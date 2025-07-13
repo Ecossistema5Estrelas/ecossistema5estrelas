@@ -8,22 +8,23 @@
     "start": "next start"
   },
   "dependencies": {
+    "@sanity/client": "^7.6.0",
     "@sanity/icons": "^3.7.4",
     "@sanity/image-url": "^1.1.0",
-    "@sanity/vision": "^3.99.0",
+    "@sanity/vision": "^2.2.6",
     "next": "latest",
-    "next-sanity": "^9.12.2",
+    "next-sanity": "^0.8.5",
     "react": "latest",
     "react-dom": "latest",
-    "sanity": "^3.99.0",
+    "sanity": "^2.36.6",
     "styled-components": "^6.1.19",
     "tailwindcss": "latest"
   },
   "devDependencies": {
     "@types/node": "24.0.13",
     "@types/react": "19.1.8",
-    "typescript": "5.8.3",
     "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.21"
+    "postcss": "^8.4.21",
+    "typescript": "5.8.3"
   }
 }
