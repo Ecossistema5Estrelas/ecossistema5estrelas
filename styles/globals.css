@@ -4,13 +4,9 @@
 
 @layer base {
   html, body {
-    @apply bg-black text-white;
+    @apply min-h-screen bg-black text-white;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  }
-  
-  #__next {
-    @apply min-h-screen;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #533483 75%, #7209b7 100%) !important;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #533483 75%, #7209b7 100%);
   }
 }
 
@@ -25,20 +21,9 @@
     filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.8));
     animation: float 4s ease-in-out infinite;
   }
-  
+
   @keyframes float {
-    0%, 100% { transform: translateY(0px); }
+    0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-20px); }
   }
-}
-
-/* Força o fundo escuro */
-body {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #533483 75%, #7209b7 100%) !important;
-  min-height: 100vh !important;
-}
-
-/* Força o container principal */
-.min-h-screen {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #533483 75%, #7209b7 100%) !important;
 }
