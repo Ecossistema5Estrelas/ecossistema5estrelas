@@ -12,7 +12,7 @@ export default function Home() {
     return (
       <div style={{ minHeight: '100vh', background: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div style={{ color: '#fff', textAlign: 'center' }}>
-          <div style={{ fontSize: '4rem', marginBottom: '1rem', animation: 'bounce 1s infinite' }}>🛸</div>
+          <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>🛸</div>
           <h1 style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>Ecossistema 5ESTRELAS em movimento!</h1>
         </div>
       </div>
@@ -38,6 +38,8 @@ export default function Home() {
         >
           Conectamos serviços locais com IA, automação e experiência de outro planeta. 🚀🛸
         </motion.p>
+      </section>
+    </main>
+  )
+}
 
-        <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="bg-purple-700 hover:bg-purple-800 text-white py-3 px-6 rounded-ful
