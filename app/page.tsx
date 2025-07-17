@@ -12,23 +12,34 @@ export default function Home() {
 
   if (!isLoaded) {
     return (
-      <div className="min-h-screen bg-black flex items-center justify-center">
-        <div className="text-white text-center">
-          <div className="text-6xl mb-4 animate-bounce">🛸</div>
-          <h1 className="text-2xl font-bold">Ecossistema 5ESTRELAS em movimento!</h1>
+      <div style={{minHeight: '100vh', background: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+        <div style={{color: '#fff', textAlign: 'center'}}>
+          <div style={{fontSize: '4rem', marginBottom: '1rem', animation: 'bounce 1s infinite'}}>🛸</div>
+          <h1 style={{fontSize: '1.5rem', fontWeight: 'bold'}}>Ecossistema 5ESTRELAS em movimento!</h1>
         </div>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
+    <div style={{
+      minHeight: '100vh',
+      background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #533483 75%, #7209b7 100%)',
+      color: '#fff'
+    }}>
       {/* Header */}
-      <header className="bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
+      <header style={{
+        background: 'rgba(0,0,0,0.2)',
+        backdropFilter: 'blur(20px)',
+        borderBottom: '1px solid rgba(255,255,255,0.1)',
+        position: 'sticky',
+        top: 0,
+        zIndex: 50
+      }}>
         <div className="container mx-auto px-4 py-6">
           <nav className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <span className="text-3xl">🛸</span>
+              <span style={{fontSize: '2rem', filter: 'drop-shadow(0 0 20px rgba(139, 92, 246, 0.8))'}}>🛸</span>
               <h1 className="text-2xl font-bold text-white">ECOSSISTEMA 5ESTRELAS</h1>
             </div>
             <div className="hidden md:flex space-x-6">
@@ -51,7 +62,12 @@ export default function Home() {
           >
             <h2 className="text-5xl md:text-7xl font-bold text-white mb-6">
               O Futuro dos
-              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <span style={{
+                background: 'linear-gradient(45deg, #a855f7, #ec4899)',
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                WebkitTextFillColor: 'transparent'
+              }}>
                 {' '}Serviços Locais
               </span>
             </h2>
@@ -60,10 +76,28 @@ export default function Home() {
               IA e automação para criar experiências 5 estrelas em todos os setores.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-full font-semibold hover:scale-105 transition-transform">
+              <button style={{
+                background: 'linear-gradient(45deg, #8b5cf6, #ec4899)',
+                color: '#fff',
+                padding: '12px 32px',
+                borderRadius: '50px',
+                fontWeight: '600',
+                border: 'none',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease'
+              }}>
                 Começar Agora
               </button>
-              <button className="border border-white/30 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition-colors">
+              <button style={{
+                background: 'transparent',
+                border: '2px solid rgba(255,255,255,0.3)',
+                color: '#fff',
+                padding: '12px 32px',
+                borderRadius: '50px',
+                fontWeight: '600',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease'
+              }}>
                 Saiba Mais
               </button>
             </div>
@@ -118,7 +152,15 @@ export default function Home() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 group"
+                style={{
+                  background: 'rgba(255,255,255,0.1)',
+                  backdropFilter: 'blur(10px)',
+                  borderRadius: '12px',
+                  padding: '24px',
+                  border: '1px solid rgba(255,255,255,0.2)',
+                  transition: 'all 0.3s ease'
+                }}
+                className="hover:bg-white/20 group"
               >
                 <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{agent.icon}</div>
                 <h4 className="text-xl font-bold text-white mb-2">{agent.name}</h4>
@@ -134,30 +176,39 @@ export default function Home() {
       </section>
 
       {/* Verticais Section */}
-      <section id="verticais" className="py-20 px-4 bg-black/20">
+      <section id="verticais" style={{padding: '80px 16px', background: 'rgba(0,0,0,0.2)'}}>
         <div className="container mx-auto">
           <h3 className="text-4xl font-bold text-white text-center mb-12">
             Verticais do Ecossistema
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { name: 'BELEZA5ESTRELAS', desc: 'Salões, cabeleireiros, estética', icon: '💄', color: 'from-pink-500 to-rose-500' },
-              { name: 'MECÂNICA5ESTRELAS', desc: 'Oficinas e serviços automotivos', icon: '🔧', color: 'from-blue-500 to-cyan-500' },
-              { name: 'MODA5ESTRELAS', desc: 'Fashion e personal styling', icon: '👗', color: 'from-purple-500 to-indigo-500' },
-              { name: 'PET5ESTRELAS', desc: 'Veterinários e pet shops', icon: '🐕', color: 'from-green-500 to-emerald-500' },
-              { name: 'EDUCAÇÃO5ESTRELAS', desc: 'Cursos e capacitação', icon: '📚', color: 'from-yellow-500 to-orange-500' },
-              { name: 'NEWS5ESTRELAS', desc: 'Jornalismo e mídia', icon: '📰', color: 'from-red-500 to-pink-500' }
+              { name: 'BELEZA5ESTRELAS', desc: 'Salões, cabeleireiros, estética', icon: '💄', color: 'linear-gradient(135deg, #ec4899, #f43f5e)' },
+              { name: 'MECÂNICA5ESTRELAS', desc: 'Oficinas e serviços automotivos', icon: '🔧', color: 'linear-gradient(135deg, #3b82f6, #06b6d4)' },
+              { name: 'MODA5ESTRELAS', desc: 'Fashion e personal styling', icon: '👗', color: 'linear-gradient(135deg, #8b5cf6, #6366f1)' },
+              { name: 'PET5ESTRELAS', desc: 'Veterinários e pet shops', icon: '🐕', color: 'linear-gradient(135deg, #10b981, #059669)' },
+              { name: 'EDUCAÇÃO5ESTRELAS', desc: 'Cursos e capacitação', icon: '📚', color: 'linear-gradient(135deg, #eab308, #f97316)' },
+              { name: 'NEWS5ESTRELAS', desc: 'Jornalismo e mídia', icon: '📰', color: 'linear-gradient(135deg, #ef4444, #ec4899)' }
             ].map((vertical, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`bg-gradient-to-br ${vertical.color} rounded-xl p-6 text-white hover:scale-105 transition-transform cursor-pointer shadow-lg hover:shadow-xl`}
+                style={{
+                  background: vertical.color,
+                  borderRadius: '12px',
+                  padding: '24px',
+                  color: '#fff',
+                  cursor: 'pointer',
+                  boxShadow: '0 10px 25px rgba(0,0,0,0.2)',
+                  transition: 'all 0.3s ease'
+                }}
+                className="hover:scale-105 hover:shadow-xl"
               >
                 <div className="text-4xl mb-4">{vertical.icon}</div>
                 <h4 className="text-xl font-bold mb-2">{vertical.name}</h4>
-                <p className="text-white/90">{vertical.desc}</p>
+                <p style={{color: 'rgba(255,255,255,0.9)'}}>{vertical.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -194,10 +245,10 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-black/40 py-12 px-4">
+      <footer style={{background: 'rgba(0,0,0,0.4)', padding: '48px 16px'}}>
         <div className="container mx-auto text-center">
           <div className="flex items-center justify-center space-x-2 mb-6">
-            <span className="text-3xl">🛸</span>
+            <span style={{fontSize: '2rem', filter: 'drop-shadow(0 0 20px rgba(139, 92, 246, 0.8))'}}>🛸</span>
             <h1 className="text-2xl font-bold text-white">ECOSSISTEMA 5ESTRELAS</h1>
           </div>
           <p className="text-gray-400 mb-6">
