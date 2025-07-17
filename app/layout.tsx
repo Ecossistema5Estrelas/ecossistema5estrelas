@@ -1,6 +1,7 @@
 // app/layout.tsx
 
-import './globals.css'
+import '../styles/globals.css' // Importa estilos do Tailwind corretamente
+
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
