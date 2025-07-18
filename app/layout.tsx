@@ -1,7 +1,4 @@
-// app/layout.tsx
-
-import '../styles/globals.css' // Importa estilos do Tailwind corretamente
-
+import '../styles/globals.css' // <- certo se estiver em app/layout.tsx
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -12,9 +9,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
-      <body className="bg-gradient-main text-white min-h-screen">
-        {children}
-      </body>
+      <body className="bg-gradient-main text-white min-h-screen">{children}</body>
     </html>
   )
 }
