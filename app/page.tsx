@@ -1,76 +1,25 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
-import Link from 'next/link'
-
-const apps = [
-  { nome: '💇‍♀️💅', titulo: 'BELEZA5ESTRELAS', rota: '/beleza' },
-  { nome: '👗🕶️', titulo: 'MODA5ESTRELAS', rota: '/moda' },
-  { nome: '🚗🔧', titulo: 'MECÂNICA5ESTRELAS', rota: '/mecanica' },
-]
+import { useEffect, useState } from 'react'
+import { MobileView, DesktopView } from './components'
 
 export default function Home() {
-  const [isLoaded, setIsLoaded] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
-    setIsLoaded(true)
+    const checkDevice = () => {
+      const width = window.innerWidth
+      console.log('📱 WIDTH DETECTADO:', width)
+      setIsMobile(width < 768)
+    }
+
+    checkDevice()
+    window.addEventListener('resize', checkDevice)
+
+    return () => window.removeEventListener('resize', checkDevice)
   }, [])
 
-  if (!isLoaded) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-black text-white">
-        <div className="text-center">
-          <div className="text-6xl mb-4 animate-bounce">🛸</div>
-          <h1 className="text-xl font-bold">Ecossistema 5ESTRELAS em movimento!</h1>
-        </div>
-      </div>
-    )
-  }
+  console.log('🔍 RENDER MOBILE?', isMobile)
 
-  return (
-    <main className="min-h-screen bg-gradient-main text-white flex flex-col items-center p-6 space-y-10">
-      <motion.h1
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        className="text-4xl md:text-6xl font-bold text-center mt-10"
-      >
-        🌟 Bem-vindo ao <span className="text-purple-400">ECOSSISTEMA 5ESTRELAS</span>
-      </motion.h1>
-
-      <motion.p
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.2 }}
-        className="text-lg text-center max-w-xl text-gray-300"
-      >
-        Escolha um aplicativo para explorar e mergulhe em uma experiência viva, inteligente e inclusiva. 🚀✨
-      </motion.p>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.4 }}
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-5xl"
-      >
-        {apps.map((app, index) => (
-          <Link key={index} href={app.rota}>
-            <motion.div
-              whileHover={{ scale: 1.05, y: -8 }}
-              whileTap={{ scale: 0.97 }}
-              className="bg-white bg-opacity-10 backdrop-blur-lg rounded-lg p-6 text-center hover:bg-opacity-20 transition cursor-pointer border border-white/20 shadow-lg"
-            >
-              <div className="flex flex-col items-center justify-center space-y-1">
-                <div className="text-2xl">{app.nome}</div>
-                <div className="text-sm sm:text-base font-semibold text-center leading-tight">
-                  {app.titulo}
-                </div>
-              </div>
-            </motion.div>
-          </Link>
-        ))}
-      </motion.div>
-    </main>
-  )
+  return isMobile ? <MobileView /> : <DesktopView />
 }
