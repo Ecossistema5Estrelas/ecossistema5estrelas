@@ -1,10 +1,10 @@
-// ✅ app/components/DesktopView.tsx
 'use client'
 
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
 
+// Lista de botões institucionais
 const botoesInstitucionais = [
   { nome: 'Blog', emoji: '📚', rota: '/blog' },
   { nome: 'Contato', emoji: '📬', rota: '/contato' },
@@ -17,6 +17,7 @@ export default function DesktopView() {
 
   useEffect(() => {
     setIsLoaded(true)
+    console.log('🖥️ DesktopView carregado.')
   }, [])
 
   if (!isLoaded) {
@@ -56,8 +57,8 @@ export default function DesktopView() {
         transition={{ duration: 1.4 }}
         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 w-full max-w-4xl"
       >
-        {botoesInstitucionais.map((btn, i) => (
-          <Link key={i} href={btn.rota}>
+        {botoesInstitucionais.map((btn) => (
+          <Link key={btn.rota} href={btn.rota}>
             <motion.div
               whileHover={{ scale: 1.05, y: -5 }}
               whileTap={{ scale: 0.95 }}

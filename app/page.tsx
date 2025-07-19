@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import MobileView from './components/MobileView'
 import DesktopView from './components/DesktopView'
 
-export default function HomePage() {
+export default function Home() {
   const [isMobile, setIsMobile] = useState<boolean | null>(null)
 
   useEffect(() => {
@@ -38,4 +38,15 @@ export default function HomePage() {
         setIsMobile(false)
       }
     }
-  }, [i]()
+  }, [isMobile])
+
+  if (isMobile === null) {
+    return (
+      <main className="flex justify-center items-center min-h-screen text-white">
+        <p>Detectando dispositivo...</p>
+      </main>
+    )
+  }
+
+  return isMobile ? <MobileView /> : <DesktopView />
+}

@@ -1,13 +1,13 @@
-// /app/studio/[[...tool]]/page.tsx
+'use client'
 
-import { NextStudio } from 'next-sanity/studio'
-import config from '@/sanity.config'
+import dynamic from 'next/dynamic'
 
 export const dynamic = 'force-static'
 
-// Exportação recomendada pelo next-sanity
-export { metadata, viewport } from 'next-sanity/studio'
+const StudioWrapper = dynamic(() => import('../../../sanity/StudioWrapper'), {
+  ssr: false,
+})
 
 export default function StudioPage() {
-  return <NextStudio config={config} />
+  return <StudioWrapper />
 }
