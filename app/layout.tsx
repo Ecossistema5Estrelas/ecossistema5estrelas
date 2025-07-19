@@ -1,4 +1,4 @@
-// 🚀 Trigger redeploy via Vercel — Cezar Braga da Silva
+// 🚀 Trigger redeploy via Vercel — Cezar Braga da Silva 
 
 import '../styles/globals.css'
 import type { Metadata, Viewport } from 'next'
