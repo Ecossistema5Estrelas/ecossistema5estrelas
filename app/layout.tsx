@@ -1,12 +1,17 @@
 // 🚀 Trigger redeploy via Vercel — Cezar Braga da Silva
 
 import '../styles/globals.css'
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 
 export const metadata: Metadata = {
   title: 'Ecossistema 5ESTRELAS',
   description: 'O futuro da inovação, inclusão e excelência começa aqui.',
-  viewport: 'width=device-width, initial-scale=1.0',
+}
+
+// ✅ Export correto para viewport
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1.0,
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

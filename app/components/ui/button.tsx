@@ -1,30 +1,44 @@
 'use client'
 
-import { ButtonHTMLAttributes } from 'react'
-import { cn } from '@/lib/utils' // se não tiver utilitário cn, remova esse uso
+import { ButtonHTMLAttributes, forwardRef } from 'react'
+import { cn } from '@/lib/utils'
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: 'default' | 'outline'
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: 'default' | 'outline' | 'ghost' | 'link'
+  size?: 'default' | 'sm' | 'lg' | 'icon'
 }
 
-export default function Button({
-  children,
-  className,
-  variant = 'default',
-  ...props
-}: ButtonProps) {
-  const base = 'px-4 py-2 rounded font-medium transition duration-200'
-  const variants = {
-    default: 'bg-indigo-600 text-white hover:bg-indigo-700',
-    outline: 'border border-indigo-600 text-indigo-600 hover:bg-indigo-100',
+const buttonVariants = {
+  default: 'bg-gradient-to-r from-amber-500 to-yellow-400 text-white hover:opacity-90',
+  outline: 'border border-white text-white hover:bg-white hover:text-black',
+  ghost: 'bg-transparent text-white hover:bg-white/10',
+  link: 'text-white underline hover:text-yellow-300',
+}
+
+const buttonSizes = {
+  default: 'px-4 py-2 text-base',
+  sm: 'px-3 py-1 text-sm',
+  lg: 'px-6 py-3 text-lg',
+  icon: 'p-2',
+}
+
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant = 'default', size = 'default', ...props }, ref) => {
+    return (
+      <button
+        ref={ref}
+        className={cn(
+          'rounded-xl font-bold transition-all duration-200 shadow-md',
+          buttonVariants[variant],
+          buttonSizes[size],
+          className
+        )}
+        {...props}
+      />
+    )
   }
+)
 
-  return (
-    <button
-      {...props}
-      className={`${base} ${variants[variant]} ${className || ''}`}
-    >
-      {children}
-    </button>
-  )
-}
+Button.displayName = 'Button'
+
+export default Button

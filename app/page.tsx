@@ -1,7 +1,8 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { MobileView, DesktopView } from './components'
+import MobileView from './components/MobileView'
+import DesktopView from './components/DesktopView'
 
 export default function HomePage() {
   const [isMobile, setIsMobile] = useState<boolean | null>(null)
@@ -24,7 +25,6 @@ export default function HomePage() {
     console.log('📦 isMobile ATUALIZADO:', isMobile)
   }, [isMobile])
 
-  // Fallback manual com userAgent
   useEffect(() => {
     if (isMobile === null && typeof navigator !== 'undefined') {
       const ua = navigator.userAgent.toLowerCase()
@@ -38,15 +38,4 @@ export default function HomePage() {
         setIsMobile(false)
       }
     }
-  }, [isMobile])
-
-  if (isMobile === null) {
-    return (
-      <main className="flex justify-center items-center min-h-screen text-white">
-        <p>Detectando dispositivo...</p>
-      </main>
-    )
-  }
-
-  return isMobile ? <MobileView /> : <DesktopView />
-}
+  }, [i]()
