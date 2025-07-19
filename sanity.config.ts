@@ -1,7 +1,6 @@
 'use client'
 
 import { defineConfig } from 'sanity'
-import { deskTool } from 'sanity/desk'
 
 // Configurações do projeto
 import { apiVersion, dataset, projectId } from './sanity/env'
@@ -12,7 +11,5 @@ export default defineConfig({
   projectId,
   dataset,
   schema,
-  plugins: [
-    deskTool(),
-  ],
+  plugins: [], // Nenhum plugin visual por enquanto
 })
