@@ -5,15 +5,9 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 
 const apps = [
-  { nome: '💇‍♀️💅 BELEZA5ESTRELAS', rota: '/beleza' },
-  { nome: '👗🕶️ MODA5ESTRELAS', rota: '/moda' },
-  { nome: '🚗🔧 MECÂNICA5ESTRELAS', rota: '/mecanica' },
-  { nome: '📚💰🧠 LEITURAPAGA5ESTRELAS', rota: '/leiturapaga' },
-  { nome: '👶🧒👧 KIDS5ESTRELAS', rota: '/kids' },
-  { nome: '🐶🐱🐾 PETS5ESTRELAS', rota: '/pets' },
-  { nome: '📬 CONTATO', rota: '/contato' },
-  { nome: 'ℹ️ SOBRE', rota: '/sobre' },
-  { nome: '👤 DASHBOARD', rota: '/dashboard/perfil' },
+  { nome: '💇‍♀️💅', titulo: 'BELEZA5ESTRELAS', rota: '/beleza' },
+  { nome: '👗🕶️', titulo: 'MODA5ESTRELAS', rota: '/moda' },
+  { nome: '🚗🔧', titulo: 'MECÂNICA5ESTRELAS', rota: '/mecanica' },
 ]
 
 export default function Home() {
@@ -67,7 +61,12 @@ export default function Home() {
               whileTap={{ scale: 0.97 }}
               className="bg-white bg-opacity-10 backdrop-blur-lg rounded-lg p-6 text-center hover:bg-opacity-20 transition cursor-pointer border border-white/20 shadow-lg"
             >
-              <span className="text-xl font-semibold">{app.nome}</span>
+              <div className="flex flex-col items-center justify-center space-y-1">
+                <div className="text-2xl">{app.nome}</div>
+                <div className="text-sm sm:text-base font-semibold text-center leading-tight">
+                  {app.titulo}
+                </div>
+              </div>
             </motion.div>
           </Link>
         ))}
