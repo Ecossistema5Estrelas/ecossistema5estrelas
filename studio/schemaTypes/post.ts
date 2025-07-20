@@ -1,12 +1,14 @@
-export default {
+import { defineType } from 'sanity'
+
+export default defineType({
   name: 'post',
   title: 'Post',
   type: 'document',
   fields: [
     {
       name: 'title',
-      title: 'Title',
-      type: 'string'
+      title: 'Título',
+      type: 'string',
     },
     {
       name: 'slug',
@@ -14,13 +16,13 @@ export default {
       type: 'slug',
       options: {
         source: 'title',
-        maxLength: 96
-      }
+        maxLength: 96,
+      },
     },
     {
       name: 'body',
-      title: 'Body',
-      type: 'blockContent'
-    }
-  ]
-}
+      title: 'Conteúdo',
+      type: 'text',
+    },
+  ],
+})

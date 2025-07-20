@@ -1,52 +1,40 @@
+// app/page.tsx
 'use client'
 
-import { useEffect, useState } from 'react'
-import MobileView from './components/MobileView'
-import DesktopView from './components/DesktopView'
+import Link from 'next/link'
+import { motion } from 'framer-motion'
 
-export default function Home() {
-  const [isMobile, setIsMobile] = useState<boolean | null>(null)
+export default function HomePage() {
+  return (
+    <main className="min-h-screen bg-gradient-to-b from-black via-zinc-900 to-zinc-950 px-6 py-20 text-white flex flex-col items-center justify-center text-center space-y-8">
+      <motion.h1
+        initial={{ opacity: 0, y: -40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="text-4xl md:text-6xl font-bold text-emerald-400"
+      >
+        🛸 ECOSSISTEMA 5ESTRELAS
+      </motion.h1>
 
-  useEffect(() => {
-    const checkDevice = () => {
-      const width = window.innerWidth
-      console.log('📱 LARGURA DETECTADA:', width)
-      setIsMobile(width < 768)
-    }
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5 }}
+        className="max-w-2xl text-lg md:text-xl text-zinc-300"
+      >
+        Um universo digital em construção. Em breve, os primeiros aplicativos 5⭐ serão revelados.
+        Enquanto isso, acompanhe o nosso <Link href="/blog" className="text-emerald-400 underline hover:text-white">blog oficial</Link> para atualizações e bastidores da criação.
+      </motion.p>
 
-    if (typeof window !== 'undefined') {
-      checkDevice()
-      window.addEventListener('resize', checkDevice)
-      return () => window.removeEventListener('resize', checkDevice)
-    }
-  }, [])
-
-  useEffect(() => {
-    console.log('📦 isMobile ATUALIZADO:', isMobile)
-  }, [isMobile])
-
-  useEffect(() => {
-    if (isMobile === null && typeof navigator !== 'undefined') {
-      const ua = navigator.userAgent.toLowerCase()
-      const isMobileUA =
-        /android|iphone|ipad|ipod|opera mini|iemobile|mobile/i.test(ua)
-      if (isMobileUA) {
-        console.log('📦 UA DETECTADO: MOBILE')
-        setIsMobile(true)
-      } else {
-        console.log('📦 UA DETECTADO: DESKTOP')
-        setIsMobile(false)
-      }
-    }
-  }, [isMobile])
-
-  if (isMobile === null) {
-    return (
-      <main className="flex justify-center items-center min-h-screen text-white">
-        <p>Detectando dispositivo...</p>
-      </main>
-    )
-  }
-
-  return isMobile ? <MobileView /> : <DesktopView />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1 }}
+        className="text-sm text-zinc-500"
+      >
+        Versão beta institucional — Plataforma em desenvolvimento contínuo 🚀
+      </motion.div>
+    </main>
+  )
 }
+

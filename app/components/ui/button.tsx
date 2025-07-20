@@ -1,44 +1,41 @@
 'use client'
 
-import { ButtonHTMLAttributes, forwardRef } from 'react'
+import { ButtonHTMLAttributes, DetailedHTMLProps, ReactNode } from 'react'
 import { cn } from '@/lib/utils'
 
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'default' | 'outline' | 'ghost' | 'link'
-  size?: 'default' | 'sm' | 'lg' | 'icon'
+type Variant = 'default' | 'outline' | 'ghost' | 'danger'
+
+interface ButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+  children: ReactNode
+  variant?: Variant
+  className?: string
 }
 
-const buttonVariants = {
-  default: 'bg-gradient-to-r from-amber-500 to-yellow-400 text-white hover:opacity-90',
-  outline: 'border border-white text-white hover:bg-white hover:text-black',
-  ghost: 'bg-transparent text-white hover:bg-white/10',
-  link: 'text-white underline hover:text-yellow-300',
+const variantClasses: Record<Variant, string> = {
+  default: 'bg-white text-black dark:bg-zinc-800 dark:text-white hover:bg-gray-200 dark:hover:bg-zinc-700',
+  outline: 'border border-black text-black dark:border-white dark:text-white hover:bg-gray-100 dark:hover:bg-zinc-700',
+  ghost: 'bg-transparent text-black dark:text-white hover:bg-gray-100 dark:hover:bg-zinc-800',
+  danger: 'bg-red-600 text-white hover:bg-red-700 dark:bg-red-700 dark:hover:bg-red-800'
 }
 
-const buttonSizes = {
-  default: 'px-4 py-2 text-base',
-  sm: 'px-3 py-1 text-sm',
-  lg: 'px-6 py-3 text-lg',
-  icon: 'p-2',
+export default function Button({
+  children,
+  className = '',
+  variant = 'default',
+  ...props
+}: ButtonProps) {
+  return (
+    <button
+      {...props}
+      className={cn(
+        'px-4 py-2 rounded-md font-semibold transition-all duration-300 ease-in-out shadow-sm',
+        'focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:focus:ring-offset-zinc-900',
+        variantClasses[variant],
+        className
+      )}
+    >
+      {children}
+    </button>
+  )
 }
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = 'default', size = 'default', ...props }, ref) => {
-    return (
-      <button
-        ref={ref}
-        className={cn(
-          'rounded-xl font-bold transition-all duration-200 shadow-md',
-          buttonVariants[variant],
-          buttonSizes[size],
-          className
-        )}
-        {...props}
-      />
-    )
-  }
-)
-
-Button.displayName = 'Button'
-
-export default Button

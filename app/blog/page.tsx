@@ -1,51 +1,58 @@
-// /app/blog/page.tsx
+// app/blog/page.tsx
+'use client'
+
+import { groq } from 'next-sanity'
 import { client } from '@/sanity/lib/clients'
 import Link from 'next/link'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 
-export const revalidate = 60 // Revalidação a cada 60 segundos
+type Post = {
+  _id: string
+  title: string
+  slug: { current: string }
+  mainImage?: { asset: { url: string } }
+}
+
+const query = groq`*[_type == "post"] | order(_createdAt desc){
+  _id,
+  title,
+  slug,
+  mainImage {
+    asset->{url}
+  }
+}`
 
 export default async function BlogPage() {
-  const query = `*[_type == "post"] | order(publishedAt desc)[0...10]{
-    _id,
-    title,
-    slug,
-    publishedAt,
-    mainImage {
-      asset -> {
-        url
-      }
-    }
-  }`
-
-  const posts = await client.fetch(query)
+  const posts: Post[] = await client.fetch(query)
 
   return (
-    <main className="min-h-screen p-6 bg-gradient-main text-white">
-      <h1 className="text-4xl font-bold mb-8">📰 Blog 5ESTRELAS</h1>
+    <main className="min-h-screen bg-zinc-900 text-white py-12 px-4 md:px-12">
+      <h1 className="text-4xl font-bold mb-8 text-center">📰 Blog 5ESTRELAS</h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {posts.map((post: any) => (
-          <Link
+      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {posts.map((post) => (
+          <motion.div
             key={post._id}
-            href={`/blog/${post.slug.current}`}
-            className="bg-white bg-opacity-10 backdrop-blur p-4 rounded-lg shadow hover:scale-105 transition"
+            whileHover={{ scale: 1.03 }}
+            transition={{ type: 'spring', stiffness: 300 }}
+            className="bg-zinc-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow"
           >
-            {post.mainImage?.asset?.url && (
-              <div className="relative w-full h-48 mb-4">
+            <Link href={`/blog/${post.slug.current}`} className="block group">
+              {post.mainImage?.asset?.url && (
                 <Image
                   src={post.mainImage.asset.url}
                   alt={post.title}
-                  fill
-                  className="object-cover rounded"
+                  width={400}
+                  height={250}
+                  className="w-full h-48 object-cover transition-opacity duration-300 group-hover:opacity-80"
                 />
+              )}
+              <div className="p-4">
+                <h2 className="text-xl font-semibold group-hover:underline">{post.title}</h2>
               </div>
-            )}
-            <h2 className="text-xl font-semibold">{post.title}</h2>
-            <p className="text-sm text-gray-300 mt-1">
-              🗓️ {new Date(post.publishedAt).toLocaleDateString('pt-BR')}
-            </p>
-          </Link>
+            </Link>
+          </motion.div>
         ))}
       </div>
     </main>
