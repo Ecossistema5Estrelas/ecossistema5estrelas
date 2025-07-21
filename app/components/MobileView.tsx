@@ -1,10 +1,9 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 
-// Botões institucionais com rotas do portal
 const botoesInstitucionais = [
   { nome: 'Blog', emoji: '📚', rota: '/blog' },
   { nome: 'Contato', emoji: '📬', rota: '/contato' },
@@ -57,7 +56,7 @@ export default function MobileView() {
         transition={{ duration: 1.2 }}
         className="flex flex-col space-y-4 w-full max-w-xs"
       >
-        {botoesInstitucionais.map((btn, index) => (
+        {botoesInstitucionais.map((btn) => (
           <Link key={btn.rota} href={btn.rota}>
             <motion.div
               whileHover={{ scale: 1.02 }}
@@ -82,4 +81,3 @@ export default function MobileView() {
     </main>
   )
 }
-

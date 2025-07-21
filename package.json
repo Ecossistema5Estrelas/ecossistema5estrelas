@@ -12,8 +12,8 @@
     "@sanity/client": "6.29.1",
     "@sanity/icons": "2.11.8",
     "@sanity/image-url": "^1.1.0",
-    "@sanity/ui": "1.9.3",
     "@sanity/preview-kit": "3.2.12",
+    "@sanity/ui": "1.9.3",
     "firebase": "^11.10.0",
     "framer-motion": "^12.23.6",
     "next": "^15.4.1",
@@ -36,4 +36,3 @@
     "typescript": "5.8.3"
   }
 }
-
