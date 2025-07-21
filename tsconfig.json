@@ -19,15 +19,11 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "app/*"
-      ],
-      "@/lib/*": [
-        "lib/*"
-      ],
-      "@/sanity/*": [
-        "sanity/*"
-      ]
+      "@/*": ["app/*"],
+      "@/lib/*": ["lib/*"],
+      "@/sanity/*": ["sanity/*"],
+      "@/components/*": ["app/components/*"],
+      "@/components/ui/*": ["app/components/ui/*"]
     },
     "incremental": true,
     "plugins": [
@@ -40,7 +36,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts" // Garante compatibilidade com Next 13+
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"
