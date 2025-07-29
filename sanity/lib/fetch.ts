@@ -1,19 +1,10 @@
-import { createClient } from 'next-sanity'
-import { apiVersion, dataset, projectId } from '../env'
+import { client } from './clients'
 
-export const client = createClient({
-  projectId,
-  dataset,
-  apiVersion,
-  useCdn: true,
-})
-
-export async function sanityFetch<QueryResponse>({
-  query,
-  params = {},
-}: {
-  query: string
-  params?: Record<string, any>
-}): Promise<QueryResponse> {
-  return client.fetch(query, params)
+export async function sanityFetch<T>(query: string, params: Record<string, any> = {}): Promise<T> {
+  try {
+    return await client.fetch(query, params) as T
+  } catch (error) {
+    console.error('❌ Erro em sanityFetch:', error)
+    throw new Error('Erro ao buscar dados do Sanity')
+  }
 }

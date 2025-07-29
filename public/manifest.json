@@ -1,22 +1,32 @@
 {
   "name": "Ecossistema 5ESTRELAS",
   "short_name": "5ESTRELAS",
-  "description": "Portal vivo, inteligente e inclusivo com vários apps conectados.",
+  "description": "🌟 O portal digital da inovação, inclusão e excelência.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#000000",
-  "theme_color": "#7c3aed",
+  "theme_color": "#6D28D9",
   "icons": [
     {
-      "src": "/icon-192.png",
-      "type": "image/png",
-      "sizes": "192x192"
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
     },
     {
-      "src": "/icon-512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
-  ]
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-mobile.png",
+      "type": "image/png",
+      "sizes": "540x960"
+    }
+  ],
+  "lang": "pt-BR",
+  "dir": "ltr"
 }

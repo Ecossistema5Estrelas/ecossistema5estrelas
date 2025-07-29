@@ -3,11 +3,13 @@ module.exports = {
   content: [
     './app/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
+    './lib/**/*.{js,ts,jsx,tsx}',
+    './sanity/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
       backgroundImage: {
-        'gradient-main': 'linear-gradient(135deg, #1e1e2f 0%, #431d78 100%)',
+        'gradient-main': 'linear-gradient(to bottom right, #0f0f0f, #1c1c1c, #3a3a3a)',
       },
     },
   },

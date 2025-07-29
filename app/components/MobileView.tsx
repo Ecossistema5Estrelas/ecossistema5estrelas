@@ -1,83 +1,61 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { Home } from 'lucide-react'
 
-const botoesInstitucionais = [
-  { nome: 'Blog', emoji: '📚', rota: '/blog' },
-  { nome: 'Contato', emoji: '📬', rota: '/contato' },
-  { nome: 'Sobre', emoji: 'ℹ️', rota: '/sobre' },
-  { nome: 'Dashboard', emoji: '👤', rota: '/dashboard' },
+const botoes = [
+  { nome: '📚 Blog', rota: '/blog' },
+  { nome: '📬 Contato', rota: '/contato' },
+  { nome: 'ℹ️ Sobre', rota: '/sobre' },
+  { nome: '👤 Dashboard', rota: '/dashboard' },
 ]
 
 export default function MobileView() {
-  const [isLoaded, setIsLoaded] = useState(false)
-
-  useEffect(() => {
-    setIsLoaded(true)
-    console.log('✅ MobileView carregado.')
-  }, [])
-
-  if (!isLoaded) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-black text-white">
-        <div className="text-center space-y-2">
-          <div className="text-5xl animate-spin-slow">🛸</div>
-          <p className="text-lg font-semibold">Carregando o Portal 5ESTRELAS...</p>
-        </div>
-      </div>
-    )
-  }
-
   return (
-    <main className="min-h-screen bg-gradient-to-b from-black via-zinc-900 to-zinc-950 text-white flex flex-col items-center justify-start px-5 py-10 space-y-8">
-      <motion.h1
-        initial={{ opacity: 0, y: 25 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="text-3xl font-bold text-center leading-snug"
-      >
-        🌟 Bem-vindo ao <span className="text-purple-400">ECOSSISTEMA 5ESTRELAS</span>
-      </motion.h1>
-
-      <motion.p
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        className="text-base text-center max-w-md text-gray-300"
-      >
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="min-h-screen bg-gradient-to-b from-purple-900 via-black to-indigo-950 text-white px-4 py-12 flex flex-col items-center justify-start space-y-8"
+    >
+      <h1 className="text-3xl font-extrabold text-purple-300 text-center">
+        🌟 ECOSSISTEMA <span className="text-yellow-300">5ESTRELAS</span>
+      </h1>
+      <p className="text-zinc-200 text-center max-w-xs">
         Acesse os módulos principais do nosso portal institucional.
-      </motion.p>
+      </p>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.2 }}
-        className="flex flex-col space-y-4 w-full max-w-xs"
-      >
-        {botoesInstitucionais.map((btn) => (
-          <Link key={btn.rota} href={btn.rota}>
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.96 }}
-              className="bg-white/10 hover:bg-white/20 border border-white/20 rounded-xl p-5 text-center backdrop-blur-md shadow-md"
-            >
-              <div className="text-4xl mb-2">{btn.emoji}</div>
-              <div className="text-lg font-medium">{btn.nome}</div>
-            </motion.div>
-          </Link>
-        ))}
-      </motion.div>
+      <div className="w-full max-w-xs space-y-4">
+        {botoes.map((btn) => {
+          const [emoji, ...texto] = btn.nome.split(' ')
+          return (
+            <Link key={btn.rota} href={btn.rota}>
+              <motion.div
+                whileTap={{ scale: 0.96 }}
+                className="w-full bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md p-4 rounded-xl text-center shadow-md transition-all"
+              >
+                <div className="text-2xl mb-1">{emoji}</div>
+                <div className="text-md font-medium">{texto.join(' ')}</div>
+              </motion.div>
+            </Link>
+          )
+        })}
+      </div>
 
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.4, duration: 0.8 }}
-        className="text-xs text-center text-gray-400 max-w-sm pt-6"
-      >
-        🌌 Este é o coração institucional do nosso ecossistema. Estamos ativando novos apps com responsabilidade, ética e inovação. ✨
-      </motion.p>
-    </main>
+      <p className="text-xs text-center text-zinc-400 max-w-sm pt-6">
+        🌌 Este é o coração institucional do nosso ecossistema. Estamos ativando novos apps com ética e inovação. ✨
+      </p>
+
+      <Link href="/" passHref legacyBehavior>
+        <a
+          aria-label="Voltar para a página inicial"
+          className="fixed bottom-6 right-6 bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md rounded-full px-5 py-3 text-sm flex items-center space-x-2 text-white shadow-lg transition-all z-50"
+        >
+          <Home size={20} />
+          <span>Início</span>
+        </a>
+      </Link>
+    </motion.div>
   )
 }

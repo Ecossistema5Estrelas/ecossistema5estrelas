@@ -1,87 +1,79 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { Home } from 'lucide-react'
 
-const botoesInstitucionais = [
-  { nome: 'Blog', emoji: '📚', rota: '/blog' },
-  { nome: 'Contato', emoji: '📬', rota: '/contato' },
-  { nome: 'Sobre', emoji: 'ℹ️', rota: '/sobre' },
-  { nome: 'Dashboard', emoji: '👤', rota: '/dashboard' },
+const botoes = [
+  { nome: '📚 Blog', rota: '/blog' },
+  { nome: '📬 Contato', rota: '/contato' },
+  { nome: 'ℹ️ Sobre', rota: '/sobre' },
+  { nome: '👤 Dashboard', rota: '/dashboard' },
 ]
 
 export default function DesktopView() {
-  const [isLoaded, setIsLoaded] = useState(false)
-
-  useEffect(() => {
-    setIsLoaded(true)
-    console.log('🖥️ DesktopView carregado.')
-  }, [])
-
-  if (!isLoaded) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-black text-white">
-        <div className="text-center space-y-2">
-          <div className="text-6xl animate-pulse">🌐</div>
-          <p className="text-lg font-semibold">Carregando a versão Desktop...</p>
-        </div>
-      </div>
-    )
-  }
-
   return (
-    <main className="min-h-screen bg-gradient-to-br from-zinc-950 via-zinc-900 to-black text-white flex flex-col items-center justify-start px-8 py-16 space-y-12">
+    <main className="min-h-screen bg-gradient-to-br from-purple-900 via-black to-indigo-900 text-white px-8 py-16 flex flex-col items-center justify-center space-y-10 relative">
       <motion.h1
-        initial={{ opacity: 0, y: -20 }}
+        initial={{ opacity: 0, y: 25 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-4xl font-bold text-center"
+        className="text-5xl font-bold text-center leading-tight text-purple-300"
       >
-        💻 Bem-vindo à versão <span className="text-yellow-400">Desktop</span> do
-        <br />
-        <span className="text-purple-400">ECOSSISTEMA 5ESTRELAS</span>
+        🌟 Bem-vindo ao <span className="text-yellow-300">ECOSSISTEMA 5ESTRELAS</span>
       </motion.h1>
 
       <motion.p
-        initial={{ opacity: 0, y: -10 }}
+        initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="text-lg text-center max-w-2xl text-gray-300"
+        className="text-xl text-center max-w-3xl text-zinc-200"
       >
-        Explore os principais módulos institucionais do nosso portal. Essa experiência é otimizada para tela grande,
-        navegando com excelência, estilo e acessibilidade.
+        Acesse os módulos principais do nosso portal institucional.
       </motion.p>
 
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.2 }}
-        className="grid grid-cols-2 gap-6 w-full max-w-3xl"
+        className="grid grid-cols-2 gap-6 max-w-2xl w-full"
       >
-        {botoesInstitucionais.map((btn) => (
-          <Link key={btn.rota} href={btn.rota}>
-            <motion.div
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.97 }}
-              className="bg-white/10 hover:bg-white/20 border border-white/20 rounded-2xl p-6 text-center backdrop-blur-md shadow-md cursor-pointer"
-            >
-              <div className="text-5xl mb-2">{btn.emoji}</div>
-              <div className="text-xl font-semibold">{btn.nome}</div>
-            </motion.div>
-          </Link>
-        ))}
+        {botoes.map((btn) => {
+          const [emoji, ...texto] = btn.nome.split(' ')
+          return (
+            <Link key={btn.rota} href={btn.rota}>
+              <motion.div
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.96 }}
+                className="bg-white/10 hover:bg-white/20 border border-white/20 rounded-xl p-6 text-center backdrop-blur-md shadow-lg transition-all cursor-pointer"
+              >
+                <div className="text-4xl mb-2">{emoji}</div>
+                <div className="text-lg font-medium">{texto.join(' ')}</div>
+              </motion.div>
+            </Link>
+          )
+        })}
       </motion.div>
 
-      <motion.p
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.4, duration: 0.8 }}
-        className="text-sm text-center text-gray-500 max-w-2xl pt-10"
+        className="pt-8 text-sm text-zinc-400 text-center max-w-xl"
       >
-        🛸 Você está acessando a versão desktop do nosso universo digital. Mais de 90 aplicativos 5ESTRELAS estão em fase
-        de ativação. Seja bem-vindo ao futuro! 🚀
-      </motion.p>
+        🌐 Este é o coração institucional do nosso ecossistema. Estamos ativando novos apps com ética, tecnologia e impacto social.
+      </motion.div>
+
+      <Link href="/" passHref legacyBehavior>
+        <a
+          aria-label="Voltar para a página inicial"
+          className="fixed bottom-6 right-6 bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md rounded-full px-5 py-3 text-sm flex items-center space-x-2 text-white shadow-lg transition-all z-50"
+        >
+          <Home size={20} />
+          <span>Início</span>
+        </a>
+      </Link>
     </main>
   )
 }

@@ -1,60 +1,65 @@
-// app/blog/page.tsx
-'use client'
+import type { Metadata } from 'next'
+import { getPosts, getCategories } from '@/sanity/lib/queries'
+import { Post } from '@/lib/types'
+import BotaoVoltar from '@/components/BotaoVoltar'
+import FiltroCategoriasMultiplo from '@/components/blog/FiltroCategoriasMultiplo'
 
-import { groq } from 'next-sanity'
-import { client } from '@/sanity/lib/clients'
-import Link from 'next/link'
-import Image from 'next/image'
-import { motion } from 'framer-motion'
+export const dynamic = 'force-dynamic'
 
-type Post = {
-  _id: string
-  title: string
-  slug: { current: string }
-  mainImage?: { asset: { url: string } }
+// ✅ SEO completo para a página /blog
+export const metadata: Metadata = {
+  title: 'Blog Oficial do ECOSSISTEMA 5ESTRELAS 🌟',
+  description:
+    'Explore as inovações, bastidores e novidades do ECOSSISTEMA 5ESTRELAS. Atualizações sobre apps, inteligência artificial e inclusão digital em primeira mão!',
+  keywords: [
+    'ECOSSISTEMA 5ESTRELAS',
+    'Blog 5ESTRELAS',
+    'inovação digital',
+    'startups brasileiras',
+    'inteligência artificial',
+    'tecnologia inclusiva',
+    'notícias 5estrelas',
+    'apps inteligentes'
+  ],
+  openGraph: {
+    title: 'Blog Oficial do ECOSSISTEMA 5ESTRELAS',
+    description:
+      'Notícias, bastidores e avanços do projeto digital mais inovador do Brasil. 🌟',
+    url: 'https://ecossistema5estrelas.org/blog',
+    siteName: 'ECOSSISTEMA 5ESTRELAS',
+    images: [
+      {
+        url: 'https://ecossistema5estrelas.org/og-blog.jpg', // substitua pelo caminho real do banner
+        width: 1200,
+        height: 630,
+        alt: 'Blog Oficial ECOSSISTEMA 5ESTRELAS'
+      }
+    ],
+    type: 'website'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog Oficial do ECOSSISTEMA 5ESTRELAS',
+    description:
+      'Fique por dentro das inovações e bastidores do maior ecossistema digital do Brasil!',
+    images: ['https://ecossistema5estrelas.org/og-blog.jpg']
+  },
+  metadataBase: new URL('https://ecossistema5estrelas.org'),
+  alternates: {
+    canonical: '/blog'
+  }
 }
 
-const query = groq`*[_type == "post"] | order(_createdAt desc){
-  _id,
-  title,
-  slug,
-  mainImage {
-    asset->{url}
-  }
-}`
-
 export default async function BlogPage() {
-  const posts: Post[] = await client.fetch(query)
+  const posts: Post[] = await getPosts([]) // 👈 Carrega todos os posts sem filtro
+  const categorias = await getCategories()
 
   return (
-    <main className="min-h-screen bg-zinc-900 text-white py-12 px-4 md:px-12">
-      <h1 className="text-4xl font-bold mb-8 text-center">📰 Blog 5ESTRELAS</h1>
+    <main className="min-h-screen px-4 py-8 bg-gradient-main text-white">
+      <BotaoVoltar />
+      <h1 className="text-4xl font-bold mb-6">Blog Oficial 🌟</h1>
 
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {posts.map((post) => (
-          <motion.div
-            key={post._id}
-            whileHover={{ scale: 1.03 }}
-            transition={{ type: 'spring', stiffness: 300 }}
-            className="bg-zinc-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow"
-          >
-            <Link href={`/blog/${post.slug.current}`} className="block group">
-              {post.mainImage?.asset?.url && (
-                <Image
-                  src={post.mainImage.asset.url}
-                  alt={post.title}
-                  width={400}
-                  height={250}
-                  className="w-full h-48 object-cover transition-opacity duration-300 group-hover:opacity-80"
-                />
-              )}
-              <div className="p-4">
-                <h2 className="text-xl font-semibold group-hover:underline">{post.title}</h2>
-              </div>
-            </Link>
-          </motion.div>
-        ))}
-      </div>
+      <FiltroCategoriasMultiplo categories={categorias} allPosts={posts} />
     </main>
   )
 }

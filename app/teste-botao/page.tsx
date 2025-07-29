@@ -1,6 +1,7 @@
+// app/teste-botao/page.tsx
 'use client'
 
-import Button from '@/components/ui/button'
+import Button from '@/components/ui/button' // ✅ Caminho correto com import default
 
 export default function TesteBotaoPage() {
   return (

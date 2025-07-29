@@ -1,15 +1,23 @@
-// sanity/lib/client.ts
-// 🔌 Cliente Sanity para consultas com next-sanity
+// /sanity/lib/clients.ts
+// 🔌 Cliente Sanity configurado para uso com consultas GROQ, imagens e mutations
 
 import { createClient } from 'next-sanity'
+import { apiVersion, dataset, projectId, useCdn } from '../env'
 
-// 🔒 Variáveis do ambiente Sanity definidas em /sanity/env.ts
-import { apiVersion, dataset, projectId } from '../env'
-
-// 🚀 Exporta o cliente pronto para fazer fetch com GROQ
+// 🚀 Cria e exporta o cliente Sanity
 export const client = createClient({
-  projectId,      // ID do projeto Sanity
-  dataset,        // Nome do dataset (geralmente 'production')
-  apiVersion,     // Versão da API (ex: '2023-07-20')
-  useCdn: true,   // Se true, usa cache da CDN (ótimo para produção)
+  projectId,   // ID do projeto no Sanity (ex: 'abc123')
+  dataset,     // Dataset usado (ex: 'production')
+  apiVersion,  // Versão da API (ex: '2023-01-01')
+  useCdn,      // true em produção (para cache), false para rascunhos/previews
 })
+
+// 🧪 Loga as configurações se estiver em ambiente de desenvolvimento
+if (process.env.NODE_ENV === 'development') {
+  console.log('🔍 Sanity Client conectado:', {
+    projectId,
+    dataset,
+    apiVersion,
+    useCdn,
+  })
+}

@@ -1,27 +1,57 @@
-import { groq } from 'next-sanity';
-import { client } from './clients';
+import { groq } from 'next-sanity'
+import { client } from './clients'
+import { Post, Category } from '@/lib/types'
 
-// Consulta para um post específico
-export async function getPost(slug: string) {
-  return await client.fetch(
-    groq`*[_type == "post" && slug.current == $slug][0]{
+/**
+ * 🔍 Consulta um post específico pelo slug
+ */
+export async function getPost(slug: string): Promise<Post | null> {
+  const query = groq`
+    *[_type == "post" && slug.current == $slug][0] {
       _id,
       title,
       description,
-      body
-    }`,
-    { slug }
-  );
+      slug,
+      body,
+      _createdAt,
+      "mainImage": mainImage.asset->url,
+      author->{ name },
+      categories[]->{ _id, title, slug }
+    }
+  `
+  return await client.fetch(query, { slug })
 }
 
-// Consulta para todos os posts (usado para gerar estático)
-export async function getPosts() {
-  return await client.fetch(
-    groq`*[_type == "post"] | order(_createdAt desc){
+/**
+ * 🗂 Consulta todos os posts (com ou sem filtro por categorias)
+ */
+export async function getPosts(slugs: string[] = []): Promise<Post[]> {
+  const filter = slugs.length
+    ? `&& count((categories[]->slug.current)[@ in $slugs]) > 0`
+    : ''
+
+  const query = groq`
+    *[_type == "post" ${filter}] | order(_createdAt desc) {
       _id,
       title,
       description,
-      slug
-    }`
-  );
+      slug,
+      _createdAt,
+      "mainImage": mainImage.asset->url,
+      categories[]->{
+        _id,
+        title,
+        slug
+      }
+    }
+  `
+  return await client.fetch(query, { slugs })
+}
+
+/**
+ * 🏷 Consulta todas as categorias
+ */
+export async function getCategories(): Promise<Category[]> {
+  const query = groq`*[_type == "category"]{ _id, title, slug }`
+  return await client.fetch(query)
 }

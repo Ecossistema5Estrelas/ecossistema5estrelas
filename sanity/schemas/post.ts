@@ -1,26 +1,83 @@
-export default {
+// /studio/schemaTypes/post.ts
+
+import { defineField, defineType } from 'sanity'
+
+export default defineType({
   name: 'post',
   title: 'Post',
   type: 'document',
   fields: [
-    {
+    defineField({
       name: 'title',
-      title: 'Title',
-      type: 'string'
-    },
-    {
+      title: 'Título',
+      type: 'string',
+    }),
+    defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
       options: {
         source: 'title',
-        maxLength: 96
-      }
-    },
-    {
+        maxLength: 96,
+      },
+    }),
+    defineField({
+      name: 'excerpt',
+      title: 'Resumo',
+      type: 'string',
+    }),
+    defineField({
+      name: 'mainImage',
+      title: 'Imagem Principal',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
+      name: 'audioUrl',
+      title: 'URL do Áudio (opcional)',
+      type: 'url',
+      description: 'Link para o arquivo de áudio (MP3)',
+    }),
+    defineField({
+      name: 'gallery',
+      title: 'Galeria de Imagens',
+      type: 'array',
+      of: [
+        {
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
+          fields: [
+            {
+              name: 'alt',
+              title: 'Texto Alternativo',
+              type: 'string',
+              description: 'Descrição da imagem para acessibilidade.',
+            },
+          ],
+        },
+      ],
+      description: 'Adicione múltiplas imagens para exibição em carrossel.',
+    }),
+    defineField({
+      name: 'author',
+      title: 'Autor',
+      type: 'reference',
+      to: { type: 'author' },
+    }),
+    defineField({
+      name: 'categories',
+      title: 'Categorias',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'category' } }],
+    }),
+    defineField({
       name: 'body',
-      title: 'Body',
-      type: 'blockContent'
-    }
-  ]
-}
+      title: 'Conteúdo',
+      type: 'blockContent',
+    }),
+  ],
+})
