@@ -10,29 +10,57 @@ export default function Home() {
       </h1>
 
       <p className="text-lg md:text-xl text-zinc-200 max-w-2xl text-center">
-        Estamos construindo um universo digital que vai transformar vidas com{' '}
-        <span className="text-purple-300 font-semibold">acessibilidade</span>,{' '}
-        <span className="text-pink-400 font-semibold">inovação</span> e{' '}
-        <span className="text-green-400 font-semibold">impacto real</span>. 🌐✨
+        Uma nova era digital começa aqui. Explore os primeiros portais abertos e prepare-se para o que está por vir. 🚀
       </p>
 
-      <p className="text-md md:text-lg text-zinc-400 text-center italic">
-        🚀 Em breve você poderá explorar todos os nossos aplicativos e experiências digitais interconectadas.
-      </p>
-
-      {/* Botões padronizados */}
+      {/* Botões visíveis */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-12">
-        <Botao emoji="📚" texto="Blog Oficial" href="/blog" bg="bg-yellow-500" text="text-black" />
-        <Botao emoji="🚀" texto="Sobre o Projeto" href="/sobre" bg="bg-purple-600" text="text-white" />
-        <Botao emoji="📬" texto="Fale com a gente" href="/contato" bg="bg-blue-500" text="text-white" />
-        <Botao emoji="🛠️" texto="Área do Usuário" href="/dashboard" bg="bg-green-600" text="text-white" />
+        <Botao
+          emoji="📚"
+          texto="Blog"
+          href="/blog"
+          bg="bg-yellow-500"
+          text="text-black"
+        />
+        <Botao
+          emoji="📬"
+          texto="Contato"
+          href="/contato"
+          bg="bg-blue-500"
+          text="text-white"
+        />
+        <Botao
+          emoji="ℹ️"
+          texto="Sobre"
+          href="/sobre"
+          bg="bg-purple-600"
+          text="text-white"
+        />
+        <Botao
+          emoji="👤"
+          texto="Dashboard"
+          href="/dashboard"
+          bg="bg-green-600"
+          text="text-white"
+        />
       </div>
     </main>
   )
 }
 
-// Componente de botão reutilizável com emoji em cima
-function Botao({ emoji, texto, href, bg, text }: { emoji: string; texto: string; href: string; bg: string; text: string }) {
+function Botao({
+  emoji,
+  texto,
+  href,
+  bg,
+  text,
+}: {
+  emoji: string
+  texto: string
+  href: string
+  bg: string
+  text: string
+}) {
   return (
     <Link
       href={href}

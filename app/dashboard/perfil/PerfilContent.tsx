@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from 'react'
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage'
-import { auth, storage } from '@/lib/firebase'
+import { auth, storage } from '../../../lib/firebase'
 import { onAuthStateChanged, updateProfile } from 'firebase/auth'
-import BotaoVoltar from '@/components/BotaoVoltar'
+import BotaoVoltar from '../../components/BotaoVoltar'
 
 export default function PerfilContent() {
   const [user, setUser] = useState<any>(null)

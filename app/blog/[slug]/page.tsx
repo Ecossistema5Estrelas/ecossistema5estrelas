@@ -9,18 +9,16 @@ import BotaoVoltar from '@/components/BotaoVoltar'
 import Image from 'next/image'
 import type { Metadata } from 'next'
 import SocialShare from '@/components/SocialShare'
-import { urlForImage } from '@/sanity/lib/image' // ✅ Correto agora
+import { urlForImage } from '@/sanity/lib/image'
 
+// ✅ Define Props normalmente
 type Props = {
-  params: {
-    slug: string
-  }
+  params: { slug: string }
 }
 
-// SEO dinâmico
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post: Post | null = await getPost(params.slug)
-
+// ✅ SEO dinâmico — usando `satisfies`
+export const generateMetadata = (async ({ params }) => {
+  const post = await getPost(params.slug)
   return {
     title: post?.title || 'Post não encontrado',
     description: post?.description || 'Sem descrição disponível.',
@@ -30,7 +28,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: post?.mainImage ? [post.mainImage] : [],
     },
   }
-}
+}) satisfies (
+  (ctx: { params: { slug: string } }) => Promise<Metadata>
+)
 
 export default async function BlogPostPage({ params }: Props) {
   const post: Post | null = await getPost(params.slug)

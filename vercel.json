@@ -1,21 +1,22 @@
 {
   "version": 2,
-  "builds": [
+  "buildCommand": "npm install --legacy-peer-deps && npm run build",
+  "outputDirectory": ".next",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ],
+  "headers": [
     {
-      "src": "next.config.js",
-      "use": "@vercel/next"
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store" }
+      ]
     }
   ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ],
+  "redirects": [],
   "env": {
     "NODE_ENV": "production"
-  },
-  "buildCommand": "npm install --legacy-peer-deps && npm run build",
-  "cleanUrls": true,
-  "trailingSlash": false
+  }
 }
