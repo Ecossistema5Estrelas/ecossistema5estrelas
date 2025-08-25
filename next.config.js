@@ -1,14 +1,6 @@
-/** @type {import("next").NextConfig} */
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    remotePatterns: [
-      { protocol: "https", hostname: "cdn.sanity.io" },
-      { protocol: "https", hostname: "images.unsplash.com" },
-    ],
-  },
-  experimental: {
-    optimizeCss: true,
-  },
-}
-
-module.exports = nextConfig
+  reactStrictMode: true,
+  experimental: { optimizeCss: true },
+};
+module.exports = nextConfig;
