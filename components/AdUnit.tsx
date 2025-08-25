@@ -1,4 +1,4 @@
-'use client';
+\'use client\';
 import { useEffect } from 'react';
 
 declare global { interface Window { adsbygoogle?: any[] } }
@@ -9,11 +9,13 @@ export default function AdUnit({ slot, className }:{ slot:string; className?:str
   }, []);
   if (!process.env.NEXT_PUBLIC_ADSENSE_CLIENT || !slot) return null;
   return (
-    <ins className={dsbygoogle \}
-         style={{ display:'block' }}
-         data-ad-client={process.env.NEXT_PUBLIC_ADSENSE_CLIENT}
-         data-ad-slot={slot}
-         data-ad-format="auto"
-         data-full-width-responsive="true" />
+    <ins
+      className={`adsbygoogle ${className ?? ''}`}
+      style={{ display:'block' }}
+      data-ad-client={process.env.NEXT_PUBLIC_ADSENSE_CLIENT}
+      data-ad-slot={slot}
+      data-ad-format="auto"
+      data-full-width-responsive="true"
+    />
   );
 }

@@ -19,7 +19,7 @@ export default function BlogIndex() {
         {posts.map((post:any) => (
           <article key={post.slug} style={{ border:'1px solid #1e2433', borderRadius:12, padding:16 }}>
             <h2 style={{ marginTop:0, marginBottom:8 }}>
-              <Link href={/blog/\} style={{ color:'#a5b4fc', textDecoration:'none' }}>
+              <Link href={`/blog/${post.slug}`} style={{ color:'#a5b4fc', textDecoration:'none' }}>
                 {post.title}
               </Link>
             </h2>
