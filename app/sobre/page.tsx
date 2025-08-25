@@ -1,34 +1,15 @@
 import SobreContent from './SobreContent'
-import CardApp from '@/components/CardApp'
-import { appsDisponiveis, appsMeta } from '@/lib/appsDisponiveis'
 
-export const metadata = {
-  title: 'Sobre | ECOSSISTEMA 5ESTRELAS',
-  description: 'Conheça a missão, visão e valores do Ecossistema 5ESTRELAS.',
-}
-
-export const viewport = {
-  themeColor: '#6D28D9',
-}
+export const metadata = { title: 'Sobre | ECOSSISTEMA 5ESTRELAS' }
 
 export default function SobrePage() {
   return (
-    <div className="min-h-screen px-6 py-12 text-white bg-gradient-main">
-      <SobreContent />
-
-      <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {appsMeta.map((app) =>
-          appsDisponiveis[app.chave] ? (
-            <CardApp
-              key={app.chave}
-              titulo={app.titulo}
-              descricao={app.descricao}
-              emoji={app.emoji}
-              href={app.href}
-            />
-          ) : null
-        )}
-      </div>
-    </div>
+    <main className="min-h-screen bg-transparent">
+      <section className="mx-auto max-w-6xl px-4 py-10">
+        <h1 className="text-3xl font-bold mb-6">ℹ️ Sobre</h1>
+        <SobreContent />
+      </section>
+    </main>
   )
 }
+

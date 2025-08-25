@@ -1,17 +1,43 @@
-# 1. Clone o repositório em modo espelho
-git clone --mirror https://github.com/CezarBraga/ecossistema5estrelas.git
+# ⚙️ Node
+node_modules/
+.env
+.env.local
+dist/
+.next/
+out/
 
-# 2. Acesse a pasta do repositório espelhado
-cd ecossistema5estrelas.git
+# 🔧 Logs e depuração
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
 
-# 3. Baixe o BFG Repo-Cleaner (se ainda não tiver)
-curl -L -o bfg.jar https://repo1.maven.org/maven2/com/madgag/bfg/1.14.0/bfg-1.14.0.jar
+# 🧪 IDEs e SOs
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
 
-# 4. Remova arquivos grandes indesejados do histórico (ajustável conforme suas necessidades)
-java -jar bfg.jar --delete-files '*.exe' --delete-files '*.zip' --delete-files '*.bat' --delete-folders icones-pwa_files
+# 🧪 Sanity
+/app/studio/.sanity/
+.studio/
+.sanity.tmp/
 
-# 5. Limpe e compacte o repositório para finalizar a limpeza
-git reflog expire --expire=now --all && git gc --prune=now --aggressive
+# 📦 Compilados e caches
+*.tsbuildinfo
+.cache/
+.eslintcache
 
-# 6. Faça o push forçado de volta para o GitHub (⚠️ avisa se tiver colaboradores)
-git push --force
+# 📁 Gerado automaticamente (ex: Studio static vazio)
+app/studio/static/
+app/studio/schemaTypes/
+app/schemaTypes/
+
+# 📷 Uploads locais ou assets manuais (opcional)
+public/uploads/
+uploads/
+
+# 🔒 Dados sensíveis
+firebase.json
+serviceAccountKey.json

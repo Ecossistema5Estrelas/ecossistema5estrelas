@@ -1,53 +1,28 @@
-import type { PortableTextBlock } from '@portabletext/types'
+export type Slug = { current?: string | null } | null;
 
-/**
- * 📚 Tipo para categorias
- */
-export interface Category {
-  _id: string
-  title: string
-  slug: {
-    current: string
-  }
-}
+export type Author = {
+  _id?: string;
+  name?: string;
+  slug?: Slug;
+  image?: unknown;
+};
 
-/**
- * 📝 Tipo para post completo (detalhado)
- */
-export interface Post {
-  _id: string
-  title: string
-  description: string
-  slug: {
-    current: string
-  }
-  mainImage?: string
-  excerpt?: string
-  audioUrl?: string
-  body?: PortableTextBlock[]
-  _createdAt: string
-  author?: {
-    name?: string
-  }
-  categories?: Category[] // ✅ ESSENCIAL para os filtros funcionarem
-  gallery?: Array<{
-    asset: any
-    caption?: string
-    alt?: string
-  }>
-}
+export type Category = {
+  _id?: string;
+  title?: string;
+  slug?: Slug;
+};
 
-/**
- * 📄 Tipo reduzido para listagem (pode ser usado na home, se quiser)
- */
-export interface PostPreview {
-  _id: string
-  title: string
-  slug: {
-    current: string
-  }
-  excerpt?: string
-  description?: string
-  _createdAt: string
-  mainImage?: string
-}
+export type Post = {
+  _id?: string;
+  title?: string;
+  slug?: Slug;
+  publishedAt?: string;
+  _updatedAt?: string;
+  _createdAt?: string;
+  excerpt?: string;
+  body?: unknown;
+  mainImage?: string | { asset?: { _ref?: string; _type?: string } };
+  author?: Author;
+  categories?: Category[];
+};

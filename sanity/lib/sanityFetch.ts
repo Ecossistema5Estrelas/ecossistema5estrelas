@@ -1,15 +1,21 @@
-import { client } from './clients'
+import { createClient } from "next-sanity";
 
-type SanityFetchParams = {
-  query: string
-  params?: Record<string, any>
-}
+export const client = createClient({
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "hf3nh9vb",
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
+  apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION || "2024-10-01",
+  useCdn: true,
+});
 
-export async function sanityFetch<T>({ query, params = {} }: SanityFetchParams): Promise<T> {
-  try {
-    return await client.fetch(query, params)
-  } catch (error) {
-    console.error('❌ Erro em sanityFetch:', error)
-    throw new Error('Erro ao buscar dados do Sanity')
-  }
+/**
+ * Fetch genérico e simples: aceita (query) ou (query, params).
+ * Ex.: sanityFetch<Post[]>(query)
+ *     sanityFetch<Post|null>(query, { slug })
+ */
+export async function sanityFetch<T>(
+  query: string,
+  params?: Record<string, unknown>
+): Promise<T> {
+  const data = await client.fetch(query as any, params as any)
+  return data as T
 }

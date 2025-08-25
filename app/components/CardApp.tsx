@@ -1,23 +1,21 @@
-'use client'
+import Link from "next/link";
+import { motion } from "framer-motion";
+import type { ComponentPropsWithoutRef } from "react";
+import type { MotionProps } from "framer-motion";
 
-import Link from 'next/link'
+const MotionDiv = motion.div as unknown as React.FC<
+  ComponentPropsWithoutRef<"div"> & MotionProps
+>;
 
-interface CardAppProps {
-  titulo: string
-  descricao: string
-  emoji: string
-  href: string
-}
+type Props = { href: string; title: string; children?: React.ReactNode };
 
-export default function CardApp({ titulo, descricao, emoji, href }: CardAppProps) {
+export default function CardApp({ href, title, children }: Props) {
   return (
-    <Link
-      href={href}
-      className="bg-white/5 hover:bg-white/10 transition p-6 rounded-xl shadow-md text-white flex flex-col items-start gap-2"
-    >
-      <span className="text-3xl">{emoji}</span>
-      <h3 className="text-xl font-bold">{titulo}</h3>
-      <p className="text-sm text-gray-300">{descricao}</p>
-    </Link>
-  )
+    <MotionDiv className="rounded-2xl p-4 shadow">
+      <Link href={href} className="inline-flex items-center gap-2">
+        <span className="font-semibold">{title}</span>
+      </Link>
+      {children}
+    </MotionDiv>
+  );
 }

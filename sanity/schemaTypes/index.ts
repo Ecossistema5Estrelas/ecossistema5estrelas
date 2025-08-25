@@ -1,13 +1,6 @@
-import { blockContentType } from './blockContentType'
-import { categoryType } from './categoryType'
-import { postType } from './postType'
-import { authorType } from './authorType'
+// app/schemaTypes/index.ts
 
-export const schema = {
-  types: [
-    blockContentType,
-    categoryType,
-    postType,
-    authorType,
-  ],
-}
+export * from './authorType'
+export * from './categoryType'
+export * from './blockContentType'
+export * from './postType'

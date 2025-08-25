@@ -1,0 +1,36 @@
+// @types/aliases.d.ts
+
+declare module '@/*' {
+  const value: any
+  export default value
+}
+
+declare module '@/lib/*' {
+  const value: any
+  export default value
+}
+
+declare module '@/sanity/*' {
+  const value: any
+  export default value
+}
+
+declare module '@/app/components/*' {
+  const value: any
+  export default value
+}
+
+declare module '@/app/components/ui/*' {
+  const value: any
+  export default value
+}
+
+declare module '@components/*' {
+  const value: any
+  export default value
+}
+
+declare module '@components/blog/*' {
+  const value: any
+  export default value
+}

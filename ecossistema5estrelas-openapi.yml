@@ -1,0 +1,82 @@
+openapi: 3.0.3
+info:
+  title: API ECOSSISTEMA 5ESTRELAS
+  version: 1.0.0
+  description: API base do ecossistema5estrelas.org para validação de esquema no Cloudflare
+servers:
+  - url: https://api.ecossistema5estrelas.org
+paths:
+  /healthz:
+    get:
+      summary: Testa se o servidor está ativo
+      responses:
+        '200':
+          description: Retorna status OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok:
+                    type: boolean
+  /usuarios:
+    get:
+      summary: Lista usuários
+      responses:
+        '200':
+          description: Lista de usuários
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    nome:
+                      type: string
+    post:
+      summary: Cria um novo usuário
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - nome
+              properties:
+                nome:
+                  type: string
+      responses:
+        '201':
+          description: Usuário criado com sucesso
+  /login:
+    post:
+      summary: Realiza login de usuário
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - email
+                - senha
+              properties:
+                email:
+                  type: string
+                  format: email
+                senha:
+                  type: string
+      responses:
+        '200':
+          description: Token JWT de acesso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string

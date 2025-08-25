@@ -1,17 +1,22 @@
-'use client'
+"use client";
+import Link from "next/link";
+import type { PropsWithChildren } from "react";
 
-import Link from 'next/link'
-import { Home } from 'lucide-react'
+type Props = PropsWithChildren<{
+  href: string;
+  texto?: string;      // opcional, mas preferimos children
+  className?: string;
+}>;
 
-export default function BotaoVoltar() {
+export default function BotaoVoltar({ href, texto, className, children }: Props) {
+  const label = children ?? texto ?? "Voltar";
   return (
     <Link
-      href="/"
-      aria-label="Voltar para a página inicial"
-      className="fixed bottom-6 right-6 z-50 bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md rounded-full px-5 py-3 text-sm flex items-center space-x-2 text-white shadow-lg transition-all"
+      href={href}
+      className={["inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-zinc-800 text-white hover:bg-zinc-700 transition", className]
+        .filter(Boolean).join(" ")}
     >
-      <Home size={20} />
-      <span>Início</span>
+      ← {label}
     </Link>
-  )
+  );
 }

@@ -1,10 +1,19 @@
+// sanity/lib/fetch.ts
 import { client } from './clients'
+import type { QueryParams } from '@sanity/client'
 
-export async function sanityFetch<T>(query: string, params: Record<string, any> = {}): Promise<T> {
-  try {
-    return await client.fetch(query, params) as T
-  } catch (error) {
-    console.error('❌ Erro em sanityFetch:', error)
-    throw new Error('Erro ao buscar dados do Sanity')
+type SanityFetchParams<T = unknown> = {
+  query: string
+  params?: QueryParams
+}
+
+export async function sanityFetch<T = unknown>({
+  query,
+  params,
+}: SanityFetchParams<T>): Promise<T> {
+  // Chama o overload sem params quando não houver parâmetros
+  if (params === undefined) {
+    return client.fetch<T>(query)
   }
+  return client.fetch<T>(query, params)
 }

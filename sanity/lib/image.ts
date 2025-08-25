@@ -1,11 +1,14 @@
 import imageUrlBuilder from '@sanity/image-url'
-import { client } from './clients'
-import { SanityImageSource } from '@sanity/image-url/lib/types/types'
+import { dataset, projectId } from './env'
+import type { SanityImageSource } from '@sanity/image-url/lib/types/types'
 
-// Constrói URLs de imagens com base no cliente Sanity já configurado
-const builder = imageUrlBuilder(client)
+// Constrói o builder com ID e dataset do projeto
+const builder = imageUrlBuilder({
+  projectId: projectId!,
+  dataset: dataset!,
+})
 
-// Função para uso em componentes do tipo PortableText (ex: imagens, galeria)
+// Função exportável para uso em componentes
 export function urlForImage(source: SanityImageSource) {
   return builder.image(source)
 }

@@ -1,83 +1,62 @@
-// /studio/schemaTypes/post.ts
+// @ts-nocheck
+import { defineField, defineType } from "sanity";
 
-import { defineField, defineType } from 'sanity'
-
-export default defineType({
-  name: 'post',
-  title: 'Post',
-  type: 'document',
+const post = defineType({
+  name: "post",
+  title: "Post",
+  type: "document",
   fields: [
     defineField({
-      name: 'title',
-      title: 'Título',
-      type: 'string',
+      name: "title",
+      title: "Title",
+      type: "string",
+      validation: (Rule) => Rule.required().min(5),
     }),
     defineField({
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      options: {
-        source: 'title',
-        maxLength: 96,
-      },
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      options: { source: "title", maxLength: 96 },
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'excerpt',
-      title: 'Resumo',
-      type: 'string',
+      name: "author",
+      title: "Author",
+      type: "reference",
+      to: [{ type: "author" }],
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'mainImage',
-      title: 'Imagem Principal',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
+      name: "mainImage",
+      title: "Main image",
+      type: "image",
+      options: { hotspot: true },
     }),
     defineField({
-      name: 'audioUrl',
-      title: 'URL do Áudio (opcional)',
-      type: 'url',
-      description: 'Link para o arquivo de áudio (MP3)',
+      name: "excerpt",
+      title: "Excerpt",
+      type: "text",
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'gallery',
-      title: 'Galeria de Imagens',
-      type: 'array',
-      of: [
-        {
-          type: 'image',
-          options: {
-            hotspot: true,
-          },
-          fields: [
-            {
-              name: 'alt',
-              title: 'Texto Alternativo',
-              type: 'string',
-              description: 'Descrição da imagem para acessibilidade.',
-            },
-          ],
-        },
-      ],
-      description: 'Adicione múltiplas imagens para exibição em carrossel.',
+      name: "categories",
+      title: "Categories",
+      type: "array",
+      of: [{ type: "reference", to: { type: "category" } }],
+      validation: (Rule) => Rule.required().min(1),
     }),
     defineField({
-      name: 'author',
-      title: 'Autor',
-      type: 'reference',
-      to: { type: 'author' },
+      name: "publishedAt",
+      title: "Published at",
+      type: "datetime",
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'categories',
-      title: 'Categorias',
-      type: 'array',
-      of: [{ type: 'reference', to: { type: 'category' } }],
-    }),
-    defineField({
-      name: 'body',
-      title: 'Conteúdo',
-      type: 'blockContent',
+      name: "body",
+      title: "Body",
+      type: "blockContent",
     }),
   ],
-})
+});
+
+export default post;

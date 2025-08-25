@@ -1,65 +1,52 @@
-import type { Metadata } from 'next'
-import { getPosts, getCategories } from '@/sanity/lib/queries'
-import { Post } from '@/lib/types'
-import BotaoVoltar from '@/components/BotaoVoltar'
-import FiltroCategoriasMultiplo from '@/components/blog/FiltroCategoriasMultiplo'
+import Link from "next/link";
+import { groq } from "next-sanity";
+import { client } from "@/sanity/lib/client";
 
-export const dynamic = 'force-dynamic'
+type Post = {
+  _id: string;
+  title: string;
+  slug: string;
+  excerpt?: string;
+  coverImage?: string;
+  readingTime?: string;
+  publishedAt?: string;
+};
 
-// ✅ SEO completo para a página /blog
-export const metadata: Metadata = {
-  title: 'Blog Oficial do ECOSSISTEMA 5ESTRELAS 🌟',
-  description:
-    'Explore as inovações, bastidores e novidades do ECOSSISTEMA 5ESTRELAS. Atualizações sobre apps, inteligência artificial e inclusão digital em primeira mão!',
-  keywords: [
-    'ECOSSISTEMA 5ESTRELAS',
-    'Blog 5ESTRELAS',
-    'inovação digital',
-    'startups brasileiras',
-    'inteligência artificial',
-    'tecnologia inclusiva',
-    'notícias 5estrelas',
-    'apps inteligentes'
-  ],
-  openGraph: {
-    title: 'Blog Oficial do ECOSSISTEMA 5ESTRELAS',
-    description:
-      'Notícias, bastidores e avanços do projeto digital mais inovador do Brasil. 🌟',
-    url: 'https://ecossistema5estrelas.org/blog',
-    siteName: 'ECOSSISTEMA 5ESTRELAS',
-    images: [
-      {
-        url: 'https://ecossistema5estrelas.org/og-blog.jpg', // substitua pelo caminho real do banner
-        width: 1200,
-        height: 630,
-        alt: 'Blog Oficial ECOSSISTEMA 5ESTRELAS'
-      }
-    ],
-    type: 'website'
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Blog Oficial do ECOSSISTEMA 5ESTRELAS',
-    description:
-      'Fique por dentro das inovações e bastidores do maior ecossistema digital do Brasil!',
-    images: ['https://ecossistema5estrelas.org/og-blog.jpg']
-  },
-  metadataBase: new URL('https://ecossistema5estrelas.org'),
-  alternates: {
-    canonical: '/blog'
-  }
-}
+const POSTS_QUERY = groq`*[_type == "post"] | order(publishedAt desc)[0..19]{
+  _id,
+  title,
+  "slug": slug.current,
+  "excerpt": coalesce(excerpt, ""),
+  "coverImage": coalesce(coverImage.asset->url, ""),
+  "readingTime": coalesce(readingTime, "4 min"),
+  publishedAt
+}`;
 
-export default async function BlogPage() {
-  const posts: Post[] = await getPosts([]) // 👈 Carrega todos os posts sem filtro
-  const categorias = await getCategories()
+export default async function Page() {
+  const posts: Post[] = await client.fetch(POSTS_QUERY);
 
   return (
-    <main className="min-h-screen px-4 py-8 bg-gradient-main text-white">
-      <BotaoVoltar />
-      <h1 className="text-4xl font-bold mb-6">Blog Oficial 🌟</h1>
+    <main className="container mx-auto max-w-3xl p-6">
+      <header className="mb-8">
+        <h1 className="text-4xl font-bold">Blog</h1>
+        <p className="text-zinc-400">Últimos artigos</p>
+      </header>
 
-      <FiltroCategoriasMultiplo categories={categorias} allPosts={posts} />
+      <ul className="space-y-6">
+        {posts.map((post: Post) => (
+          <li key={post._id} className="p-4 rounded-lg bg-zinc-800">
+            <h2 className="text-2xl font-semibold">
+              <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+            </h2>
+            {post.excerpt && (
+              <p className="text-zinc-400 mt-1">{post.excerpt}</p>
+            )}
+            <div className="text-xs text-zinc-500 mt-2">
+              {post.publishedAt ?? ""} · {post.readingTime ?? "4 min"}
+            </div>
+          </li>
+        ))}
+      </ul>
     </main>
-  )
+  );
 }

@@ -1,40 +1,21 @@
 {
-  "name": "ecossistema5estrelas-studio",
+  "name": "studio",
   "private": true,
-  "version": "1.0.0",
-  "main": "package.json",
-  "license": "UNLICENSED",
+  "type": "module",
   "scripts": {
-    "dev": "sanity dev",
-    "start": "sanity start",
+    "dev": "sanity dev --port 3333",
     "build": "sanity build",
     "deploy": "sanity deploy",
-    "deploy-graphql": "sanity graphql deploy"
+    "clean": "rm -rf .sanity && rm -rf dist"
   },
-  "keywords": [
-    "sanity"
-  ],
   "dependencies": {
-    "@sanity/vision": "^4.1.1",
-    "esbuild": "^0.25.8",
-    "react": "^19.1",
-    "react-dom": "^19.1",
-    "sanity": "^4.1.1",
-    "styled-components": "^6.1.18"
+    "@sanity/code-input": "^5.2.0",
+    "@sanity/icons": "^3.7.4",
+    "@sanity/image-url": "^1.1.0",
+    "@sanity/vision": "^3.99.0",
+    "sanity": "^3.99.0"
   },
   "devDependencies": {
-    "@sanity/eslint-config-studio": "^5.0.2",
-    "@types/react": "^19.1",
-    "autoprefixer": "^10.4.21",
-    "eslint": "^9.28",
-    "postcss": "^8.5.6",
-    "prettier": "^3.5",
-    "typescript": "^5.8"
-  },
-  "prettier": {
-    "semi": false,
-    "printWidth": 100,
-    "bracketSpacing": false,
-    "singleQuote": true
+    "typescript": "^5.3.3"
   }
 }

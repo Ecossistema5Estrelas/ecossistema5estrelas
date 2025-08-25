@@ -1,13 +1,3 @@
-// sanity/lib/live.ts
-import { defineLive } from 'next-sanity'
-import { client } from './clients' // ✅ agora correto
+// app/sanity/lib/live.ts
 
-const configuredClient = client.withConfig({
-  perspective: 'previewDrafts',
-  useCdn: false,
-})
-
-export const { sanityFetch, SanityLive } = defineLive({
-  client: configuredClient,
-})
-
+export const useLiveMode = false

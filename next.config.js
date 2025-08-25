@@ -1,22 +1,15 @@
+// next.config.js
 /** @type {import('next').NextConfig} */
-const withPWA = require('next-pwa')({
-  dest: 'public',
-  register: true,
-  skipWaiting: true,
-  disable: process.env.NODE_ENV === 'development',
-})
-
 const nextConfig = {
-  reactStrictMode: true,
-  typescript: {
-    ignoreBuildErrors: true,
-  },
   experimental: {
-    serverActions: {}, // ✅ CORRETO
+    serverActions: {}, // também corrige aquele warning do boolean
   },
-  images: {
-    domains: ['cdn.sanity.io'],
+  async redirects() {
+    return [
+      { source: '/investidor', destination: '/', permanent: false },
+      { source: '/investidores', destination: '/', permanent: false },
+    ]
   },
 }
 
-module.exports = withPWA(nextConfig)
+module.exports = nextConfig

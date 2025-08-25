@@ -1,73 +1,19 @@
-'use client'
-
-import Link from 'next/link'
-
-export default function Home() {
+export default function HomePage() {
   return (
-    <main className="min-h-screen w-full bg-gradient-main text-white px-6 py-20 flex flex-col items-center justify-center space-y-10">
-      <h1 className="text-4xl md:text-6xl font-extrabold text-center text-yellow-400 drop-shadow-lg">
-        🌟 ECOSSISTEMA 5ESTRELAS
-      </h1>
-
-      <p className="text-lg md:text-xl text-zinc-200 max-w-2xl text-center">
-        Uma nova era digital começa aqui. Explore os primeiros portais abertos e prepare-se para o que está por vir. 🚀
-      </p>
-
-      {/* Botões visíveis */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-12">
-        <Botao
-          emoji="📚"
-          texto="Blog"
-          href="/blog"
-          bg="bg-yellow-500"
-          text="text-black"
-        />
-        <Botao
-          emoji="📬"
-          texto="Contato"
-          href="/contato"
-          bg="bg-blue-500"
-          text="text-white"
-        />
-        <Botao
-          emoji="ℹ️"
-          texto="Sobre"
-          href="/sobre"
-          bg="bg-purple-600"
-          text="text-white"
-        />
-        <Botao
-          emoji="👤"
-          texto="Dashboard"
-          href="/dashboard"
-          bg="bg-green-600"
-          text="text-white"
-        />
-      </div>
+    <main className="min-h-screen">
+      <section className="hero-5e">
+        <h1 className="hero-5e__title">Acesso inteligente aos aplicativos que transformam a sociedade.</h1>
+        <p className="hero-5e__subtitle">Bastidores, inovação e impacto social — com IA, ética e criatividade.</p>
+      </section>
+      <section className="mx-auto max-w-6xl px-4 pb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="rounded-2xl border border-white/10 bg-black/30 p-5 shadow-lg shadow-black/40"><div className="text-3xl mb-2">📚</div><h3 className="text-lg font-semibold">Blog Oficial</h3><p className="text-sm text-zinc-300">Bastidores da inovação e novas ideias.</p></div>
+          <div className="rounded-2xl border border-white/10 bg-black/30 p-5 shadow-lg shadow-black/40"><div className="text-3xl mb-2">📬</div><h3 className="text-lg font-semibold">Contato</h3><p className="text-sm text-zinc-300">Fale conosco e envie sua proposta.</p></div>
+          <div className="rounded-2xl border border-white/10 bg-black/30 p-5 shadow-lg shadow-black/40"><div className="text-3xl mb-2">ℹ️</div><h3 className="text-lg font-semibold">Sobre</h3><p className="text-sm text-zinc-300">Missão, visão e propósito do projeto.</p></div>
+          <div className="rounded-2xl border border-white/10 bg-black/30 p-5 shadow-lg shadow-black/40"><div className="text-3xl mb-2">👤</div><h3 className="text-lg font-semibold">Dashboard</h3><p className="text-sm text-zinc-300">Acompanhe seu progresso e recompensas.</p></div>
+        </div>
+      </section>
     </main>
   )
 }
 
-function Botao({
-  emoji,
-  texto,
-  href,
-  bg,
-  text,
-}: {
-  emoji: string
-  texto: string
-  href: string
-  bg: string
-  text: string
-}) {
-  return (
-    <Link
-      href={href}
-      className={`${bg} ${text} px-4 py-5 rounded-xl text-center font-bold transition hover:scale-105 shadow-lg flex flex-col items-center space-y-1`}
-    >
-      <span className="text-3xl">{emoji}</span>
-      <span className="text-sm sm:text-base">{texto}</span>
-    </Link>
-  )
-}

@@ -1,69 +1,25 @@
-import { DocumentTextIcon } from '@sanity/icons'
-import { defineArrayMember, defineField, defineType } from 'sanity'
+// app/schemaTypes/postType.ts
 
-export const postType = defineType({
-  name: 'post',
-  title: 'Post',
-  type: 'document',
-  icon: DocumentTextIcon,
-  fields: [
-    defineField({
-      name: 'title',
-      type: 'string',
-    }),
-    defineField({
-      name: 'slug',
-      type: 'slug',
-      options: {
-        source: 'title',
-      },
-    }),
-    defineField({
-      name: 'author',
-      type: 'reference',
-      to: { type: 'author' },
-    }),
-    defineField({
-      name: 'mainImage',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-      fields: [
-        defineField({
-          name: 'alt',
-          type: 'string',
-          title: 'Alternative text',
-        }),
-      ],
-    }),
-    defineField({
-      name: 'categories',
-      type: 'array',
-      of: [defineArrayMember({ type: 'reference', to: { type: 'category' } })],
-    }),
-    defineField({
-      name: 'publishedAt',
-      type: 'datetime',
-    }),
-    defineField({
-      name: 'body',
-      type: 'blockContent',
-    }),
-  ],
-  preview: {
-    select: {
-      title: 'title',
-      author: 'author.name',
-      media: 'mainImage',
-    },
-    prepare(selection: any) {
-      const { author } = selection
-      return {
-        ...selection,
-        subtitle: author && `by ${author}`,
-      }
-    },
-  },
-})
+import type { Author } from './authorType'
+import type { Category } from './categoryType'
+import type { BlockContent } from './blockContentType'
 
+export interface Post {
+  _id: string
+  title: string
+  description: string
+  slug: {
+    current: string
+  }
+  mainImage?: {
+    asset: {
+      _ref: string
+      _type: string
+    }
+    alt?: string
+  }
+  publishedAt: string
+  categories: Category[]
+  author?: Author
+  body: BlockContent
+}
