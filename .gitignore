@@ -1,15 +1,12 @@
-# Node/Next
 node_modules/
 .next/
 .sanity/
 dist/
 out/
 
-# IDEs
 .vscode/
 .idea/
 
-# Ambiente / segredos
 .env
 .env.*
 *.pem
@@ -17,18 +14,17 @@ out/
 *.crt
 *.pfx
 
-# Logs
 npm-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# SO
 .DS_Store
 Thumbs.db
 
-# Miscs
 ngrok/
 *.zip
 *.gz
 *.exe
 *.pack
+*.7z
+*.rar
