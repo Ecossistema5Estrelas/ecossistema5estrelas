@@ -1,18 +1,11 @@
 import { NextResponse } from "next/server";
-import { groq } from "next-sanity";
-import { client } from "@/sanity/lib/client";
+import { readFileSync } from "fs";
+import { join } from "path";
 
-const POSTS_QUERY = groq`*[_type == "post"] | order(publishedAt desc)[0..19]{
-  _id,
-  title,
-  "slug": slug.current,
-  publishedAt,
-  "coverImage": coalesce(coverImage.asset->url, ""),
-  "readingTime": coalesce(readingTime, "4 min"),
-  "bodyPortableText": coalesce(bodyPortableText, [])
-}`;
+export const runtime = "nodejs"; // evita Edge e simplifica FS
 
 export async function GET() {
-  const posts = await client.fetch(POSTS_QUERY);
-  return NextResponse.json({ posts });
+  const file = readFileSync(join(process.cwd(), "data", "posts.json"), "utf8");
+  const posts = JSON.parse(file);
+  return NextResponse.json(posts);
 }
