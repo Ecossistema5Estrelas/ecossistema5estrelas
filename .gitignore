@@ -1,31 +1,34 @@
-# deps
+# Node/Next
 node_modules/
-
-# Next.js
 .next/
+.sanity/
+dist/
 out/
 
-# Sanity
-.sanity/
+# IDEs
+.vscode/
+.idea/
 
-# env/segredos
+# Ambiente / segredos
 .env
 .env.*
 *.pem
 *.key
 *.crt
 *.pfx
-*.pem.txt
-*.key.txt
 
-# logs/cache
+# Logs
 npm-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# OS
+# SO
 .DS_Store
 Thumbs.db
 
-# misc
+# Miscs
 ngrok/
+*.zip
+*.gz
+*.exe
+*.pack
