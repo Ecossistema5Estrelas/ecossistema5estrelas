@@ -1,31 +1,24 @@
-import { groq } from "next-sanity";
-import { client } from "@/sanity/lib/client";
+import AdUnit from '../../../components/AdUnit';
+import all from '../../../data/posts.json';
 
 export async function generateStaticParams() {
-  const slugs: string[] = await client.fetch(
-    groq`*[_type=="post" && defined(slug.current)][].slug.current`
-  );
-  return slugs.map((slug) => ({ slug }));
+  return (all as any[]).map(p => ({ slug: p.slug }));
 }
 
-export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+export default function PostPage({ params }: { params: { slug: string } }) {
+  const post = (all as any[]).find(p => p.slug === params.slug);
+  if (!post) return <div>Post não encontrado.</div>;
 
-  const data = await client.fetch(
-    groq`*[_type=="post" && slug.current==$slug][0]{
-      _id, title, "slug": slug.current, publishedAt,
-      "coverImage": coalesce(coverImage.asset->url, ""),
-      "readingTime": coalesce(readingTime, "4 min"),
-      bodyPortableText
-    }`,
-    { slug }
-  );
-
-  if (!data) return <div>Post não encontrado.</div>;
   return (
-    <main className="container mx-auto max-w-2xl p-6">
-      <h1 className="text-3xl font-bold mb-4">{data.title}</h1>
-      {/* TODO: renderizar PortableText aqui */}
-    </main>
+    <article style={{ display:'grid', gap:16 }}>
+      <h1 style={{ fontSize:30, margin:0 }}>{post.title}</h1>
+      <small style={{ opacity:.7 }}>{new Date(post.date).toLocaleDateString('pt-BR')}</small>
+
+      <AdUnit slot="1234567890" />
+
+      <p style={{ lineHeight:1.8, opacity:.95 }}>{post.content}</p>
+
+      <AdUnit slot="1234567890" />
+    </article>
   );
 }

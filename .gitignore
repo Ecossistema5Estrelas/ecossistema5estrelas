@@ -28,3 +28,4 @@ ngrok/
 *.pack
 *.7z
 *.rar
+.vercel

@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "bem-vindo-ao-ecossistema",
+    "title": "Bem-vindo ao ECOSSISTEMA 5ESTRELAS",
+    "excerpt": "Nossa visão: apps, cultura e monetização saudável para creators e comunidades.",
+    "content": "Este é o pontapé do blog. Vamos publicar guias, anúncios e estudos de caso para alavancar a audiência e a renda.",
+    "date": "2025-08-25",
+    "tags": ["comunicado", "visao"]
+  },
+  {
+    "slug": "como-monetizar-com-ads",
+    "title": "Como monetizar com Ads + Afiliados",
+    "excerpt": "Adsense, afiliados e conteúdo evergreen para renda recorrente.",
+    "content": "Estruture posts em clusters, use CTAs claros e categorias. Integre afiliados confiáveis por nicho.",
+    "date": "2025-08-25",
+    "tags": ["monetizacao", "ads"]
+  },
+  {
+    "slug": "seguranca-digital",
+    "title": "Segurança Digital para Todos",
+    "excerpt": "Boas práticas contra golpes online e engenharia social.",
+    "content": "Use 2FA, senhas fortes e desconfie de links encurtados. Em breve: SherlockIA com checagens automáticas.",
+    "date": "2025-08-25",
+    "tags": ["seguranca", "educacao"]
+  }
+]

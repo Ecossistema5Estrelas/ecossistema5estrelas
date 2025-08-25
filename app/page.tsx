@@ -1,19 +1,20 @@
-export default function HomePage() {
-  return (
-    <main className="min-h-screen">
-      <section className="hero-5e">
-        <h1 className="hero-5e__title">Acesso inteligente aos aplicativos que transformam a sociedade.</h1>
-        <p className="hero-5e__subtitle">Bastidores, inovação e impacto social — com IA, ética e criatividade.</p>
-      </section>
-      <section className="mx-auto max-w-6xl px-4 pb-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="rounded-2xl border border-white/10 bg-black/30 p-5 shadow-lg shadow-black/40"><div className="text-3xl mb-2">📚</div><h3 className="text-lg font-semibold">Blog Oficial</h3><p className="text-sm text-zinc-300">Bastidores da inovação e novas ideias.</p></div>
-          <div className="rounded-2xl border border-white/10 bg-black/30 p-5 shadow-lg shadow-black/40"><div className="text-3xl mb-2">📬</div><h3 className="text-lg font-semibold">Contato</h3><p className="text-sm text-zinc-300">Fale conosco e envie sua proposta.</p></div>
-          <div className="rounded-2xl border border-white/10 bg-black/30 p-5 shadow-lg shadow-black/40"><div className="text-3xl mb-2">ℹ️</div><h3 className="text-lg font-semibold">Sobre</h3><p className="text-sm text-zinc-300">Missão, visão e propósito do projeto.</p></div>
-          <div className="rounded-2xl border border-white/10 bg-black/30 p-5 shadow-lg shadow-black/40"><div className="text-3xl mb-2">👤</div><h3 className="text-lg font-semibold">Dashboard</h3><p className="text-sm text-zinc-300">Acompanhe seu progresso e recompensas.</p></div>
-        </div>
-      </section>
-    </main>
-  )
-}
+import Link from 'next/link';
 
+export default function Home() {
+  return (
+    <section style={{ display:'grid', gap:16 }}>
+      <h1 style={{ fontSize:36, margin:0 }}>ECOSSISTEMA 5ESTRELAS 🚀✨</h1>
+      <p style={{ opacity:.9, lineHeight:1.6 }}>
+        Universo intergaláctico de apps, mídia e cultura. O blog já está ligado e pronto pra monetizar.
+      </p>
+      <div style={{ display:'flex', gap:12 }}>
+        <Link href="/blog" style={{ background:'#6ee7b7', color:'#06221a', padding:'10px 16px', borderRadius:10, fontWeight:700, textDecoration:'none' }}>
+          🌟 Abrir Blog
+        </Link>
+        <a href="mailto:contato@ecossistema5estrelas.org" style={{ border:'1px solid #2a344a', padding:'10px 16px', borderRadius:10, color:'#e9ecf1', textDecoration:'none' }}>
+          📬 Fale com a gente
+        </a>
+      </div>
+    </section>
+  );
+}
