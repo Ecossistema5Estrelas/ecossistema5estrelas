@@ -29,3 +29,9 @@ ngrok/
 *.7z
 *.rar
 .vercel
+
+.vercel/
+
+
+.vercel
+
