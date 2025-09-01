@@ -1,0 +1,32 @@
+"use client";
+
+import { useMemo, useState } from "react";
+import BlogCard from "./components/BlogCard";
+import Filters from "./components/Filters";
+import EmptyState from "./components/EmptyState";
+
+export default function ClientFiltersImpl({ initial }: { initial: any[] }) {
+  const [items, setItems] = useState(initial);
+  const count = items.length;
+
+  const grid = useMemo(
+    () => (
+      <div className="grid gap-5 sm:grid-cols-2">
+        {items.map((p:any)=><BlogCard key={p._id} post={p} />)}
+      </div>
+    ),
+    [items]
+  );
+
+  return (
+    <>
+      <Filters original={initial} onFiltered={setItems} />
+      <div className="mb-4 text-sm text-neutral-600 dark:text-neutral-400">
+        {count} resultado{count===1?"":"s"}
+      </div>
+      <EmptyState count={count} />
+      {count>0 && grid}
+    </>
+  );
+}
+

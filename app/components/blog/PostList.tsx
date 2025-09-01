@@ -1,5 +1,3 @@
-'use client'
-
 import PostCard from './PostCard'
 
 type Post = {
@@ -40,4 +38,5 @@ export default function PostList({ posts }: PostListProps) {
     </div>
   )
 }
+
 

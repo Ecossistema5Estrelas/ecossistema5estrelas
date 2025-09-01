@@ -1,23 +1,25 @@
-// app/dashboard/page.tsx
-import type { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'Dashboard | ECOSSISTEMA 5ESTRELAS',
-  description: 'Acompanhe seu progresso e gerencie seu perfil.',
-}
-
-export default function DashboardPage() {
+export default function Page(){
+  const Card = ({title,value}:{title:string;value:string}) => (
+    <div className='rounded-2xl p-4 ring-1 ring-white/15 bg-white/10'>
+      <p className='text-sm opacity-80'>{title}</p>
+      <p className='text-3xl font-bold mt-1'>{value}</p>
+    </div>
+  );
   return (
-    <main className="min-h-screen bg-transparent">
-      <section className="mx-auto max-w-4xl px-4 py-10">
-        <h1 className="text-3xl font-bold mb-6">👤 Dashboard</h1>
-
-        {/* Apenas a CAIXA com “glass” — o entorno é transparente pro gradiente global aparecer */}
-        <div className="rounded-2xl border border-white/10 bg-black/30 backdrop-blur p-6 shadow-lg shadow-black/40">
-          <p className="text-zinc-200">Bem-vindo ao seu painel. Em breve, widgets e métricas aqui.</p>
-        </div>
-      </section>
-    </main>
-  )
+    <section className='space-y-6'>
+      <h1 className='text-3xl font-bold'>Dashboard</h1>
+      <div className='grid gap-4 sm:grid-cols-2 lg:grid-cols-4'>
+        <Card title='Leads (Zoho CRM)' value='0' />
+        <Card title='Tickets (Zoho Desk)' value='0' />
+        <Card title='Vendas (Loja)' value='R$ 0' />
+        <Card title='Visitantes (SalesIQ)' value='0' />
+      </div>
+      <div className='rounded-2xl p-4 ring-1 ring-white/15 bg-white/10'>
+        <p className='text-sm opacity-80'>Próximo passo: puxar dados via APIs/embeds.</p>
+      </div>
+    </section>
+  );
 }
+
+
 

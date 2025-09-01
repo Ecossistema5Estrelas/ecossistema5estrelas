@@ -1,29 +1,12 @@
-// @ts-nocheck
-import { defineField, defineType } from "sanity";
+import { defineType, defineField } from "sanity";
 
-const author = defineType({
+export default defineType({
   name: "author",
   title: "Author",
   type: "document",
   fields: [
-    defineField({
-      name: "name",
-      title: "Name",
-      type: "string",
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
-      name: "image",
-      title: "Image",
-      type: "image",
-      options: { hotspot: true },
-    }),
-    defineField({
-      name: "bio",
-      title: "Bio",
-      type: "text",
-    }),
+    defineField({ name: "name", title: "Name", type: "string", validation: r=>r.required() }),
+    defineField({ name: "bio", title: "Bio", type: "text" }),
+    defineField({ name: "avatar", title: "Avatar", type: "image", options: { hotspot: true } }),
   ],
 });
-
-export default author;

@@ -1,0 +1,13 @@
+"use client";
+export default function DebugBuildBanner() {
+  const id = process.env.NEXT_PUBLIC_BUILD_ID || "no-id";
+  return (
+    <div style={{
+      position:"sticky", top:0, zIndex:60, padding:"6px 10px",
+      background:"repeating-linear-gradient(45deg,#111 0 10px,#222 10px 20px)",
+      color:"#fff", fontSize:"12px", letterSpacing:"0.02em"
+    }}>
+      BUILD_ID: <strong>{id}</strong>
+    </div>
+  );
+}

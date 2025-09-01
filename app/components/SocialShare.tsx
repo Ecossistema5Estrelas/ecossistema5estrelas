@@ -1,5 +1,3 @@
-'use client'
-
 import {
   FacebookShareButton,
   TwitterShareButton,
@@ -43,5 +41,6 @@ export default function SocialShare({ url, title }: Props) {
     </div>
   )
 }
+
 
 

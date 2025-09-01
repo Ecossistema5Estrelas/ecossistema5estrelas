@@ -1,5 +1,3 @@
-"use client";
-
 import { motion } from "framer-motion";
 import type { ComponentPropsWithoutRef } from "react";
 import type { MotionProps } from "framer-motion";
@@ -22,3 +20,4 @@ export default function DesktopView({ children }: Props) {
     </MotionDiv>
   );
 }
+

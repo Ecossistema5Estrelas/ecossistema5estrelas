@@ -1,0 +1,12 @@
+import type { ReactNode } from "react";
+export function Hero({ title, subtitle, icon }: { title: string; subtitle?: string; icon?: ReactNode }) {
+  return (
+    <section className="hero" aria-label={title}>
+      <div className="hero__inner">
+        {icon ? <div className="hero__icon">{icon}</div> : null}
+        <h1 className="hero__title">{title}</h1>
+        {subtitle && <p className="hero__subtitle">{subtitle}</p>}
+      </div>
+    </section>
+  );
+}

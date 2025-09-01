@@ -1,0 +1,14 @@
+export function SiteFooter() {
+  return (
+    <footer className="fixed inset-x-0 bottom-0 z-40 border-t border-black/10 dark:border-white/10 bg-white/80 dark:bg-black/50 backdrop-blur">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between text-xs text-slate-900 dark:text-slate-200">
+        <p>© {new Date().getFullYear()} ecossistema5estrelas — Todos os direitos reservados.</p>
+        <nav className="flex gap-4">
+          <a href="/cookies" className="hover:underline">Cookies</a>
+          <a href="/privacidade" className="hover:underline">Privacidade</a>
+          <a href="/termos" className="hover:underline">Termos</a>
+        </nav>
+      </div>
+    </footer>
+  );
+}

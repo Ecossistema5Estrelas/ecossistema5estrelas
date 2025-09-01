@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { motion } from "framer-motion";
 import type { ComponentPropsWithoutRef } from "react";
@@ -26,3 +24,4 @@ export default function MobileView({ children }: Props) {
     </MotionDiv>
   );
 }
+

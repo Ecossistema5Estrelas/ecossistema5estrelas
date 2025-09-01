@@ -1,41 +1,50 @@
-import Script from 'next/script';
-import Link from 'next/link';
-
 export const metadata = {
-  title: 'ECOSSISTEMA 5ESTRELAS',
-  description: 'Ecosistema multimodal com blog pronto para monetização.',
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
-  alternates: { canonical: '/' }
+  title: "ECOSSISTEMA 5ESTRELAS",
+  description: "Portal oficial do ECOSSISTEMA 5ESTRELAS",
 };
 
+import "./globals.css";
+
+function NavLink({ href, emoji, label }: { href: string; emoji: string; label: string }) {
+  return (
+    <a
+      href={href}
+      className="flex flex-col items-center gap-0.5 px-3 py-2 rounded-xl hover:bg-white/10 transition"
+    >
+      <span className="text-lg leading-none">{emoji}</span>
+      <span className="text-sm">{label}</span>
+    </a>
+  );
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const adsClient = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
   return (
     <html lang="pt-BR">
-      <head>
-        {adsClient ? (
-          <Script
-            async
-            strategy="afterInteractive"
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsClient}`}
-            crossOrigin="anonymous"
-          />
-        ) : null}
-      </head>
-      <body style={{ fontFamily:'system-ui, sans-serif', background:'#0b0f1a', color:'#e9ecf1', margin:0 }}>
-        <header style={{ display:'flex', alignItems:'center', justifyContent:'space-between', padding:'16px 24px', borderBottom:'1px solid #1e2433', position:'sticky', top:0, background:'#0b0f1a' }}>
-          <Link href="/" style={{ textDecoration:'none', color:'#e9ecf1', fontWeight:700 }}>
-            <span style={{ fontSize:18 }}>🌌 ECOSSISTEMA 5ESTRELAS</span>
-          </Link>
-          <nav style={{ display:'flex', gap:16 }}>
-            <Link href="/blog" style={{ color:'#e9ecf1' }}>Blog</Link>
-          </nav>
+      <body className="min-h-dvh bg-gradient-to-b from-indigo-900 via-purple-900 to-fuchsia-900 text-white antialiased">
+        <header className="sticky top-0 z-50 backdrop-blur bg-black/30 border-b border-white/10">
+          <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+            <a href="/" className="flex items-center gap-3">
+              <div className="size-8 rounded-full bg-yellow-300 shadow ring-2 ring-yellow-200 animate-pulse"></div>
+              <div className="leading-tight">
+                <div className="text-xs opacity-80">Portal</div>
+                <div className="text-lg font-semibold tracking-wide">ECOSSISTEMA 5ESTRELAS</div>
+              </div>
+            </a>
+            <nav className="flex items-end gap-2">
+              <NavLink href="/" emoji="🏠" label="Início" />
+              <NavLink href="/blog" emoji="📰" label="Blog" />
+              <NavLink href="/loja" emoji="🛍️" label="Loja" />
+              <NavLink href="/sobre" emoji="🧭" label="Sobre" />
+              <NavLink href="/contato" emoji="✉️" label="Contato" />
+            </nav>
+          </div>
         </header>
-        <main style={{ padding:'24px', maxWidth:1000, margin:'0 auto' }}>
-          {children}
-        </main>
-        <footer style={{ padding:'24px', borderTop:'1px solid #1e2433', opacity:.9 }}>
-          <small>© {new Date().getFullYear()} ECOSSISTEMA 5ESTRELAS — Pronto para monetização.</small>
+        <main className="mx-auto max-w-6xl px-4 py-10">{children}</main>
+        <footer className="mt-16 border-t border-white/10 bg-black/30">
+          <div className="mx-auto max-w-6xl px-4 py-6 text-sm flex items-center justify-between">
+            <span>© {new Date().getFullYear()} ECOSSISTEMA 5ESTRELAS</span>
+            <span className="opacity-80">⭐️ ⭐️ ⭐️ ⭐️ ⭐️</span>
+          </div>
         </footer>
       </body>
     </html>

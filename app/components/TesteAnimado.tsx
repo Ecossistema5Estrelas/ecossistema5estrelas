@@ -1,4 +1,3 @@
-"use client";
 import { MotionDiv } from "./MotionPrimitives";
 
 export default function TesteAnimado() {
@@ -14,3 +13,4 @@ export default function TesteAnimado() {
     </MotionDiv>
   );
 }
+

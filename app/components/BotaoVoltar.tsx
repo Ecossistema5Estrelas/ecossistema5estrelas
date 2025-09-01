@@ -1,4 +1,3 @@
-"use client";
 import Link from "next/link";
 import type { PropsWithChildren } from "react";
 
@@ -20,3 +19,4 @@ export default function BotaoVoltar({ href, texto, className, children }: Props)
     </Link>
   );
 }
+

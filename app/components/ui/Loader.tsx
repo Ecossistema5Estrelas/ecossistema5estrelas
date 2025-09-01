@@ -1,5 +1,3 @@
-'use client'
-
 import React from 'react'
 
 export const Loader = () => {
@@ -11,4 +9,5 @@ export const Loader = () => {
 }
 
 export default Loader
+
 

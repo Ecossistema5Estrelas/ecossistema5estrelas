@@ -1,10 +1,10 @@
-import type { MetadataRoute } from "next"
+import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
-  const host = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ecossistema5estrelas.vercel.app"
+  const base = "https://ecossistema5estrelas.org";
   return {
     rules: [{ userAgent: "*", allow: "/" }],
-    sitemap: `${host}/sitemap.xml`,
-    host,
-  }
+    sitemap: `${base}/sitemap.xml`,
+    host: base,
+  };
 }

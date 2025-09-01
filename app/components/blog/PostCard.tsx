@@ -1,5 +1,3 @@
-'use client'
-
 import Link from 'next/link'
 import Image from 'next/image'
 import { urlForImage } from '@/sanity/lib/image'
@@ -60,4 +58,5 @@ export default function PostCard({ post }: PostCardProps) {
     </div>
   )
 }
+
 

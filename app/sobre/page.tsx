@@ -1,15 +1,9 @@
-import SobreContent from './SobreContent'
-
-export const metadata = { title: 'Sobre | ECOSSISTEMA 5ESTRELAS' }
-
-export default function SobrePage() {
+import Hero from "@/components/hero";
+export default function Page(){
   return (
-    <main className="min-h-screen bg-transparent">
-      <section className="mx-auto max-w-6xl px-4 py-10">
-        <h1 className="text-3xl font-bold mb-6">ℹ️ Sobre</h1>
-        <SobreContent />
-      </section>
-    </main>
-  )
+    <>
+      <Hero title="Quem Somos" subtitle="Missão, Visão e Propósito" />
+      <section className="py-6"><p>Conteúdo de /quem somos.</p></section>
+    </>
+  );
 }
-
