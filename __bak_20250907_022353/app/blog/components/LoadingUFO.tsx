@@ -1,7 +1,0 @@
-export default function LoadingUFO() {
-  return (
-    <div className="flex items-center justify-center py-16">
-      <div className="animate-bounce text-4xl">🛸</div>
-    </div>
-  );
-}

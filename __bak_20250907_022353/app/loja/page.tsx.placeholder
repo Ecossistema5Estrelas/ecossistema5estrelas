@@ -1,8 +1,0 @@
-export default function Page() {
-  return (
-    <section style={{padding:"24px"}}>
-      <h2 style={{fontSize:"28px",fontWeight:800}}>/OK ✅</h2>
-      <p>Rota funcionando (placeholder temporário).</p>
-    </section>
-  );
-}

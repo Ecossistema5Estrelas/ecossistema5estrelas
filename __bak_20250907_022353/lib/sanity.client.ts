@@ -1,9 +1,0 @@
-import {createClient} from "next-sanity";
-
-export const sanityClient = createClient({
-  projectId: process.env.SANITY_PROJECT_ID || "df3uyd06",
-  dataset: process.env.SANITY_DATASET || "production",
-  apiVersion: process.env.SANITY_API_VERSION || "2025-02-19",
-  token: process.env.SANITY_API_TOKEN, // opcional; só precisa p/ escritas
-  useCdn: true,
-});
