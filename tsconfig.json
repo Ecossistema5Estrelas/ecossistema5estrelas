@@ -1,48 +1,51 @@
-﻿{
-    "compilerOptions":  {
-                            "typeRoots":  [
-                                              "./types",
-                                              "./node_modules/@types"
-                                          ],
-                            "target":  "ES2022",
-                            "lib":  [
-                                        "dom",
-                                        "dom.iterable",
-                                        "esnext"
-                                    ],
-                            "allowJs":  true,
-                            "skipLibCheck":  true,
-                            "strict":  true,
-                            "noEmit":  true,
-                            "esModuleInterop":  true,
-                            "module":  "ESNext",
-                            "moduleResolution":  "bundler",
-                            "resolveJsonModule":  true,
-                            "isolatedModules":  true,
-                            "jsx":  "preserve",
-                            "incremental":  true,
-                            "plugins":  [
-                                            {
-                                                "name":  "next"
-                                            }
-                                        ],
-                            "baseUrl":  ".",
-                            "paths":  {
-                                          "@/*":  [
-                                                      "./*"
-                                                  ]
-                                      }
-                        },
-    "include":  [
-                    "next-env.d.ts",
-                    "**/*.ts",
-                    "**/*.tsx",
-                    ".next/types/**/*.ts"
-                ],
-    "exclude":  [
-                    "sanity.config.ts",
-                    "sanity/**",
-                    "./sanity.config.ts",
-                    "./sanity/**"
-                ]
+{
+  "compilerOptions": {
+    "typeRoots": [
+      "./types",
+      "./node_modules/@types"
+    ],
+    "target": "ES2022",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "next-env.d.ts",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    ".next",
+    "out",
+    "**/__bak_*",
+    "__bak_*",
+    "**/__api_quarantine__*",
+    "__api_quarantine__*"
+  ]
 }
