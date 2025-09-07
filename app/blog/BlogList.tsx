@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
@@ -25,11 +25,11 @@ export default function BlogList() {
 
   if (error) return <div style={{ padding: 24 }}><h2>Erro ao carregar</h2><p>{error}</p></div>;
   if (posts === null) return <div style={{ padding: 24 }}>Carregando...</div>;
-  if (!posts.length) return <div style={{ padding: 24 }}>Nenhum post disponÃ­vel no momento.</div>;
+  if (!posts.length) return <div style={{ padding: 24 }}>Nenhum post disponÃƒÂ­vel no momento.</div>;
 
   return (
     <main style={{ padding: 24, maxWidth: 860, margin: "0 auto" }}>
-      <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 16 }}>ðŸ“š Blog</h1>
+      <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 16 }}>Ã°Å¸â€œÅ¡ Blog</h1>
       <ul style={{ display: "grid", gap: 16, listStyle: "none", padding: 0 }}>
         {posts.map((p) => (
           <li key={p._id} style={{ border: "1px solid #e5e7eb", borderRadius: 12, padding: 16 }}>
@@ -44,3 +44,4 @@ export default function BlogList() {
     </main>
   );
 }
+
