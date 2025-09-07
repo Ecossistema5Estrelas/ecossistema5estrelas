@@ -35,3 +35,4 @@ ngrok/
 
 .vercel
 
+data/flags.json

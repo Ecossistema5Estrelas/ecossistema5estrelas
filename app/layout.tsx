@@ -1,34 +1,23 @@
-import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "ECOSSISTEMA 5ESTRELAS",
-  description: "Micélio tecnológico 5⭐ — sites inteligentes, conteúdo e monetização.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
-
-export const viewport: Viewport = { themeColor: "#0f172a" };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
-      <body className="min-h-screen bg-estrela-grad">
-        <header className="border-b border-white/10">
-          <div className="container-estrela py-4 flex items-center justify-between">
-            <a href="/" className="text-lg sm:text-xl font-semibold tracking-wide">
-              ✨ ECOSSISTEMA <span className="text-estrela-gold">5ESTRELAS</span>
-            </a>
-            <nav className="flex gap-4 text-sm">
-              <a className="opacity-90 hover:opacity-100 hover:underline" href="/blog">📚 Blog</a>
-              <a className="opacity-90 hover:opacity-100 hover:underline" href="/loja">🛍 Loja</a>
-              <a className="opacity-90 hover:opacity-100 hover:underline" href="/sobre">🏛 Sobre</a>
-            </nav>
-          </div>
+      <body className="min-h-screen bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 text-white">
+        <header className="p-6 text-center text-3xl font-bold tracking-wide drop-shadow-lg">
+          ✨ ECOSSISTEMA5ESTRELAS
         </header>
-        <main className="container-estrela py-10">{children}</main>
-        <footer className="mt-16 border-t border-white/10">
-          <div className="container-estrela py-6 text-sm opacity-80">
-            © 2025 ECOSSISTEMA 5ESTRELAS — Todos os direitos reservados. • <a className="underline" href="/privacidade">Privacidade</a> • <a className="underline" href="/termos">Termos</a>
-          </div>
+        <main className="max-w-4xl mx-auto p-6">{children}</main>
+        <footer className="mt-10 text-center text-sm opacity-80">
+          © 2025 ECOSSISTEMA 5ESTRELAS — Todos os direitos reservados. • Privacidade • Termos
         </footer>
       </body>
     </html>

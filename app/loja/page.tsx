@@ -1,9 +1,4 @@
-import Hero from "@/components/hero";
-export default function Page(){
-  return (
-    <>
-      <Hero title="Loja Oficial" subtitle="Produtos e pagamentos" />
-      <section className="py-6"><p>Conteúdo de /loja oficial.</p></section>
-    </>
-  );
+export const metadata = { title: "Loja | ECOSSISTEMA 5ESTRELAS" };
+export default function Page() {
+  return <h1 className="text-2xl font-bold">🛍 Nossa Loja</h1>;
 }

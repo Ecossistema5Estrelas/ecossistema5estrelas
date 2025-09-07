@@ -1,0 +1,14 @@
+"use client";
+import { BrandStars } from "@/components/brand/brand-stars";
+
+export default function Home() {
+  return (
+    <main>
+      <section>
+        <div style={{display:"flex", alignItems:"center", justifyContent:"center", padding:"2rem 0"}}>
+          <BrandStars large />
+        </div>
+      </section>
+    </main>
+  );
+}

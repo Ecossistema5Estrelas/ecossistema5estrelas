@@ -1,0 +1,10 @@
+export default function Loading(){
+  return (
+    <div className="fixed inset-0 grid place-items-center bg-white/80 backdrop-blur-sm">
+      <div className="flex flex-col items-center gap-3">
+        <div className="text-5xl animate-bounce">🛸</div>
+        <p className="text-indigo-700 font-semibold">Carregando...</p>
+      </div>
+    </div>
+  );
+}

@@ -1,0 +1,52 @@
+export const appsDisponiveis = [
+  {
+    nome: '📚 BLOG',
+    rota: '/blog',
+    descricao: 'Leia notícias, artigos e os bastidores do ECOSSISTEMA 5ESTRELAS.',
+    ativo: true,
+  },
+  {
+    nome: '📬 CONTATO',
+    rota: '/contato',
+    descricao: 'Fale com a equipe, envie ideias ou sugestões.',
+    ativo: true,
+  },
+  {
+    nome: 'ℹ️ SOBRE',
+    rota: '/sobre',
+    descricao: 'Conheça a missão, visão e propósito do ECOSSISTEMA 5ESTRELAS.',
+    ativo: true,
+  },
+  {
+    nome: '👤 DASHBOARD',
+    rota: '/dashboard',
+    descricao: 'Painel do usuário com perfil, recompensas e muito mais.',
+    ativo: true,
+  },
+
+  // 🔒 Apps a serem liberados manualmente
+  {
+    nome: '💄 BELEZA5ESTRELAS',
+    rota: '/beleza',
+    descricao: 'Avaliações de salões, influencers e produtos de beleza.',
+    ativo: false,
+  },
+  {
+    nome: '👕 MODA5ESTRELAS',
+    rota: '/moda',
+    descricao: 'Tendências, looks, designers e estilo com inteligência artificial.',
+    ativo: false,
+  },
+  {
+    nome: '🔧 MECÂNICA5ESTRELAS',
+    rota: '/mecanica',
+    descricao: 'Avalie oficinas, serviços e profissionais automotivos.',
+    ativo: false,
+  },
+  {
+    nome: '🎮 GAMES5ESTRELAS',
+    rota: '/games',
+    descricao: 'Ranking, NFT, IA jogadora e campeonatos premiados.',
+    ativo: false,
+  },
+]
