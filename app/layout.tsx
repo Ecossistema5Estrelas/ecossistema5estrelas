@@ -1,49 +1,33 @@
-export const metadata = {
-  title: "ECOSSISTEMA 5ESTRELAS",
-  description: "Portal oficial do ECOSSISTEMA 5ESTRELAS",
-};
-
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
-function NavLink({ href, emoji, label }: { href: string; emoji: string; label: string }) {
-  return (
-    <a
-      href={href}
-      className="flex flex-col items-center gap-0.5 px-3 py-2 rounded-xl hover:bg-white/10 transition"
-    >
-      <span className="text-lg leading-none">{emoji}</span>
-      <span className="text-sm">{label}</span>
-    </a>
-  );
-}
+export const metadata: Metadata = {
+  title: "ECOSSISTEMA 5ESTRELAS",
+  description: "Micélio tecnológico 5⭐ — sites inteligentes, conteúdo e monetização.",
+};
+
+export const viewport: Viewport = { themeColor: "#0f172a" };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
-      <body className="min-h-dvh bg-gradient-to-b from-indigo-900 via-purple-900 to-fuchsia-900 text-white antialiased">
-        <header className="sticky top-0 z-50 backdrop-blur bg-black/30 border-b border-white/10">
-          <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
-            <a href="/" className="flex items-center gap-3">
-              <div className="size-8 rounded-full bg-yellow-300 shadow ring-2 ring-yellow-200 animate-pulse"></div>
-              <div className="leading-tight">
-                <div className="text-xs opacity-80">Portal</div>
-                <div className="text-lg font-semibold tracking-wide">ECOSSISTEMA 5ESTRELAS</div>
-              </div>
+      <body className="min-h-screen bg-estrela-grad">
+        <header className="border-b border-white/10">
+          <div className="container-estrela py-4 flex items-center justify-between">
+            <a href="/" className="text-lg sm:text-xl font-semibold tracking-wide">
+              ✨ ECOSSISTEMA <span className="text-estrela-gold">5ESTRELAS</span>
             </a>
-            <nav className="flex items-end gap-2">
-              <NavLink href="/" emoji="🏠" label="Início" />
-              <NavLink href="/blog" emoji="📰" label="Blog" />
-              <NavLink href="/loja" emoji="🛍️" label="Loja" />
-              <NavLink href="/sobre" emoji="🧭" label="Sobre" />
-              <NavLink href="/contato" emoji="✉️" label="Contato" />
+            <nav className="flex gap-4 text-sm">
+              <a className="opacity-90 hover:opacity-100 hover:underline" href="/blog">📚 Blog</a>
+              <a className="opacity-90 hover:opacity-100 hover:underline" href="/loja">🛍 Loja</a>
+              <a className="opacity-90 hover:opacity-100 hover:underline" href="/sobre">🏛 Sobre</a>
             </nav>
           </div>
         </header>
-        <main className="mx-auto max-w-6xl px-4 py-10">{children}</main>
-        <footer className="mt-16 border-t border-white/10 bg-black/30">
-          <div className="mx-auto max-w-6xl px-4 py-6 text-sm flex items-center justify-between">
-            <span>© {new Date().getFullYear()} ECOSSISTEMA 5ESTRELAS</span>
-            <span className="opacity-80">⭐️ ⭐️ ⭐️ ⭐️ ⭐️</span>
+        <main className="container-estrela py-10">{children}</main>
+        <footer className="mt-16 border-t border-white/10">
+          <div className="container-estrela py-6 text-sm opacity-80">
+            © 2025 ECOSSISTEMA 5ESTRELAS — Todos os direitos reservados. • <a className="underline" href="/privacidade">Privacidade</a> • <a className="underline" href="/termos">Termos</a>
           </div>
         </footer>
       </body>

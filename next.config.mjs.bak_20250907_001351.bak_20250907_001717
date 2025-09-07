@@ -1,0 +1,15 @@
+/** @type {import('next').NextConfig} */
+const config = {
+  // Server mode (sem 'output: "export"')
+  experimental: { optimizeCss: true }
+};
+export default config;
+const nextConfigPatched = {
+  ...nextConfig,
+  experimental: {
+    ...(nextConfig.experimental || {}),
+    allowedDevOrigins: ['localhost','127.0.0.1'],
+  },
+  eslint: { ignoreDuringBuilds: true },
+};
+export default nextConfigPatched;

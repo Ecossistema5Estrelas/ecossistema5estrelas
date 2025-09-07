@@ -1,31 +1,37 @@
-import Hero from "@/components/hero";
+export const dynamic = "force-static";
+export const dynamicParams = false;
+export const revalidate = 86400;
 
-type Params = { params: { slug: string } };
+// Gera as páginas estáticas a partir de app/blog/static-slugs.json
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
+  try {
+    const mod: any = await import("../static-slugs.json");
+    const slugs: string[] = (mod.default ?? mod) as string[];
+    return slugs.map((slug) => ({ slug }));
+  } catch {
+    return [];
+  }
+}
 
-export async function generateMetadata({ params }: Params) {
+// (Opcional) título básico por slug
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   return {
-    title: `Post — ${params.slug}`,
-    description: "Leitura no ecossistema5estrelas",
-    openGraph: { title: `Post — ${params.slug}` },
-    twitter: { card: "summary_large_image" },
+    title: `ECOSSISTEMA 5ESTRELAS — ${slug.replace(/-/g, " ")}`,
+    openGraph: { images: ["/og.png"] },
+    twitter: { card: "summary_large_image", images: ["/og.png"] },
   };
 }
 
-export default async function PostPage({ params }: Params) {
-  const url = `/api/posts?slug=${params.slug}`;
-  let post: any = null;
-  try { post = await fetch(url, { cache: "no-store" }).then((r) => r.json()); } catch {}
-  if (!post) {
-    return (
-      <div>
-        <Hero title="Post não encontrado" subtitle="Tente voltar ao Blog" />
-      </div>
-    );
-  }
+// ✅ Next 15: params como Promise
+export default async function BlogPostPage(
+  { params }: { params: Promise<{ slug: string }> }
+) {
+  const { slug } = await params;
   return (
-    <article>
-      <Hero title={post.title} subtitle={post.publishedAt ? new Date(post.publishedAt).toLocaleDateString("pt-BR") : ""} />
-      <div className="prose prose-slate max-w-none mt-4" dangerouslySetInnerHTML={{ __html: post.html || "<p>Conteúdo indisponível.</p>" }} />
-    </article>
+    <main className="mx-auto max-w-3xl p-6">
+      <h1 className="text-3xl font-bold mb-2">Post: {slug}</h1>
+      <p className="opacity-80">Conteúdo estático do post “{slug}”.</p>
+    </main>
   );
 }

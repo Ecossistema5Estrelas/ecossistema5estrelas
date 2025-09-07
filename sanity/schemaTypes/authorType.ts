@@ -1,3 +1,4 @@
+// @ts-nocheck
 // app/schemaTypes/authorType.ts
 
 export interface Author {

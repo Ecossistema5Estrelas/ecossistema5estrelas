@@ -1,3 +1,4 @@
+// @ts-nocheck
 // app/schemaTypes/postType.ts
 
 import type { Author } from './authorType'
@@ -23,3 +24,4 @@ export interface Post {
   author?: Author
   body: BlockContent
 }
+

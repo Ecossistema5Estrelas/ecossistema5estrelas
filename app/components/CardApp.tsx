@@ -1,21 +1,47 @@
+"use client";
+
 import Link from "next/link";
-import { motion } from "framer-motion";
-import type { ComponentPropsWithoutRef } from "react";
-import type { MotionProps } from "framer-motion";
+import { motion, type MotionProps } from "framer-motion";
+import type { ComponentPropsWithoutRef, ReactNode } from "react";
 
-const MotionDiv = motion.div as unknown as React.FC<
-  ComponentPropsWithoutRef<"div"> & MotionProps
->;
+// Props de um <div> normal + MotionProps
+type MotionDivProps = ComponentPropsWithoutRef<"div"> & MotionProps;
 
-type Props = { href: string; title: string; children?: React.ReactNode };
+// Força o motion.div a aceitar as props de <div>
+const MotionDiv = motion.div as unknown as React.FC<MotionDivProps>;
 
-export default function CardApp({ href, title, children }: Props) {
+type CardAppProps = {
+  href: string;
+  title: string;
+  description?: string;
+  icon?: ReactNode;
+} & MotionDivProps;
+
+export default function CardApp({
+  href,
+  title,
+  description,
+  icon,
+  className = "",
+  ...rest
+}: CardAppProps) {
   return (
-    <MotionDiv className="rounded-2xl p-4 shadow">
-      <Link href={href} className="inline-flex items-center gap-2">
-        <span className="font-semibold">{title}</span>
+    <MotionDiv
+      whileHover={{ scale: 1.05 }}
+      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      className={`group rounded-2xl border border-white/10 bg-zinc-900 p-6 shadow-md transition-colors hover:border-yellow-500 hover:bg-zinc-800 ${className}`}
+      {...rest}
+    >
+      <Link href={href} className="flex flex-col h-full justify-between">
+        <div>
+          {icon && <div className="mb-3">{icon}</div>}
+          <h3 className="text-xl font-semibold">{title}</h3>
+          {description && <p className="text-zinc-400 mt-1">{description}</p>}
+        </div>
+        <span className="mt-4 inline-flex items-center gap-2 text-yellow-400">
+          Acessar →
+        </span>
       </Link>
-      {children}
     </MotionDiv>
   );
 }

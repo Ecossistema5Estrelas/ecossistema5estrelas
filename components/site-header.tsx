@@ -1,3 +1,5 @@
+import Logo from "@/components/Logo";
+import BrandMark from "@/components/BrandMark";
 import Link from "next/link";
 import BrandStars from "@/components/brand/brand-stars";
 export default function SiteHeader(){
@@ -18,3 +20,5 @@ export default function SiteHeader(){
     </header>
   );
 }
+
+

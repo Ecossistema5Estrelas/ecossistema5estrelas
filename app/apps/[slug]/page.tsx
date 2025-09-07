@@ -1,16 +1,26 @@
-import Hero from "@/components/hero";
-type Params = { params: { slug: string } };
-export async function generateMetadata({ params }: Params){ return { title: `App — ${params.slug}` } }
-export default async function AppPage({ params }: Params){
-  const app = await fetch(`/api/apps?slug=${params.slug}`, { cache: "no-store" }).then(r=>r.json()).catch(()=>null);
-  if(!app){ return (<div><Hero title="App não encontrado" subtitle="Volte para /apps" /></div>); }
+export const dynamic = "force-static";
+export const dynamicParams = false;
+export const revalidate = 86400;
+
+// Gera as páginas estáticas a partir de app/apps/static-slugs.json
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
+  try {
+    const mod: any = await import("../static-slugs.json");
+    const slugs: string[] = (mod.default ?? mod) as string[];
+    return slugs.map((slug) => ({ slug }));
+  } catch {
+    return [];
+  }
+}
+
+// ✅ Next 15: params como Promise
+export default async function AppPage(
+  { params }: { params: Promise<{ slug: string }> }
+) {
+  const { slug } = await params;
   return (
-    <div>
-      <Hero title={app.name} subtitle={app.description} />
-      <section className="py-6">
-        <p className="opacity-80">Categoria: <strong>{app.category}</strong></p>
-        {app.url ? <p className="mt-2"><a className="underline text-blue-600" href={app.url} target="_blank">Abrir aplicativo</a></p> : null}
-      </section>
-    </div>
+    <main className="p-8">
+      <h1 className="text-2xl font-bold">App: {slug}</h1>
+    </main>
   );
 }

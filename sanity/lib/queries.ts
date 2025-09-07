@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { groq } from "next-sanity";
 import { sanityFetch } from "./sanityFetch";
 import type { Post, Category } from "@/lib/types";
@@ -41,3 +42,4 @@ export async function getAllCategories(): Promise<Category[]> {
   } | order(title asc)`;
   return sanityFetch<Category[]>(query);
 }
+

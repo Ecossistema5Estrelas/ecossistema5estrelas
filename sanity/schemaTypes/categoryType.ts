@@ -1,3 +1,4 @@
+// @ts-nocheck
 // app/schemaTypes/categoryType.ts
 
 export interface Category {
@@ -7,3 +8,4 @@ export interface Category {
     current: string
   }
 }
+

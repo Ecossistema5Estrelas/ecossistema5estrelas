@@ -1,14 +1,17 @@
-import Hero from "@/components/hero";
-import { AppCard } from "@/components/app-card";
-export const metadata = { title: "Apps — ecossistema5estrelas" };
-export default async function AppsPage(){
-  const apps = await fetch("/api/apps", { cache: "no-store" }).then(r => r.json()).catch(()=>[]);
+import Hero from "../../components/hero";
+import { AppCard } from "../../components/app-card";
+
+export const metadata = { title: "Apps — ECOSSISTEMA 5ESTRELAS" };
+
+export default function AppsPage() {
   return (
-    <div>
-      <Hero title="Apps" subtitle="Catálogo e registro de aplicativos do ecossistema" />
-      <div className="grid gap-4 sm:grid-cols-2 mt-4">
-        {apps.map((a:any)=>(<AppCard key={a.slug} app={a}/>))}
-      </div>
-    </div>
+    <main className="mx-auto max-w-5xl p-6 space-y-8">
+      <Hero />
+      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <AppCard app={{ title: "Exemplo 1", description: "Card de exemplo." }} />
+        <AppCard app={{ title: "Exemplo 2", description: "Outro card." }} />
+        <AppCard app={{ title: "Exemplo 3", description: "Mais um card." }} />
+      </section>
+    </main>
   );
 }

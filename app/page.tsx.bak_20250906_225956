@@ -1,0 +1,4 @@
+import type { Metadata } from "next";
+import Main from "./components/index";
+export const metadata: Metadata = { title: "ECOSSISTEMA 5ESTRELAS" };
+export default function Page(){ return <Main/>; }

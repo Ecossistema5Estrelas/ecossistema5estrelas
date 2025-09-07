@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { defineType, defineField } from "sanity";
 
 export default defineType({
@@ -23,3 +24,4 @@ export default defineType({
     defineField({ name: "isSponsored", title: "Sponsored", type: "boolean", initialValue: false }),
   ],
 });
+

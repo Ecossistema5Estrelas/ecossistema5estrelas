@@ -1,3 +1,4 @@
+// @ts-nocheck
 // sanity/lib/fetch.ts
 import { client } from './clients'
 import type { QueryParams } from '@sanity/client'

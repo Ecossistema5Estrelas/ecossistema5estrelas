@@ -1,27 +1,31 @@
-import Link from "next/link";
-import { motion } from "framer-motion";
-import type { ComponentPropsWithoutRef } from "react";
-import type { MotionProps } from "framer-motion";
+"use client";
 
-const MotionDiv = motion.div as unknown as React.FC<
-  ComponentPropsWithoutRef<"div"> & MotionProps
->;
+import React, { createContext, useContext, useEffect, useState } from "react";
 
-type Props = { children: React.ReactNode };
+type MobileCtxValue = { isMobile: boolean };
+const MobileCtx = createContext<MobileCtxValue | null>(null);
 
-export default function MobileView({ children }: Props) {
-  return (
-    <MotionDiv
-      initial={{ opacity: 0, y: 12 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="flex flex-col items-center gap-4 p-6 bg-black/90 text-white shadow-md rounded-2xl"
-    >
-      <Link href="/blog" className="text-xl hover:text-yellow-300 transition-colors">
-        📚 Blog
-      </Link>
-      {children}
-    </MotionDiv>
-  );
+export function MobileProvider({ children }: { children: React.ReactNode }) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 768px)");
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
+  return <MobileCtx.Provider value={{ isMobile }}>{children}</MobileCtx.Provider>;
 }
 
+export function useMobile() {
+  const ctx = useContext(MobileCtx);
+  return ctx ?? { isMobile: false };
+}
+
+export default function MobileView({ children }: { children: React.ReactNode }) {
+  const { isMobile } = useMobile();
+  // Ajuste esta lógica para o seu layout real:
+  return <div className={isMobile ? "block md:hidden" : "hidden md:block"}>{children}</div>;
+}

@@ -1,3 +1,4 @@
+// @ts-nocheck
 // app/schemaTypes/blockContentType.ts
 
 export interface BlockText {

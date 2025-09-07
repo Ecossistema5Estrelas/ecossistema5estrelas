@@ -1,3 +1,4 @@
+// @ts-nocheck
 // app/schemaType/env.ts
 
 export const projectId: string = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!

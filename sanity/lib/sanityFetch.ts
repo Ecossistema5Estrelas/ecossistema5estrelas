@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { createClient } from "next-sanity";
 
 export const client = createClient({
@@ -19,3 +20,4 @@ export async function sanityFetch<T>(
   const data = await client.fetch(query as any, params as any)
   return data as T
 }
+

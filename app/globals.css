@@ -3,7 +3,12 @@
 @tailwind utilities;
 
 :root { color-scheme: dark; }
-
 html, body { height: 100%; }
+body { @apply bg-[#0a0a0a] text-white; }
 
-* { outline-color: rgba(255,255,255,0.35); }
+.container-estrela { @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8; }
+.card-estrela { @apply rounded-2xl border border-white/10 bg-white/5 shadow-lg shadow-black/20 backdrop-blur-sm; }
+.btn-estrela {
+  @apply inline-flex items-center gap-2 rounded-xl px-5 py-3 font-medium transition hover:scale-[1.02] active:scale-[0.98];
+  @apply bg-estrela-gold/20 text-estrela-gold hover:bg-estrela-gold/30;
+}

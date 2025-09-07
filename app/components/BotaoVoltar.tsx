@@ -1,22 +1,19 @@
+"use client";
 import Link from "next/link";
-import type { PropsWithChildren } from "react";
+import React from "react";
 
-type Props = PropsWithChildren<{
-  href: string;
-  texto?: string;      // opcional, mas preferimos children
-  className?: string;
-}>;
+type Props = React.PropsWithChildren<{ href: string; className?: string }>;
 
-export default function BotaoVoltar({ href, texto, className, children }: Props) {
-  const label = children ?? texto ?? "Voltar";
+export default function BotaoVoltar({ href, className, children }: Props) {
   return (
     <Link
       href={href}
-      className={["inline-flex items-center gap-2 rounded-xl px-4 py-2 bg-zinc-800 text-white hover:bg-zinc-700 transition", className]
-        .filter(Boolean).join(" ")}
+      className={
+        className ??
+        "inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-neutral-300 hover:bg-neutral-50"
+      }
     >
-      ← {label}
+      {children ?? "Voltar"}
     </Link>
   );
 }
-

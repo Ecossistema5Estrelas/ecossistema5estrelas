@@ -1,23 +1,21 @@
 import type { MetadataRoute } from "next";
-import { sanityClient } from "@/lib/sanity.client";
-import { groq } from "next-sanity";
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const base = "https://ecossistema5estrelas.org";
-  const slugs: { slug: string }[] = await sanityClient.fetch(
-    groq`*[_type=="post" && defined(slug.current)][].{"slug": slug.current}`
-  );
-  const now = new Date().toISOString();
+export const revalidate = 86400;
+export const dynamic = "force-static";
 
-  const staticPaths = [
-    "", "sobre", "contato", "loja", "privacidade", "termos", "cookies",
-    "comunidade", "copyright", "anuncios", "suporte", "blog"
-  ].map(p => ({ url: `${base}/${p}`, lastModified: now }));
-
-  const posts = slugs.map(({ slug }) => ({
-    url: `${base}/blog/${slug}`,
-    lastModified: now
-  }));
-
-  return [...staticPaths, ...posts];
+export default function sitemap(): MetadataRoute.Sitemap {
+  const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+  const now = new Date();
+  const paths = [
+    "", "apps", "blog", "contato", "loja", "sobre", "termos", "politicas/privacidade",
+  ];
+  return paths.map((p) => {
+    const url = p ? `${BASE.replace(/\/$/,"")}/${p}` : BASE.replace(/\/$/,"") + "/";
+    return {
+      url,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: p === "" ? 1 : 0.7,
+    };
+  });
 }

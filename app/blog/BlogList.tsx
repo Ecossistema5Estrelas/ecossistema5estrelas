@@ -1,52 +1,46 @@
-import { useEffect, useState } from 'react'
-import Link from 'next/link'
+"use client";
+import { useEffect, useState } from "react";
+import Link from "next/link";
 
-type Post = { _id: string; slug?: { current: string }; title: string; excerpt?: string; publishedAt?: string }
+type Post = { _id: string; slug?: { current: string }; title: string; excerpt?: string; publishedAt?: string };
 
 export default function BlogList() {
-  const [posts, setPosts] = useState<Post[] | null>(null)
-  const [loading, setLoading] = useState(true)
+  const [posts, setPosts] = useState<Post[] | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    let aborted = false
-    ;(async () => {
+    let cancelled = false;
+    (async () => {
       try {
-        const res = await fetch('/api/posts', { next: { revalidate: 60 } })
-        const data = res.ok ? await res.json() : { posts: [] }
-        if (!aborted) setPosts(data.posts ?? [])
-      } finally {
-        if (!aborted) setLoading(false)
+        const res = await fetch("/api/posts", { cache: "no-store" });
+        if (!res.ok) throw new Error("Falha ao buscar posts");
+        const data: Post[] = await res.json();
+        if (!cancelled) setPosts(data);
+      } catch (e:any) {
+        if (!cancelled) setError(e.message || "Erro desconhecido");
       }
-    })()
-    return () => { aborted = true }
-  }, [])
+    })();
+    return () => { cancelled = true; };
+  }, []);
 
-  if (loading) return <div className="mx-auto max-w-4xl px-4 py-8 text-zinc-300">Carregando publicações…</div>
-  if (!posts || posts.length === 0) {
-    return (
-      <div className="mx-auto max-w-4xl px-4 py-12">
-        <div className="rounded-2xl border border-white/10 bg-black/30 p-8 shadow-lg shadow-black/40">
-          <h2 className="text-xl font-bold mb-2">📚 Blog</h2>
-          <p className="text-zinc-300">Nenhum post disponível no momento.</p>
-        </div>
-      </div>
-    )
-  }
+  if (error) return <div style={{ padding: 24 }}><h2>Erro ao carregar</h2><p>{error}</p></div>;
+  if (posts === null) return <div style={{ padding: 24 }}>Carregando...</div>;
+  if (!posts.length) return <div style={{ padding: 24 }}>Nenhum post disponível no momento.</div>;
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-8 space-y-4">
-      {posts.map((post) => {
-        const href = post.slug?.current ? `/blog/${post.slug.current}` : '#'
-        return (
-          <article key={post._id} className="rounded-2xl border border-white/10 bg-black/30 p-6 shadow-lg shadow-black/40 hover:bg-black/40 transition">
-            <h3 className="text-lg font-semibold"><Link href={href} className="hover:underline">{post.title}</Link></h3>
-            {post.excerpt && <p className="mt-2 text-sm text-zinc-300 line-clamp-3">{post.excerpt}</p>}
-            {post.publishedAt && <time className="mt-3 block text-xs text-zinc-400">{new Date(post.publishedAt).toLocaleDateString('pt-BR')}</time>}
-          </article>
-        )
-      })}
-    </div>
-  )
+    <main style={{ padding: 24, maxWidth: 860, margin: "0 auto" }}>
+      <h1 style={{ fontSize: 28, fontWeight: 700, marginBottom: 16 }}>📚 Blog</h1>
+      <ul style={{ display: "grid", gap: 16, listStyle: "none", padding: 0 }}>
+        {posts.map((p) => (
+          <li key={p._id} style={{ border: "1px solid #e5e7eb", borderRadius: 12, padding: 16 }}>
+            <h2 style={{ fontSize: 20, margin: "0 0 8px" }}>
+              <Link href={`/blog/${p.slug?.current ?? p._id}`}>{p.title}</Link>
+            </h2>
+            {p.excerpt && <p style={{ margin: 0, opacity: .8 }}>{p.excerpt}</p>}
+            {p.publishedAt && <small style={{ opacity: .6 }}>Publicado em {new Date(p.publishedAt).toLocaleDateString("pt-BR")}</small>}
+          </li>
+        ))}
+      </ul>
+    </main>
+  );
 }
-
-

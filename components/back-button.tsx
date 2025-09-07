@@ -1,10 +1,22 @@
 "use client";
-className?: string }) {
+import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import type { ReactNode } from "react";
+
+type BackButtonProps = {
+  className?: string;
+  children?: ReactNode;
+};
+
+export default function BackButton({ className, children }: BackButtonProps) {
   const router = useRouter();
   return (
-    <Button onClick={() => router.back()} className={className ?? "gap-2"} variant="ghost">
-      <ArrowLeft className="h-4 w-4" />
-      {label}
+    <Button
+      onClick={() => router.back()}
+      className={className ?? "gap-2"}
+      variant="ghost"
+    >
+      {children ?? "← Voltar"}
     </Button>
   );
 }

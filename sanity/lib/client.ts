@@ -1,4 +1,4 @@
-import { createClient } from 'next-sanity';
+﻿import { createClient } from 'next-sanity';
 import { dataset, projectId, apiVersion, useCdn, token } from './env';
 
 export const client = createClient({
@@ -6,6 +6,6 @@ export const client = createClient({
   dataset,
   apiVersion,
   useCdn,
-  token, // remova se não usar token
+  token,
   perspective: token ? 'previewDrafts' : 'published',
 });

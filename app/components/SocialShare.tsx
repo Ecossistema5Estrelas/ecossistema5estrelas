@@ -1,3 +1,5 @@
+'use client'
+
 import {
   FacebookShareButton,
   TwitterShareButton,
@@ -19,7 +21,7 @@ type Props = {
 export default function SocialShare({ url, title }: Props) {
   return (
     <div className="flex gap-3 items-center mt-6 flex-wrap">
-      <FacebookShareButton url={url} hashtag="#Ecossistema5Estrelas">
+      <FacebookShareButton url={url} >
         <FacebookIcon size={32} round />
       </FacebookShareButton>
 
@@ -41,6 +43,4 @@ export default function SocialShare({ url, title }: Props) {
     </div>
   )
 }
-
-
 

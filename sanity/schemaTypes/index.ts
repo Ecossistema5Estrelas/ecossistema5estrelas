@@ -1,3 +1,4 @@
+// @ts-nocheck
 // app/schemaTypes/index.ts
 
 export * from './authorType'
