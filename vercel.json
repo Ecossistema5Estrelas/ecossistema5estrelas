@@ -1,9 +1,5 @@
-﻿{
+{
+  "version": 2,
   "framework": "nextjs",
-  "buildCommand": "next build",
-  "outputDirectory": ".next",
-  "devCommand": "next dev",
-  "git": {
-    "deploymentEnabled": { "preview": true, "production": true }
-  }
+  "buildCommand": "next build"
 }
