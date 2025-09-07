@@ -1,13 +1,15 @@
-import type { MetadataRoute } from "next";
+﻿import type { MetadataRoute } from "next";
 
 export const revalidate = 86400;
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+  const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ecossistema5estrelas.org";
   const now = new Date();
   const paths = [
-    "", "apps", "blog", "contato", "loja", "sobre", "termos", "politicas/privacidade",
+    "", "blog", "sobre", "contato",
+    "politicas", "politicas/privacidade", "politicas/termos",
+    "obrigado", "apps"
   ];
   return paths.map((p) => {
     const url = p ? `${BASE.replace(/\/$/,"")}/${p}` : BASE.replace(/\/$/,"") + "/";
@@ -19,3 +21,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
     };
   });
 }
+
