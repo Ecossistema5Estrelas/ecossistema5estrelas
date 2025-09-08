@@ -1,13 +1,7 @@
 ﻿import "./globals.css";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://ecossistema5estrelas.org'),
-  title: "ECOSSISTEMA 5ESTRELAS",
-  icons: {
-    icon: "/favicon.svg",
-  },
-};
+
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -25,8 +19,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   );
 }
 
-
-export const metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://ecossistema5estrelas.org"),
-  alternates: { canonical: "/" }
+export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://ecossistema5estrelas.org'),
+  title: "ECOSSISTEMA 5ESTRELAS",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
+
