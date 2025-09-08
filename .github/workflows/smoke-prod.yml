@@ -1,0 +1,19 @@
+﻿name: smoke-prod
+on:
+  push:
+    branches: [ "release/landing-v1" ]
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hit endpoints
+        run: |
+          set -e
+          BASE="https://ecossistema5estrelas.org"
+          curl -sS -f "$BASE/api/health"
+          curl -sS -f "$BASE/robots.txt"
+          curl -sS -f "$BASE/sitemap.xml"
+          curl -sS -f "$BASE/rss.xml"
+          canon=$(curl -sS -H "Accept-Encoding: identity" "$BASE" | grep -i 'rel="canonical"')
+          echo "$canon" | grep -q 'ecossistema5estrelas.org'
+          echo "✅ canonical ok e sem www"
