@@ -1,17 +1,3 @@
 ﻿{
-  "redirects": [
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.ecossistema5estrelas.org" }],
-      "destination": "https://ecossistema5estrelas.org/:path*",
-      "permanent": true
-    }
-  ],
-  "headers": [
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": ".*\\.vercel\\.app" }],
-      "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }]
-    }
-  ]
+  "$schema": "https://openapi.vercel.sh/vercel.json"
 }
