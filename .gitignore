@@ -25,3 +25,7 @@ data/flags.json
 .vercel
 
 tsconfig.tsbuildinfo
+inspect-summary.json
+inspect-tree.txt
+scripts/Ensure-HeadLinks.ps1
+scripts/Inspect-Project.ps1
