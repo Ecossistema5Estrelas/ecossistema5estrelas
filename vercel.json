@@ -1,5 +1,9 @@
-{
-  "version": 2,
-  "framework": "nextjs",
-  "buildCommand": "next build"
+﻿{
+  "redirects": [
+    { "source": "https://www.ecossistema5estrelas.org/:path*", "destination": "https://ecossistema5estrelas.org/:path*", "permanent": true }
+  ],
+  "headers": [
+    { "source": "/:path*", "has": [{ "type": "host", "value": ".*-.*\\.vercel\\.app" }],
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }] }
+  ]
 }
