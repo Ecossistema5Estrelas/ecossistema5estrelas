@@ -4,3 +4,4 @@ Allow: /
 
 Host: https://ecossistema5estrelas.org
 Sitemap: https://ecossistema5estrelas.org/sitemap.xml
+
