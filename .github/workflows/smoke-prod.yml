@@ -1,19 +1,32 @@
 ﻿name: smoke-prod
+
 on:
   push:
-    branches: [ "release/landing-v1" ]
+    branches: [ release/landing-v1 ]
+  pull_request:
+    branches: [ release/landing-v1 ]
+  workflow_dispatch: {}
+
 jobs:
-  smoke:
+  smoke-prod:
     runs-on: ubuntu-latest
     steps:
-      - name: Hit endpoints
+      - name: Health must be 200
         run: |
-          set -e
-          BASE="https://ecossistema5estrelas.org"
-          curl -sS -f "$BASE/api/health"
-          curl -sS -f "$BASE/robots.txt"
-          curl -sS -f "$BASE/sitemap.xml"
-          curl -sS -f "$BASE/rss.xml"
-          canon=$(curl -sS -H "Accept-Encoding: identity" "$BASE" | grep -i 'rel="canonical"')
-          echo "$canon" | grep -q 'ecossistema5estrelas.org'
-          echo "✅ canonical ok e sem www"
+          code=$(curl -sS -o /dev/null -w "%{http_code}" https://ecossistema5estrelas.org/api/health)
+          echo "health: $code"
+          test "$code" = "200"
+
+      - name: Robots/Sitemap/RSS must be 200
+        run: |
+          for p in /robots.txt /sitemap.xml /rss.xml; do
+            code=$(curl -sS -o /dev/null -w "%{http_code}" "https://ecossistema5estrelas.org$p")
+            echo "$p -> $code"
+            test "$code" = "200"
+          done
+
+      - name: Canonical presente e sem www
+        run: |
+          html=$(curl -sS https://ecossistema5estrelas.org)
+          echo "$html" | grep -q 'rel="canonical"' || (echo "canonical ausente" && exit 1)
+          echo "$html" | grep -q 'https://ecossistema5estrelas.org' || (echo "canonical com www ou domínio errado" && exit 1)
