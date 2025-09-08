@@ -1,0 +1,20 @@
+﻿{
+    "when":  "2025-09-07T21:25:35",
+    "root":  "C:\\Users\\Cezar Braga\\Desktop\\ecossistema5estrelasBackup",
+    "node":  "v22.19.0",
+    "vercel":  "47.0.5",
+    "branch":  "release/landing-v1",
+    "lastCommit":  "88ac98f 2025-09-07 21:12:32 -0300 fix(layout): normalizar charset e definir metadataBase; stop tracking tsbuildinfo",
+    "critical":  {
+                     "app\\sitemap.xml\\route.ts":  false,
+                     "public\\favicon.ico":  false,
+                     "app\\layout.tsx":  true,
+                     "next.config.mjs":  false,
+                     "vercel.json":  true,
+                     "app\\rss.xml\\route.ts":  true,
+                     "app\\api\\health\\route.ts":  true,
+                     "app\\page.tsx":  true,
+                     "app\\robots.txt":  false,
+                     "public\\site.webmanifest":  false
+                 }
+}
