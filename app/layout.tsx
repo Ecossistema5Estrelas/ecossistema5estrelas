@@ -1,7 +1,8 @@
-import "./globals.css";
+﻿import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://ecossistema5estrelas.org'),
   title: "ECOSSISTEMA 5ESTRELAS",
   icons: {
     icon: "/favicon.svg",
@@ -23,3 +24,4 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
+
