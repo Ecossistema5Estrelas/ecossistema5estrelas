@@ -1,0 +1,32 @@
+name: blog-auto
+on:
+  workflow_dispatch:
+    inputs:
+      title:       { description: "Título", required: true, type: string }
+      slug:        { description: "slug", required: true, type: string }
+      body:        { description: "Conteúdo", required: true, type: string }
+      image_url:   { description: "URL da imagem", required: true, type: string }
+      draft:
+        description: "Criar como rascunho?"
+        required: false
+        default: "false"
+        type: choice
+        options: ["false","true"]
+jobs:
+  publish:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publicar post no Sanity
+        shell: pwsh
+        env:
+          SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
+          SANITY_DATASET:     ${{ secrets.SANITY_DATASET }}
+          SANITY_TOKEN:       ${{ secrets.SANITY_TOKEN }}
+        run: |
+          ./scripts/publish-blog.ps1 `
+            -Title "${{ github.event.inputs.title }}" `
+            -Slug "${{ github.event.inputs.slug }}" `
+            -Body "${{ github.event.inputs.body }}" `
+            -ImagePathOrUrl "${{ github.event.inputs.image_url }}" `
+            $( if ("${{ github.event.inputs.draft }}" -eq "true") { "-Draft" } )
