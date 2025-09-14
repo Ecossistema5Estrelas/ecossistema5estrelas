@@ -1,15 +1,18 @@
-export default function Cookies() {
-  const hoje = new Date().toLocaleDateString("pt-BR");
+export default function Page() {
   return (
-    <>
-      <h1 className="text-3xl md:text-4xl font-bold">🍪 Política de Cookies</h1>
-      <p className="mt-2 opacity-80">
-        <strong>Última atualização:</strong> {hoje}
-      </p>
-      <div className="mt-6 space-y-3 opacity-90">
-        <p>Usamos cookies para melhorar sua experiência e entender o uso do portal.</p>
-        <p>Você pode gerenciar cookies nas configurações do seu navegador.</p>
-      </div>
-    </>
+    <main className="prose mx-auto p-6">
+      <h1>Política de Cookies</h1>
+      <p>Usamos cookies para garantir o funcionamento do site, analisar tráfego e exibir publicidade.</p>
+      <h2>Tipos de Cookies</h2>
+      <ul>
+        <li>Estritamente necessários (funcionamento do site)</li>
+        <li>Desempenho e análises</li>
+        <li>Publicidade (incluindo Google AdSense)</li>
+      </ul>
+      <h2>Como Gerenciar</h2>
+      <p>Você pode controlar cookies no navegador. Ao continuar navegando, você concorda com o uso descrito.</p>
+      <p>Contato: suporte@ecossistema5estrelas.org</p>
+      <p>Última atualização: 2025-09-13</p>
+    </main>
   );
 }
