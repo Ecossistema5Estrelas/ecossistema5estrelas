@@ -30,6 +30,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
           rel="stylesheet"
         />
+        <style>{`
+          .estrela-piscando {
+            animation: blink 1.5s infinite alternate;
+          }
+          @keyframes blink {
+            from { opacity: 1; }
+            to { opacity: 0.3; }
+          }
+        `}</style>
       </head>
       <body>
         <div
@@ -42,30 +51,25 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             backgroundAttachment: "fixed",
           }}
         >
-          {/* Logomarca fixa e translúcida no fundo */}
-          <div
-            className="absolute inset-0 flex items-center justify-center"
-            style={{ zIndex: 0, pointerEvents: "none" }}
-          >
-            <img
-              src="/logo-5estrelas.png"
-              alt="Logo 5 Estrelas"
-              className="w-[360px] md:w-[500px] opacity-15"
-            />
-          </div>
+          {/* Cabeçalho com logo + estrelas piscando */}
+          <header className="sticky top-0 z-20 flex items-center justify-between px-6 py-3 bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-600 backdrop-blur border-b border-black/20">
+            <div className="flex items-center gap-2 font-extrabold text-lg">
+              <span className="estrela-piscando">⭐</span>
+              <span>ECOSSISTEMA 5ESTRELAS</span>
+            </div>
+            <nav className="flex items-center gap-4">
+              <a href="/blog" className="px-3 py-1 rounded-lg bg-black/20 backdrop-blur hover:bg-black/40 transition">Blog</a>
+              <a href="/loja" className="px-3 py-1 rounded-lg bg-black/20 backdrop-blur hover:bg-black/40 transition">Loja</a>
+              <a href="/contato" className="px-3 py-1 rounded-lg bg-black/20 backdrop-blur hover:bg-black/40 transition">Contato</a>
+            </nav>
+          </header>
 
-          {/* Painel translúcido abre-alas */}
-          <div className="relative z-10 min-h-screen flex flex-col bg-black/50 backdrop-blur-sm">
-            <header className="sticky top-0 z-20 bg-black/30 backdrop-blur border-b border-white/10">
-              <Header />
-            </header>
+          {/* Conteúdo */}
+          <main className="container-estrela flex-1 py-10">
+            {children}
+          </main>
 
-            <main className="container-estrela flex-1 py-10">
-              {children}
-            </main>
-
-            <Footer />
-          </div>
+          <Footer />
         </div>
       </body>
     </html>
