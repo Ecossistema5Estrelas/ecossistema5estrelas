@@ -37,3 +37,18 @@ body {
          border border-black/10 bg-white/40 backdrop-blur
          hover:shadow-md transition;
 }
+/* Botão dourado */
+.btn-gold {
+  @apply bg-gradient-to-r from-yellow-600 to-yellow-400 text-white font-semibold px-4 py-2 rounded shadow-sm transition ease-in-out;
+}
+.btn-gold:hover {
+  @apply brightness-110 shadow-md shadow-yellow-500/50;
+}
+
+/* Botão translúcido estilo glassmorphism */
+.btn-glass {
+  @apply relative px-4 py-2 rounded-xl text-yellow-300 font-medium bg-black/30 backdrop-blur-md border border-yellow-500/30 shadow transition;
+}
+.btn-glass:hover {
+  @apply bg-black/40 border-yellow-500/50 scale-105 shadow-lg;
+}
