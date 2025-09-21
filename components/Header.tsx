@@ -1,23 +1,31 @@
-"use client";
-import React from "react";
-import FiveStars from "./FiveStars";
+﻿import Image from "next/image";
+import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="relative z-50 w-full border-b border-black/10 dark:border-white/10 bg-gradient-to-b from-indigo-50/60 to-white/0 dark:from-neutral-900/60 dark:to-transparent backdrop-blur">
-      <div className="max-w-6xl mx-auto px-4 py-8 text-center">
-        <div className="mb-2">
-          <FiveStars size={22} aria-label="cinco estrelas do cabeçalho" />
-        </div>
-        <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
-          ECOSSISTEMA <span className="whitespace-nowrap">5ESTRELAS</span>
-        </h1>
-        <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
-          Blog • Apps • Recompensas • Banco Digital • Universo 5⭐
-        </p>
+    <header className="w-full flex items-center justify-between bg-[#0A1F0A] px-8 py-4 shadow-lg">
+      {/* Logomarca grande no cabeçalho */}
+      <div className="flex items-center">
+        <Image
+          src="/logo-header-ecossistema5estrelas.png"
+          alt="ECOSSISTEMA 5ESTRELAS"
+          width={380}
+          height={100}
+          priority
+        />
       </div>
+      {/* Navegação com botões dourados translúcidos */}
+      <nav className="flex gap-6 text-yellow-400 font-semibold">
+        <Link href="/blog" className="px-4 py-2 rounded-lg bg-yellow-400/20 hover:bg-yellow-400/40 transition">
+          Blog
+        </Link>
+        <Link href="/loja" className="px-4 py-2 rounded-lg bg-yellow-400/20 hover:bg-yellow-400/40 transition">
+          Loja
+        </Link>
+        <Link href="/contato" className="px-4 py-2 rounded-lg bg-yellow-400/20 hover:bg-yellow-400/40 transition">
+          Contato
+        </Link>
+      </nav>
     </header>
   );
 }
-
-
