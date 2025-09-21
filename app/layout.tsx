@@ -5,17 +5,7 @@ import Footer from "@/components/site/Footer";
 export const metadata: Metadata = {
   title: "ECOSSISTEMA 5ESTRELAS",
   description: "Micélio tecnológico de apps, conteúdo e experiências 5⭐",
-  openGraph: {
-    title: "ECOSSISTEMA 5ESTRELAS",
-    description: "Micélio tecnológico de apps, conteúdo e experiências 5⭐",
-    images: ["/logo-5estrelas.png", "/brain-fractal.png"],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "ECOSSISTEMA 5ESTRELAS",
-    description: "Micélio tecnológico de apps, conteúdo e experiências 5⭐",
-    images: ["/logo-5estrelas.png"],
-  },
+  icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -23,12 +13,43 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="pt-BR">
       <head>
         <style>{`
-          .estrela-piscando {
+          /* Estrelas girando em círculo */
+          .estrela-circulo {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto;
+            animation: spin 6s linear infinite;
+          }
+          .estrela-circulo span {
+            position: absolute;
+            font-size: 24px;
             animation: blink 1.5s infinite alternate;
+          }
+          .estrela-circulo span:nth-child(1) { top: 0; left: 45%; }
+          .estrela-circulo span:nth-child(2) { top: 20%; left: 85%; }
+          .estrela-circulo span:nth-child(3) { top: 70%; left: 85%; }
+          .estrela-circulo span:nth-child(4) { top: 100%; left: 45%; }
+          .estrela-circulo span:nth-child(5) { top: 70%; left: 0; }
+          .estrela-circulo span:nth-child(6) { top: 20%; left: 0; }
+
+          /* Central final */
+          .estrela-central {
+            font-size: 36px;
+            animation: pulse 2s infinite;
+          }
+
+          @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
           }
           @keyframes blink {
             from { opacity: 1; }
-            to { opacity: 0.4; }
+            to { opacity: 0.3; }
+          }
+          @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.3); opacity: 0.6; }
           }
         `}</style>
       </head>
@@ -43,25 +64,33 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             backgroundAttachment: "fixed",
           }}
         >
-          {/* Cabeçalho fixo com degradê dourado */}
-          <header className="sticky top-0 z-20 flex items-center justify-between px-6 py-3 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 backdrop-blur border-b border-yellow-700/30">
-            <div className="flex items-center gap-2 font-extrabold text-lg">
-              <span className="estrela-piscando">⭐</span>
-              <span>ECOSSISTEMA 5ESTRELAS</span>
+          {/* Cabeçalho expandido */}
+          <header className="sticky top-0 z-20 flex flex-col items-center py-6 bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-600 shadow-lg">
+            {/* Logomarca animada */}
+            <div className="estrela-circulo">
+              <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+              <div className="estrela-central">⭐</div>
             </div>
-            <nav className="flex items-center gap-4">
-              <a href="/blog" className="px-3 py-1 rounded-lg bg-white/10 backdrop-blur hover:bg-white/20 transition">Blog</a>
-              <a href="/loja" className="px-3 py-1 rounded-lg bg-white/10 backdrop-blur hover:bg-white/20 transition">Loja</a>
-              <a href="/contato" className="px-3 py-1 rounded-lg bg-white/10 backdrop-blur hover:bg-white/20 transition">Contato</a>
+            <h1 className="mt-2 text-xl font-extrabold">ECOSSISTEMA 5ESTRELAS</h1>
+            <nav className="mt-4 flex items-center gap-6">
+              <a href="/blog" className="px-3 py-1 rounded-lg bg-black/20 backdrop-blur hover:bg-black/40 transition">Blog</a>
+              <a href="/loja" className="px-3 py-1 rounded-lg bg-black/20 backdrop-blur hover:bg-black/40 transition">Loja</a>
+              <a href="/contato" className="px-3 py-1 rounded-lg bg-black/20 backdrop-blur hover:bg-black/40 transition">Contato</a>
             </nav>
           </header>
 
           {/* Conteúdo */}
-          <main className="container-estrela flex-1 py-10">
-            {children}
-          </main>
+          <main className="container-estrela flex-1 py-10">{children}</main>
 
-          <Footer />
+          {/* Footer com políticas fixas */}
+          <footer className="mt-16 border-t border-black/20 bg-black/60 text-center text-sm py-6">
+            <p>© 2025 ECOSSISTEMA 5ESTRELAS — Todos os direitos reservados.</p>
+            <p className="mt-2 space-x-3">
+              <a href="/privacidade" className="underline hover:text-yellow-300">Privacidade</a>
+              <a href="/termos" className="underline hover:text-yellow-300">Termos</a>
+              <a href="/politica" className="underline hover:text-yellow-300">Política</a>
+            </p>
+          </footer>
         </div>
       </body>
     </html>
