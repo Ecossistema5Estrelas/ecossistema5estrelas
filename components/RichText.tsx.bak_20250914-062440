@@ -1,0 +1,24 @@
+﻿"use client";
+import {PortableText, PortableTextComponents} from "@portabletext/react";
+
+const components: PortableTextComponents = {
+  types: {
+    image: ({value}) => (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img src={value?.asset?.url} alt={value?.alt || ""} className="rounded-lg" />
+    ),
+  },
+  marks: {
+    link: ({value, children}) => (
+      <a href={value?.href} className="underline underline-offset-4 hover:no-underline" target="_blank" rel="noreferrer">
+        {children}
+      </a>
+    ),
+  },
+};
+
+export default function RichText({value}:{value:any}) {
+  return <PortableText value={value} components={components} />;
+}
+
+

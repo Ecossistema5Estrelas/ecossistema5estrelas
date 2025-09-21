@@ -1,70 +1,73 @@
-import Image from 'next/image'
-import { PortableTextComponents } from '@portabletext/react'
-import { urlForImage } from '@/sanity/lib/image'
+import Image from 'next/image'
+import { PortableTextComponents } from '@portabletext/react'
+import { urlForImage } from '@/sanity/lib/image'
+
+export const portableTextComponents: PortableTextComponents = {
+  types: {
+    image: ({ value }) => {
+      const imageUrl = urlForImage(value).url()
+      return (
+        <div className="my-6">
+          <Image
+            src={imageUrl}
+            alt={value.alt || 'Imagem do post'}
+            width={800}
+            height={500}
+            className="rounded-xl shadow-lg w-full h-auto object-cover"
+          />
+        </div>
+      )
+    },
+    code: ({ value }) => (
+      <pre className="bg-gray-900 text-green-300 p-4 rounded-lg overflow-x-auto text-sm my-4">
+        <code>{value.code}</code>
+      </pre>
+    ),
+  },
+
+  block: {
+    h1: ({ children }) => <h1 className="text-3xl font-bold mt-8 mb-4">{children}</h1>,
+    h2: ({ children }) => <h2 className="text-2xl font-semibold mt-6 mb-3">{children}</h2>,
+    h3: ({ children }) => <h3 className="text-xl font-semibold mt-4 mb-2">{children}</h3>,
+    normal: ({ children }) => <p className="text-base leading-relaxed mb-4">{children}</p>,
+    blockquote: ({ children }) => (
+      <blockquote className="border-l-4 border-yellow-400 pl-4 italic my-4 text-zinc-300">
+        {children}
+      </blockquote>
+    ),
+  },
+
+  marks: {
+    strong: ({ children }) => <strong className="font-bold text-yellow-300">{children}</strong>,
+    em: ({ children }) => <em className="italic text-zinc-400">{children}</em>,
+    link: ({ children, value }) => {
+      const rel = !value.href.startsWith('/') ? 'noreferrer noopener' : undefined
+      return (
+        <a
+          href={value.href}
+          target="_blank"
+          rel={rel}
+          className="underline text-blue-400 hover:text-blue-600"
+        >
+          {children}
+        </a>
+      )
+    },
+  },
+
+  list: {
+    bullet: ({ children }) => <ul className="list-disc pl-6 mb-4 space-y-1">{children}</ul>,
+    number: ({ children }) => <ol className="list-decimal pl-6 mb-4 space-y-1">{children}</ol>,
+  },
+
+  listItem: {
+    bullet: ({ children }) => <li className="text-base">{children}</li>,
+    number: ({ children }) => <li className="text-base">{children}</li>,
+  },
+}
+
 
-export const portableTextComponents: PortableTextComponents = {
-  types: {
-    image: ({ value }) => {
-      const imageUrl = urlForImage(value).url()
-      return (
-        <div className="my-6">
-          <Image
-            src={imageUrl}
-            alt={value.alt || 'Imagem do post'}
-            width={800}
-            height={500}
-            className="rounded-xl shadow-lg w-full h-auto object-cover"
-          />
-        </div>
-      )
-    },
-    code: ({ value }) => (
-      <pre className="bg-gray-900 text-green-300 p-4 rounded-lg overflow-x-auto text-sm my-4">
-        <code>{value.code}</code>
-      </pre>
-    ),
-  },
-
-  block: {
-    h1: ({ children }) => <h1 className="text-3xl font-bold mt-8 mb-4">{children}</h1>,
-    h2: ({ children }) => <h2 className="text-2xl font-semibold mt-6 mb-3">{children}</h2>,
-    h3: ({ children }) => <h3 className="text-xl font-semibold mt-4 mb-2">{children}</h3>,
-    normal: ({ children }) => <p className="text-base leading-relaxed mb-4">{children}</p>,
-    blockquote: ({ children }) => (
-      <blockquote className="border-l-4 border-yellow-400 pl-4 italic my-4 text-zinc-300">
-        {children}
-      </blockquote>
-    ),
-  },
-
-  marks: {
-    strong: ({ children }) => <strong className="font-bold text-yellow-300">{children}</strong>,
-    em: ({ children }) => <em className="italic text-zinc-400">{children}</em>,
-    link: ({ children, value }) => {
-      const rel = !value.href.startsWith('/') ? 'noreferrer noopener' : undefined
-      return (
-        <a
-          href={value.href}
-          target="_blank"
-          rel={rel}
-          className="underline text-blue-400 hover:text-blue-600"
-        >
-          {children}
-        </a>
-      )
-    },
-  },
-
-  list: {
-    bullet: ({ children }) => <ul className="list-disc pl-6 mb-4 space-y-1">{children}</ul>,
-    number: ({ children }) => <ol className="list-decimal pl-6 mb-4 space-y-1">{children}</ol>,
-  },
-
-  listItem: {
-    bullet: ({ children }) => <li className="text-base">{children}</li>,
-    number: ({ children }) => <li className="text-base">{children}</li>,
-  },
-}
+export default portableTextComponents;
 
 
-export default portableTextComponents;
+

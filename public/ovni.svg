@@ -1,0 +1,9 @@
+﻿<svg xmlns=""http://www.w3.org/2000/svg"" viewBox=""0 0 200 120"">
+  <ellipse cx=""100"" cy=""80"" rx=""70"" ry=""20"" fill=""#999""/>
+  <ellipse cx=""100"" cy=""70"" rx=""50"" ry=""15"" fill=""#bbb""/>
+  <circle cx=""100"" cy=""60"" r=""25"" fill=""#ddd""/>
+  <circle cx=""70"" cy=""80"" r=""4"" fill=""#ffe680""/>
+  <circle cx=""100"" cy=""80"" r=""4"" fill=""#ffe680""/>
+  <circle cx=""130"" cy=""80"" r=""4"" fill=""#ffe680""/>
+  <title>Disco voador</title>
+</svg>

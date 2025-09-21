@@ -1,4 +1,4 @@
-﻿export default function Hero() {
+export default function Hero() {
   return (
     <section className="relative overflow-hidden rounded-2xl p-8 md:p-12">
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-purple-600 via-fuchsia-500 to-amber-400 opacity-20 dark:opacity-25" />
@@ -27,3 +27,6 @@
     </section>
   );
 }
+
+
+

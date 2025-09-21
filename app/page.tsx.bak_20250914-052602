@@ -1,0 +1,22 @@
+﻿import Link from "next/link";
+
+export default function Page() {
+  return (
+    <main className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-yellow-100 via-yellow-300 to-yellow-500 text-neutral-900 p-8">
+      <div className="flex gap-1 mb-4">
+        {["⭐","⭐","⭐","⭐","⭐"].map((star, i) => (
+          <span key={i} className={`text-yellow-${(i+1)%2==0 ? '300' : '400'} text-2xl animate-bounce delay-[${i * 150}ms]`}>{star}</span>
+        ))}
+      </div>
+      <h1 className="text-4xl font-bold mb-2">✨ ECOSSISTEMA 5ESTRELAS</h1>
+      <p className="text-lg opacity-90 mb-8">Escolha onde quer navegar:</p>
+      <nav className="flex justify-center gap-4 mb-6 text-sm font-medium underline underline-offset-4">
+        <Link href="/blog">📚 Blog</Link>
+        <Link href="/loja">🛒 Loja</Link>
+        <Link href="/dashboard">📊 Dashboard</Link>
+        <Link href="/contato">✉️ Contato</Link>
+      </nav>
+    </main>
+  );
+}
+

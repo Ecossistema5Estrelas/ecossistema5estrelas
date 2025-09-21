@@ -1,0 +1,7 @@
+﻿/* styles/tokens.css */
+:root{
+  --gold: #d4af37; /* dourado padrão (ajuste aqui, 1 ponto de verdade) */
+  --btn-fg: #111;
+  --btn-bg: var(--gold);
+  --btn-fg-ghost: var(--gold);
+}

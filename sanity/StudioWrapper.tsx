@@ -1,4 +1,4 @@
-// @ts-nocheck
+﻿// @ts-nocheck
 "use client";
 import { Studio } from "sanity";
 import config from "./sanity.config";
@@ -6,3 +6,4 @@ import config from "./sanity.config";
 export default function StudioWrapper() {
   return <Studio config={config} />;
 }
+

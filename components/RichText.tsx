@@ -20,3 +20,6 @@ const components: PortableTextComponents = {
 export default function RichText({value}:{value:any}) {
   return <PortableText value={value} components={components} />;
 }
+
+
+

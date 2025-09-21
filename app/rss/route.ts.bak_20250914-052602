@@ -1,0 +1,37 @@
+﻿import { NextResponse } from "next/server";
+import { sanityClient } from "@/lib/sanity.client";
+import { groq } from "next-sanity";
+
+export const revalidate = 3600;
+
+export async function GET() {
+  const base = "https://ecossistema5estrelas.org";
+  const posts = await sanityClient.fetch(groq`
+    *[_type=="post"] | order(publishedAt desc)[0...50]{
+      title, excerpt, "slug": slug.current, publishedAt
+    }
+  `);
+
+  const items = posts.map((p:any)=>`
+    <item>
+      <title><![CDATA[${p.title}]]></title>
+      <link>${base}/blog/${p.slug}</link>
+      <guid>${base}/blog/${p.slug}</guid>
+      <pubDate>${new Date(p.publishedAt).toUTCString()}</pubDate>
+      <description><![CDATA[${p.excerpt ?? ""}]]></description>
+    </item>
+  `).join("");
+
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+  <rss version="2.0">
+    <channel>
+      <title>ECOSSISTEMA 5ESTRELAS â€” Blog</title>
+      <link>${base}/blog</link>
+      <description>Novidades e guias</description>
+      ${items}
+    </channel>
+  </rss>`;
+
+  return new NextResponse(xml, { headers: { "Content-Type": "application/rss+xml; charset=utf-8" } });
+}
+

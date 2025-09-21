@@ -8,3 +8,6 @@ export const qPostBySlug = groq`*[_type=="post" && slug.current==$slug][0]{
   _id, title, excerpt, publishedAt, content, "slug": slug.current,
   author->{name}
 }`;
+
+
+

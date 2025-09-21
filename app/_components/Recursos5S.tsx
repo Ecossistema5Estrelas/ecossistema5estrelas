@@ -1,4 +1,4 @@
-﻿function Card({title,desc}:{title:string;desc:string}) {
+function Card({title,desc}:{title:string;desc:string}) {
   return (
     <div className="card">
       <h3 className="text-xl font-extrabold">{title}</h3>
@@ -15,3 +15,6 @@ export default function Recursos5S(){
     </section>
   );
 }
+
+
+

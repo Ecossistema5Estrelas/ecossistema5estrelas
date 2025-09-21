@@ -1,20 +1,21 @@
-// @ts-nocheck
-// sanity/lib/fetch.ts
-import { client } from './clients'
-import type { QueryParams } from '@sanity/client'
-
-type SanityFetchParams<T = unknown> = {
-  query: string
-  params?: QueryParams
+﻿// @ts-nocheck
+// sanity/lib/fetch.ts
+import { client } from './clients'
+import type { QueryParams } from '@sanity/client'
+
+type SanityFetchParams<T = unknown> = {
+  query: string
+  params?: QueryParams
+}
+
+export async function sanityFetch<T = unknown>({
+  query,
+  params,
+}: SanityFetchParams<T>): Promise<T> {
+  // Chama o overload sem params quando nÃ£o houver parÃ¢metros
+  if (params === undefined) {
+    return client.fetch<T>(query)
+  }
+  return client.fetch<T>(query, params)
 }
 
-export async function sanityFetch<T = unknown>({
-  query,
-  params,
-}: SanityFetchParams<T>): Promise<T> {
-  // Chama o overload sem params quando não houver parâmetros
-  if (params === undefined) {
-    return client.fetch<T>(query)
-  }
-  return client.fetch<T>(query, params)
-}

@@ -1,0 +1,31 @@
+﻿import Link from 'next/link'
+
+export default function HeaderNav() {
+  return (
+    <header className="nav-5e">
+      <div className="nav-5e__inner flex items-center justify-between gap-4">
+        {/* Marca */}
+        <Link href="/" className="flex items-center gap-2 group">
+          <span className="text-xl sm:text-2xl font-extrabold tracking-tight">
+            ECOSSISTEMA <span className="text-purple-300 group-hover:text-purple-200 transition">5ESTRELAS</span>
+          </span>
+          <span className="text-yellow-300 text-xl sm:text-2xl" aria-hidden>⭐</span>
+        </Link>
+
+        {/* Grade de botões */}
+        <nav className="w-full sm:w-auto">
+          <ul className="nav-5e__grid">
+            <li><Link href="/" className="btn-5e btn-5e--tile" aria-label="Home"><span className="btn-5e__emoji">🏠</span><span className="btn-5e__label">Home</span></Link></li>
+            <li><Link href="/blog" className="btn-5e btn-5e--tile" aria-label="Blog"><span className="btn-5e__emoji">📚</span><span className="btn-5e__label">Blog</span></Link></li>
+            <li><Link href="/contato" className="btn-5e btn-5e--tile" aria-label="Contato"><span className="btn-5e__emoji">📬</span><span className="btn-5e__label">Contato</span></Link></li>
+            <li><Link href="/sobre" className="btn-5e btn-5e--tile" aria-label="Sobre"><span className="btn-5e__emoji">ℹ️</span><span className="btn-5e__label">Sobre</span></Link></li>
+            <li><Link href="/dashboard" className="btn-5e btn-5e--tile" aria-label="Dashboard"><span className="btn-5e__emoji">👤</span><span className="btn-5e__label">Dashboard</span></Link></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  )
+}
+
+
+

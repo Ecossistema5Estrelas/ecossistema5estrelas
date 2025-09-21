@@ -1,0 +1,37 @@
+﻿// components/EmojiButton.tsx
+import Link from 'next/link'
+
+type Props = {
+  emoji: string
+  label: string
+  href?: string
+  onClick?: () => void
+  size?: 'md' | 'lg'
+  className?: string
+}
+
+export default function EmojiButton({ emoji, label, href, onClick, size = 'lg', className = '' }: Props) {
+  const cls = `btn-5e ${size === 'lg' ? 'btn-5e--lg' : ''} ${className}`
+  const content = (
+    <>
+      <span className="btn-5e__emoji" aria-hidden>{emoji}</span>
+      <span className="btn-5e__label">{label}</span>
+    </>
+  )
+
+  if (href) {
+    return (
+      <Link href={href} className={cls} aria-label={label}>
+        {content}
+      </Link>
+    )
+  }
+
+  return (
+    <button type="button" className={cls} onClick={onClick} aria-label={label}>
+      {content}
+    </button>
+  )
+}
+
+

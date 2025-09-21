@@ -1,13 +1,16 @@
-import React from 'react'
+import React from 'react'
+
+export const Loader = () => {
+  return (
+    <div className="flex items-center justify-center py-8">
+      <div className="w-6 h-6 border-4 border-t-transparent border-white rounded-full animate-spin" />
+    </div>
+  )
+}
+
+export default Loader
+
 
-export const Loader = () => {
-  return (
-    <div className="flex items-center justify-center py-8">
-      <div className="w-6 h-6 border-4 border-t-transparent border-white rounded-full animate-spin" />
-    </div>
-  )
-}
 
-export default Loader
 
 

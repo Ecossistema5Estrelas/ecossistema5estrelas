@@ -1,11 +1,12 @@
-// @ts-nocheck
-// app/schemaTypes/categoryType.ts
+﻿// @ts-nocheck
+// app/schemaTypes/categoryType.ts
+
+export interface Category {
+  _id: string
+  title: string
+  slug: {
+    current: string
+  }
+}
 
-export interface Category {
-  _id: string
-  title: string
-  slug: {
-    current: string
-  }
-}
 

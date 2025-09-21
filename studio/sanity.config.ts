@@ -1,4 +1,4 @@
-// @ts-nocheck
+﻿// @ts-nocheck
 import { defineConfig } from "sanity";
 import { visionTool } from "@sanity/vision";
 import { structureTool } from "sanity/structure";
@@ -13,3 +13,4 @@ export default defineConfig({
   plugins: [structureTool(), visionTool()],
   schema: { types: schemas },
 });
+

@@ -14,3 +14,6 @@ export const postBySlugQuery = `*[_type=="post" && slug.current==$slug][0]{
   "author": author->name,
   categories[]->{"title": title, "slug": slug.current}, tags
 }`;
+
+
+

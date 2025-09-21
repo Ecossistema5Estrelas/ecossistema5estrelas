@@ -1,31 +1,32 @@
-// @ts-nocheck
-// app/schemaTypes/blockContentType.ts
-
-export interface BlockText {
-  _type: 'block'
-  _key: string
-  children: {
-    _key: string
-    _type: 'span'
-    marks: string[]
-    text: string
-  }[]
-  markDefs: {
-    _key: string
-    _type: 'link'
-    href: string
-  }[]
-  style: string
-}
-
-export interface BlockImage {
-  _type: 'image'
-  _key: string
-  asset: {
-    _ref: string
-    _type: 'reference'
-  }
-  alt?: string
-}
-
+﻿// @ts-nocheck
+// app/schemaTypes/blockContentType.ts
+
+export interface BlockText {
+  _type: 'block'
+  _key: string
+  children: {
+    _key: string
+    _type: 'span'
+    marks: string[]
+    text: string
+  }[]
+  markDefs: {
+    _key: string
+    _type: 'link'
+    href: string
+  }[]
+  style: string
+}
+
+export interface BlockImage {
+  _type: 'image'
+  _key: string
+  asset: {
+    _ref: string
+    _type: 'reference'
+  }
+  alt?: string
+}
+
 export type BlockContent = (BlockText | BlockImage)[]
+

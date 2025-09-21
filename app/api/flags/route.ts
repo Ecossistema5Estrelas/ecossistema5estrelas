@@ -1,4 +1,4 @@
-﻿import { NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 
@@ -63,3 +63,6 @@ export async function DELETE(req: Request) {
   await writeFlags(flags);
   return NextResponse.json({ ok: true, flags });
 }
+
+
+

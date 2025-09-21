@@ -1,0 +1,17 @@
+@import "../styles/tokens.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+
+@import "../styles/components/buttons.css";
+
+
+/* tema brand gradient */
+:root{ --brand-gradient: linear-gradient(135deg,#0e7a54 0%,#11a36a 50%,#0b6144 100%);}
+body{
+  background:
+    radial-gradient(1200px 600px at 100% -10%, rgba(14,122,84,.12), transparent 60%),
+    linear-gradient(180deg,#0a1f1a 0%, #061511 100%);
+}

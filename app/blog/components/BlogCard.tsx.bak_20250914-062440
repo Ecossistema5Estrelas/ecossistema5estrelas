@@ -1,0 +1,18 @@
+﻿export type BlogCardProps = {
+  post?: any;
+  title?: string;
+  description?: string;
+  href?: string;
+};
+export default function BlogCard(props: BlogCardProps) {
+  const title = props.title ?? props.post?.title ?? "Título";
+  const desc  = props.description ?? props.post?.description ?? "Descrição";
+  return (
+    <article className="rounded-xl border p-4">
+      <h3 className="font-semibold">{title}</h3>
+      <p className="opacity-70">{desc}</p>
+    </article>
+  );
+}
+
+

@@ -16,3 +16,6 @@ export default function BrandMark({ className = "", size = 28, color = "#facc15"
     </svg>
   );
 }
+
+
+

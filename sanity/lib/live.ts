@@ -1,5 +1,6 @@
-// @ts-nocheck
-// app/sanity/lib/live.ts
+﻿// @ts-nocheck
+// app/sanity/lib/live.ts
+
+export const useLiveMode = false
 
-export const useLiveMode = false
 

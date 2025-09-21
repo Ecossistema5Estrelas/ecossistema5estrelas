@@ -1,4 +1,4 @@
-@tailwind base;
+﻿@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -8,7 +8,7 @@ html, body { margin: 0; padding: 0; }
 :root { color-scheme: dark; }
 html, body { background: #000; }
 
-/* Tipografia base legível */
+/* Tipografia base legÃ­vel */
 @layer base {
   html { font-size: 16px; }
   body { @apply text-[17px] leading-7; }
@@ -57,7 +57,7 @@ body.site-root::before {
   .nav-5e__grid { @apply grid grid-cols-2 sm:grid-cols-5 gap-2 sm:gap-3; }
 }
 
-/* ===== BOTÕES 5ESTRELAS ===== */
+/* ===== BOTÃ•ES 5ESTRELAS ===== */
 @layer components {
   .btn-5e {
     @apply inline-flex flex-col items-center justify-center gap-1

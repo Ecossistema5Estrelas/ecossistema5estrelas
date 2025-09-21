@@ -1,0 +1,32 @@
+﻿"use client";
+
+import React, { createContext, useContext, useEffect, useState } from "react";
+
+type MobileCtxValue = { isMobile: boolean };
+const MobileCtx = createContext<MobileCtxValue | null>(null);
+
+export function MobileProvider({ children }: { children: React.ReactNode }) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 768px)");
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
+  return <MobileCtx.Provider value={{ isMobile }}>{children}</MobileCtx.Provider>;
+}
+
+export function useMobile() {
+  const ctx = useContext(MobileCtx);
+  return ctx ?? { isMobile: false };
+}
+
+export default function MobileView({ children }: { children: React.ReactNode }) {
+  const { isMobile } = useMobile();
+  // Ajuste esta lógica para o seu layout real:
+  return <div className={isMobile ? "block md:hidden" : "hidden md:block"}>{children}</div>;
+}
+

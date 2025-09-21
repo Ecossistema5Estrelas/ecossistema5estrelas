@@ -1,0 +1,19 @@
+﻿import * as React from "react";
+import BrandMark from "@/components/BrandMark";
+
+type Props = { size?: number; showText?: boolean; className?: string };
+
+export default function Logo({ size = 32, showText = false, className = "" }: Props) {
+  return (
+    <div className={`flex items-center gap-2 ${className}`}>
+      <BrandMark size={size} className="drop-shadow-[0_0_6px_rgba(250,204,21,0.75)]" />
+      {showText && (
+        <div className="leading-none">
+          <div className="text-base font-bold tracking-tight">ecossistema</div>
+          <div className="text-base font-bold">5estrelas</div>
+        </div>
+      )}
+    </div>
+  );
+}
+

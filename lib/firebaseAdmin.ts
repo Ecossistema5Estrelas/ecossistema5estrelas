@@ -1,4 +1,4 @@
-﻿import * as admin from "firebase-admin";
+import * as admin from "firebase-admin";
 
 type Cred = admin.ServiceAccount;
 
@@ -31,3 +31,6 @@ export function getAdminApp() {
 export function getDb() {
   return getAdminApp().firestore();
 }
+
+
+

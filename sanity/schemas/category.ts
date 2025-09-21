@@ -1,4 +1,4 @@
-// @ts-nocheck
+﻿// @ts-nocheck
 import { defineType, defineField } from "sanity";
 
 export default defineType({
@@ -10,4 +10,5 @@ export default defineType({
     defineField({ name: "slug", title: "Slug", type: "slug", options: { source: "title" }, validation: r=>r.required() }),
   ],
 });
+
 

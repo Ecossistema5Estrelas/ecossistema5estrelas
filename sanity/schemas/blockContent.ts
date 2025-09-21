@@ -1,4 +1,4 @@
-// @ts-nocheck
+﻿// @ts-nocheck
 import { defineType, defineArrayMember } from "sanity";
 
 const blockContent = defineType({
@@ -17,3 +17,4 @@ const blockContent = defineType({
 });
 
 export default blockContent;
+

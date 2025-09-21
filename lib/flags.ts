@@ -1,4 +1,4 @@
-﻿import { promises as fs } from "node:fs";
+import { promises as fs } from "node:fs";
 import path from "node:path";
 
 export type Flag = { name: string; enabled: boolean };
@@ -17,3 +17,6 @@ export async function isEnabled(name: string): Promise<boolean> {
   const flags = await getFlags();
   return !!flags.find(f => f.name === name && f.enabled);
 }
+
+
+

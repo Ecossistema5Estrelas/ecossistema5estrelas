@@ -1,8 +1,11 @@
-export default function UfoLoader() {
-  return (
-    <div className="grid place-items-center py-10">
-      <div className="animate-bounce text-5xl" aria-label="Carregando">🛸</div>
-    </div>
-  )
-}
+export default function UfoLoader() {
+  return (
+    <div className="grid place-items-center py-10">
+      <div className="animate-bounce text-5xl" aria-label="Carregando">🛸</div>
+    </div>
+  )
+}
+
+
+
 

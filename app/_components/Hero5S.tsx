@@ -1,4 +1,4 @@
-﻿export default function Hero5S() {
+export default function Hero5S() {
   return (
     <section className="relative overflow-hidden rounded-3xl p-8 md:p-12">
       <div className="absolute inset-0 pointer-events-none">
@@ -14,3 +14,6 @@
     </section>
   );
 }
+
+
+

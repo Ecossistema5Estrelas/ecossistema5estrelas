@@ -1,0 +1,11 @@
+﻿import Hero from "@/components/hero";
+export default function Page(){
+  return (
+    <>
+      <Hero title="Política de Privacidade" subtitle="Transparência sobre dados" />
+      <section className="py-6"><div className="prose prose-slate"><p>Esta é uma política de privacidade padrão. Adapte para LGPD.</p></div></section>
+    </>
+  );
+}
+
+

@@ -1,0 +1,25 @@
+﻿import Logo from "@/components/Logo";
+import BrandMark from "@/components/BrandMark";
+import Link from "next/link";
+import BrandStars from "@/components/brand/brand-stars";
+export default function SiteHeader(){
+  return (
+    <header className="w-full border-b">
+      <div className="container-5e flex items-center justify-between py-3">
+        <Link href="/" className="flex items-center gap-2 font-extrabold text-xl">
+          <span>ecossistema5estrelas</span>
+          <span className="text-yellow-400"><BrandStars /></span>
+        </Link>
+        <nav className="text-sm flex gap-4">
+          <Link href="/loja">Loja</Link>
+          <Link href="/blog">Blog</Link>
+          <Link href="/sobre">Sobre</Link>
+          <Link href="/contato">Contato</Link>
+        </nav>
+      </div>
+    </header>
+  );
+}
+
+
+

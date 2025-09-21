@@ -7,3 +7,6 @@ export async function GET() {
     at: new Date().toISOString()
   });
 }
+
+
+

@@ -1,0 +1,16 @@
+﻿import * as React from "react";
+type Variant = "primary" | "ghost" | "link";
+const base = "inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-medium shadow-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-cyan-400/70";
+const variants: Record<Variant, string> = {
+  primary: "bg-gradient-to-r from-[--brand-start] to-[--brand-end] text-white hover:opacity-95 active:opacity-85",
+  ghost:   "bg-transparent text-slate-900 dark:text-slate-100 hover:bg-black/5 dark:hover:bg-white/10",
+  link:    "bg-transparent underline underline-offset-4 hover:no-underline text-[--brand-start]"
+};
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> { variant?: Variant; className?: string; }
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className = "", variant = "primary", ...props }, ref) => (
+    <button ref={ref} className={[base, variants[variant], className].join(" ")} {...props} />
+  )
+);
+Button.displayName = "Button";
+

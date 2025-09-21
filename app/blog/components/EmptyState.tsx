@@ -1,3 +1,6 @@
 export default function EmptyState({ children }: any) {
   return <p className="opacity-70">{children ?? "Nenhum resultado encontrado."}</p>;
 }
+
+
+

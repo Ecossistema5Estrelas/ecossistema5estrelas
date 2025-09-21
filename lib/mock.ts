@@ -22,25 +22,25 @@ export const MOCK_POSTS: PostFull[] = [
     _id: "mock-1",
     title: "Bem-vindo ao ECOSSISTEMA 5ESTRELAS",
     slug: "bem-vindo-ao-ecossistema",
-    excerpt: "Visão geral do projeto, apps e plano de monetização.",
+    excerpt: "VisÃ£o geral do projeto, apps e plano de monetizaÃ§Ã£o.",
     publishedAt: new Date().toISOString(),
     cover: "",
-    author: "Equipe 5⭐",
+    author: "Equipe 5â­",
     categories: [{ title: "Institucional", slug: "institucional" }],
     tags: ["apresentacao", "ecosistema"],
     body: [
-      { _type: "block", children: [{ _type: "span", text: "Olá, mundo 5⭐!" }] },
+      { _type: "block", children: [{ _type: "span", text: "OlÃ¡, mundo 5â­!" }] },
     ],
   },
   {
     _id: "mock-2",
-    title: "Segurança Digital — Primeiros Passos",
+    title: "SeguranÃ§a Digital â€” Primeiros Passos",
     slug: "seguranca-digital",
-    excerpt: "Guia básico de proteção de contas, senhas e 2FA.",
+    excerpt: "Guia bÃ¡sico de proteÃ§Ã£o de contas, senhas e 2FA.",
     publishedAt: new Date(Date.now() - 86400000).toISOString(),
     cover: "",
-    author: "Equipe 5⭐",
-    categories: [{ title: "Segurança", slug: "seguranca" }],
+    author: "Equipe 5â­",
+    categories: [{ title: "SeguranÃ§a", slug: "seguranca" }],
     tags: ["seguranca", "guia"],
     body: [
       { _type: "block", children: [{ _type: "span", text: "Ative 2FA agora!" }] },
@@ -54,3 +54,6 @@ export const MOCK_POSTS: PostFull[] = [
 export function mockFindBySlug(slug: string) {
   return MOCK_POSTS.find((p) => p.slug === slug) || null;
 }
+
+
+

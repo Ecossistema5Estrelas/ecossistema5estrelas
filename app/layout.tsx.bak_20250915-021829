@@ -1,0 +1,36 @@
+import "./globals.css";
+import type { Metadata } from "next";
+import { headers } from "next/headers";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const h = await headers();
+  const env = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ecossistema5estrelas.org";
+  const proto = h.get("x-forwarded-proto") ?? (process.env.NODE_ENV === "development" ? "http" : "https");
+  const host  = h.get("x-forwarded-host") ?? h.get("host") ?? (new URL(env)).host;
+  const base  = new URL(env || (proto + "://" + host));
+
+  return {
+    metadataBase: base,
+    title: "ECOSSISTEMA 5ESTRELAS",
+    description: "Plataforma inteligente e monetizável",
+    alternates: { canonical: "/" },
+    openGraph: { siteName: "ECOSSISTEMA 5ESTRELAS", url: base, type: "website" },
+    twitter:   { card: "summary_large_image" }
+  };
+}
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="pt-BR">
+      <head>`r`n        <meta charSet="utf-8" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3817850874366352"
+          crossOrigin="anonymous"></script>
+      </head>
+      <body>{children}</body>
+    </html>
+  );
+}
+
+

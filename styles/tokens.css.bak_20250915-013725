@@ -1,0 +1,29 @@
+:root{
+  --brand-50:#e6f4ef;
+  --brand-100:#cce8df;
+  --brand-200:#99d1bf;
+  --brand-300:#66bb9f;
+  --brand-400:#33a47f;
+  --brand-500:#0e7a54;  /* verde principal */
+  --brand-600:#0c6b4b;  /* hover/ativo */
+  --brand-700:#0b6144;
+  --brand-800:#094e3a;
+  --brand-900:#073a2b;
+
+  --brand-gradient: linear-gradient(135deg,#0e7a54 0%,#11a36a 50%,#0b6144 100%);
+
+  /* botões baseados no brand */
+--btn-bg: var(--brand-600);
+  --btn-bg-hover: var(--brand-700);
+  --btn-fg: #ffffff;
+--btn-fg-ghost: var(--brand-600);
+}
+/* styles/tokens.css */
+:root{
+  --gold: var(--brand-600); /* dourado padrão (ajuste aqui, 1 ponto de verdade) */
+  --btn-fg: #111;
+--btn-bg: var(--brand-600);
+--btn-fg-ghost: var(--brand-600);
+}
+
+

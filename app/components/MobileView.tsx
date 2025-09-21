@@ -29,3 +29,5 @@ export default function MobileView({ children }: { children: React.ReactNode }) 
   // Ajuste esta lógica para o seu layout real:
   return <div className={isMobile ? "block md:hidden" : "hidden md:block"}>{children}</div>;
 }
+
+

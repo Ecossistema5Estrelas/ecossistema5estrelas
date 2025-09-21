@@ -1,4 +1,4 @@
-﻿import { NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ecossistema5estrelas.org";
 const urls = ["/loja", "/","/blog","/sobre","/contato","/politicas","/politicas/privacidade","/politicas/termos","/obrigado","/apps"];
@@ -22,5 +22,8 @@ ${urls.map(u => `
   return new NextResponse(xml, { headers: { "Content-Type": "application/xml; charset=utf-8",
     "Cache-Control":"public, s-maxage=300, stale-while-revalidate=86400" }});
 }
+
+
+
 
 

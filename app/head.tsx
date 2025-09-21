@@ -1,4 +1,4 @@
-﻿export default function Head() {
+export default function Head() {
   const site =
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://ecossistema5estrelas.org";
 
@@ -19,4 +19,7 @@
     </>
   );
 }
+
+
+
 

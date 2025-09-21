@@ -1,4 +1,4 @@
-﻿import { NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ecossistema5estrelas.org";
 
@@ -32,4 +32,7 @@ export async function GET() {
 </rss>`;
   return new NextResponse(xml, { headers: { "Content-Type": "application/rss+xml; charset=utf-8" }});
 }
+
+
+
 

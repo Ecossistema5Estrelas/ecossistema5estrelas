@@ -14,3 +14,6 @@ export default function BlogCard(props: BlogCardProps) {
     </article>
   );
 }
+
+
+

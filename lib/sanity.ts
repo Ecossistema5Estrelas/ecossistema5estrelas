@@ -12,3 +12,6 @@ export const client = hasSanity
       useCdn: process.env.SANITY_USE_CDN === "true",
     })
   : (null as any);
+
+
+

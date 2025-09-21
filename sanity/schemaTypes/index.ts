@@ -1,7 +1,8 @@
-// @ts-nocheck
-// app/schemaTypes/index.ts
-
-export * from './authorType'
-export * from './categoryType'
-export * from './blockContentType'
+﻿// @ts-nocheck
+// app/schemaTypes/index.ts
+
+export * from './authorType'
+export * from './categoryType'
+export * from './blockContentType'
 export * from './postType'
+

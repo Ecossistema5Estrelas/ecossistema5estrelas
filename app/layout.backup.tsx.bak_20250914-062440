@@ -1,0 +1,23 @@
+﻿import './globals.css';
+import Footer from '@/components/Footer';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'ECOSSISTEMA 5ESTRELAS',
+  description: 'Site oficial do ECOSSISTEMA 5ESTRELAS',
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang='pt-BR'>
+      <body className='min-h-screen bg-white text-black'>
+        <div className='min-h-screen flex flex-col'>
+          <main className='flex-1'>{children}</main>
+          <Footer />
+        </div>
+      </body>
+    </html>
+  );
+}
+
+

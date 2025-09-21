@@ -1,16 +1,16 @@
-/* Camada fixa com degradê vibrante */
+/* Camada fixa com degradÃª vibrante */
 body::before{
   content:"";
   position:fixed; inset:0; z-index:-1;
   background: linear-gradient(135deg,
-    #8b5cf6 0%,   /* lilás vivo (violet-500) */
+    #8b5cf6 0%,   /* lilÃ¡s vivo (violet-500) */
     #6d28d9 38%,  /* roxo intenso (violet-700) */
-    #2563eb 100%  /* azul elétrico (blue-600) */
+    #2563eb 100%  /* azul elÃ©trico (blue-600) */
   ) !important;
   background-attachment: fixed; background-size: cover;
 }
 
-/* Brilho psicodélico sutil (radiais nas bordas) */
+/* Brilho psicodÃ©lico sutil (radiais nas bordas) */
 body::after{
   content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
   background:
@@ -18,3 +18,5 @@ body::after{
     radial-gradient(900px 500px  at 110% 70%, rgba(37,99,235,.28),  transparent 60%);
   mix-blend-mode: screen;
 }
+
+

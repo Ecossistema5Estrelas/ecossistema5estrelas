@@ -38,3 +38,5 @@ export default function Hero({ title, subtitle, className = "", children }: Prop
     </section>
   );
 }
+
+

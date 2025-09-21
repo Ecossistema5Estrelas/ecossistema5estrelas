@@ -1,4 +1,4 @@
-﻿type CardProps = { title: string; desc: string; badge?: string };
+type CardProps = { title: string; desc: string; badge?: string };
 function Card({ title, desc, badge }: CardProps) {
   return (
     <div className="card bg-white/60 dark:bg-white/[0.03]">
@@ -23,3 +23,6 @@ export default function Features() {
     </section>
   );
 }
+
+
+

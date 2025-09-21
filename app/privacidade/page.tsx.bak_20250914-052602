@@ -1,0 +1,25 @@
+﻿import Link from "next/link";
+
+export default function Page() {
+  return (
+    <main className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-yellow-200 via-gold-400 to-amber-600 text-neutral-900 p-8">
+      <div className="flex gap-1 mb-4 animate-pulse">
+        <span className="text-yellow-400 text-2xl animate-ping">⭐</span>
+        <span className="text-yellow-300 text-2xl animate-pulse delay-100">⭐</span>
+        <span className="text-yellow-200 text-2xl animate-pulse delay-200">⭐</span>
+        <span className="text-yellow-300 text-2xl animate-pulse delay-300">⭐</span>
+        <span className="text-yellow-400 text-2xl animate-ping delay-500">⭐</span>
+      </div>
+      <h1 className="text-4xl font-bold mb-2">🔒 Privacidade</h1>
+      <p className="text-lg opacity-90 mb-8">Esta é a página de privacidade.</p>
+      <nav className="flex justify-center gap-4 mb-6 text-sm font-medium underline underline-offset-4">
+        <Link href="/">🏠 Início</Link>
+        <Link href="/blog">📚 Blog</Link>
+        <Link href="/loja">🛒 Loja</Link>
+        <Link href="/dashboard">📊 Dashboard</Link>
+        <Link href="/contato">✉️ Contato</Link>
+      </nav>
+    </main>
+  );
+}
+

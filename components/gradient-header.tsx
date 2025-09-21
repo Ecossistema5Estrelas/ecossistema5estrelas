@@ -15,3 +15,5 @@ export function GradientHeader({ title, subtitle, icon }: Props) {
     </section>
   );
 }
+
+

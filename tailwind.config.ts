@@ -1,7 +1,18 @@
-﻿import type { Config } from "tailwindcss";
-const config: Config = {
-  content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./pages/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
-  theme: { extend: {} },
-  plugins: [],
+﻿/** @type {import('tailwindcss').Config} */
+const config = {
+  content: [
+    "./app/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}"
+  ],
+  theme: {
+    extend: {
+      animation: {
+        "pulse-slow": "pulse 4s ease-in-out infinite"
+      }
+    }
+  },
+  plugins: []
 };
+
 export default config;
+

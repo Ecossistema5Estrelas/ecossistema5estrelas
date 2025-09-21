@@ -1,21 +1,52 @@
-﻿import BotaoVoltar from "../components/BotaoVoltar";
+import BotaoVoltar from "../components/BotaoVoltar";
+
 import ObrigadoContent from './ObrigadoContent'
+
 export const metadata = {
+
   title: 'Obrigado | ECOSSISTEMA 5ESTRELAS',
+
   description: 'Agradecimento pela sua participação no ECOSSISTEMA 5ESTRELAS.',
+
 }
+
 export default function ObrigadoPage() {
+
   return (
+
     <section className="prose prose-slate dark:prose-invert max-w-3xl mx-auto p-8">
+
       <section className="max-w-4xl mx-auto space-y-10">
+
         <ObrigadoContent />
+
         <div className="text-center">
+
           <BotaoVoltar href="/">Voltar ao Início</BotaoVoltar>
+
         </div>
+
       </section>
+
     </section>
+
   )
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

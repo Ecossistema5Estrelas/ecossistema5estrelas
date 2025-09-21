@@ -1,4 +1,4 @@
-// @ts-nocheck
+﻿// @ts-nocheck
 import { defineType, defineField } from "sanity";
 
 export default defineType({
@@ -11,4 +11,5 @@ export default defineType({
     defineField({ name: "avatar", title: "Avatar", type: "image", options: { hotspot: true } }),
   ],
 });
+
 

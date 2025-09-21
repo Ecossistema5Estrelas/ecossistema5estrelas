@@ -2,4 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-:root { color-scheme: light; }
+/* Paleta e estrutura */
+:root { --brand-yellow:#f6d33a; --brand-gold:#d9b545; --brand-green:#0a3a2a; }
+html, body { height: 100%; }
+body {
+  @apply antialiased text-neutral-900;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", Arial, sans-serif;
+}
+
+/* Fundo padronizado para todas as páginas */
+.bg-page {
+  position: relative;
+  min-height: 100dvh;
+  background:
+    radial-gradient(1000px 700px at 20% 10%, #ffe45e 0%, #ffd949 35%, #f2c530 60%, #e2b329 80%, #d1a022 100%),
+    linear-gradient(180deg, rgba(10,58,42,0.25), rgba(10,58,42,0.25));
+}
+
+/* Cards, botões, container */
+.container-estrela { @apply max-w-3xl mx-auto px-4; }
+.btn-estrela { @apply inline-flex items-center gap-2 rounded-2xl px-4 py-2 shadow-sm border border-black/10 bg-white/70 backdrop-blur hover:shadow-md transition; }
+.card-estrela { @apply rounded-2xl p-5 shadow-sm border border-black/10 bg-white/70 backdrop-blur; }
+
+/* Loader: pulsar */
+@keyframes star-pulse { 
+  0%,100% { transform: scale(0.85); filter: drop-shadow(0 0 0 rgba(0,0,0,0.2)); opacity:.8; }
+  50% { transform: scale(1.15); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25)); opacity:1; }
+}
+.animate-star { animation: star-pulse 1.2s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+.btn-estrela {
+  @apply inline-flex items-center gap-2 rounded-2xl px-4 py-2 shadow-sm
+         border border-black/10 bg-white/40 backdrop-blur
+         hover:shadow-md transition;
+}

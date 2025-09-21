@@ -10,3 +10,6 @@ export default function GradientBG({children}:{children:React.ReactNode}) {
     </div>
   );
 }
+
+
+

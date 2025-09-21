@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import React from "react";
 import FiveStars from "./FiveStars";
 
@@ -19,3 +19,5 @@ export default function Header() {
     </header>
   );
 }
+
+

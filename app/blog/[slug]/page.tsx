@@ -1,7 +1,6 @@
-export const dynamic = "force-static";
+export const dynamic = 'force-static';
+export const revalidate = false;
 export const dynamicParams = false;
-export const revalidate = 86400;
-
 // Gera as páginas estáticas a partir de app/blog/static-slugs.json
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   try {
@@ -35,3 +34,4 @@ export default async function BlogPostPage(
     </main>
   );
 }
+

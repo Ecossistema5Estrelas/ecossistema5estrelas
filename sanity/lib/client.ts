@@ -9,3 +9,4 @@ export const client = createClient({
   token,
   perspective: token ? 'previewDrafts' : 'published',
 });
+

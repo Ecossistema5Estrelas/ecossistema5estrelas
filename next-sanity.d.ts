@@ -1,4 +1,4 @@
-// next-sanity.d.ts
+﻿// next-sanity.d.ts
 
 declare module 'next-sanity' {
   import type { ClientConfig } from 'sanity'

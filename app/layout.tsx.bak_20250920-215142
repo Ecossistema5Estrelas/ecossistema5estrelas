@@ -1,0 +1,39 @@
+import "./globals.css";
+import Script from "next/script";
+import type { Metadata } from "next";
+import type { ReactNode } from "react";
+import Shell from "../components/Shell";
+
+export const metadata: Metadata = {
+  title: "ECOSSISTEMA 5ESTRELAS",
+  description: "Portal oficial do Ecossistema 5Estrelas",
+};
+
+export default function RootLayout({ children }: { children: ReactNode }) {
+  return (
+    <html lang="pt-BR">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body>
+        <Shell>{children}</Shell>
+
+        {/* AdSense – mantém apenas um snippet global */}
+        <Script
+          id="adsense"
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3817850874366352"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+      </body>
+    </html>
+  );
+}

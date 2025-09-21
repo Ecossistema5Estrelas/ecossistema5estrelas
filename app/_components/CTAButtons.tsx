@@ -1,4 +1,4 @@
-﻿type Btn = { href:string; emoji:string; label:string; tone:"amber"|"fuchsia"|"emerald" };
+type Btn = { href:string; emoji:string; label:string; tone:"amber"|"fuchsia"|"emerald" };
 const toneClass = (t:Btn["tone"]) => t==="amber"?"btn-amber":t==="fuchsia"?"btn-fuchsia":"btn-emerald";
 export default function CTAButtons(){
   const items:Btn[] = [
@@ -17,3 +17,6 @@ export default function CTAButtons(){
     </nav>
   );
 }
+
+
+

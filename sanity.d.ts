@@ -1,4 +1,4 @@
-// sanity.d.ts
+﻿// sanity.d.ts
 
 import type { Slug } from 'sanity'
 

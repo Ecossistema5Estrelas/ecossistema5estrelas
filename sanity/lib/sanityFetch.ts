@@ -1,4 +1,4 @@
-// @ts-nocheck
+﻿// @ts-nocheck
 import { createClient } from "next-sanity";
 
 export const client = createClient({
@@ -9,7 +9,7 @@ export const client = createClient({
 });
 
 /**
- * Fetch genérico e simples: aceita (query) ou (query, params).
+ * Fetch genÃ©rico e simples: aceita (query) ou (query, params).
  * Ex.: sanityFetch<Post[]>(query)
  *     sanityFetch<Post|null>(query, { slug })
  */
@@ -20,4 +20,5 @@ export async function sanityFetch<T>(
   const data = await client.fetch(query as any, params as any)
   return data as T
 }
+
 

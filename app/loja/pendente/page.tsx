@@ -2,3 +2,7 @@ export default function Pendente(){
   return <div className="max-w-3xl mx-auto px-6 py-16"><h1 className="text-3xl font-bold">🕒 Pagamento pendente</h1><p className="mt-3 opacity-80">Assim que o pagamento for confirmado, você receberá o acesso.</p></div>;
 }
 
+
+
+
+
