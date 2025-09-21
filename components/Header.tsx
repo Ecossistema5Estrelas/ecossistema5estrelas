@@ -3,19 +3,16 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="w-full flex items-center justify-between bg-[#0A1F0A] px-8 py-4 shadow-lg">
-      {/* Logomarca grande no cabeçalho */}
-      <div className="flex items-center">
-        <Image
-          src="/logo-header-ecossistema5estrelas.png"
-          alt="ECOSSISTEMA 5ESTRELAS"
-          width={380}
-          height={100}
-          priority
-        />
-      </div>
-      {/* Navegação com botões dourados translúcidos */}
-      <nav className="flex gap-6 text-yellow-400 font-semibold">
+    <header
+      className="relative w-full flex flex-col items-center justify-center px-6 py-6 shadow-lg"
+      style={{
+        backgroundImage: "url('/logo-header-ecossistema5estrelas.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* Navegação no topo */}
+      <nav className="absolute top-2 right-6 flex gap-6 text-yellow-400 font-semibold">
         <Link href="/blog" className="px-4 py-2 rounded-lg bg-yellow-400/20 hover:bg-yellow-400/40 transition">
           Blog
         </Link>
@@ -26,6 +23,18 @@ export default function Header() {
           Contato
         </Link>
       </nav>
+
+      {/* Logomarca central (se quiser manter visível por cima do fundo) */}
+      <div className="flex flex-col items-center mt-16">
+        <Image
+          src="/logo-header-ecossistema5estrelas.png"
+          alt="ECOSSISTEMA 5ESTRELAS"
+          width={600}
+          height={160}
+          priority
+          className="drop-shadow-xl"
+        />
+      </div>
     </header>
   );
 }
