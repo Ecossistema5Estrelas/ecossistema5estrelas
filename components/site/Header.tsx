@@ -10,15 +10,14 @@ export default function Header() {
         backgroundPosition: "center",
       }}
     >
-      {/* Navegação no topo direito */}
-      <nav className="absolute top-3 right-8 flex gap-6 text-yellow-400 font-semibold">
-        <Link href="/blog" className="px-4 py-2 rounded-lg bg-yellow-400/20 hover:bg-yellow-400/40 transition">
+      <nav className="absolute top-3 right-8 flex gap-6 font-semibold">
+        <Link href="/blog" className="px-4 py-2 rounded-lg bg-yellow-400/20 hover:bg-yellow-400/40 text-yellow-300 transition">
           Blog
         </Link>
-        <Link href="/loja" className="px-4 py-2 rounded-lg bg-yellow-400/20 hover:bg-yellow-400/40 transition">
+        <Link href="/loja" className="px-4 py-2 rounded-lg bg-yellow-400/20 hover:bg-yellow-400/40 text-yellow-300 transition">
           Loja
         </Link>
-        <Link href="/contato" className="px-4 py-2 rounded-lg bg-yellow-400/20 hover:bg-yellow-400/40 transition">
+        <Link href="/contato" className="px-4 py-2 rounded-lg bg-yellow-400/20 hover:bg-yellow-400/40 text-yellow-300 transition">
           Contato
         </Link>
       </nav>
