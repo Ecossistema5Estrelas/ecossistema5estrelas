@@ -33,7 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <div
-          className="relative min-h-screen bg-black text-white"
+          className="relative min-h-screen text-white"
           style={{
             backgroundImage: "url('/brain-fractal.png')",
             backgroundSize: "cover",
@@ -42,21 +42,28 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             backgroundAttachment: "fixed",
           }}
         >
-          {/* Logo centralizada no viewport */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          {/* Logomarca fixa e translúcida no fundo */}
+          <div
+            className="absolute inset-0 flex items-center justify-center"
+            style={{ zIndex: 0, pointerEvents: "none" }}
+          >
             <img
               src="/logo-5estrelas.png"
               alt="Logo 5 Estrelas"
-              className="max-w-[280px] md:max-w-[400px] drop-shadow-2xl"
+              className="w-[360px] md:w-[500px] opacity-15"
             />
           </div>
 
-          {/* Conteúdo principal com contraste */}
-          <div className="relative z-10 bg-black/50 min-h-screen flex flex-col">
-            <Header />
+          {/* Painel translúcido abre-alas */}
+          <div className="relative z-10 min-h-screen flex flex-col bg-black/50 backdrop-blur-sm">
+            <header className="sticky top-0 z-20 bg-black/30 backdrop-blur border-b border-white/10">
+              <Header />
+            </header>
+
             <main className="container-estrela flex-1 py-10">
               {children}
             </main>
+
             <Footer />
           </div>
         </div>
