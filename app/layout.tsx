@@ -1,4 +1,4 @@
-import "./globals.css";
+﻿import "./globals.css";
 import type { Metadata } from "next";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
@@ -32,23 +32,33 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
-        <div className="bg-page min-h-screen flex flex-col">
-          {/* Banner com as imagens */}
-          <header className="flex items-center justify-between px-6 py-4 bg-black">
-            <img src="/logo-5estrelas.png" alt="Logo 5 Estrelas" className="h-10" />
-            <img src="/brain-fractal.png" alt="Brain Fractal" className="h-10" />
-          </header>
+        <div
+          className="relative min-h-screen bg-black text-white"
+          style={{
+            backgroundImage: "url('/brain-fractal.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundAttachment: "fixed",
+          }}
+        >
+          {/* Logo centralizada no viewport */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <img
+              src="/logo-5estrelas.png"
+              alt="Logo 5 Estrelas"
+              className="max-w-[280px] md:max-w-[400px] drop-shadow-2xl"
+            />
+          </div>
 
-          {/* Header do site */}
-          <Header />
-
-          {/* Conteúdo principal */}
-          <main className="container-estrela flex-1 py-10">
-            {children}
-          </main>
-
-          {/* Rodapé */}
-          <Footer />
+          {/* Conteúdo principal com contraste */}
+          <div className="relative z-10 bg-black/50 min-h-screen flex flex-col">
+            <Header />
+            <main className="container-estrela flex-1 py-10">
+              {children}
+            </main>
+            <Footer />
+          </div>
         </div>
       </body>
     </html>
