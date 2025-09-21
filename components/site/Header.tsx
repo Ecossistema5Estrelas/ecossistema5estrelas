@@ -1,23 +1,40 @@
+﻿import Image from "next/image";
 import Link from "next/link";
-import Star from "@/components/icons/Star";
-import Book from "@/components/icons/Book";
-import Cart from "@/components/icons/Cart";
-import Mail from "@/components/icons/Mail";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-20 backdrop-blur bg-white/55 border-b border-black/10">
-      <nav className="container-estrela flex items-center justify-between py-3">
-        <Link href="/" className="flex items-center gap-2 font-bold">
-          <span className="inline-block w-6 h-6"><Star /></span>
-          <span>ECOSSISTEMA 5ESTRELAS</span>
+    <header
+      className="relative w-full flex flex-col items-center justify-center px-6 py-6 shadow-lg"
+      style={{
+        backgroundImage: "url('/logo-header-ecossistema5estrelas.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* Navegação no topo direito */}
+      <nav className="absolute top-3 right-8 flex gap-6 text-yellow-400 font-semibold">
+        <Link href="/blog" className="px-4 py-2 rounded-lg bg-yellow-400/20 hover:bg-yellow-400/40 transition">
+          Blog
         </Link>
-        <div className="hidden sm:flex items-center gap-2 text-sm">
-          <Link href="/blog" className="btn-estrela"><span className="w-5 h-5"><Book/></span> Blog</Link>
-          <Link href="/loja" className="btn-estrela"><span className="w-5 h-5"><Cart/></span> Loja</Link>
-          <Link href="/contato" className="btn-estrela"><span className="w-5 h-5"><Mail/></span> Contato</Link>
-        </div>
+        <Link href="/loja" className="px-4 py-2 rounded-lg bg-yellow-400/20 hover:bg-yellow-400/40 transition">
+          Loja
+        </Link>
+        <Link href="/contato" className="px-4 py-2 rounded-lg bg-yellow-400/20 hover:bg-yellow-400/40 transition">
+          Contato
+        </Link>
       </nav>
+
+      {/* Logo central visível */}
+      <div className="flex flex-col items-center mt-20">
+        <Image
+          src="/logo-header-ecossistema5estrelas.png"
+          alt="ECOSSISTEMA 5ESTRELAS"
+          width={600}
+          height={160}
+          priority
+          className="drop-shadow-2xl"
+        />
+      </div>
     </header>
   );
 }
