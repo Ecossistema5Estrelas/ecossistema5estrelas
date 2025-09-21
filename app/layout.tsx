@@ -13,17 +13,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="pt-BR">
       <head>
         <style>{`
-          /* Estrelas animadas em círculo */
           .estrela-circulo {
             position: relative;
-            width: 140px;
-            height: 140px;
+            width: 120px;
+            height: 120px;
             margin: 0 auto;
-            animation: spin 8s linear infinite;
+            animation: spin 6s linear infinite;
           }
           .estrela-circulo span {
             position: absolute;
-            font-size: 26px;
+            font-size: 24px;
             animation: blink 1.5s infinite alternate;
           }
           .estrela-circulo span:nth-child(1) { top: 0; left: 45%; }
@@ -33,18 +32,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           .estrela-circulo span:nth-child(5) { top: 70%; left: 0; }
           .estrela-circulo span:nth-child(6) { top: 20%; left: 0; }
 
-          /* Estrela central */
           .estrela-central {
-            font-size: 38px;
+            font-size: 36px;
             animation: pulse 2s infinite;
-            text-shadow: 0 0 12px #FFD700, 0 0 24px #FFA500;
           }
 
-          @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-          @keyframes blink { from { opacity: 1; } to { opacity: 0.3; } }
+          @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }
+          @keyframes blink {
+            from { opacity: 1; }
+            to { opacity: 0.3; }
+          }
           @keyframes pulse {
             0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.4); opacity: 0.7; }
+            50% { transform: scale(1.3); opacity: 0.6; }
           }
         `}</style>
       </head>
@@ -59,17 +62,26 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             backgroundAttachment: "fixed",
           }}
         >
-          {/* Cabeçalho expandido com logomarca */}
-          <header className="sticky top-0 z-20 flex flex-col items-center py-8 bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-600 shadow-lg">
+          {/* Cabeçalho com fundo verde carbono zero */}
+          <header className="sticky top-0 z-20 flex flex-col items-center py-6 bg-[#003300] shadow-lg">
+            {/* Estrelas animadas */}
             <div className="estrela-circulo">
               <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
               <div className="estrela-central">⭐</div>
             </div>
-            <h1 className="mt-3 text-2xl font-extrabold tracking-wide">ECOSSISTEMA 5ESTRELAS</h1>
+
+            {/* Logomarca centralizada */}
+            <img
+              src="/logo-5estrelas.png"
+              alt="Logomarca ECOSSISTEMA 5ESTRELAS"
+              className="mt-4 h-20 md:h-28 object-contain"
+            />
+
+            {/* Navegação */}
             <nav className="mt-4 flex items-center gap-6">
-              <a href="/blog" className="px-3 py-1 rounded-lg bg-white/20 backdrop-blur hover:bg-white/40 transition">Blog</a>
-              <a href="/loja" className="px-3 py-1 rounded-lg bg-white/20 backdrop-blur hover:bg-white/40 transition">Loja</a>
-              <a href="/contato" className="px-3 py-1 rounded-lg bg-white/20 backdrop-blur hover:bg-white/40 transition">Contato</a>
+              <a href="/blog" className="px-3 py-1 rounded-lg bg-black/20 backdrop-blur hover:bg-black/40 transition">Blog</a>
+              <a href="/loja" className="px-3 py-1 rounded-lg bg-black/20 backdrop-blur hover:bg-black/40 transition">Loja</a>
+              <a href="/contato" className="px-3 py-1 rounded-lg bg-black/20 backdrop-blur hover:bg-black/40 transition">Contato</a>
             </nav>
           </header>
 
@@ -77,7 +89,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main className="container-estrela flex-1 py-10">{children}</main>
 
           {/* Footer fixo com políticas */}
-          <footer className="mt-16 border-t border-black/20 bg-black/70 text-center text-sm py-6">
+          <footer className="mt-16 border-t border-black/20 bg-black/60 text-center text-sm py-6">
             <p>© 2025 ECOSSISTEMA 5ESTRELAS — Todos os direitos reservados.</p>
             <p className="mt-2 space-x-3">
               <a href="/privacidade" className="underline hover:text-yellow-300">Privacidade</a>
