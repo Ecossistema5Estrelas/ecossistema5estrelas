@@ -27,16 +27,11 @@ export default function Hero({ title, subtitle, className = "", children }: Prop
       <div className="mb-3">
         <FiveStars size={22} />
       </div>
-
       {title ? <h1 className="text-3xl font-bold">{title}</h1> : null}
-
       {subtitle ? (
         <p className="mt-2 text-neutral-600 dark:text-neutral-400">{subtitle}</p>
       ) : null}
-
       {children}
     </section>
   );
 }
-
-

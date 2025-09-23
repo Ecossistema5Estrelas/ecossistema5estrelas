@@ -10,4 +10,3 @@ export function AppCard({ app }: { app: any }){
 }
 
 
-

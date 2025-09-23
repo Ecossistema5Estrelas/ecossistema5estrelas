@@ -3,7 +3,6 @@
 import { useEffect } from 'react';
 
 declare global { interface Window { adsbygoogle?: any[] } }
-
 export default function AdUnit({ slot, className }:{ slot:string; className?:string }) {
   useEffect(() => {
     try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch {}
@@ -20,6 +19,4 @@ export default function AdUnit({ slot, className }:{ slot:string; className?:str
     />
   );
 }
-
-
 

@@ -3,7 +3,6 @@ import * as React from "react";
 import BrandMark from "@/components/BrandMark";
 
 type Props = { className?: string; size?: number };
-
 export default function FiveStars({ className = "", size = 22 }: Props) {
   const delays = [0, 0.15, 0.30, 0.45, 0.60];
   return (
@@ -26,6 +25,4 @@ export default function FiveStars({ className = "", size = 22 }: Props) {
     </div>
   );
 }
-
-
 

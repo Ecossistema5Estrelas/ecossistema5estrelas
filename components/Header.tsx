@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Header() {
@@ -13,18 +13,27 @@ export default function Header() {
     >
       {/* Navegação no topo */}
       <nav className="absolute top-2 right-6 flex gap-6 text-yellow-400 font-semibold">
-        <Link href="/blog" className="px-4 py-2 rounded-lg bg-yellow-400/20 hover:bg-yellow-400/40 transition">
+        <Link
+          href="/blog"
+          className="px-4 py-2 rounded-lg bg-yellow-400/20 hover:bg-yellow-400/40 transition"
+        >
           Blog
         </Link>
-        <Link href="/loja" className="px-4 py-2 rounded-lg bg-yellow-400/20 hover:bg-yellow-400/40 transition">
+        <Link
+          href="/loja"
+          className="px-4 py-2 rounded-lg bg-yellow-400/20 hover:bg-yellow-400/40 transition"
+        >
           Loja
         </Link>
-        <Link href="/contato" className="px-4 py-2 rounded-lg bg-yellow-400/20 hover:bg-yellow-400/40 transition">
+        <Link
+          href="/contato"
+          className="px-4 py-2 rounded-lg bg-yellow-400/20 hover:bg-yellow-400/40 transition"
+        >
           Contato
         </Link>
       </nav>
 
-      {/* Logomarca central (se quiser manter visível por cima do fundo) */}
+      {/* Logomarca central */}
       <div className="flex flex-col items-center mt-16">
         <Image
           src="/logo-header-ecossistema5estrelas.png"

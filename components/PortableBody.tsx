@@ -6,5 +6,3 @@ export default function PortableBody({ value }: { value: PortableTextBlock[] }) 
   return <PortableText value={value} />
 }
 
-
-

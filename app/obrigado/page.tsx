@@ -1,60 +1,16 @@
-import BotaoVoltar from "../components/BotaoVoltar";
+"use client";
+import React from "react";
 
-import ObrigadoContent from './ObrigadoContent'
-
-export const metadata = {
-
-  title: 'Obrigado | ECOSSISTEMA 5ESTRELAS',
-
-  description: 'Agradecimento pela sua participação no ECOSSISTEMA 5ESTRELAS.',
-
-}
-
-export default function ObrigadoPage() {
-
+export default function Page() {
   return (
-
-    <section className="prose prose-slate dark:prose-invert max-w-3xl mx-auto p-8">
-
-      <section className="max-w-4xl mx-auto space-y-10">
-
-        <ObrigadoContent />
-
-        <div className="text-center">
-
-          <BotaoVoltar href="/">Voltar ao Início</BotaoVoltar>
-
-        </div>
-
-      </section>
-
-    </section>
-
-  )
-
+    <main className="p-10 max-w-3xl mx-auto text-center leading-relaxed">
+      <h1 className="text-3xl font-bold mb-6">Obrigado</h1>
+      <p className="text-neutral-700 dark:text-neutral-300 mb-4">
+        Obrigado por participar do ECOSSISTEMA 5ESTRELAS.
+      </p>
+      <p className="text-sm text-neutral-500 mt-8">
+        Última atualização: 22/09/2025
+      </p>
+    </main>
+  );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

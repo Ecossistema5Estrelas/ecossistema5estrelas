@@ -7,7 +7,6 @@ type BackButtonProps = {
   className?: string;
   children?: ReactNode;
 };
-
 export default function BackButton({ className, children }: BackButtonProps) {
   const router = useRouter();
   return (
@@ -20,6 +19,4 @@ export default function BackButton({ className, children }: BackButtonProps) {
     </Button>
   );
 }
-
-
 

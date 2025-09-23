@@ -1,8 +1,16 @@
-export default function Sucesso(){
-  return <div className="max-w-3xl mx-auto px-6 py-16"><h1 className="text-3xl font-bold">✅ Pagamento aprovado!</h1><p className="mt-3 opacity-80">Obrigado! Seu acesso será liberado em instantes.</p></div>;
+"use client";
+import React from "react";
+
+export default function Page() {
+  return (
+    <main className="p-10 max-w-3xl mx-auto text-center leading-relaxed">
+      <h1 className="text-3xl font-bold mb-6">Pagamento Concluído</h1>
+      <p className="text-neutral-700 dark:text-neutral-300 mb-4">
+        Sua compra foi realizada com sucesso.
+      </p>
+      <p className="text-sm text-neutral-500 mt-8">
+        Última atualização: 22/09/2025
+      </p>
+    </main>
+  );
 }
-
-
-
-
-

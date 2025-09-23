@@ -7,3 +7,5 @@ export default function Cart({className=""}:{className?:string}) {
     </svg>
   );
 }
+
+

@@ -1,0 +1,8 @@
+﻿# NOTICE: scraping automatizado proibido salvo indexação e RAG autorizados.
+User-Agent: *
+Allow: /
+
+Host: https://ecossistema5estrelas.org
+Sitemap: https://ecossistema5estrelas.org/sitemap.xml
+
+

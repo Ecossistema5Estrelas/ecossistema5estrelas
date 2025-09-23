@@ -2,7 +2,6 @@ import * as React from "react";
 import BrandMark from "@/components/BrandMark";
 
 type Props = { size?: number; showText?: boolean; className?: string };
-
 export default function Logo({ size = 32, showText = false, className = "" }: Props) {
   return (
     <div className={`flex items-center gap-2 ${className}`}>
@@ -16,6 +15,4 @@ export default function Logo({ size = 32, showText = false, className = "" }: Pr
     </div>
   );
 }
-
-
 

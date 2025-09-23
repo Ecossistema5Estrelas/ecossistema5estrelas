@@ -1,7 +1,6 @@
 import * as React from "react";
 
 type Props = { className?: string; size?: number; color?: string };
-
 export default function BrandMark({ className = "", size = 28, color = "#facc15" }: Props) {
   return (
     <svg
@@ -16,6 +15,4 @@ export default function BrandMark({ className = "", size = 28, color = "#facc15"
     </svg>
   );
 }
-
-
 

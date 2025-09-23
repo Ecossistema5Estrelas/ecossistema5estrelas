@@ -18,3 +18,4 @@ Host: https://ecossistema5estrelas.org
     },
   })
 }
+
