@@ -1,27 +1,21 @@
 ﻿name = "llm-chat-app-stardust"
 main = "src/index.ts"
 compatibility_date = "2025-10-04"
-compatibility_flags = ["nodejs_compat"]
-workers_dev = true
 
-[durable_objects]
-bindings = [
-  { name = "CHAT_ROOM", class_name = "ChatRoomDO" }
-]
+[triggers]
+crons = []
 
-[[migrations]]
+[[[migrations]]
 tag = "v1"
-new_classes = ["ChatRoomDO"]
+new_classes = [ "ChatRoomDO" ]
 
 [[d1_databases]]
 binding = "DB"
-database_name = "llm-chat-db"
 database_id = "c9e691b2-a520-48bd-87ec-e29cecf9b04a"
 
 [vars]
 MODERATION_WEBHOOK = "https://api.ecossistema5estrelas.org/moderation/log"
-AUDIT_PUBLIC_KEY = '''-----BEGIN PUBLIC KEY-----
------BEGIN PUBLIC KEY-----
+AUDIT_PUBLIC_KEY = """-----BEGIN PUBLIC KEY-----
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAp2PGn2ZqHH4yjnUw70vG
 zWVf9c+Zba/D8LhfNawzLNcUVxygPMDuN/bfsGPggTIeQYI1zbwJOxz9LcgTrrT7
 Ckyz89C25MKQuAZ4yy+id5EfjJXIr3kswGt/oDXqWtOj4aqckimliLBepvtFoPNd
@@ -29,6 +23,28 @@ shCpu0a5X6j0hefc5fnyZK1iLYd5rvGs5/mLw9l+a4AQVLu4c4BeQuVVtcM6Df38
 MjOSQQOsNLKe76bsMPOFMQClg0SRO4X1wwzuRNV8dumGaYEEeCvLasMa3mgeKqZM
 /vC5QwO0Pinv1ph0BCmviI/5N96UM/Y7xPT8ACjIQqYE3FxhlhG3miEZdHylf935
 hQIDAQAB
------END PUBLIC KEY-----
+-----END PUBLIC KEY-----"""
 
------END PUBLIC KEY-----'''
+[route]
+pattern = "ecossistema5estrelas.org"
+custom_domain = true
+
+
+[env.production]
+name = "llm-chat-app-stardust"
+main = "src/index.ts"
+
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "DB"
+database_id = "c9e691b2-a520-48bd-87ec-e29cecf9b04a"
+
+[[env.production.[[env.production.migrations]]
+tag = "v1"
+new_classes = ["ChatRoomDO"]
+
+[env.production.vars]
+SYSTEM_PROMPT = "🌌 Você é o Guardião Stardust do ECOSSISTEMA 5ESTRELAS — mantenha tudo sincronizado."
+
+
+
