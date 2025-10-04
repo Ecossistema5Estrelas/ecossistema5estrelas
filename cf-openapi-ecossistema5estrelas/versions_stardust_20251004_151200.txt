@@ -1,0 +1,535 @@
+﻿
+ ⛅️ wrangler 4.40.2 (update available 4.42.0)
+─────────────────────────────────────────────
+Version ID:  bbd76373-decb-4140-92cc-18f0ab8c8e79
+Created:     2025-09-28T18:59:41.189Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Upload
+Tag:         -
+Message:     -
+
+Version ID:  9dde10ab-05bc-4be8-afc3-2da779df75c3
+Created:     2025-09-28T19:00:09.670Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  7fe6d2aa-2cc6-4794-af9b-9b2ae915ff7c
+Created:     2025-09-28T19:01:34.436Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  bdeaa4d2-1506-4f07-91bf-2864463432af
+Created:     2025-09-28T19:02:54.418Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  8304a091-f89e-4b50-acc3-720bf992ba86
+Created:     2025-09-28T19:04:14.952Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  f941e663-4ceb-4ac5-a717-69db206c4139
+Created:     2025-09-28T19:05:35.324Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  9c1b9b5e-332d-49a7-a28a-0ad8351ca1c1
+Created:     2025-09-28T19:06:55.294Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  2fdb3c5a-b35d-4c93-b992-132727fc999d
+Created:     2025-09-28T19:08:13.154Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  08c40e5e-40b4-4b33-b3c6-af978c2dc75f
+Created:     2025-09-28T19:09:25.484Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  86e9e896-ea8a-471b-bfcc-12c76ce34bb0
+Created:     2025-09-28T19:10:40.037Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  7ed18575-45a3-4364-b21f-6ab916711bd1
+Created:     2025-09-28T19:11:56.478Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  311a2d29-2db4-4f36-9424-4e5d6ddd286d
+Created:     2025-09-28T19:13:15.604Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  50fb60e4-674d-4641-ad1f-16295de39fd4
+Created:     2025-09-28T19:14:46.962Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  3e1a200e-620c-4744-9f94-edf6558f41b4
+Created:     2025-09-28T19:16:08.500Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  dcbb43ba-26f7-4821-a12a-4135f66e81fd
+Created:     2025-09-28T19:17:27.845Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  0355a0fb-cddb-4536-9503-11295625081d
+Created:     2025-09-28T19:18:46.439Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  a3430823-56b5-463e-855f-225fbef5fcd4
+Created:     2025-09-28T19:20:12.910Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  e431b478-c44d-4634-84b8-a8c183c8a111
+Created:     2025-09-28T19:21:31.733Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  e8ca2a6a-1ce7-49a0-88a1-e456d906ec7f
+Created:     2025-09-28T19:22:44.162Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  8e10b105-a28f-4955-9989-b129d4246efd
+Created:     2025-09-28T19:23:26.586Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  9720281b-a5bb-46bf-915d-7443acaa3106
+Created:     2025-09-28T19:23:55.962Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  1eba75f9-f425-48a6-a5bf-f29d1ac1f30b
+Created:     2025-09-28T19:25:10.865Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  8a8a3228-577f-41f9-a150-25303bc328b5
+Created:     2025-09-28T19:26:22.898Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  c95dd02f-e4c8-435e-8a9e-2a2b118b21d7
+Created:     2025-09-28T19:27:38.391Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  fd72d454-a35d-4527-89fe-3c42e3d74ecd
+Created:     2025-09-28T19:28:58.612Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  18ce59cb-b2e3-422d-a010-ece0621f169d
+Created:     2025-09-28T19:30:17.782Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  b01e120b-2267-45db-aef6-ad6ee6741d34
+Created:     2025-09-28T19:31:37.523Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  d7bce1b0-5576-41df-bdf3-1741ba3210d1
+Created:     2025-09-28T19:32:56.831Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  1d586d16-e85b-455b-abaa-b21056691133
+Created:     2025-09-28T19:34:17.313Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  643ccfbc-1b9f-42d3-9142-0ba069a4d388
+Created:     2025-09-28T19:35:36.146Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  d706abee-387c-4bfd-a5b0-0002c2235820
+Created:     2025-09-28T19:36:55.000Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  cfbe1ec8-37f3-4c0b-a225-ba007fbb4236
+Created:     2025-09-28T19:38:15.040Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  41aeabf1-bfeb-4698-b10f-fdf470674d1c
+Created:     2025-09-28T19:39:34.915Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  53082649-e1af-46c9-88a8-a6bf921c72f3
+Created:     2025-09-28T19:40:54.586Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  5d81c99d-09d5-4278-9fe9-81cfa05238d8
+Created:     2025-09-28T19:42:14.203Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  07431eb4-92f8-4609-ad43-2cd9482c691e
+Created:     2025-09-28T19:43:34.444Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  61b12454-8548-447f-bc52-dbbd6edddfc2
+Created:     2025-09-28T19:44:58.391Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  c25a2aa0-675e-4e2d-aae8-fa0eb91766c2
+Created:     2025-09-28T19:46:24.549Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  505f8ef9-85b5-4dc9-8bf9-04b4c5f25956
+Created:     2025-09-28T19:47:43.713Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  4bb16f58-50ed-418f-abc7-69cb85e26645
+Created:     2025-09-28T19:48:55.702Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  de2773a2-2a7c-496f-b872-7157285b49e2
+Created:     2025-09-28T19:50:10.925Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  c2d76fd3-55dc-4222-9d1f-1b8e5c25c3dc
+Created:     2025-09-28T19:51:24.141Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  fd70b510-0da7-414b-bf83-2279e968bf64
+Created:     2025-09-29T00:39:31.138Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Upload
+Tag:         -
+Message:     -
+
+Version ID:  3af907fe-255a-4ebc-a73d-72a6fd1368ca
+Created:     2025-09-29T00:43:34.270Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  de873f39-d7d1-4a08-a2a3-949063bdc8be
+Created:     2025-09-29T00:53:08.610Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  8e0a9993-5e69-4666-a4e2-f7e33ef99883
+Created:     2025-09-29T01:38:17.493Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  d056b2bb-4b9c-4022-80c0-04d250ead1e5
+Created:     2025-09-29T01:43:05.392Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  97376899-9182-4dc1-8f93-a89982f68048
+Created:     2025-09-29T01:48:56.239Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  52725ad1-911f-4069-bb2d-d1149a00a6ee
+Created:     2025-09-29T01:54:34.181Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  63d54a7f-b759-432f-abe7-de250f82f405
+Created:     2025-09-29T02:30:35.675Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  4d5d3511-6d94-4dee-bd47-9998442ffb2f
+Created:     2025-09-29T02:32:47.304Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  994a23e4-5efe-484a-8ba9-ee56b0a4a590
+Created:     2025-09-29T03:38:12.941Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  cc09ccb0-0fbd-4522-87e6-2ab4acdc622f
+Created:     2025-09-29T03:45:48.406Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  e9713939-17c5-4151-8a63-a96916c27a19
+Created:     2025-09-29T03:48:42.881Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  0e0d426c-e807-4c7f-ae73-77668c53098e
+Created:     2025-09-29T03:51:25.946Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  b1fad75c-0e47-4a85-a6ec-4825e750879b
+Created:     2025-09-29T03:55:26.081Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  38ab0309-a9d4-4799-b9ef-e26bc423fb4c
+Created:     2025-09-29T03:59:54.125Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  466e0fb9-2dd5-46c8-8571-4d8ecc7e44a4
+Created:     2025-09-29T04:03:25.600Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Upload
+Tag:         -
+Message:     -
+
+Version ID:  298df5b2-82b8-47a4-af62-6ccae5072435
+Created:     2025-09-29T04:05:24.850Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  f93b1b2d-708a-4d37-a1f0-1c52b8f19030
+Created:     2025-09-29T04:09:05.057Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  56bede86-92f5-410e-b586-09e810aeabd4
+Created:     2025-09-29T04:10:47.525Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  502edb05-8671-449f-9ae0-ec1362a998ce
+Created:     2025-09-29T22:41:44.683Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Upload
+Tag:         -
+Message:     -
+
+Version ID:  6beb85bb-8c3f-431a-85ce-fe98c68f9de2
+Created:     2025-09-29T22:47:40.560Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  2ff17d05-4b18-470b-8c91-f0c828a16357
+Created:     2025-09-29T22:52:25.498Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  c5f8e736-296c-4849-aef4-880465ce10ed
+Created:     2025-09-29T23:33:14.703Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  bbdf815e-d7ff-4c29-85cc-f5d5de6f7a39
+Created:     2025-10-04T14:13:48.289Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  2715d306-37f8-4f36-868a-ed347e5ea5fd
+Created:     2025-10-04T14:14:50.660Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  1c0a636c-9cf7-468b-b334-b9a97e8b5850
+Created:     2025-10-04T14:25:16.471Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  fdd76118-ac90-4a9a-8243-bcc40dbcb216
+Created:     2025-10-04T14:28:45.289Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  31a164bc-5ba8-4733-a54d-01d5e26fd3f3
+Created:     2025-10-04T14:36:23.976Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  e80b5345-4180-499f-9973-1387959495be
+Created:     2025-10-04T14:44:58.584Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  b77992ae-bcc0-473d-8066-b92089dcaf8b
+Created:     2025-10-04T15:59:29.039Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  08338377-8ac6-418a-9910-9411314768ea
+Created:     2025-10-04T16:04:34.469Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  d1f3436e-8ec4-4017-8210-413137cef2fe
+Created:     2025-10-04T16:53:08.661Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  805147be-070f-459a-bc35-7eaff140352c
+Created:     2025-10-04T17:05:09.252Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
+Version ID:  df8cc66b-21c2-4e63-8af0-4d1b1e656e70
+Created:     2025-10-04T18:01:30.622Z
+Author:      bragadasilvacezar@gmail.com
+Source:      Unknown (version_upload)
+Tag:         -
+Message:     -
+
