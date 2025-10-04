@@ -1,0 +1,22 @@
+﻿body {
+  background: radial-gradient(circle at top, #0f0c29, #302b63, #24243e);
+  color: #f8f8ff;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+#chat-container {
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: left;
+}
+
+.chat-bubble {
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  color: white;
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin: 8px 0;
+  box-shadow: 0 0 12px rgba(144, 202, 249, 0.8);
+}

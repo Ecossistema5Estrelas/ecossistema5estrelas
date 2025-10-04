@@ -1,0 +1,23 @@
+🎯 CONTEXTO:
+Continuar desenvolvimento do projeto CF OpenAPI ECOSSISTEMA5ESTRELAS (Cloudflare Workers + Wrangler).
+
+Todas as próximas ações devem ser executadas exclusivamente pelo terminal PowerShell.
+
+🧩 ETAPAS CONCLUÍDAS:
+- Worker ativo: https://llm-chat-app-stardust.bragadasilvacezar.workers.dev
+- D1 Database: llm-chat-db ✅
+- Durable Object: ChatRoomDO configurado
+- Variáveis de ambiente ativas: MODERATION_WEBHOOK, AUDIT_PUBLIC_KEY, DB, CHAT_ROOM
+- Endpoint público /send respondendo
+- UTF-8 e RSA funcionando
+- Deploys bem-sucedidos após correções
+
+⚙️ PRÓXIMOS PASSOS:
+1️⃣ Corrigir exportação do ChatRoomDO em src/index.ts
+2️⃣ Fazer deploy via `wrangler deploy`
+3️⃣ Confirmar Worker ativo
+4️⃣ Implementar rota /history com fetch no D1
+5️⃣ Testar fila webhook e auditoria PowerShell
+
+💬 INSTRUÇÃO FINAL:
+Responda sempre com blocos PowerShell prontos, sem explicações narrativas.

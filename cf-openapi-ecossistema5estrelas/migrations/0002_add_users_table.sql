@@ -1,0 +1,6 @@
+-- Migration number: 0002 	 2025-09-28T15:48:58.605Z
+CREATE TABLE users (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT NOT NULL,
+  email TEXT NOT NULL
+);
