@@ -1,71 +1,44 @@
-// app/layout.tsx
-
-import '../styles/globals.css'
-import type { Metadata, Viewport } from 'next'
+import './globals.css'
+import type { Metadata } from 'next'
+import Header from '@/components/layout/Header'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://ecossistema5estrelas.vercel.app'), // ou .org se já estiver ativo
-  title: {
-    default: 'ECOSSISTEMA 5ESTRELAS',
-    template: '%s | ECOSSISTEMA 5ESTRELAS',
-  },
-  description:
-    'O ECOSSISTEMA 5ESTRELAS integra inovação, impacto social e inteligência artificial em um universo de aplicativos que transformam realidades.',
-  applicationName: 'ECOSSISTEMA 5ESTRELAS',
-  icons: {
-    icon: '/icon-192x192.png',
-    apple: '/icons/icon-192x192.png',
-    shortcut: '/favicon.ico',
-  },
+  title: 'ECOSSISTEMA 5ESTRELAS',
+  description: 'Inovação, inclusão e prosperidade digital em um só lugar.',
   manifest: '/manifest.json',
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-    },
-  },
-  openGraph: {
-    title: 'ECOSSISTEMA 5ESTRELAS',
-    description:
-      'Inovação inclusiva e inteligência artificial em um ecossistema digital premiado.',
-    url: 'https://ecossistema5estrelas.vercel.app', // ou .org
-    siteName: 'ECOSSISTEMA 5ESTRELAS',
-    images: [
-      {
-        url: '/opengraph-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'ECOSSISTEMA 5ESTRELAS',
-      },
-    ],
-    locale: 'pt_BR',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'ECOSSISTEMA 5ESTRELAS',
-    description:
-      'Transformando vidas com IA, acessibilidade e impacto social real.',
-    images: ['/opengraph-image.png'],
+  icons: {
+    icon: '/icon.192x192.png',
+    apple: '/icon.512x512.png',
   },
 }
 
-// ✅ Viewport deve ser exportado separadamente no Next.js 15+
-export const viewport: Viewport = {
-  width: 'device-width',
-  initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
-  themeColor: '#6D28D9', // Roxo 5ESTRELAS
+export const viewport = {
+  themeColor: '#000000',
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang="pt-BR">
-      <body className="min-h-screen w-full bg-gradient-main text-white antialiased selection:bg-purple-700 selection:text-white">
-        {children}
+    <html lang="pt-BR" className="dark" suppressHydrationWarning>
+      <head />
+      <body className="min-h-screen bg-gradient-to-b from-black via-zinc-900 to-zinc-950 text-white antialiased">
+        
+        {/* Header Global Premium */}
+        <Header />
+
+        {/* Conteúdo central */}
+        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
+          {children}
+        </main>
+
+        {/* Footer global */}
+        <footer className="text-center text-xs text-zinc-500 py-10">
+          © {new Date().getFullYear()} ECOSSISTEMA 5ESTRELAS • Todos os direitos reservados
+        </footer>
+
       </body>
     </html>
   )

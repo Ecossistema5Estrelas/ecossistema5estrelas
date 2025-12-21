@@ -1,21 +1,22 @@
-'use client'
+import PerfilContent from './PerfilContent'
 
-import BotaoVoltar from '../../components/BotaoVoltar'
+export const metadata = {
+  title: 'Perfil | ECOSSISTEMA 5ESTRELAS',
+  description: 'Gerencie seu perfil pessoal dentro do ECOSSISTEMA 5ESTRELAS.',
+}
 
-export default function DashboardPage() {
+export default function PerfilPage() {
   return (
-    <main className="min-h-screen w-full px-4 py-8 text-white">
-      <h1 className="text-3xl font-bold mb-4">Painel do Usuário</h1>
-      <p className="mb-8 text-lg">
-        Aqui você terá acesso às suas informações pessoais, histórico de atividades e configurações do Ecossistema 5ESTRELAS.
-      </p>
+    <main className="min-h-screen px-4 py-12 bg-gradient-to-b from-black via-zinc-900 to-zinc-950 text-white">
+      <section className="max-w-4xl mx-auto space-y-10">
+        <header className="text-center">
+          <div className="text-5xl mb-2">👤</div>
+          <h1 className="text-3xl font-bold">Painel do Usuário</h1>
+          <p className="text-zinc-400">Acesse e edite suas informações com segurança.</p>
+        </header>
 
-      {/* Aqui você pode adicionar cards, widgets ou gráficos futuramente */}
-      <div className="border border-white/20 rounded-lg p-6 bg-white/5">
-        <p className="text-sm text-white/80">Este módulo ainda está em construção.</p>
-      </div>
-
-      <BotaoVoltar />
+        <PerfilContent />
+      </section>
     </main>
   )
 }

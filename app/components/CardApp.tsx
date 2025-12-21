@@ -1,23 +1,36 @@
 'use client'
 
 import Link from 'next/link'
+import { motion } from 'framer-motion'
+import { ArrowRight } from 'lucide-react'
 
-interface CardAppProps {
+type CardAppProps = {
+  emoji: string
   titulo: string
   descricao: string
-  emoji: string
   href: string
 }
 
-export default function CardApp({ titulo, descricao, emoji, href }: CardAppProps) {
+export default function CardApp({ emoji, titulo, descricao, href }: CardAppProps) {
   return (
-    <Link
-      href={href}
-      className="bg-white/5 hover:bg-white/10 transition p-6 rounded-xl shadow-md text-white flex flex-col items-start gap-2"
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+      className="group rounded-2xl border border-white/10 bg-zinc-900 p-6 shadow-md transition-colors hover:border-yellow-500 hover:bg-zinc-800"
     >
-      <span className="text-3xl">{emoji}</span>
-      <h3 className="text-xl font-bold">{titulo}</h3>
-      <p className="text-sm text-gray-300">{descricao}</p>
-    </Link>
+      <Link href={href as any} className="flex flex-col h-full justify-between">
+        <div>
+          <div className="text-5xl">{emoji}</div>
+          <h2 className="mt-2 text-xl font-bold text-white group-hover:text-yellow-300">
+            {titulo}
+          </h2>
+          <p className="mt-1 text-sm text-gray-400">{descricao}</p>
+        </div>
+        <div className="mt-4 flex items-center gap-2 text-sm font-medium text-yellow-400 group-hover:underline">
+          Acessar
+          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+        </div>
+      </Link>
+    </motion.div>
   )
 }

@@ -1,58 +1,66 @@
 'use client'
 
+import type { Route } from 'next'
+import Link from 'next/link'
 import BotaoVoltar from '@/components/BotaoVoltar'
 
 export default function SobreContent() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center bg-gradient-main text-white px-6 py-20">
-      {/* Botão de voltar */}
-      <div className="w-full max-w-4xl mb-10 self-start">
-        <BotaoVoltar />
+    <section className="max-w-4xl mx-auto space-y-8 px-4 py-12 text-white">
+      <div className="text-center">
+        <div className="text-5xl mb-2">ℹ️</div>
+        <h1 className="text-3xl font-bold">SOBRE O PROJETO</h1>
+        <p className="text-gray-400 mt-2">
+          Uma visão clara e ética para transformar o mundo digital.
+        </p>
       </div>
 
-      {/* Conteúdo */}
-      <section className="w-full max-w-4xl space-y-12 bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-lg border border-white/20">
-        <header className="text-center space-y-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-emerald-400">
-            🌟 Sobre o ECOSSISTEMA 5ESTRELAS
-          </h1>
-          <p className="text-lg md:text-xl text-zinc-100">
-            Conectando excelência, inclusão e tecnologia em um só universo.
-          </p>
-        </header>
-
-        <section className="space-y-6">
-          <h2 className="text-2xl font-semibold text-emerald-300">🚀 Missão</h2>
-          <p className="text-zinc-200 text-lg">
-            Democratizar o acesso à reputação, inovação e prosperidade digital por meio de plataformas que elevam pessoas, serviços e negócios com justiça, transparência e impacto social.
+      <div className="space-y-6">
+        <section>
+          <h2 className="text-xl font-semibold mb-2">🌟 Missão</h2>
+          <p>
+            Democratizar o acesso à inovação, empoderando pessoas por meio de tecnologia, ética e criatividade.
           </p>
         </section>
 
-        <section className="space-y-6">
-          <h2 className="text-2xl font-semibold text-emerald-300">🔭 Visão</h2>
-          <p className="text-zinc-200 text-lg">
-            Ser o ecossistema digital mais amado, acessível e influente do Brasil e do mundo, promovendo inclusão, tecnologia, educação e sustentabilidade com propósito.
+        <section>
+          <h2 className="text-xl font-semibold mb-2">🔭 Visão</h2>
+          <p>
+            Ser referência global em inclusão, inteligência artificial e transformação digital com impacto social positivo.
           </p>
         </section>
 
-        <section className="space-y-6">
-          <h2 className="text-2xl font-semibold text-emerald-300">🧭 Valores</h2>
-          <ul className="list-disc list-inside text-zinc-200 text-lg space-y-1">
-            <li>Inclusão radical com acessibilidade real</li>
-            <li>Transparência, segurança e ética digital</li>
-            <li>Foco na excelência e reputação justa</li>
-            <li>Inovação com propósito e impacto social</li>
-            <li>Colaboração entre humanos e IAs responsáveis</li>
-          </ul>
-        </section>
-
-        <section className="space-y-6">
-          <h2 className="text-2xl font-semibold text-emerald-300">🌌 Propósito</h2>
-          <p className="text-zinc-200 text-lg">
-            Capacitar cada estrela brasileira — seja uma manicure, mecânico, criador de conteúdo ou empresa — a brilhar com autonomia, visibilidade e valorização. Nós não apenas conectamos pessoas, nós iluminamos trajetórias. ✨
+        <section>
+          <h2 className="text-xl font-semibold mb-2">🧭 Propósito</h2>
+          <p>
+            Criar pontes entre pessoas, ideias e oportunidades — gerando novas formas de viver, trabalhar e aprender com dignidade e inovação.
           </p>
         </section>
-      </section>
-    </main>
+
+        <section>
+          <h2 className="text-xl font-semibold mb-2">📜 Ética</h2>
+          <p>
+            Baseamos cada decisão em respeito, equidade, transparência e compromisso com o bem coletivo.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-semibold mb-2">💼 Investidores e Parceiros</h2>
+          <p>
+            Acesse nossa área especial para quem deseja investir ou colaborar:
+          </p>
+          <Link
+            href={"/investidores" as Route}
+            className="inline-block mt-2 px-4 py-2 rounded bg-white text-black font-medium hover:bg-zinc-200 transition"
+          >
+            Acessar área de investidores
+          </Link>
+        </section>
+      </div>
+
+      <div className="text-center">
+        <BotaoVoltar href="/" texto="Voltar ao Início" />
+      </div>
+    </section>
   )
 }

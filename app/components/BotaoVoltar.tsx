@@ -1,17 +1,47 @@
 'use client'
 
+import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { Home } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
 
-export default function BotaoVoltar() {
+type BotaoVoltarProps = {
+  href?: string
+  texto?: string
+}
+
+export default function BotaoVoltar({
+  href,
+  texto = 'Voltar',
+}: BotaoVoltarProps) {
+  const router = useRouter()
+
+  const content = (
+    <>
+      <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
+      {texto}
+    </>
+  )
+
+  // Se href foi passado → navegação explícita
+  if (href) {
+    return (
+      <Link
+        href={href as any}
+        className="group inline-flex items-center gap-2 rounded-xl border border-white/10 bg-zinc-800 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-zinc-700 hover:text-yellow-300 focus:outline-none focus:ring-2 focus:ring-white/50"
+      >
+        {content}
+      </Link>
+    )
+  }
+
+  // Caso contrário → voltar no histórico
   return (
-    <Link
-      href="/"
-      aria-label="Voltar para a página inicial"
-      className="fixed bottom-6 right-6 z-50 bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md rounded-full px-5 py-3 text-sm flex items-center space-x-2 text-white shadow-lg transition-all"
+    <button
+      type="button"
+      onClick={() => router.back()}
+      className="group inline-flex items-center gap-2 rounded-xl border border-white/10 bg-zinc-800 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-zinc-700 hover:text-yellow-300 focus:outline-none focus:ring-2 focus:ring-white/50"
     >
-      <Home size={20} />
-      <span>Início</span>
-    </Link>
+      {content}
+    </button>
   )
 }

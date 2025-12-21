@@ -1,73 +1,65 @@
-'use client'
-
 import Link from 'next/link'
 
-export default function Home() {
-  return (
-    <main className="min-h-screen w-full bg-gradient-main text-white px-6 py-20 flex flex-col items-center justify-center space-y-10">
-      <h1 className="text-4xl md:text-6xl font-extrabold text-center text-yellow-400 drop-shadow-lg">
-        🌟 ECOSSISTEMA 5ESTRELAS
-      </h1>
-
-      <p className="text-lg md:text-xl text-zinc-200 max-w-2xl text-center">
-        Uma nova era digital começa aqui. Explore os primeiros portais abertos e prepare-se para o que está por vir. 🚀
-      </p>
-
-      {/* Botões visíveis */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-12">
-        <Botao
-          emoji="📚"
-          texto="Blog"
-          href="/blog"
-          bg="bg-yellow-500"
-          text="text-black"
-        />
-        <Botao
-          emoji="📬"
-          texto="Contato"
-          href="/contato"
-          bg="bg-blue-500"
-          text="text-white"
-        />
-        <Botao
-          emoji="ℹ️"
-          texto="Sobre"
-          href="/sobre"
-          bg="bg-purple-600"
-          text="text-white"
-        />
-        <Botao
-          emoji="👤"
-          texto="Dashboard"
-          href="/dashboard"
-          bg="bg-green-600"
-          text="text-white"
-        />
-      </div>
-    </main>
-  )
+export const metadata = {
+  title: 'ECOSSISTEMA 5ESTRELAS',
+  description: 'Inovação, inclusão e prosperidade digital em um só lugar.',
 }
 
-function Botao({
-  emoji,
-  texto,
-  href,
-  bg,
-  text,
-}: {
-  emoji: string
-  texto: string
-  href: string
-  bg: string
-  text: string
-}) {
+export default function HomePage() {
   return (
-    <Link
-      href={href}
-      className={`${bg} ${text} px-4 py-5 rounded-xl text-center font-bold transition hover:scale-105 shadow-lg flex flex-col items-center space-y-1`}
-    >
-      <span className="text-3xl">{emoji}</span>
-      <span className="text-sm sm:text-base">{texto}</span>
-    </Link>
+    <main className="min-h-screen py-14 text-white">
+      <section className="text-center space-y-4">
+        <h1 className="text-5xl font-bold tracking-tight">🌟 ECOSSISTEMA 5ESTRELAS</h1>
+        <p className="text-gray-400 text-lg max-w-xl mx-auto">
+          Acesso inteligente aos aplicativos que transformam a sociedade.
+        </p>
+      </section>
+
+      <section className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-14 max-w-4xl mx-auto px-4">
+        <Link
+          href="/blog"
+          className="rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition p-6 text-center"
+        >
+          <div className="text-4xl mb-2">📚</div>
+          <h2 className="text-xl font-semibold">Blog Oficial</h2>
+          <p className="text-gray-400 text-sm mt-1">
+            Bastidores da inovação e novas ideias.
+          </p>
+        </Link>
+
+        <Link
+          href="/contato"
+          className="rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition p-6 text-center"
+        >
+          <div className="text-4xl mb-2">📬</div>
+          <h2 className="text-xl font-semibold">Contato</h2>
+          <p className="text-gray-400 text-sm mt-1">
+            Fale conosco e envie sua proposta.
+          </p>
+        </Link>
+
+        <Link
+          href="/sobre"
+          className="rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition p-6 text-center"
+        >
+          <div className="text-4xl mb-2">ℹ️</div>
+          <h2 className="text-xl font-semibold">Sobre</h2>
+          <p className="text-gray-400 text-sm mt-1">
+            Conheça a visão e missão do projeto.
+          </p>
+        </Link>
+
+        <Link
+          href="/dashboard"
+          className="rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition p-6 text-center"
+        >
+          <div className="text-4xl mb-2">👤</div>
+          <h2 className="text-xl font-semibold">Dashboard</h2>
+          <p className="text-gray-400 text-sm mt-1">
+            Acompanhe seu progresso e recompensas.
+          </p>
+        </Link>
+      </section>
+    </main>
   )
 }

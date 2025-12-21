@@ -1,51 +1,37 @@
-'use client'
-
-import { useEffect, useState } from 'react'
-import { useRouter } from 'next/navigation'
+﻿import PerfilContent from './perfil/PerfilContent'
 import BotaoVoltar from '@/components/BotaoVoltar'
+import IAsSection from './ias/IAsSection'
+
+export const metadata = {
+  title: 'Dashboard | ECOSSISTEMA 5ESTRELAS',
+  description: 'Gerencie seu perfil e preferências no ECOSSISTEMA 5ESTRELAS.',
+}
 
 export default function DashboardPage() {
-  const router = useRouter()
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    // Em breve: validar se usuário está logado aqui
-    setTimeout(() => {
-      setLoading(false)
-    }, 1000)
-  }, [])
-
-  if (loading) {
-    return (
-      <main className="min-h-screen flex items-center justify-center bg-gradient-main text-white">
-        <p className="animate-pulse text-xl">🔄 Carregando seu painel...</p>
-      </main>
-    )
-  }
-
   return (
-    <main className="min-h-screen bg-gradient-main text-white px-6 py-16 flex flex-col items-start">
-      <div className="mb-8">
-        <BotaoVoltar />
-      </div>
+    <main className="min-h-screen bg-gradient-to-b from-zinc-950 via-zinc-900 to-black text-white px-4 py-10">
+      <section className="max-w-4xl mx-auto space-y-12">
 
-      <section className="w-full max-w-4xl mx-auto space-y-8">
-        <header>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-purple-300 mb-2">📊 Seu Painel de Controle</h1>
-          <p className="text-lg text-zinc-300">
-            Bem-vindo ao seu dashboard 5ESTRELAS! Aqui você pode acompanhar seus dados, interações, histórico
-            de atividades e controlar sua jornada pelo Ecossistema.
+        {/* Cabeçalho do Dashboard */}
+        <header className="text-center">
+          <div className="text-5xl mb-2">👤</div>
+          <h1 className="text-3xl font-bold">DASHBOARD</h1>
+          <p className="text-gray-400 text-sm mt-2">
+            Gerencie seu perfil, preferências e configurações
           </p>
         </header>
 
-        <div className="bg-white/10 rounded-2xl p-6 shadow-lg backdrop-blur-md border border-white/20">
-          <ul className="space-y-3 text-zinc-100 list-disc list-inside text-lg">
-            <li>📋 Visualizar dados do perfil</li>
-            <li>⚙️ Configurações da conta</li>
-            <li>💎 Acesso Premium e benefícios</li>
-            <li>🧠 Estatísticas de uso do Ecossistema</li>
-          </ul>
+        {/* Perfil do usuário */}
+        <PerfilContent />
+
+        {/* IAs do Ecossistema */}
+        <IAsSection />
+
+        {/* Ação de retorno */}
+        <div className="text-center">
+          <BotaoVoltar />
         </div>
+
       </section>
     </main>
   )
