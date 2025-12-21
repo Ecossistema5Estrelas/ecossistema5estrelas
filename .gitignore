@@ -20,3 +20,9 @@ out
 # Governança local
 _backup_pre_higienizacao
 _discarded
+# Binários e instaladores
+*.exe
+*.msi
+*.zip
+*.7z
+*.iso
