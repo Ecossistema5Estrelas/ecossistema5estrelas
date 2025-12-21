@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ================================
+   BASE PREMIUM — ECOSSISTEMA 5⭐
+   ================================ */
+
+@layer base {
+  html {
+    background-color: #000000;
+    color-scheme: dark;
+  }
+
+  body {
+    min-height: 100vh;
+    background-color: #000000;
+    color: #ffffff;
+  }
+}
+
+/* ================================
+   AJUSTES GLOBAIS
+   ================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #27272a;
+  color: #ffffff;
+}
