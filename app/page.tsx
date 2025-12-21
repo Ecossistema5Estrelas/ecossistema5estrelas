@@ -1,65 +1,61 @@
-import Link from 'next/link'
-
-export const metadata = {
-  title: 'ECOSSISTEMA 5ESTRELAS',
-  description: 'Inovação, inclusão e prosperidade digital em um só lugar.',
-}
-
 export default function HomePage() {
   return (
-    <main className="min-h-screen py-14 text-white">
-      <section className="text-center space-y-4">
-        <h1 className="text-5xl font-bold tracking-tight">🌟 ECOSSISTEMA 5ESTRELAS</h1>
-        <p className="text-gray-400 text-lg max-w-xl mx-auto">
-          Acesso inteligente aos aplicativos que transformam a sociedade.
+    <section className="py-24">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+
+        {/* Headline institucional */}
+        <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white">
+          ECOSSISTEMA 5ESTRELAS
+        </h1>
+
+        {/* Subheadline: público e aberto */}
+        <p className="mt-6 text-base sm:text-lg text-white/70 leading-relaxed">
+          Portal público e institucional dedicado à apresentação, organização
+          e desenvolvimento de iniciativas digitais orientadas por governança,
+          impacto social e visão de longo prazo.
         </p>
-      </section>
 
-      <section className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-14 max-w-4xl mx-auto px-4">
-        <Link
-          href="/blog"
-          className="rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition p-6 text-center"
-        >
-          <div className="text-4xl mb-2">📚</div>
-          <h2 className="text-xl font-semibold">Blog Oficial</h2>
-          <p className="text-gray-400 text-sm mt-1">
-            Bastidores da inovação e novas ideias.
+        {/* Corpo editorial — posicionamento público */}
+        <div className="mt-12 text-sm text-white/60 leading-relaxed space-y-6 text-left">
+          <p>
+            O ECOSSISTEMA 5ESTRELAS é um ambiente aberto, acessível e transparente,
+            concebido para dialogar com o público em geral sobre tecnologia,
+            inovação, cultura digital e organização de sistemas complexos.
           </p>
-        </Link>
 
-        <Link
-          href="/contato"
-          className="rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition p-6 text-center"
-        >
-          <div className="text-4xl mb-2">📬</div>
-          <h2 className="text-xl font-semibold">Contato</h2>
-          <p className="text-gray-400 text-sm mt-1">
-            Fale conosco e envie sua proposta.
+          <p>
+            Este portal funciona como a porta de entrada institucional do
+            ecossistema, reunindo princípios, diretrizes, informações públicas
+            e acesso aos aplicativos que o compõem. Não se trata de um espaço
+            restrito, privado ou seletivo, mas de uma plataforma voltada à
+            comunicação clara e responsável com a sociedade.
           </p>
-        </Link>
 
-        <Link
-          href="/sobre"
-          className="rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition p-6 text-center"
-        >
-          <div className="text-4xl mb-2">ℹ️</div>
-          <h2 className="text-xl font-semibold">Sobre</h2>
-          <p className="text-gray-400 text-sm mt-1">
-            Conheça a visão e missão do projeto.
+          <p>
+            Critérios específicos de acesso, regras internas, níveis de
+            participação ou funcionalidades avançadas são definidos
+            exclusivamente no escopo de cada aplicativo, conforme sua
+            finalidade, natureza e contexto de uso.
           </p>
-        </Link>
 
-        <Link
-          href="/dashboard"
-          className="rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 transition p-6 text-center"
-        >
-          <div className="text-4xl mb-2">👤</div>
-          <h2 className="text-xl font-semibold">Dashboard</h2>
-          <p className="text-gray-400 text-sm mt-1">
-            Acompanhe seu progresso e recompensas.
+          <p>
+            O conteúdo editorial ativo encontra-se concentrado no Blog
+            ArqFuturum, espaço dedicado à reflexão, análise e registro de
+            fundamentos que orientam a evolução do ecossistema.
           </p>
-        </Link>
-      </section>
-    </main>
+        </div>
+
+        {/* Convite silencioso ao Blog */}
+        <div className="mt-12">
+          <a
+            href="/blog"
+            className="inline-block text-sm text-white/70 hover:text-white transition"
+          >
+            Acessar o Blog ArqFuturum →
+          </a>
+        </div>
+
+      </div>
+    </section>
   )
 }

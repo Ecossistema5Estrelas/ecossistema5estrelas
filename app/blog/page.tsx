@@ -1,27 +1,47 @@
-import { Suspense } from 'react'
-import BlogList from './BlogList'
+import Link from 'next/link'
+import { getPosts } from '@/sanity/lib/queries'
 
-export const metadata = {
-  title: 'Blog | ECOSSISTEMA 5ESTRELAS',
-  description: 'Conheça as novidades e bastidores do ECOSSISTEMA 5ESTRELAS.',
-}
+export default async function BlogPage() {
+  const posts = await getPosts()
 
-export default function BlogPage() {
   return (
-    <main className="min-h-screen px-4 py-12 bg-gradient-to-b from-black via-zinc-900 to-zinc-950 text-white">
-      <section className="max-w-4xl mx-auto space-y-10">
-        <header className="text-center">
-          <div className="text-5xl mb-2">📚</div>
-          <h1 className="text-3xl font-bold">BLOG OFICIAL</h1>
-          <p className="text-gray-400 text-sm mt-2">
-            Bastidores da Inovação e das Estrelas 🌟
-          </p>
-        </header>
+    <section className="py-24">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
 
-        <Suspense fallback={<p className="text-center text-gray-400">Carregando posts...</p>}>
-          <BlogList />
-        </Suspense>
-      </section>
-    </main>
+        <h1 className="text-2xl font-semibold text-white mb-12">
+          Blog ArqFuturum
+        </h1>
+
+        <div className="space-y-12">
+          {posts?.map((post: any) => (
+            <article key={post._id} className="space-y-3">
+
+              <h2 className="text-xl font-medium leading-snug">
+                <Link
+                  href={`/blog/${post.slug?.current}`}
+                  className="text-white hover:underline"
+                >
+                  {post.title || 'Sem título'}
+                </Link>
+              </h2>
+
+              {post.description && (
+                <p className="text-sm text-white/60 leading-relaxed">
+                  {post.description}
+                </p>
+              )}
+
+              {post._createdAt && (
+                <p className="text-xs text-white/40">
+                  {new Date(post._createdAt).toLocaleDateString('pt-BR')}
+                </p>
+              )}
+
+            </article>
+          ))}
+        </div>
+
+      </div>
+    </section>
   )
 }

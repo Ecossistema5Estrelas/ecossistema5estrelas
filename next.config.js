@@ -1,22 +1,21 @@
 /** @type {import('next').NextConfig} */
-const withPWA = require('next-pwa')({
-  dest: 'public',
-  register: true,
-  skipWaiting: true,
-  disable: process.env.NODE_ENV === 'development',
-})
-
 const nextConfig = {
   reactStrictMode: true,
+
   typescript: {
+    // Mantido conforme seu estado atual
     ignoreBuildErrors: true,
   },
+
   experimental: {
-    serverActions: {}, // ✅ CORRETO
+    // Compatível com Next.js 15+
+    serverActions: {},
+    typedRoutes: true,
   },
+
   images: {
     domains: ['cdn.sanity.io'],
   },
 }
 
-module.exports = withPWA(nextConfig)
+module.exports = nextConfig
