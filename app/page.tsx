@@ -1,3 +1,15 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'ECOSSISTEMA 5ESTRELAS',
+  description:
+    'Portal público e institucional dedicado à apresentação, organização e desenvolvimento de iniciativas digitais orientadas por governança, impacto social e visão de longo prazo.',
+  alternates: {
+    canonical: '/'
+  }
+}
+
 export default function HomePage() {
   return (
     <section className="py-24">
@@ -47,12 +59,12 @@ export default function HomePage() {
 
         {/* Convite silencioso ao Blog */}
         <div className="mt-12">
-          <a
+          <Link
             href="/blog"
             className="inline-block text-sm text-white/70 hover:text-white transition"
           >
             Acessar o Blog ArqFuturum →
-          </a>
+          </Link>
         </div>
 
       </div>
