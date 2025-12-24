@@ -10,22 +10,23 @@ out
 .vscode
 .DS_Store
 
-# Backups & lixo
-*.bak
-*.exe
-*.zip
-*.bat
-*.ps1
+# Sanity (gerado)
+studio/.sanity
 
-# Governança local
+# Backups e snapshots
+backups
 _backup_pre_higienizacao
 _discarded
-# Binários e instaladores
+
+# Binários / instaladores / lixo
 *.exe
 *.msi
 *.zip
 *.7z
 *.iso
+*.bak
+*.bat
+*.ps1
+
+# Deploy
 .vercel
-studio/.sanity
-backups
