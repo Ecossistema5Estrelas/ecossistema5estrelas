@@ -27,3 +27,5 @@ _discarded
 *.7z
 *.iso
 .vercel
+studio/.sanity
+backups
