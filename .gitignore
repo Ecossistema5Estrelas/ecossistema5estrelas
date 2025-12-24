@@ -1,24 +1,39 @@
-# Node / Next
-node_modules
-.next
-out
+# ===============================
+# Node / Next.js
+# ===============================
+node_modules/
+.next/
+out/
 
-# Env
+# ===============================
+# Environment
+# ===============================
 .env.local
 
+# ===============================
 # OS / Editor
-.vscode
+# ===============================
+.vscode/
 .DS_Store
 
-# Sanity (gerado)
-studio/.sanity
+# ===============================
+# Sanity (gerado / runtime)
+# ===============================
+studio/.sanity/
+sanity.cli.js
 
-# Backups e snapshots
-backups
-_backup_pre_higienizacao
-_discarded
+# ===============================
+# Backups & snapshots (não-versionados)
+# ===============================
+backups/
+sanity-backup-*
+*.tar.gz
+_backup_pre_higienizacao/
+_discarded/
 
+# ===============================
 # Binários / instaladores / lixo
+# ===============================
 *.exe
 *.msi
 *.zip
@@ -28,5 +43,7 @@ _discarded
 *.bat
 *.ps1
 
+# ===============================
 # Deploy
-.vercel
+# ===============================
+.vercel/
