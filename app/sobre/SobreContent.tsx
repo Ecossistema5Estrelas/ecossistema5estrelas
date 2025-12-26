@@ -2,6 +2,7 @@
 
 import type { Route } from 'next'
 import Link from 'next/link'
+
 import BotaoVoltar from '@/components/BotaoVoltar'
 
 export default function SobreContent() {

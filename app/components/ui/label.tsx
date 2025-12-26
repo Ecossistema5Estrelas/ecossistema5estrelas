@@ -1,5 +1,6 @@
-import { cn } from '@/lib/utils'
 import { LabelHTMLAttributes } from 'react'
+
+import { cn } from '@/lib/utils'
 
 export interface LabelProps extends LabelHTMLAttributes<HTMLLabelElement> {}
 

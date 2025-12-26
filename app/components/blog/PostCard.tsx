@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+
 import { urlForImage } from '@/sanity/lib/image'
 
 type PostCardProps = {

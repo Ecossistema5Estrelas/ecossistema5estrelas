@@ -8,8 +8,11 @@ export default defineConfig({
   name: 'default',
   title: 'ECOSSISTEMA 5ESTRELAS',
 
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
+  // 🔒 CLI NÃO USA NEXT_PUBLIC_*
+  projectId: 'df3uyd06',
+  dataset: 'production',
+
+  apiVersion: '2024-01-01',
 
   plugins: [
     deskTool(),
