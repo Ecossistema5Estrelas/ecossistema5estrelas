@@ -1,4 +1,5 @@
 import ObrigadoContent from './ObrigadoContent'
+
 import BotaoVoltar from '@/components/BotaoVoltar'
 
 export const metadata = {

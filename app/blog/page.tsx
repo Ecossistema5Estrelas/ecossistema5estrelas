@@ -1,47 +1,38 @@
 import Link from 'next/link'
+
 import { getPosts } from '@/sanity/lib/queries'
+
+export const dynamic = 'force-dynamic'
 
 export default async function BlogPage() {
   const posts = await getPosts()
 
+  if (!posts || posts.length === 0) {
+    return <p>Nenhum post publicado.</p>
+  }
+
   return (
-    <section className="py-24">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+    <main className="mx-auto max-w-3xl py-16 px-4">
+      <h1 className="mb-8 text-3xl font-bold">
+        Blog
+      </h1>
 
-        <h1 className="text-2xl font-semibold text-white mb-12">
-          Blog ArqFuturum
-        </h1>
+      <ul className="space-y-6">
+        {posts.map((post) => (
+          <li key={post.slug.current}>
+            <Link
+              href={`/blog/${post.slug.current}`}
+              className="text-xl font-semibold text-white hover:underline"
+            >
+              {post.title}
+            </Link>
 
-        <div className="space-y-12">
-          {posts?.map((post: any) => (
-            <article key={post._id} className="space-y-3">
-
-              <h2 className="text-xl font-medium leading-snug">
-                <Link
-                  href={`/blog/${post.slug?.current}`}
-                  className="text-white hover:underline"
-                >
-                  {post.title || 'Sem título'}
-                </Link>
-              </h2>
-
-              {post.description && (
-                <p className="text-sm text-white/60 leading-relaxed">
-                  {post.description}
-                </p>
-              )}
-
-              {post._createdAt && (
-                <p className="text-xs text-white/40">
-                  {new Date(post._createdAt).toLocaleDateString('pt-BR')}
-                </p>
-              )}
-
-            </article>
-          ))}
-        </div>
-
-      </div>
-    </section>
+            <div className="mt-1 text-sm text-white/60">
+              {new Date(post.publishedAt).toLocaleDateString('pt-BR')}
+            </div>
+          </li>
+        ))}
+      </ul>
+    </main>
   )
 }

@@ -3,10 +3,11 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 
+import SubmitButton from './SubmitButton'
+
 import Input from '@/components/ui/input'
 import Textarea from '@/components/ui/textarea'
 import Label from '@/components/ui/label'
-import SubmitButton from './SubmitButton'
 
 export default function FormularioContato() {
   const [formData, setFormData] = useState({
