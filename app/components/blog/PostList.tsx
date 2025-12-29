@@ -1,23 +1,5 @@
-'use client'
-
 import PostCard from './PostCard'
-
-type Post = {
-  _id: string
-  title: string
-  description: string
-  slug: {
-    current: string
-  }
-  mainImage?: {
-    asset?: {
-      _ref?: string
-      _id?: string
-      url?: string
-    }
-  }
-  categories?: { title: string }[]
-}
+import type { Post } from '@/lib/types'
 
 type PostListProps = {
   posts: Post[]

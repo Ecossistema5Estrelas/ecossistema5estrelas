@@ -9,8 +9,14 @@ import Input from '@/components/ui/input'
 import Textarea from '@/components/ui/textarea'
 import Label from '@/components/ui/label'
 
-export default function FormularioContato() {
-  const [formData, setFormData] = useState({
+type FormData = {
+  nome: string
+  email: string
+  mensagem: string
+}
+
+export default function FormularioContato(): JSX.Element {
+  const [formData, setFormData] = useState<FormData>({
     nome: '',
     email: '',
     mensagem: '',
@@ -20,17 +26,20 @@ export default function FormularioContato() {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target
-    setFormData(prev => ({ ...prev, [name]: value }))
+    setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log('Formulario enviado:', formData)
+
+    // 🔒 Pronto para integração futura (API / Action / Server)
+    // Nenhum efeito colateral aqui
   }
 
   return (
     <motion.form
       onSubmit={handleSubmit}
+      noValidate
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
@@ -44,6 +53,7 @@ export default function FormularioContato() {
           value={formData.nome}
           onChange={handleChange}
           required
+          aria-describedby="nome-descricao"
         />
       </div>
 
@@ -56,6 +66,7 @@ export default function FormularioContato() {
           value={formData.email}
           onChange={handleChange}
           required
+          aria-describedby="email-descricao"
         />
       </div>
 
@@ -68,6 +79,7 @@ export default function FormularioContato() {
           onChange={handleChange}
           rows={5}
           required
+          aria-describedby="mensagem-descricao"
         />
       </div>
 

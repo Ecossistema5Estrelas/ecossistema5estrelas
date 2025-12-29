@@ -1,23 +1,34 @@
 import './globals.css'
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
+import type { ReactNode } from 'react'
 
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 
+/**
+ * 🌐 Metadata mínima do portal (institucional)
+ * Rotas específicas (ex: Blog) cuidam do próprio SEO
+ */
 export const metadata: Metadata = {
-  title: 'ECOSSISTEMA 5ESTRELAS',
+  title: {
+    default: 'ECOSSISTEMA 5ESTRELAS',
+    template: '%s | ECOSSISTEMA 5ESTRELAS',
+  },
   description: 'Portal institucional do ECOSSISTEMA 5ESTRELAS',
 }
 
-export const viewport = {
+/**
+ * 🎨 Viewport canônico
+ */
+export const viewport: Viewport = {
   themeColor: '#000000',
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+interface RootLayoutProps {
+  children: ReactNode
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="pt-BR" className="dark" suppressHydrationWarning>
       <body className="min-h-screen bg-gradient-to-b from-black via-zinc-900 to-zinc-950 text-white antialiased">

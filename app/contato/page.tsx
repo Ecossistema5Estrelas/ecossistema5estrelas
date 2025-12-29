@@ -1,8 +1,15 @@
-export default function ContatoPage() {
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Contato | ECOSSISTEMA 5ESTRELAS',
+  description:
+    'Canal institucional oficial do ECOSSISTEMA 5ESTRELAS para comunicações formais, parcerias, imprensa e assuntos institucionais.',
+}
+
+export default function ContatoPage(): JSX.Element {
   return (
     <main className="py-24">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-
         <h1 className="text-2xl font-semibold text-white">
           Contato
         </h1>
@@ -26,7 +33,6 @@ export default function ContatoPage() {
             </a>
           </p>
         </section>
-
       </div>
     </main>
   )

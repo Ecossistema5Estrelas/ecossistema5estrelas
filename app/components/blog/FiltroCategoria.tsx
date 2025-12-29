@@ -7,14 +7,16 @@ type FiltroCategoriaProps = {
   categorias: string[]
 }
 
-export default function FiltroCategoria({ categorias }: FiltroCategoriaProps) {
+export default function FiltroCategoria({
+  categorias,
+}: FiltroCategoriaProps): JSX.Element {
   const searchParams = useSearchParams()
   const pathname = usePathname()
   const router = useRouter()
 
   const handleFiltro = useCallback(
     (categoria: string) => {
-      const params = new URLSearchParams(searchParams)
+      const params = new URLSearchParams(searchParams.toString())
 
       if (params.get('categoria') === categoria) {
         params.delete('categoria')
@@ -22,28 +24,28 @@ export default function FiltroCategoria({ categorias }: FiltroCategoriaProps) {
         params.set('categoria', categoria)
       }
 
-      router.replace(
-        {
-          pathname,
-          query: Object.fromEntries(params.entries()),
-        } as any
-      )
+      const query = params.toString()
+      const url = query ? `${pathname}?${query}` : pathname
+
+      router.replace(url)
     },
     [searchParams, pathname, router]
   )
 
   return (
-    <div className="flex flex-wrap gap-2 justify-center mb-6">
+    <div className="mb-6 flex flex-wrap justify-center gap-2">
       {categorias.map((categoria) => {
         const ativa = searchParams.get('categoria') === categoria
 
         return (
           <button
             key={categoria}
+            type="button"
+            aria-pressed={ativa}
             onClick={() => handleFiltro(categoria)}
-            className={`px-3 py-1 rounded-full text-sm transition-colors ${
+            className={`rounded-full px-3 py-1 text-sm transition-colors ${
               ativa
-                ? 'bg-yellow-500 text-black font-semibold'
+                ? 'bg-yellow-500 font-semibold text-black'
                 : 'bg-zinc-800 text-white hover:bg-zinc-700'
             }`}
           >

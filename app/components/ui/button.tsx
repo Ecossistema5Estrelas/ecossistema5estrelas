@@ -1,21 +1,38 @@
-import { ButtonHTMLAttributes, forwardRef } from 'react'
+'use client'
+
+import type { ButtonHTMLAttributes } from 'react'
+import { forwardRef } from 'react'
 
 import { cn } from '@/lib/utils'
 
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps
+  extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'default' | 'outline' | 'ghost'
   size?: 'default' | 'sm' | 'lg'
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, children, variant = 'default', size = 'default', ...props }, ref) => {
+  (
+    {
+      className,
+      children,
+      variant = 'default',
+      size = 'default',
+      type = 'button',
+      ...props
+    },
+    ref
+  ): JSX.Element => {
     const baseClasses =
-      'inline-flex items-center justify-center rounded-xl text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none'
+      'inline-flex items-center justify-center rounded-xl text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50'
 
     const variantClasses = {
-      default: 'bg-emerald-500 text-white hover:bg-emerald-600 focus:ring-emerald-500',
-      outline: 'border border-gray-300 text-white hover:bg-gray-700 focus:ring-gray-500',
-      ghost: 'bg-transparent text-white hover:bg-gray-800 focus:ring-gray-600',
+      default:
+        'bg-emerald-500 text-white hover:bg-emerald-600 focus:ring-emerald-500',
+      outline:
+        'border border-gray-300 text-white hover:bg-gray-700 focus:ring-gray-500',
+      ghost:
+        'bg-transparent text-white hover:bg-gray-800 focus:ring-gray-600',
     }
 
     const sizeClasses = {
@@ -27,7 +44,13 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <button
         ref={ref}
-        className={cn(baseClasses, variantClasses[variant], sizeClasses[size], className)}
+        type={type}
+        className={cn(
+          baseClasses,
+          variantClasses[variant],
+          sizeClasses[size],
+          className
+        )}
         {...props}
       >
         {children}

@@ -1,13 +1,20 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
+import { baseMetadata } from './metadata'
+
 export const metadata: Metadata = {
-  title: 'ECOSSISTEMA 5ESTRELAS',
+  ...baseMetadata,
+  title: 'Portal Institucional',
   description:
     'Portal público e institucional dedicado à apresentação, organização e desenvolvimento de iniciativas digitais orientadas por governança, impacto social e visão de longo prazo.',
   alternates: {
-    canonical: '/'
-  }
+    canonical: 'https://ecossistema5estrelas.org/',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function HomePage() {
@@ -15,19 +22,16 @@ export default function HomePage() {
     <section className="py-24">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
 
-        {/* Headline institucional */}
         <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white">
           ECOSSISTEMA 5ESTRELAS
         </h1>
 
-        {/* Subheadline: público e aberto */}
         <p className="mt-6 text-base sm:text-lg text-white/70 leading-relaxed">
           Portal público e institucional dedicado à apresentação, organização
           e desenvolvimento de iniciativas digitais orientadas por governança,
           impacto social e visão de longo prazo.
         </p>
 
-        {/* Corpo editorial — posicionamento público */}
         <div className="mt-12 text-sm text-white/60 leading-relaxed space-y-6 text-left">
           <p>
             O ECOSSISTEMA 5ESTRELAS é um ambiente aberto, acessível e transparente,
@@ -38,16 +42,13 @@ export default function HomePage() {
           <p>
             Este portal funciona como a porta de entrada institucional do
             ecossistema, reunindo princípios, diretrizes, informações públicas
-            e acesso aos aplicativos que o compõem. Não se trata de um espaço
-            restrito, privado ou seletivo, mas de uma plataforma voltada à
-            comunicação clara e responsável com a sociedade.
+            e acesso aos aplicativos que o compõem.
           </p>
 
           <p>
             Critérios específicos de acesso, regras internas, níveis de
             participação ou funcionalidades avançadas são definidos
-            exclusivamente no escopo de cada aplicativo, conforme sua
-            finalidade, natureza e contexto de uso.
+            exclusivamente no escopo de cada aplicativo.
           </p>
 
           <p>
@@ -57,7 +58,6 @@ export default function HomePage() {
           </p>
         </div>
 
-        {/* Convite silencioso ao Blog */}
         <div className="mt-12">
           <Link
             href="/blog"

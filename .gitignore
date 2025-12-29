@@ -6,9 +6,13 @@ node_modules/
 out/
 
 # ===============================
-# Environment
+# Environment (NUNCA versionar)
 # ===============================
+.env
 .env.local
+.env.production
+.env.*
+!.env.example
 
 # ===============================
 # OS / Editor
@@ -20,7 +24,16 @@ out/
 # Sanity (gerado / runtime)
 # ===============================
 studio/.sanity/
-sanity.cli.js
+.sanity/
+sanity.cli.*
+
+# ===============================
+# Scripts editoriais (Node + token)
+# ===============================
+sanity-*.mjs
+publish-*.mjs
+post-*.json
+post-*.ndjson
 
 # ===============================
 # Backups & snapshots (não-versionados)
@@ -30,6 +43,7 @@ sanity-backup-*
 *.tar.gz
 _backup_pre_higienizacao/
 _discarded/
+_archive/
 
 # ===============================
 # Binários / instaladores / lixo
@@ -46,8 +60,9 @@ _discarded/
 # ===============================
 # Deploy
 # ===============================
-.vercel/# --- Hydra: higiene local ---
-.env.production
-.env.*
-!.env.example
-.sanity/
+.vercel/
+
+# ===============================
+# Sentry
+# ===============================
+.env.sentry-build-plugin

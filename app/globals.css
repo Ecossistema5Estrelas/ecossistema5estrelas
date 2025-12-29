@@ -10,10 +10,13 @@
   html {
     background-color: #000000;
     color-scheme: dark;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
-    min-height: 100vh;
+    min-height: 100dvh;
     background-color: #000000;
     color: #ffffff;
   }
@@ -23,7 +26,9 @@
    AJUSTES GLOBAIS
    ================================ */
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 

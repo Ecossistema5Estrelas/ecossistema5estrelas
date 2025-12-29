@@ -1,14 +1,20 @@
-import { LabelHTMLAttributes } from 'react'
+'use client'
+
+import type { LabelHTMLAttributes } from 'react'
 
 import { cn } from '@/lib/utils'
 
-export interface LabelProps extends LabelHTMLAttributes<HTMLLabelElement> {}
+export interface LabelProps
+  extends LabelHTMLAttributes<HTMLLabelElement> {}
 
-export default function Label({ className, ...props }: LabelProps) {
+export default function Label({
+  className,
+  ...props
+}: LabelProps): JSX.Element {
   return (
     <label
       className={cn(
-        'text-sm font-medium text-white leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70',
+        'text-sm font-medium leading-none text-white peer-disabled:cursor-not-allowed peer-disabled:opacity-70',
         className
       )}
       {...props}

@@ -1,24 +1,39 @@
-import { client } from '@/sanity/lib/clients'
+﻿import type { MetadataRoute } from 'next'
+import { getPosts } from '@/lib/queries'
 
-export default async function sitemap() {
-  const posts = await client.fetch(`
-    *[_type == "post" && defined(slug.current)]{
-      "slug": slug.current,
-      "updated": _updatedAt
-    }
-  `)
+const baseUrl = 'https://ecossistema5estrelas.org'
 
-  const base = 'https://ecossistema5estrelas.org'
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const posts = await getPosts()
 
-  const routes = [
-    { url: base, lastModified: new Date() },
-    { url: `${base}/blog`, lastModified: new Date() },
+  const staticRoutes: MetadataRoute.Sitemap = [
+    {
+      url: baseUrl,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 1,
+    },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: 'daily',
+      priority: 0.9,
+    },
   ]
 
-  const blogRoutes = posts.map((p: any) => ({
-    url: `${base}/blog/${p.slug}`,
-    lastModified: new Date(p.updated),
-  }))
+  const blogRoutes: MetadataRoute.Sitemap = posts.map((post) => {
+    const slug =
+      typeof post.slug === 'string'
+        ? post.slug
+        : post.slug?.current
 
-  return [...routes, ...blogRoutes]
+    return {
+      url: `${baseUrl}/blog/${slug}`,
+      lastModified: new Date(post._updatedAt || post.publishedAt),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    }
+  })
+
+  return [...staticRoutes, ...blogRoutes]
 }

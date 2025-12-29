@@ -2,29 +2,60 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import type { Route } from 'next'
 
-const MobileView = () => {
+type MobileLink = {
+  href: Route
+  label: string
+  emoji: string
+  hoverClass: string
+}
+
+const links: MobileLink[] = [
+  {
+    href: '/blog',
+    label: 'Blog',
+    emoji: '📚',
+    hoverClass: 'hover:text-yellow-300',
+  },
+  {
+    href: '/contato',
+    label: 'Contato',
+    emoji: '📬',
+    hoverClass: 'hover:text-blue-400',
+  },
+  {
+    href: '/sobre',
+    label: 'Sobre',
+    emoji: 'ℹ️',
+    hoverClass: 'hover:text-green-400',
+  },
+  {
+    href: '/dashboard',
+    label: 'Dashboard',
+    emoji: '👤',
+    hoverClass: 'hover:text-pink-400',
+  },
+]
+
+export default function MobileView(): JSX.Element {
   return (
     <motion.nav
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="flex flex-col items-center gap-4 p-6 bg-black/90 text-white shadow-md rounded-2xl"
+      aria-label="Navegação mobile"
+      className="flex flex-col items-center gap-4 rounded-2xl bg-black/90 p-6 text-white shadow-md"
     >
-      <Link href="/blog" className="text-xl hover:text-yellow-300 transition-colors">
-        📚 Blog
-      </Link>
-      <Link href="/contato" className="text-xl hover:text-blue-400 transition-colors">
-        📬 Contato
-      </Link>
-      <Link href="/sobre" className="text-xl hover:text-green-400 transition-colors">
-        ℹ️ Sobre
-      </Link>
-      <Link href="/dashboard" className="text-xl hover:text-pink-400 transition-colors">
-        👤 Dashboard
-      </Link>
+      {links.map(({ href, label, emoji, hoverClass }) => (
+        <Link
+          key={href}
+          href={href}
+          className={`text-xl transition-colors ${hoverClass}`}
+        >
+          <span aria-hidden="true">{emoji}</span> {label}
+        </Link>
+      ))}
     </motion.nav>
   )
 }
-
-export default MobileView

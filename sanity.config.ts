@@ -1,11 +1,15 @@
-import { defineConfig } from 'sanity'
+﻿import { defineConfig } from "sanity"
+import { schemaTypes } from "./sanity/schema"
 
 export default defineConfig({
-  name: 'default',
-  title: 'ECOSSISTEMA 5ESTRELAS',
+  name: "default",
+  title: "ECOSSISTEMA 5ESTRELAS",
 
-  projectId: 'df3uyd06',
-  dataset: 'production',
+  projectId: "df3uyd06",
+  dataset: "production",
+  apiVersion: "2024-01-01",
 
-  apiVersion: '2024-01-01',
+  schema: {
+    types: schemaTypes,
+  },
 })
