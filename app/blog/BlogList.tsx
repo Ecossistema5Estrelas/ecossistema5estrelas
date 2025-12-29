@@ -1,22 +1,34 @@
-﻿import { getPosts } from '@/sanity/lib/queries'
-import PostCard from '@/components/blog/PostCard'
+﻿import Link from "next/link"
+import type { Post } from "@/lib/types"
 
-export default async function BlogList() {
-  const posts = await getPosts()
+type Props = {
+  posts: Post[]
+}
 
-  if (!posts.length) {
-    return (
-      <p className="text-center text-gray-400">
-        Nenhum post encontrado.
-      </p>
-    )
-  }
-
+export default function BlogList({ posts }: Props) {
   return (
-    <div className="grid gap-6">
-      {posts.map((post) => (
-        <PostCard key={post._id} post={post} />
-      ))}
-    </div>
+    <ul className="space-y-6">
+      {posts.map((post) => {
+        // 🔒 Blindagem correta para slug string
+        if (!post.slug || typeof post.slug !== "string") {
+          return null
+        }
+
+        return (
+          <li key={post._id}>
+            <Link
+              href={`/blog/${post.slug}`}
+              className="text-lg font-semibold underline"
+            >
+              {post.title}
+            </Link>
+
+            <div className="text-sm text-neutral-500">
+              {new Date(post.publishedAt).toLocaleDateString("pt-BR")}
+            </div>
+          </li>
+        )
+      })}
+    </ul>
   )
 }

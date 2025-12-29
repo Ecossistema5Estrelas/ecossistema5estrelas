@@ -1,78 +1,72 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
-import { notFound } from 'next/navigation'
-import { PortableText } from '@portabletext/react'
+import { notFound } from "next/navigation"
+import type { Metadata } from "next"
+import Link from "next/link"
+import { PortableText } from "@portabletext/react"
 
-import { getPost } from '@/sanity/lib/queries'
+import { getPost } from "@/lib/queries"
+import { portableTextComponents } from "@/lib/portableText"
+
+/**
+ * 🔒 Next 15 — força execução dinâmica da rota
+ * Evita cache fantasma e 404 silencioso
+ */
+export const dynamic = "force-dynamic"
 
 type PageProps = {
-  params: Promise<{ slug: string }>
+  params: Promise<{
+    slug: string
+  }>
 }
 
+/**
+ * Metadata dinâmica (SEO)
+ */
 export async function generateMetadata(
   { params }: PageProps
 ): Promise<Metadata> {
   const { slug } = await params
   const post = await getPost(slug)
 
-  if (!post) return {}
+  if (!post) {
+    return {}
+  }
 
   return {
     title: post.title,
-    alternates: {
-      canonical: `/blog/${post.slug.current}`,
-    },
+    description:
+      post.excerpt || "Conteúdo oficial do ECOSSISTEMA 5ESTRELAS",
   }
 }
 
-const portableTextComponents = {
-  block: {
-    h2: ({ children }: any) => (
-      <h2 className="mt-14 mb-6 text-2xl font-semibold">
-        {children}
-      </h2>
-    ),
-    normal: ({ children }: any) => (
-      <p className="mt-6 leading-relaxed text-white/90">
-        {children}
-      </p>
-    ),
-  },
-}
-
-export default async function BlogPostPage({ params }: PageProps) {
+/**
+ * Página do post
+ */
+export default async function BlogPostPage(
+  { params }: PageProps
+) {
   const { slug } = await params
+
+  console.log("🧭 SLUG RECEBIDO:", slug)
+
   const post = await getPost(slug)
 
-  if (!post) notFound()
+  if (!post) {
+    console.log("❌ POST NÃO ENCONTRADO PARA:", slug)
+    notFound()
+  }
 
   return (
     <section className="py-24">
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-
-        <div className="mb-12">
-          <Link
-            href="/blog"
-            className="text-sm text-white/60 hover:text-white transition"
-          >
-            ← Voltar para o Blog
-          </Link>
-        </div>
-
-        <article
-          className="
-            prose prose-invert
-            max-w-none
-            prose-h2:text-2xl
-            prose-h2:font-semibold
-            prose-h2:mt-14
-            prose-h2:mb-6
-            prose-p:leading-relaxed
-            prose-p:mt-6
-            prose-p:text-white/90
-          "
+      <div className="mx-auto max-w-3xl px-4">
+        <Link
+          href="/blog"
+          className="mb-10 inline-block text-sm text-white/60 hover:text-white"
         >
-          <h1 className="mb-10 text-3xl font-extrabold tracking-tight text-white">
+          ← Voltar para o Blog
+        </Link>
+
+        <article className="prose prose-invert max-w-none">
+          <h1 className="mb-10 text-3xl font-extrabold">
             {post.title}
           </h1>
 
@@ -83,7 +77,6 @@ export default async function BlogPostPage({ params }: PageProps) {
             />
           )}
         </article>
-
       </div>
     </section>
   )
