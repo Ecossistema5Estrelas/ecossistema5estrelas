@@ -1,10 +1,8 @@
-import * as Sentry from '@sentry/nextjs';
+﻿import * as Sentry from "@sentry/nextjs";
 
-Sentry.init({
-  dsn: process.env.NEXT_PUBLIC_SENTRY_DSN!,
-  tracesSampleRate: 1,
-  sendDefaultPii: true,
-});
-
-export const onRouterTransitionStart =
-  Sentry.captureRouterTransitionStart;
+/**
+ * Sentry Next.js instrumentation client
+ * Required to instrument router navigations:
+ * export const onRouterTransitionStart = Sentry.captureRouterTransitionStart;
+ */
+export const onRouterTransitionStart = Sentry.captureRouterTransitionStart;
