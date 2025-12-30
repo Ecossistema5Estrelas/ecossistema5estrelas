@@ -1,0 +1,2 @@
+npm run build || exit 1
+node scripts/editorial/query-ghost-posts.mjs || exit 1
