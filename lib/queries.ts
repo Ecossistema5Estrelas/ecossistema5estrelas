@@ -3,7 +3,7 @@ import { sanityClient } from "./sanity";
 
 /**
  * 🔍 Lista de posts do blog
- * Shape CANÔNICO (slug estrutural)
+ * Shape CANÔNICO (frontend-safe)
  */
 export async function getPosts() {
   return sanityClient.fetch(
@@ -17,7 +17,7 @@ export async function getPosts() {
     | order(publishedAt desc) {
       _id,
       title,
-      slug,           // ⚠️ NÃO achatar
+      "slug": slug.current,   // ✅ NORMALIZADO
       publishedAt
     }`,
     {},
@@ -40,7 +40,7 @@ export async function getPost(slug: string) {
     ][0] {
       _id,
       title,
-      slug,
+      "slug": slug.current,   // ✅ NORMALIZADO
       publishedAt,
       body,
       excerpt,
