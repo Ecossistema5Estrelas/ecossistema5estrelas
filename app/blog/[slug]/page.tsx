@@ -14,7 +14,6 @@ export default async function BlogPost({ params }) {
     notFound()
   }
 
-  return (
-    // render normal
-  )
+  return (<article></article>)
 }
+
