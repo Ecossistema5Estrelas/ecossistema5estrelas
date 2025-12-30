@@ -66,3 +66,8 @@ _archive/
 # Sentry
 # ===============================
 .env.sentry-build-plugin
+.env.local
+.node-version
+.nvmrc
+dist/
+_archive/
