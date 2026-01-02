@@ -1,0 +1,2 @@
+ROOT=C:\dev\portal-ecossistema5estrelas
+TS=20251230-003414

@@ -1,0 +1,52 @@
+{
+  "contract": "EDITORIAL_MINIMO_LISTAGEM_V1",
+  "scope": "blog_list",
+  "status": "CANONICO",
+  "principles": [
+    "vitrine_premium",
+    "criterio_antes_de_exposicao",
+    "sem_inflacao_editorial",
+    "terminal_first",
+    "frontend_puro"
+  ],
+  "eligibility": {
+    "required": {
+      "_id": {
+        "type": "string",
+        "immutable": true
+      },
+      "title": {
+        "type": "string",
+        "minLength": 1
+      },
+      "slug": {
+        "type": "string",
+        "source": "backend_normalizado"
+      },
+      "publishedAt": {
+        "type": "string",
+        "format": "iso-8601",
+        "rule": "<= now()"
+      },
+      "excerpt": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "visibility_rules": {
+    "blog_list": "somente_se_eligivel",
+    "post_route": "/blog/[slug] sempre_acessivel_se_existir"
+  },
+  "anti_regression": [
+    "nao_duplicar_post",
+    "frontend_nao_normaliza",
+    "nao_remover_filtro_publishedAt",
+    "nao_relaxar_contrato_sem_versionar"
+  ],
+  "audit": {
+    "deterministic": true,
+    "explainable": true,
+    "human_visible": true
+  }
+}

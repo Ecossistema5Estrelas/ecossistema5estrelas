@@ -1,0 +1,12 @@
+MNEMOSINE — REGISTRO CANÔNICO
+Timestamp: 2026-01-01 02:45:53
+
+TÍTULO
+POL-01 Política de Privacidade Publicada no Portal
+
+CONTEÚDO
+Status: PUBLICADA
+URL: /politica-de-privacidade
+Vigência: 01/01/2026
+Fonte: Política Canônica (Notion)
+Impacto: Correção de 404, melhoria de SEO e confiança institucional

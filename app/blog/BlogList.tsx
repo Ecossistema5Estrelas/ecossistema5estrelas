@@ -1,15 +1,31 @@
 ﻿import Link from "next/link"
-import type { Post } from "@/lib/types"
 
-type Props = {
-  posts: Post[]
+/**
+ * Contrato canônico de post resumido
+ * Usado APENAS em listagens
+ */
+type PostSummary = {
+  _id: string
+  title: string
+  slug: string
+  publishedAt: string
 }
 
+type Props = {
+  posts: PostSummary[]
+}
+
+/**
+ * Lista de posts do blog
+ * - NÃO renderiza conteúdo
+ * - NÃO conhece body
+ * - NÃO aceita post completo
+ */
 export default function BlogList({ posts }: Props) {
   return (
     <ul className="space-y-6">
       {posts.map((post) => {
-        // 🔒 Blindagem correta para slug string
+        // Blindagem final de segurança
         if (!post.slug || typeof post.slug !== "string") {
           return null
         }

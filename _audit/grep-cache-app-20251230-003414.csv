@@ -1,0 +1,8 @@
+"Path","LineNumber","Line"
+"C:\dev\portal-ecossistema5estrelas\app\blog\[slug]\page.tsx","1","export const dynamic = 'force-dynamic'"
+"C:\dev\portal-ecossistema5estrelas\app\blog\[slug]\page.tsx","7","  const post = await sanityClient.fetch("
+"C:\dev\portal-ecossistema5estrelas\app\blog\[slug]\page.tsx","10","    { cache: 'no-store' }"
+"C:\dev\portal-ecossistema5estrelas\app\blog\layout.tsx","3","export const dynamic = 'force-dynamic'"
+"C:\dev\portal-ecossistema5estrelas\app\blog\layout.tsx","4","export const revalidate = 0"
+"C:\dev\portal-ecossistema5estrelas\app\blog\page.tsx","4","export const dynamic = 'force-dynamic'"
+"C:\dev\portal-ecossistema5estrelas\app\blog\page.tsx","5","export const revalidate = 0"

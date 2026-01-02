@@ -1,0 +1,18 @@
+MNEMOSINE — REGISTRO CANÔNICO
+Timestamp: 2026-01-01 00:47:42
+
+TÍTULO
+NEXT-01 Webhook Sanity Revalidate
+
+CONTEÚDO
+Status: IMPLEMENTADO
+Líder: ArqFuturum
+Auditoria: Hydra
+
+Impacto:
+- Revalidação por tag e path
+- Sem rebuild global
+- Blog em operação contínua
+
+Princípio:
+Crescimento ao redor, nunca em cima.
