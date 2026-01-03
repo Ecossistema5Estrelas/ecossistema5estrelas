@@ -14,3 +14,4 @@ Sentry.init({
   // Logs estruturados (opcional)
   enableLogs: true,
 });
+export const onRouterTransitionStart = Sentry.captureRouterTransitionStart;
