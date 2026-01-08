@@ -1,3 +1,8 @@
-export default function Privacidade() {
-  return <main><h1>Política de Privacidade</h1><p>Em preparação.</p></main>
+ï»¿export default function Privacidade() {
+  return (
+    <main>
+      <h1>PolÃ­tica de Privacidade</h1>
+      <p>Em preparaÃ§Ã£o.</p>
+    </main>
+  )
 }
