@@ -13,7 +13,7 @@ export const dynamic = "force-dynamic";
  * Deve SOBRESCREVER o layout raiz após invalidação.
  */
 export const metadata: Metadata = {
-  title: "Sobre | ECOSSISTEMA 5ESTRELAS",
+  title: "Sobre",
   description:
     "Conheça o ECOSSISTEMA 5ESTRELAS: missão, visão, valores e governança ética do portal premium.",
   alternates: {
