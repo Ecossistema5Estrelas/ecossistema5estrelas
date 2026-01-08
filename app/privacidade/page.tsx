@@ -1,4 +1,6 @@
-﻿export default function Privacidade() {
+﻿"use client"
+
+export default function Privacidade() {
   return (
     <main>
       <h1>Política de Privacidade</h1>
