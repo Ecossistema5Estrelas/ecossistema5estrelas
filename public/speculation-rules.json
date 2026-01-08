@@ -1,0 +1,12 @@
+{
+  "prefetch": [
+    {
+      "source": "list",
+      "urls": [
+        "/blog",
+        "/sobre",
+        "/contato"
+      ]
+    }
+  ]
+}

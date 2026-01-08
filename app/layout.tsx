@@ -52,6 +52,9 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="pt-BR" className="dark" suppressHydrationWarning>
+    <head>
+      <script type="speculationrules" src="/speculation-rules.json"></script>
+    </head>
       <head>
         {/* ⚡ Performance de rede — domínios críticos */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
