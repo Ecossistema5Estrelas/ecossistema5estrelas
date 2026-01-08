@@ -13,7 +13,7 @@ import CookieConsent from '@/components/consent/CookieConsent'
  *
  * - Define identidade institucional
  * - NÃO bloqueia override por página
- * - Permite que /sobre, /blog, /posts etc. definam SEO próprio
+ * - SEO específico deve ser definido nas rotas (/sobre, /blog, etc.)
  */
 export const metadata: Metadata = {
   title: {
@@ -21,6 +21,18 @@ export const metadata: Metadata = {
     template: '%s | ECOSSISTEMA 5ESTRELAS',
   },
   description: 'Portal institucional do ECOSSISTEMA 5ESTRELAS',
+
+  /** 🧭 SEO & Governança */
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  /** 🔐 Privacidade */
+  referrer: 'strict-origin-when-cross-origin',
+
+  /** 🎨 UX nativa */
+  colorScheme: 'dark',
 }
 
 /**
@@ -45,7 +57,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         {/* Analytics (GA4) — respeita consentimento */}
         <Analytics />
 
-        {/* Conteúdo principal (páginas podem controlar SEO livremente) */}
+        {/* Conteúdo principal */}
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
           {children}
         </main>
