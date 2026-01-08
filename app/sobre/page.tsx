@@ -1,5 +1,17 @@
 import type { Metadata } from "next";
+import type { AnchorHTMLAttributes } from "react";
 
+/**
+ * ⚠️ QUEBRA DE CACHE CONTROLADA
+ * Força re-renderização para invalidar snapshot antigo do Edge.
+ * (Remover após validação final.)
+ */
+export const dynamic = "force-dynamic";
+
+/**
+ * 🧭 Metadata canônica da página /sobre
+ * Deve SOBRESCREVER o layout raiz após invalidação.
+ */
 export const metadata: Metadata = {
   title: "Sobre | ECOSSISTEMA 5ESTRELAS",
   description:
@@ -17,9 +29,10 @@ export const metadata: Metadata = {
   },
 };
 
-function ExternalLink(
-  props: React.AnchorHTMLAttributes<HTMLAnchorElement>
-) {
+/**
+ * 🔗 Link externo seguro (noopener / noreferrer)
+ */
+function ExternalLink(props: AnchorHTMLAttributes<HTMLAnchorElement>) {
   const { href = "#", children, ...rest } = props;
   const isExternal = typeof href === "string" && /^https?:\/\//i.test(href);
 
@@ -27,9 +40,7 @@ function ExternalLink(
     <a
       href={href}
       {...rest}
-      {...(isExternal
-        ? { target: "_blank", rel: "noopener noreferrer" }
-        : {})}
+      {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
     >
       {children}
     </a>
@@ -50,8 +61,9 @@ export default function SobrePage() {
       <section aria-labelledby="missao">
         <h2 id="missao">Missão</h2>
         <p>
-          Entregar experiências digitais com <strong>qualidade estrutural</strong>,
-          acessibilidade nativa e performance real.
+          Entregar experiências digitais com{" "}
+          <strong>qualidade estrutural</strong>, acessibilidade nativa e
+          performance real.
         </p>
       </section>
 
@@ -67,8 +79,12 @@ export default function SobrePage() {
         <h2 id="valores">Valores</h2>
         <article>
           <ul>
-            <li><strong>Governança &gt; velocidade</strong></li>
-            <li><em>Faturar → observar → investir</em></li>
+            <li>
+              <strong>Governança &gt; velocidade</strong>
+            </li>
+            <li>
+              <em>Faturar → observar → investir</em>
+            </li>
             <li>Semântica, acessibilidade e ética como padrão</li>
           </ul>
           <p>
@@ -92,8 +108,8 @@ export default function SobrePage() {
         <details>
           <summary>Como validar o SEO?</summary>
           <p>
-            Conferindo <strong>&lt;title&gt;</strong>, description e canonical via
-            view-source.
+            Conferindo <strong>&lt;title&gt;</strong>, description e canonical no
+            HTML servido.
           </p>
         </details>
       </section>
