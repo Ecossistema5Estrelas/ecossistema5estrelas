@@ -14,6 +14,7 @@ import CookieConsent from '@/components/consent/CookieConsent'
  * - Identidade institucional
  * - Permite override por página
  * - NÃO contém propriedades de viewport
+ * - Injeta Speculation Rules de forma NATIVA (App Router safe)
  */
 export const metadata: Metadata = {
   title: {
@@ -35,6 +36,13 @@ export const metadata: Metadata = {
    * 📱 PWA
    */
   manifest: '/manifest.webmanifest',
+
+  /**
+   * ⚡ Performance — Speculation Rules (FORMA CORRETA)
+   */
+  other: {
+    'speculationrules': '/speculation-rules.json',
+  },
 }
 
 /**
@@ -52,19 +60,6 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="pt-BR" className="dark" suppressHydrationWarning>
-    <head>
-      <script type="speculationrules" src="/speculation-rules.json"></script>
-    </head>
-      <head>
-        {/* ⚡ Performance de rede — domínios críticos */}
-        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <link
-          rel="preconnect"
-          href="https://www.googletagmanager.com"
-          crossOrigin=""
-        />
-      </head>
-
       <body className="min-h-screen bg-gradient-to-b from-black via-zinc-900 to-zinc-950 text-white antialiased">
         {/* Header institucional */}
         <Header />
