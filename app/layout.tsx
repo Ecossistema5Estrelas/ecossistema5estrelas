@@ -11,9 +11,9 @@ import CookieConsent from '@/components/consent/CookieConsent'
 /**
  * 🌐 Metadata base do portal (NÍVEL RAIZ)
  *
- * - Define identidade institucional
- * - NÃO bloqueia override por página
- * - SEO específico deve ser definido nas rotas (/sobre, /blog, etc.)
+ * - Identidade institucional
+ * - Permite override por página
+ * - NÃO contém propriedades de viewport
  */
 export const metadata: Metadata = {
   title: {
@@ -21,23 +21,11 @@ export const metadata: Metadata = {
     template: '%s | ECOSSISTEMA 5ESTRELAS',
   },
   description: 'Portal institucional do ECOSSISTEMA 5ESTRELAS',
-
-  /** 🧭 SEO & Governança */
-  robots: {
-    index: true,
-    follow: true,
-  },
-
-  /** 🔐 Privacidade */
-  referrer: 'strict-origin-when-cross-origin',
-
-  /** 🎨 UX nativa */
-  colorScheme: 'dark',
 }
 
 /**
- * 🎨 Viewport canônico
- * Mantido no layout raiz por padrão institucional
+ * 🎨 Viewport canônico institucional
+ * (somente propriedades suportadas)
  */
 export const viewport: Viewport = {
   themeColor: '#000000',
@@ -51,10 +39,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="pt-BR" className="dark" suppressHydrationWarning>
       <body className="min-h-screen bg-gradient-to-b from-black via-zinc-900 to-zinc-950 text-white antialiased">
-        {/* Header institucional global */}
+        {/* Header institucional */}
         <Header />
 
-        {/* Analytics (GA4) — respeita consentimento */}
+        {/* Analytics (respeita consentimento) */}
         <Analytics />
 
         {/* Conteúdo principal */}
@@ -65,7 +53,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         {/* Footer institucional */}
         <Footer />
 
-        {/* Consentimento de cookies (LGPD) */}
+        {/* Consentimento LGPD */}
         <CookieConsent />
       </body>
     </html>
