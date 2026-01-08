@@ -21,6 +21,20 @@ export const metadata: Metadata = {
     template: '%s | ECOSSISTEMA 5ESTRELAS',
   },
   description: 'Portal institucional do ECOSSISTEMA 5ESTRELAS',
+
+  /**
+   * 🧭 SEO & Governança
+   */
+  robots: {
+    index: true,
+    follow: true,
+  },
+  referrer: 'strict-origin-when-cross-origin',
+
+  /**
+   * 📱 PWA
+   */
+  manifest: '/manifest.webmanifest',
 }
 
 /**
@@ -38,6 +52,16 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="pt-BR" className="dark" suppressHydrationWarning>
+      <head>
+        {/* ⚡ Performance de rede — domínios críticos */}
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link
+          rel="preconnect"
+          href="https://www.googletagmanager.com"
+          crossOrigin=""
+        />
+      </head>
+
       <body className="min-h-screen bg-gradient-to-b from-black via-zinc-900 to-zinc-950 text-white antialiased">
         {/* Header institucional */}
         <Header />
