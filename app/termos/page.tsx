@@ -1,4 +1,6 @@
-﻿export default function Termos() {
+﻿"use client"
+
+export default function Termos() {
   return (
     <main>
       <h1>Termos de Uso</h1>
