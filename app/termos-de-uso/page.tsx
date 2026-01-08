@@ -1,7 +1,4 @@
-export const metadata = {
-  title: "Termos de Uso | ECOSSISTEMA 5ESTRELAS",
-  robots: { index: true, follow: true },
-};
+"use client";
 
 export default function TermosDeUsoPage() {
   return (
@@ -13,7 +10,8 @@ export default function TermosDeUsoPage() {
       <h2>1. Aceite</h2>
       <p>
         Ao acessar ou utilizar o Portal ECOSSISTEMA 5ESTRELAS, você concorda com estes
-        Termos de Uso e com a nossa <a href="/politica-de-privacidade">Política de Privacidade</a>.
+        Termos de Uso e com a nossa{" "}
+        <a href="/politica-de-privacidade">Política de Privacidade</a>.
         Se você não concordar, não utilize o portal.
       </p>
 
@@ -30,7 +28,6 @@ export default function TermosDeUsoPage() {
       </p>
 
       <h2>4. Conduta do usuário</h2>
-      <p>Você concorda em não:</p>
       <ul>
         <li>violar leis, regulamentos ou direitos de terceiros;</li>
         <li>tentar acessar áreas restritas sem autorização;</li>
@@ -59,27 +56,24 @@ export default function TermosDeUsoPage() {
       <h2>8. Limitação de responsabilidade</h2>
       <p>
         Na máxima extensão permitida por lei, não nos responsabilizamos por danos indiretos, lucros cessantes
-        ou perdas decorrentes do uso do portal, incluindo indisponibilidades, falhas de terceiros e eventos fora
-        do controle razoável.
+        ou perdas decorrentes do uso do portal.
       </p>
 
       <h2>9. Links de terceiros</h2>
       <p>
-        O portal pode conter links para sites/serviços de terceiros. Não controlamos esses ambientes e não
-        nos responsabilizamos por seus conteúdos, políticas ou práticas.
+        O portal pode conter links para serviços de terceiros. Não controlamos esses ambientes.
       </p>
 
       <h2>10. Privacidade e Cookies</h2>
       <p>
-        Para entender como tratamos dados e utilizamos cookies, consulte:
-        <a href="/politica-de-privacidade"> Política de Privacidade</a> e
-        <a href="/politica-de-cookies"> Política de Cookies</a>.
+        Consulte a{" "}
+        <a href="/politica-de-privacidade">Política de Privacidade</a> e a{" "}
+        <a href="/politica-de-cookies">Política de Cookies</a>.
       </p>
 
       <h2>11. Lei aplicável e foro</h2>
       <p>
-        Estes termos são regidos pelas leis da República Federativa do Brasil. Eventuais disputas serão
-        tratadas no foro competente, conforme legislação aplicável.
+        Estes termos são regidos pelas leis da República Federativa do Brasil.
       </p>
 
       <h2>12. Contato</h2>
