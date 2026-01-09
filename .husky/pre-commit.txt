@@ -1,0 +1,11 @@
+#!/bin/sh
+echo "🔒 Guardião 5⭐ ativo..."
+
+if [ -f "package-lock.json" ]; then
+  echo "❌ ERRO: package-lock.json detectado."
+  exit 1
+fi
+
+pnpm store status || exit 1
+
+echo "✅ Governança OK"
