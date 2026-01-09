@@ -4,6 +4,23 @@
 node_modules/
 .next/
 out/
+dist/
+
+# ===============================
+# Gerenciadores (governança)
+# ===============================
+package-lock.json
+node_modules.PNPM-CONTAMINATED/
+.pnpm-debug.log*
+
+# ===============================
+# Auditoria e snapshots (não versionar)
+# ===============================
+audits/
+audit-*.txt
+snapshots/
+*.snapshot
+*.freeze
 
 # ===============================
 # Environment (NUNCA versionar)
@@ -19,6 +36,7 @@ out/
 # ===============================
 .vscode/
 .DS_Store
+Thumbs.db
 
 # ===============================
 # Sanity (gerado / runtime)
@@ -66,10 +84,29 @@ _archive/
 # Sentry
 # ===============================
 .env.sentry-build-plugin
-.env.local
+
+# ===============================
+# Node version managers
+# ===============================
 .node-version
 .nvmrc
-dist/
-_archive/
 
+# ===============================
+# Logs
+# ===============================
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ===============================
+# Cache / Temp
+# ===============================
+.cache/
+.tmp/
+.temp/
+
+# ===============================
+# Mnemosine / Arquivos históricos
+# ===============================
 _archive/mnemosine/
