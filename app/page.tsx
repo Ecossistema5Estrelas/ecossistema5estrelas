@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   ...baseMetadata,
   title: 'Portal Institucional',
   description:
-    'Portal público e institucional dedicado à apresentação, organização e desenvolvimento de iniciativas digitais orientadas por governança, impacto social e visão de longo prazo.',
+    'Portal institucional do ECOSSISTEMA 5ESTRELAS, dedicado à apresentação, organização e desenvolvimento de iniciativas digitais orientadas por governança, impacto social e visão de longo prazo.',
   alternates: {
     canonical: 'https://ecossistema5estrelas.org/',
   },
@@ -19,16 +19,22 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <section className="py-24">
+    <main
+      id="content"
+      role="main"
+      className="py-24"
+      aria-labelledby="home-title"
+    >
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-
-        <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white">
+        <h1
+          id="home-title"
+          className="text-3xl sm:text-4xl font-semibold tracking-tight text-white"
+        >
           ECOSSISTEMA 5ESTRELAS
         </h1>
 
         <p className="mt-6 text-base sm:text-lg text-white/70 leading-relaxed">
-          Portal público e institucional dedicado à apresentação, organização
-          e desenvolvimento de iniciativas digitais orientadas por governança,
+          Portal institucional do ECOSSISTEMA 5ESTRELAS, orientado por governança,
           impacto social e visão de longo prazo.
         </p>
 
@@ -64,6 +70,12 @@ export default function HomePage() {
             className="inline-block text-sm text-white/70 hover:text-white transition"
           >
             Acessar o Blog ArqFuturum →
+          </Link>
+        </div>
+      </div>
+    </main>
+  )
+}m →
           </Link>
         </div>
 
