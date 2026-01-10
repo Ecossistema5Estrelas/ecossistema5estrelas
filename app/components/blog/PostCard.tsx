@@ -1,7 +1,8 @@
-﻿'use client'
+'use client'
 
 import Link from 'next/link'
 import Image from 'next/image'
+
 import type { Route } from 'next'
 
 import { urlForImage } from '@/lib/sanityImage'
@@ -34,7 +35,7 @@ type PostCardProps = {
 export default function PostCard({
   post,
 }: PostCardProps): JSX.Element | null {
-  // ðŸš¨ Blindagem: slug Ã© obrigatÃ³rio para navegaÃ§Ã£o
+  // 🚨 Blindagem: slug é obrigatório para navegação
   if (!post?.slug?.current) {
     return null
   }
@@ -76,7 +77,7 @@ export default function PostCard({
           aria-label={`Ler o post ${post.title}`}
           className="inline-block text-sm font-medium text-emerald-400 hover:underline"
         >
-          Ler mais â†’
+          Ler mais →
         </Link>
       </div>
     </article>

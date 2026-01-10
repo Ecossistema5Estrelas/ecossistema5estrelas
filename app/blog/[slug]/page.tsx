@@ -2,6 +2,7 @@ export const dynamic = 'force-dynamic'
 
 import { notFound } from 'next/navigation'
 import { PortableText } from '@portabletext/react'
+
 import { sanityClient } from '@/lib/sanity'
 import portableTextComponents from '@/components/portableTextComponents'
 
@@ -48,3 +49,4 @@ export default async function BlogPost({
     </article>
   )
 }
+

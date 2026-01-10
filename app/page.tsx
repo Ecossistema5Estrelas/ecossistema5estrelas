@@ -1,7 +1,8 @@
-import type { Metadata } from 'next'
 import Link from 'next/link'
 
 import { baseMetadata } from './metadata'
+
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   ...baseMetadata,
@@ -74,12 +75,5 @@ export default function HomePage() {
         </div>
       </div>
     </main>
-  )
-}m →
-          </Link>
-        </div>
-
-      </div>
-    </section>
   )
 }

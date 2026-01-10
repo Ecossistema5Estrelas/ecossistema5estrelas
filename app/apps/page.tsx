@@ -1,5 +1,7 @@
-import type { Metadata } from 'next'
 import AppsClient from './AppsClient'
+
+import type { Metadata } from 'next'
+
 
 export const metadata: Metadata = {
   title: 'Aplicativos | ECOSSISTEMA 5ESTRELAS',

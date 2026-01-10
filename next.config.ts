@@ -1,4 +1,5 @@
 import { withSentryConfig } from "@sentry/nextjs";
+
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
@@ -7,11 +8,11 @@ const nextConfig: NextConfig = {
   output: "standalone",
 
   typescript: {
-    ignoreBuildErrors: true, // alinhado ao estado atual
+    ignoreBuildErrors: false, // alinhado ao estado atual
   },
 
   eslint: {
-    ignoreDuringBuilds: true, // elimina warning legado
+    ignoreDuringBuilds: false, // elimina warning legado
   },
 
   images: {
@@ -62,3 +63,4 @@ export default withSentryConfig(nextConfig, {
    },
  }
 });
+

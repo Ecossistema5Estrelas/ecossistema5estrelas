@@ -1,0 +1,43 @@
+name: Verify & Snapshot (Governança Viva)
+
+on:
+  pull_request:
+    branches: [ "main" ]
+  push:
+    branches: [ "main" ]
+
+jobs:
+  verify:
+    name: Gates Canônicos
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node (pinado)
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.x"
+          cache: "pnpm"
+
+      - name: Setup pnpm (pinado)
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+          run_install: false
+
+      - name: Install (frozen lockfile)
+        run: pnpm install --frozen-lockfile
+
+      - name: Gate — Verify
+        run: pnpm run verify
+
+      - name: Gate — Snapshot
+        run: pnpm run snapshot
+
+      - name: Upload Snapshot Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: mnemosine-snapshots
+          path: .mnemosine/snapshots

@@ -1,0 +1,23 @@
+{
+  "prefetch": [
+    {
+      "source": "list",
+      "urls": [
+        "/blog",
+        "/sobre",
+        "/contato",
+        "/loja",
+        "/dashboard"
+      ]
+    }
+  ],
+  "prerender": [
+    {
+      "source": "list",
+      "urls": [
+        "/blog",
+        "/sobre"
+      ]
+    }
+  ]
+}

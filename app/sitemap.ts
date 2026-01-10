@@ -1,10 +1,21 @@
-﻿import type { MetadataRoute } from 'next'
+import type { MetadataRoute } from 'next'
+
 import { getPosts } from '@/lib/queries'
 
 const baseUrl = 'https://ecossistema5estrelas.org'
 
+type SitemapPost = {
+  slug:
+    | string
+    | {
+        current?: string
+      }
+  _updatedAt?: string
+  publishedAt?: string
+}
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const posts = await getPosts()
+  const posts = (await getPosts()) as SitemapPost[]
 
   const staticRoutes: MetadataRoute.Sitemap = [
     {
@@ -29,7 +40,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     return {
       url: `${baseUrl}/blog/${slug}`,
-      lastModified: new Date(post._updatedAt || post.publishedAt),
+      lastModified: new Date(
+        post._updatedAt || post.publishedAt || new Date()
+      ),
       changeFrequency: 'monthly',
       priority: 0.8,
     }

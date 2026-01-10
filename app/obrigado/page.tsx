@@ -1,6 +1,9 @@
 import ObrigadoContent from './ObrigadoContent'
-import BotaoVoltar from '@/components/BotaoVoltar'
+
 import type { Metadata } from 'next'
+
+
+import BotaoVoltar from '@/components/BotaoVoltar'
 
 export const metadata: Metadata = {
   title: 'Obrigado | ECOSSISTEMA 5ESTRELAS',
