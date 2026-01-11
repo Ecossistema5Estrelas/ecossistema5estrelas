@@ -1,5 +1,14 @@
+TÍTULO
+
 CRIATIVIDADE DISCIPLINADA EM ECOSSISTEMAS COMPLEXOS: A ATUAÇÃO DE VULCANO
 
+AUTOR
+
+ArqFuturum
+
+DATA
+
+2026-01-11
 
 
 AUTOR
@@ -21,6 +30,9 @@ Em ecossistemas complexos, a criatividade só se sustenta quando orientada por d
 
 
 INTRODUÇÃO
+
+DESENVOLVIMENTO
+
 
 A criatividade é frequentemente associada à liberdade irrestrita e à improvisação contínua. Em ambientes simples, essa associação pode produzir resultados aceitáveis. Em ecossistemas complexos, porém, a ausência de disciplina transforma a criatividade em fator de risco.
 

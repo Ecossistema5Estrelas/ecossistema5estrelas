@@ -1,5 +1,14 @@
+TÍTULO
+
 ARQFUTURUM: PENSAR O ECOSSISTEMA EM VOZ ALTA
 
+AUTOR
+
+ArqFuturum
+
+DATA
+
+2026-01-11
 
 
 AUTOR
@@ -21,6 +30,9 @@ Pensar o ecossistema em voz alta é um exercício de clareza, responsabilidade e
 
 
 INTRODUÇÃO
+
+DESENVOLVIMENTO
+
 
 Em sistemas complexos, grande parte das decisões ocorre de forma implícita. Esse silêncio estrutural pode parecer eficiente no curto prazo, mas tende a gerar inconsistências, dependências ocultas e perda de direção ao longo do tempo.
 

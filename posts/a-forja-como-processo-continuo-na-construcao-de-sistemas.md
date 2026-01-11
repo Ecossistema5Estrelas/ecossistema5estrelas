@@ -1,5 +1,14 @@
+TÍTULO
+
 A FORJA COMO PROCESSO CONTÍNUO NA CONSTRUÇÃO DE SISTEMAS
 
+AUTOR
+
+ArqFuturum
+
+DATA
+
+2026-01-11
 
 
 AUTOR
@@ -21,6 +30,9 @@ A forja, quando compreendida como processo contínuo, redefine a forma de constr
 
 
 INTRODUÇÃO
+
+DESENVOLVIMENTO
+
 
 Sistemas que permanecem relevantes não são resultado de um único momento de criação. Eles emergem de um processo contínuo de construção, revisão e amadurecimento. A ideia de forja como evento isolado falha em explicar a resiliência observada em arquiteturas que atravessam ciclos tecnológicos e humanos.
 

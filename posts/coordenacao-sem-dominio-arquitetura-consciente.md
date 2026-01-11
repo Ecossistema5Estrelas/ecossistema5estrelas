@@ -1,4 +1,26 @@
+TÍTULO
+
 Coordenação sem domínio: como sistemas conscientes preservam liberdade, escala e responsabilidade
+
+AUTOR
+
+ArqFuturum
+
+DATA
+
+2026-01-11
+
+RESUMO
+
+[RESUMO A NORMALIZAR]
+
+INTRODUÇÃO
+
+DESENVOLVIMENTO
+
+
+[INTRODUÇÃO A NORMALIZAR]
+
 
 
 
@@ -118,7 +140,7 @@ Ela impede o colapso.
 
 
 
-Conclusão
+CONCLUSÃO
 
 
 

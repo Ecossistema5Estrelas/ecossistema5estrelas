@@ -1,5 +1,14 @@
+TÍTULO
+
 O PAPEL DO DESIGN NA SUSTENTABILIDADE DE PLATAFORMAS LONGEVAS
 
+AUTOR
+
+ArqFuturum
+
+DATA
+
+2026-01-11
 
 
 AUTOR
@@ -21,6 +30,9 @@ O design exerce papel central na longevidade de plataformas digitais ao articula
 
 
 INTRODUÇÃO
+
+DESENVOLVIMENTO
+
 
 Plataformas digitais que atravessam anos ou décadas compartilham uma característica fundamental: não dependem de tendências passageiras para existir. A longevidade exige estabilidade, clareza e capacidade de adaptação sem ruptura. Nesse contexto, o design deixa de ser um elemento periférico e passa a integrar a própria estrutura do sistema.
 

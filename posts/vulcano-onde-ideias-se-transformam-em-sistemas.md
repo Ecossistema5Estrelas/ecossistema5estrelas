@@ -1,5 +1,14 @@
+TÍTULO
+
 VULCANO: ONDE IDEIAS SE TRANSFORMAM EM SISTEMAS
 
+AUTOR
+
+ArqFuturum
+
+DATA
+
+2026-01-11
 
 
 AUTOR
@@ -21,6 +30,9 @@ A transformação de ideias em sistemas exige método, rigor e continuidade. Vul
 
 
 INTRODUÇÃO
+
+DESENVOLVIMENTO
+
 
 Ideias são abundantes em ambientes criativos e tecnológicos. Sistemas, no entanto, são raros. A diferença entre ambos não reside na originalidade, mas na capacidade de estruturar, sustentar e evoluir aquilo que foi concebido. É nesse intervalo crítico que Vulcano se estabelece como princípio organizador.
 

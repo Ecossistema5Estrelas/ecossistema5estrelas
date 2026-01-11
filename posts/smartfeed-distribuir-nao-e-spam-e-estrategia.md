@@ -1,5 +1,14 @@
+TÍTULO
+
 SMARTFEED: DISTRIBUIR NÃO É SPAM, É ESTRATÉGIA
 
+AUTOR
+
+ArqFuturum
+
+DATA
+
+2026-01-11
 
 
 AUTOR
@@ -21,6 +30,9 @@ No ecossistema5estrelas, o SmartFeed não opera como mecanismo de empurrar conte
 
 
 INTRODUÇÃO
+
+DESENVOLVIMENTO
+
 
 A distribuição de conteúdo costuma ser confundida com repetição e insistência. Essa confusão transforma canais em fontes de desgaste e usuários em alvos. O SmartFeed nasce como resposta a essa distorção.
 

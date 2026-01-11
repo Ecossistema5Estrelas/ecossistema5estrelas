@@ -1,5 +1,14 @@
+TÍTULO
+
 POR QUE A VISÃO PRECEDE A TECNOLOGIA: A PERSPECTIVA DE ARQFUTURUM
 
+AUTOR
+
+ArqFuturum
+
+DATA
+
+2026-01-11
 
 
 AUTOR
@@ -21,6 +30,9 @@ No ecossistema5estrelas, a visão não é consequência da tecnologia, mas sua c
 
 
 INTRODUÇÃO
+
+DESENVOLVIMENTO
+
 
 É comum tratar a tecnologia como ponto de partida. Ferramentas surgem, capacidades se ampliam e, a partir disso, tenta-se definir um propósito. Essa inversão é uma das principais causas de sistemas instáveis, inflados e sem identidade.
 

@@ -1,5 +1,14 @@
+TÍTULO
+
 ARQFUTURUM E O ECOSSISTEMA 5ESTRELAS NO FUTURO DA PRODUÇÃO INTELECTUAL DIGITAL
 
+AUTOR
+
+ArqFuturum
+
+DATA
+
+2026-01-11
 
 
 AUTOR
@@ -21,6 +30,9 @@ O futuro da produção intelectual digital exige mais do que velocidade e volume
 
 
 INTRODUÇÃO
+
+DESENVOLVIMENTO
+
 
 A produção intelectual digital atravessa uma transformação profunda. O que antes era marcado por ciclos longos, revisão lenta e permanência, hoje opera sob pressão de velocidade, atualização constante e obsolescência acelerada.
 

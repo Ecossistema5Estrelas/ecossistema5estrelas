@@ -1,5 +1,14 @@
+TÍTULO
+
 SMARTFEED E O PRINCÍPIO DO CONTEÚDO CERTO NO TEMPO CERTO
 
+AUTOR
+
+ArqFuturum
+
+DATA
+
+2026-01-11
 
 
 AUTOR
@@ -21,6 +30,9 @@ No ecossistema5estrelas, o SmartFeed opera a distribuição como um sistema de t
 
 
 INTRODUÇÃO
+
+DESENVOLVIMENTO
+
 
 A maior parte dos sistemas de distribuição digital confunde presença com pertinência. Quanto mais se entrega, mais se acredita que se está sendo relevante. O SmartFeed nasce como crítica a essa lógica. Ele parte do princípio de que relevância é função do tempo, não apenas do conteúdo.
 

@@ -1,5 +1,14 @@
+TÍTULO
+
 DESIGN NÃO É DECORAÇÃO, É COMUNICAÇÃO
 
+AUTOR
+
+ArqFuturum
+
+DATA
+
+2026-01-11
 
 
 AUTOR

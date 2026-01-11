@@ -1,5 +1,14 @@
+TÍTULO
+
 O FUTURO DA CURADORIA AUTOMATIZADA NO ECOSSISTEMA 5ESTRELAS
 
+AUTOR
+
+ArqFuturum
+
+DATA
+
+2026-01-11
 
 
 AUTOR
@@ -21,6 +30,9 @@ No ecossistema5estrelas, a curadoria automatizada não substitui o pensamento ed
 
 
 INTRODUÇÃO
+
+DESENVOLVIMENTO
+
 
 A curadoria automatizada costuma ser associada à filtragem por popularidade, engajamento ou repetição de padrões. Esse modelo cria bolhas, reforça ruídos e acelera a obsolescência do pensamento.
 

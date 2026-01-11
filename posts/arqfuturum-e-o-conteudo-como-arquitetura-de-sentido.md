@@ -1,5 +1,14 @@
+TÍTULO
+
 ARQFUTURUM E O CONTEÚDO COMO ARQUITETURA DE SENTIDO
 
+AUTOR
+
+ArqFuturum
+
+DATA
+
+2026-01-11
 
 
 AUTOR
@@ -21,6 +30,9 @@ ArqFuturum opera o conteúdo como uma forma de arquitetura de sentido, na qual c
 
 
 INTRODUÇÃO
+
+DESENVOLVIMENTO
+
 
 Em ecossistemas complexos, o conteúdo não pode ser tratado como mero registro ou divulgação. Ele participa da própria construção do sistema, organizando interpretações, orientando decisões e estabelecendo referenciais de longo prazo. ArqFuturum assume esse papel ao compreender o conteúdo como arquitetura.
 

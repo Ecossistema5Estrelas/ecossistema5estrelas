@@ -1,5 +1,14 @@
+TÍTULO
+
 ALCANCE ORGÂNICO E SUSTENTABILIDADE NO ECOSSISTEMA 5ESTRELAS
 
+AUTOR
+
+ArqFuturum
+
+DATA
+
+2026-01-11
 
 
 AUTOR
@@ -21,6 +30,9 @@ No ecossistema5estrelas, alcance orgânico não é um efeito colateral da public
 
 
 INTRODUÇÃO
+
+DESENVOLVIMENTO
+
 
 Grande parte das estratégias digitais trata alcance como um problema de visibilidade e sustentabilidade como um problema de recursos. No ecossistema5estrelas, essas duas dimensões são inseparáveis.
 

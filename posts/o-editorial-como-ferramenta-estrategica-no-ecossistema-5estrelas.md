@@ -1,5 +1,14 @@
+TÍTULO
+
 O EDITORIAL COMO FERRAMENTA ESTRATÉGICA NO ECOSSISTEMA 5ESTRELAS
 
+AUTOR
+
+ArqFuturum
+
+DATA
+
+2026-01-11
 
 
 AUTOR
@@ -21,6 +30,9 @@ No ecossistema5estrelas, o editorial não é um apêndice comunicacional, mas um
 
 
 INTRODUÇÃO
+
+DESENVOLVIMENTO
+
 
 Em muitos projetos digitais, o editorial é tratado como um espaço de divulgação, opinião ou atualização. No ecossistema5estrelas, essa abordagem é insuficiente. Aqui, o editorial é compreendido como parte ativa da arquitetura do sistema, responsável por organizar o campo simbólico, conceitual e interpretativo no qual todas as demais camadas operam.
 

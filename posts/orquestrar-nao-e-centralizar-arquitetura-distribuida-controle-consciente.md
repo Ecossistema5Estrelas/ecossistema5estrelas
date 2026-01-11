@@ -1,4 +1,26 @@
+TÍTULO
+
 \# Orquestrar não é centralizar: arquitetura distribuída e controle consciente
+
+AUTOR
+
+ArqFuturum
+
+DATA
+
+2026-01-11
+
+RESUMO
+
+[RESUMO A NORMALIZAR]
+
+INTRODUÇÃO
+
+DESENVOLVIMENTO
+
+
+[INTRODUÇÃO A NORMALIZAR]
+
 
 
 
@@ -217,4 +239,7 @@ A arquitetura deixa de ser apenas técnica e passa a ser também uma declaraçã
 
 
 E sistemas que entendem isso cedo não apenas funcionam melhor — duram mais.
+
+
+CONCLUSÃO
 

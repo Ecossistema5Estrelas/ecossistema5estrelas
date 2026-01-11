@@ -1,5 +1,14 @@
+TÍTULO
+
 CRIAR COM MÉTODO E NÃO NO IMPROVISO: A FORJA DE VULCANO
 
+AUTOR
+
+ArqFuturum
+
+DATA
+
+2026-01-11
 
 
 AUTOR
@@ -21,6 +30,9 @@ Criar com método é condição essencial para a construção de sistemas duráv
 
 
 INTRODUÇÃO
+
+DESENVOLVIMENTO
+
 
 O improviso pode ser útil em situações pontuais, mas se torna um risco quando elevado a princípio de construção. Sistemas que nascem do improviso tendem a carregar fragilidades ocultas, inconsistências e dependência excessiva de correções futuras.
 

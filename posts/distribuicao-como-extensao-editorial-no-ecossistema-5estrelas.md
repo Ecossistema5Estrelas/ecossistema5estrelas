@@ -1,5 +1,14 @@
+TÍTULO
+
 DISTRIBUIÇÃO COMO EXTENSÃO EDITORIAL NO ECOSSISTEMA 5ESTRELAS
 
+AUTOR
+
+ArqFuturum
+
+DATA
+
+2026-01-11
 
 
 AUTOR
@@ -21,6 +30,9 @@ No ecossistema5estrelas, a distribuição não é um ato técnico posterior à c
 
 
 INTRODUÇÃO
+
+DESENVOLVIMENTO
+
 
 Em grande parte dos sistemas digitais, a distribuição é vista como etapa final. Primeiro se cria, depois se espalha. Essa separação produz ruído, saturação e perda de coerência. No ecossistema5estrelas, essa lógica é invertida.
 
