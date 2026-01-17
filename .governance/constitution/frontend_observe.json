@@ -1,0 +1,38 @@
+{
+  "process": [
+    "design-system-automation",
+    "a11y-auto-remediation",
+    "visual-regression-gates",
+    "performance-budget-gates"
+  ],
+  "js": [
+    "iterator-helpers",
+    "atomics",
+    "web-workers-advanced",
+    "streams-api",
+    "scheduler-posttask",
+    "temporal-api"
+  ],
+  "css": [
+    "container-queries",
+    "has-selector",
+    "margin-trim",
+    "view-transitions",
+    "advanced-gradients",
+    "color-contrast-function",
+    "accent-color"
+  ],
+  "meta": {
+    "type": "prospective",
+    "created": "2026-01-17T16:40:22Z",
+    "name": "Frontend Constitution — Observe",
+    "scope": "frontend",
+    "version": "1.0"
+  },
+  "html": [
+    "dialog-element",
+    "popover-attribute",
+    "inert-attribute",
+    "details-summary-advanced"
+  ]
+}

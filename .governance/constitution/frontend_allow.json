@@ -1,0 +1,66 @@
+{
+  "principles": [
+    "html-first",
+    "css-first",
+    "progressive-enhancement",
+    "accessibility-native",
+    "no-implicit-behavior"
+  ],
+  "enforce_now": {
+    "js": [
+      "html-first-behavior",
+      "css-first-presentation",
+      "no-inline-js",
+      "no-dom-hacks",
+      "pure-functions-preferred",
+      "explicit-side-effects"
+    ],
+    "css": [
+      "design-tokens-required",
+      "no-magic-values",
+      "cascade-controlled",
+      "prefers-reduced-motion-supported",
+      "no-layout-via-effects",
+      "logical-properties-preferred"
+    ],
+    "html": [
+      "one-main-per-page",
+      "semantic-landmarks-required",
+      "heading-hierarchy-no-skip",
+      "label-required-for-inputs",
+      "button-not-div",
+      "nav-landmarks-required",
+      "alt-required-for-images",
+      "time-element-for-dates",
+      "figure-with-figcaption"
+    ]
+  },
+  "enforce_later": {
+    "js": [
+      "web-workers",
+      "iterator-helpers",
+      "structured-observability",
+      "streaming-apis"
+    ],
+    "css": [
+      "container-queries",
+      "has-selector",
+      "advanced-gradients",
+      "view-transitions"
+    ],
+    "html": [
+      "breadcrumb-semantic",
+      "series-navigation",
+      "category-navigation",
+      "trail-navigation",
+      "dialog-element"
+    ]
+  },
+  "meta": {
+    "type": "prospective",
+    "created": "2026-01-17T16:38:51Z",
+    "name": "Frontend Constitution — Allow",
+    "scope": "frontend",
+    "version": "1.0"
+  }
+}
