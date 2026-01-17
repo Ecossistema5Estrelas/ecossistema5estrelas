@@ -1,0 +1,38 @@
+{
+  "timestamp": "2026-01-17T05:53:59.443Z",
+  "dryRun": true,
+  "branch": "audit/a4-apply-20260117-025358",
+  "counts": {
+    "totalDecisions": 198325
+  },
+  "actions": {
+    "gitignoreRoots": 6,
+    "untracked": 3,
+    "legacyMoved": 3,
+    "sandboxTop": 2
+  },
+  "details": {
+    "gitignoreRoots": [
+      ".env",
+      ".env.local",
+      ".env.production",
+      ".env.sentry-build-plugin",
+      ".git",
+      "node_modules"
+    ],
+    "untracked": [
+      ".env.local",
+      "tsconfig.tsbuildinfo",
+      ".env.local"
+    ],
+    "legacyMoved": [
+      "docs",
+      "_archive",
+      "_audit"
+    ],
+    "sandboxTop": [
+      "test-results",
+      "tests"
+    ]
+  }
+}

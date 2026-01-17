@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "version": "A2-CONSTITUTION-2.0",
+    "scope": "LEGACY",
+    "createdAt": "AUTO",
+    "notes": "Existe, mas não cresce. Serve para referência, migração ou estudo."
+  },
+  "rules": [
+    { "prefix": "old/", "note": "Código antigo" },
+    { "prefix": "deprecated/", "note": "Componentes obsoletos" },
+    { "prefix": "legacy/", "note": "Heranças técnicas" },
+    { "prefix": "v1/", "note": "Versões antigas" },
+    { "prefix": "archive/", "note": "Arquivos arquivados" }
+  ]
+}

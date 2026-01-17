@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "version": "A2-CONSTITUTION-3.1",
+    "scope": "BLOG",
+    "notes": "Canal editorial e CMS (sem contaminar o core). Inclui regras para itens top-level sem barra."
+  },
+  "rules": [
+    { "prefix": "studio/", "note": "Sanity Studio (CMS)" },
+    { "prefix": "studio",  "note": "Sanity Studio (top-level dir sem '/')" },
+
+    { "prefix": "posts/", "note": "Posts e textos" },
+    { "prefix": "posts",  "note": "Posts (top-level dir sem '/')" },
+
+    { "prefix": "content/", "note": "Conteúdo editorial (se existir)" },
+    { "prefix": "content",  "note": "Content (top-level dir sem '/')" },
+
+    { "prefix": "blog/", "note": "Estrutura editorial (se existir fora do app/)" },
+    { "prefix": "blog",  "note": "Blog (top-level dir sem '/')" },
+
+    { "prefix": "sanity/", "note": "Schemas e CMS (se existir fora do studio/)" },
+    { "prefix": "sanity",  "note": "Sanity (top-level dir sem '/')" },
+
+    { "prefix": "media/", "note": "Mídia editorial (se existir)" },
+    { "prefix": "media",  "note": "Media (top-level dir sem '/')" }
+  ]
+}

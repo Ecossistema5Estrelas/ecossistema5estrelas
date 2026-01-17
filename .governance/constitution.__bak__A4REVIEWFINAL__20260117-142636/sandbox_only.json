@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "version": "A2-CONSTITUTION-3.0",
+    "scope": "SANDBOX",
+    "notes": "Ambiente de experimentação isolado."
+  },
+  "rules": [
+    { "prefix": ".sandbox/", "note": "POCs, smoke tests e rascunhos" },
+    { "prefix": "experiments/", "note": "Experimentos" },
+    { "prefix": "tests/", "note": "Testes e POCs" },
+    { "prefix": "scratch/", "note": "Rascunhos" },
+    { "prefix": "playground/", "note": "Ambiente livre" },
+    { "prefix": "prototypes/", "note": "Protótipos" }
+  ]
+}

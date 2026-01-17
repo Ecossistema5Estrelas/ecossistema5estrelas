@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "version": "A2-CONSTITUTION-2.0",
+    "scope": "SANDBOX",
+    "createdAt": "AUTO",
+    "notes": "Pode existir, mas nunca contamina o núcleo."
+  },
+  "rules": [
+    { "prefix": "experiments/", "note": "Experimentos" },
+    { "prefix": "tests/", "note": "Testes e POCs" },
+    { "prefix": "scratch/", "note": "Rascunhos" },
+    { "prefix": "playground/", "note": "Ambiente livre" },
+    { "prefix": "prototypes/", "note": "Protótipos" }
+  ]
+}

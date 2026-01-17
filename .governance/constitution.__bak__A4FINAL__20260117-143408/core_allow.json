@@ -1,0 +1,110 @@
+{
+  "meta": {
+    "version": "A2-CONSTITUTION-3.1",
+    "scope": "CORE",
+    "notes": "Núcleo do produto + governança ativa + runtime + configs versionáveis. Inclui regras para itens top-level sem barra."
+  },
+  "rules": [
+    { "prefix": "app/", "note": "App Router do portal (runtime e UX)" },
+    { "prefix": "app",  "note": "App Router (top-level dir sem '/')" },
+
+    { "prefix": "components/", "note": "Componentes de UI e performance" },
+    { "prefix": "components",  "note": "Componentes (top-level dir sem '/')" },
+
+    { "prefix": "lib/", "note": "Bibliotecas internas do portal (sanity, firebase, utils, types)" },
+    { "prefix": "lib",  "note": "Lib (top-level dir sem '/')" },
+
+    { "prefix": "governance/", "note": "Contratos, políticas e protocolos (governança declarativa)" },
+    { "prefix": "governance",  "note": "Governança (top-level dir sem '/')" },
+
+    { "prefix": "scripts-canônicos/", "note": "Scripts oficiais de operação e observabilidade" },
+    { "prefix": "scripts-canônicos",  "note": "Scripts-canônicos (top-level dir sem '/')" },
+
+    { "prefix": ".husky/", "note": "Governança executável (hooks)" },
+    { "prefix": ".husky",  "note": "Husky (top-level dir sem '/')" },
+
+    { "prefix": ".github/", "note": "Governança automatizada (CI/CD)" },
+    { "prefix": ".github",  "note": "GitHub workflows (top-level dir sem '/')" },
+
+    { "prefix": ".githooks/", "note": "Hooks alternativos versionáveis (governança)" },
+    { "prefix": ".githooks",  "note": "Githooks (top-level dir sem '/')" },
+
+    { "prefix": "_audit/", "note": "Sistema de auditoria (A1-A4)" },
+    { "prefix": "_audit",  "note": "Audit (top-level dir sem '/')" },
+
+    { "prefix": ".governance/", "note": "Constituição e contratos (pasta oficial)" },
+    { "prefix": ".governance",  "note": "Governança oficial (top-level dir sem '/')" },
+
+    { "prefix": "docs/", "note": "Documentação oficial" },
+    { "prefix": "docs",  "note": "Docs (top-level dir sem '/')" },
+
+    { "prefix": "public/", "note": "Assets públicos versionáveis" },
+    { "prefix": "public",  "note": "Public (top-level dir sem '/')" },
+
+    { "prefix": "scripts/", "note": "Ferramentas oficiais" },
+    { "prefix": "scripts",  "note": "Scripts (top-level dir sem '/')" },
+
+    { "prefix": "src/", "note": "Código-fonte principal (se existir)" },
+    { "prefix": "src",  "note": "Src (top-level dir sem '/')" },
+
+    { "prefix": "apps/", "note": "Aplicações nucleares (se existir)" },
+    { "prefix": "apps",  "note": "Apps (top-level dir sem '/')" },
+
+    { "prefix": "packages/", "note": "Bibliotecas reutilizáveis (se existir)" },
+    { "prefix": "packages",  "note": "Packages (top-level dir sem '/')" },
+
+    { "prefix": "styles/", "note": "Estilos versionáveis do portal" },
+    { "prefix": "styles",  "note": "Styles (top-level dir sem '/')" },
+
+    { "prefix": "README", "note": "Documentação raiz" },
+    { "prefix": "README.md", "note": "Documentação raiz (arquivo)" },
+
+    { "prefix": "package.json", "note": "Config raiz do projeto" },
+    { "prefix": "pnpm-lock.yaml", "note": "Lockfile" },
+    { "prefix": "pnpm-workspace.yaml", "note": "Workspace" },
+
+    { "prefix": "tsconfig.json", "note": "TypeScript config" },
+    { "prefix": "next.config.ts", "note": "Next config" },
+    { "prefix": "next-env.d.ts", "note": "Next types" },
+    { "prefix": "next-sanity.d.ts", "note": "Sanity types" },
+    { "prefix": "sanity.config.ts", "note": "Sanity config" },
+    { "prefix": "sanity.cli.js", "note": "Sanity CLI config" },
+    { "prefix": "sanity.d.ts", "note": "Sanity types" },
+
+    { "prefix": "eslint.config.mjs", "note": "Lint config" },
+    { "prefix": "postcss.config.cjs", "note": "PostCSS config" },
+    { "prefix": "tailwind.config.cjs", "note": "Tailwind config" },
+
+    { "prefix": "vercel.json", "note": "Deploy config" },
+    { "prefix": "playwright.config.ts", "note": "E2E config" },
+
+    { "prefix": "sentry.edge.config.ts", "note": "Sentry config" },
+    { "prefix": "sentry.server.config.ts", "note": "Sentry config" },
+
+    { "prefix": "instrumentation.ts", "note": "Next instrumentation" },
+    { "prefix": "instrumentation-client.ts", "note": "Next instrumentation (client)" },
+
+    { "prefix": "commitlint.config.cjs", "note": "Commit lint config" },
+    { "prefix": "lint-staged.config.cjs", "note": "Lint-staged config" },
+
+    { "prefix": ".dockerignore", "note": "Docker ignore" },
+    { "prefix": "Dockerfile", "note": "Docker build" },
+
+    { "prefix": ".gitattributes", "note": "Git attributes" },
+    { "prefix": ".gitignore", "note": "Git ignore" },
+    { "prefix": ".prettierignore", "note": "Prettier ignore" },
+    { "prefix": ".prettierrc.cjs", "note": "Prettier config" },
+
+    { "prefix": "CookieConsent.tsx", "note": "Componente raiz (deve ser migrado para /app ou /components quando conveniente)" },
+    { "prefix": "experimental.typedRoutes", "note": "Artefato experimental versionável (avaliar migração/remoção futura)" },
+
+    { "prefix": "publish-post.mjs", "note": "Operação editorial (migrar para scripts-canônicos quando conveniente)" },
+    { "prefix": "sanity-list-posts.mjs", "note": "Operação Sanity (migrar para scripts-canônicos quando conveniente)" },
+    { "prefix": "sanity-test.mjs", "note": "Operação Sanity (migrar para scripts-canônicos quando conveniente)" },
+    { "prefix": "sanity-query-orquestrar.mjs", "note": "Operação editorial (migrar para scripts-canônicos quando conveniente)" },
+    { "prefix": "sanity-delete-orquestrar.mjs", "note": "Operação editorial (migrar para scripts-canônicos quando conveniente)" },
+
+    { "prefix": "setup-5star.ps1", "note": "Setup operacional (Windows/PowerShell) versionável" },
+    { "prefix": "deploy_5estrelas.bat", "note": "Deploy operacional (Windows) versionável (avaliar migração para scripts-canônicos)" }
+  ]
+}

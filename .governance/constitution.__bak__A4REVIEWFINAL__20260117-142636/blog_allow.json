@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "version": "A2-CONSTITUTION-3.0",
+    "scope": "BLOG",
+    "notes": "Canal editorial e CMS."
+  },
+  "rules": [
+    { "prefix": "studio/", "note": "Sanity Studio (CMS)" },
+    { "prefix": "content/", "note": "Conteúdo editorial" },
+    { "prefix": "posts/", "note": "Posts e textos" },
+    { "prefix": "blog/", "note": "Estrutura editorial" },
+    { "prefix": "sanity/", "note": "Schemas e CMS" },
+    { "prefix": "media/", "note": "Mídia editorial" }
+  ]
+}

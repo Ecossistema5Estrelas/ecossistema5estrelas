@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "version": "A2-CONSTITUTION-3.1",
+    "scope": "LOCAL_ONLY",
+    "notes": "Nunca entra no ecossistema. Ambiente local não é produto."
+  },
+  "rules": [
+    {
+      "prefix": ".env",
+      "note": "Variáveis de ambiente (prefixo)"
+    },
+    {
+      "prefix": ".env.",
+      "note": "Variáveis de ambiente específicas (prefixo)"
+    },
+    {
+      "prefix": ".env.local",
+      "note": "Env local (arquivo)"
+    },
+    {
+      "prefix": ".env.production",
+      "note": "Env produção local (arquivo)"
+    },
+    {
+      "prefix": ".env.sentry-build-plugin",
+      "note": "Env plugin local (arquivo)"
+    },
+    {
+      "prefix": "*.log",
+      "note": "Logs locais (padrão; se o classificador não suportar wildcard, manter logs/ em legacy ou mover depois)"
+    },
+    {
+      "prefix": ".vscode/",
+      "note": "Configuração local da IDE"
+    },
+    {
+      "prefix": ".vscode",
+      "note": "Configuração local da IDE (dir raiz)"
+    }
+  ]
+}

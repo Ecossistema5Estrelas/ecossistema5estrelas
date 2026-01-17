@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "version": "A2-CONSTITUTION-2.0",
+    "scope": "FORBIDDEN",
+    "createdAt": "AUTO",
+    "notes": "Não entra. Não versiona. Não governa. Não audita."
+  },
+  "rules": [
+    { "prefix": "node_modules/", "note": "Dependências compiladas" },
+    { "prefix": ".next/", "note": "Artefatos de build" },
+    { "prefix": "dist/", "note": "Artefatos de build" },
+    { "prefix": "build/", "note": "Artefatos de build" },
+    { "prefix": "coverage/", "note": "Relatórios locais" },
+    { "prefix": ".turbo/", "note": "Caches" },
+    { "prefix": ".vercel/", "note": "Metadados de deploy" },
+    { "prefix": ".pnpm/", "note": "Caches de gerenciador de pacotes" },
+    { "prefix": ".git/", "note": "Controle interno de versão" }
+  ]
+}

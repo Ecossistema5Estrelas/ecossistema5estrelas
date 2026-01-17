@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "version": "A2-CONSTITUTION-3.1",
+    "scope": "FORBIDDEN",
+    "notes": "Não entra. Não versiona. Não governa. Não audita como produto. Artefatos de build/caches/deps."
+  },
+  "rules": [
+    {
+      "prefix": "node_modules/",
+      "note": "Dependências compiladas"
+    },
+    {
+      "prefix": "node_modules",
+      "note": "Dependências (top-level dir sem '/')"
+    },
+    {
+      "prefix": ".next/",
+      "note": "Artefatos de build"
+    },
+    {
+      "prefix": "dist/",
+      "note": "Artefatos de build"
+    },
+    {
+      "prefix": "build/",
+      "note": "Artefatos de build"
+    },
+    {
+      "prefix": "coverage/",
+      "note": "Relatórios locais"
+    },
+    {
+      "prefix": ".turbo/",
+      "note": "Caches"
+    },
+    {
+      "prefix": ".vercel/",
+      "note": "Metadados de deploy"
+    },
+    {
+      "prefix": ".pnpm/",
+      "note": "Caches de gerenciador de pacotes"
+    },
+    {
+      "prefix": "test-results/",
+      "note": "Artefatos Playwright"
+    },
+    {
+      "prefix": "test-results",
+      "note": "Artefatos Playwright (top-level dir sem '/')"
+    },
+    {
+      "prefix": ".sanity/runtime/",
+      "note": "Runtime gerado (Sanity) — não versionável como produto"
+    },
+    {
+      "prefix": ".sanity/runtime",
+      "note": "Runtime gerado (top-level dir sem '/')"
+    },
+    {
+      "prefix": ".sanity/",
+      "note": "Runtime/cache do Sanity"
+    },
+    {
+      "prefix": "tsconfig.tsbuildinfo",
+      "note": "Cache do TypeScript"
+    },
+    {
+      "prefix": ".sanity",
+      "note": "Runtime/cache Sanity (dir raiz)"
+    }
+  ]
+}

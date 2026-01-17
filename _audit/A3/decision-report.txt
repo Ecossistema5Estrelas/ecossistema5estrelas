@@ -1,0 +1,30 @@
+A3 DECIDE — RELATORIO (LEVE)
+GERADO: 2026-01-17T17:45:28.022Z
+ROOT: C:\dev\portal-ecossistema5estrelas
+
+INPUTS:
+- A1: OK | itens lidos: 53662
+- A2 DIR: C:\dev\portal-ecossistema5estrelas\.governance\constitution
+  - core_allow.json: OK | rules: 79
+  - blog_allow.json: OK | rules: 12
+  - legacy.json: OK | rules: 29
+  - sandbox_only.json: OK | rules: 8
+  - local_only.json: OK | rules: 8
+  - forbidden.json: OK | rules: 16
+
+CONTAGEM (apenas file/dir do A1):
+- totalConsidered: 47631
+- classified: 47631
+- unknown: 0
+BUCKETS:
+- forbidden: 46917
+- local_only: 6
+- sandbox_only: 13
+- legacy: 238
+- blog_allow: 175
+- core_allow: 282
+- unknown: 0
+
+OBS:
+- A3 NAO move/apaga/aplica nada. Apenas recomenda (action).
+- Para melhorar a precisão, preencha .governance/constitution/*.json com regras de prefixo.
