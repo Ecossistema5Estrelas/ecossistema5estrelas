@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "area": "CSS",
+    "gate": "audit-css-motion",
+    "rootDir": "C:\\dev\\portal-ecossistema5estrelas",
+    "auditDir": "C:\\dev\\portal-ecossistema5estrelas\\_audit",
+    "createdAt": "2026-01-18T01:07:45.984Z",
+    "version": "GATES-CORE-1.0"
+  },
+  "summary": {
+    "ok": false,
+    "issues": 2
+  },
+  "issues": [
+    {
+      "code": "CSS_MOTION_TRANSITION_ALL",
+      "file": "C:\\dev\\portal-ecossistema5estrelas\\icones-pwa_files\\root-louft85j.css",
+      "msg": "transition: all detectado (proibido)."
+    },
+    {
+      "code": "CSS_MOTION_REDUCED_MISSING",
+      "file": "C:\\dev\\portal-ecossistema5estrelas\\styles\\globals.css",
+      "msg": "Há motion (animation/transition) sem prefers-reduced-motion."
+    }
+  ]
+}

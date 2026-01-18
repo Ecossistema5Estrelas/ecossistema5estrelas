@@ -1,0 +1,40 @@
+{
+  "version": "1.0",
+  "scope": "admin.semantic",
+  "principles": [
+    "observabilidade-cognitiva",
+    "read-only",
+    "determinismo",
+    "sem-dump",
+    "sem-magia",
+    "fail-fast",
+    "fonte-unica"
+  ],
+  "sources": [
+    "reports/sanity-posts.map.json",
+    "taxonomy.v1.json",
+    "reports/navigation.semantic.v1.json",
+    "sanity.groq"
+  ],
+  "views": {
+    "hub": "/admin/semantic",
+    "orphans": "/admin/semantic/orphans",
+    "clusters": "/admin/semantic/clusters",
+    "density": "/admin/semantic/density",
+    "growth": "/admin/semantic/growth",
+    "alerts": "/admin/semantic/alerts"
+  },
+  "metrics": {
+    "orphans": ["count", "list(limit=50)"],
+    "clusters": ["count", "top_terms"],
+    "density": ["by_axis", "coverage_ratio"],
+    "growth": ["by_month", "delta"],
+    "alerts": ["orphans_spike", "empty_axis", "cluster_drift"]
+  },
+  "rules": {
+    "no_write": true,
+    "no_auto_reclassify": true,
+    "time_is_view_only": true,
+    "no_global_dump": true
+  }
+}

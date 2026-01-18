@@ -1,0 +1,11 @@
+MAPA CONCEITUAL — SANITY
+
+Project: df3uyd06
+Dataset: production
+API: 2024-01-01
+Total de posts: 92
+Total de clusters: 1
+Orfãos (sem categoria): 92
+
+Clusters:
+- __uncategorized: 92

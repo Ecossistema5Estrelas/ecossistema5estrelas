@@ -8,7 +8,7 @@
 
 @layer base {
   html {
-    background-color: #000000;
+    background-color: var(--color-auto-app-01);
     color-scheme: dark;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
@@ -16,9 +16,9 @@
   }
 
   body {
-    min-height: 100dvh;
-    background-color: #000000;
-    color: #ffffff;
+    min-height: var(--size-auto-app-01);
+    background-color: var(--color-auto-app-01);
+    color: var(--color-auto-app-02);
   }
 }
 
@@ -33,6 +33,6 @@
 }
 
 ::selection {
-  background: #27272a;
-  color: #ffffff;
+  background: var(--color-auto-app-03);
+  color: var(--color-auto-app-02);
 }

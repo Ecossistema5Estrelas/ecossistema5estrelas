@@ -1,4 +1,4 @@
-﻿import { spawnSync } from "node:child_process";
+import { spawnSync } from "node:child_process";
 import {
   parseArgs,
   assertCanonicalTitleSlug,
@@ -15,7 +15,6 @@ const args = parseArgs(process.argv.slice(2));
 const title = args.title;
 const slug = args.slug;
 const bodyFile = args["body-file"];
-const now = !!args.now;
 
 assertCanonicalTitleSlug(title, slug);
 

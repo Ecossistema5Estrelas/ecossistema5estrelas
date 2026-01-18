@@ -1,0 +1,61 @@
+{
+  "meta": {
+    "area": "CSS",
+    "gate": "audit-css-layout",
+    "rootDir": "C:\\dev\\portal-ecossistema5estrelas",
+    "auditDir": "C:\\dev\\portal-ecossistema5estrelas\\_audit",
+    "createdAt": "2026-01-18T00:52:36.335Z",
+    "version": "GATES-CORE-1.0"
+  },
+  "summary": {
+    "ok": false,
+    "issues": 9
+  },
+  "issues": [
+    {
+      "code": "CSS_LAYOUT_IMPORTANT",
+      "file": "C:\\dev\\portal-ecossistema5estrelas\\icones-pwa_files\\codemirror-nauedrd6.css",
+      "msg": "Uso de !important detectado: 2. (Evitar dívida)"
+    },
+    {
+      "code": "CSS_LAYOUT_IMPORTANT",
+      "file": "C:\\dev\\portal-ecossistema5estrelas\\icones-pwa_files\\conversation-small-k592qa8k.css",
+      "msg": "Uso de !important detectado: 3. (Evitar dívida)"
+    },
+    {
+      "code": "CSS_LAYOUT_OVERFLOW_HIDDEN_GLOBAL",
+      "file": "C:\\dev\\portal-ecossistema5estrelas\\icones-pwa_files\\conversation-small-k592qa8k.css",
+      "msg": "overflow:hidden global em html/body detectado (risco de acessibilidade/navegação)."
+    },
+    {
+      "code": "CSS_LAYOUT_POSITION_FIXED_GLOBAL",
+      "file": "C:\\dev\\portal-ecossistema5estrelas\\icones-pwa_files\\conversation-small-k592qa8k.css",
+      "msg": "position:fixed global em html/body detectado (proibido)."
+    },
+    {
+      "code": "CSS_LAYOUT_IMPORTANT",
+      "file": "C:\\dev\\portal-ecossistema5estrelas\\icones-pwa_files\\prosemirror-eh65ggsy.css",
+      "msg": "Uso de !important detectado: 1. (Evitar dívida)"
+    },
+    {
+      "code": "CSS_LAYOUT_IMPORTANT",
+      "file": "C:\\dev\\portal-ecossistema5estrelas\\icones-pwa_files\\root-louft85j.css",
+      "msg": "Uso de !important detectado: 358. (Evitar dívida)"
+    },
+    {
+      "code": "CSS_LAYOUT_OVERFLOW_HIDDEN_GLOBAL",
+      "file": "C:\\dev\\portal-ecossistema5estrelas\\icones-pwa_files\\root-louft85j.css",
+      "msg": "overflow:hidden global em html/body detectado (risco de acessibilidade/navegação)."
+    },
+    {
+      "code": "CSS_LAYOUT_POSITION_FIXED_GLOBAL",
+      "file": "C:\\dev\\portal-ecossistema5estrelas\\icones-pwa_files\\root-louft85j.css",
+      "msg": "position:fixed global em html/body detectado (proibido)."
+    },
+    {
+      "code": "CSS_LAYOUT_IMPORTANT",
+      "file": "C:\\dev\\portal-ecossistema5estrelas\\styles\\globals.css",
+      "msg": "Uso de !important detectado: 1. (Evitar dívida)"
+    }
+  ]
+}

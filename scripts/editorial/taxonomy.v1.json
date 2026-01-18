@@ -1,0 +1,38 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-01-18",
+  "owner": "ArqFuturum",
+  "rules": {
+    "minThemesPerPost": 1,
+    "maxThemesPerPost": 3,
+    "slugImmutable": true,
+    "creationFlow": "A1-A4",
+    "noImplicitThemes": true
+  },
+  "themes": [
+    {"name":"Arquitetura","slug":"arquitetura","description":"Estruturas, princípios e decisões que sustentam sistemas digitais no longo prazo.","related":["governanca","longevidade","sistemas-complexos"]},
+    {"name":"Antifragilidade","slug":"antifragilidade","description":"Sistemas que melhoram com o estresse, não apenas resistem a ele.","related":["resiliencia","risco"]},
+    {"name":"Autonomia dos Sistemas","slug":"autonomia-dos-sistemas","description":"Quando sistemas passam a operar, decidir e evoluir com identidade própria.","related":["identidade","sistemas-complexos"]},
+    {"name":"Curadoria","slug":"curadoria","description":"Seleção, organização e sentido em meio à abundância informacional.","related":["distribuicao","memoria"]},
+    {"name":"Criatividade Estruturada","slug":"criatividade-estruturada","description":"Criar com método, processo e responsabilidade.","related":["design","arquitetura"]},
+    {"name":"Design","slug":"design","description":"Comunicação visual, estética funcional e legibilidade sistêmica.","related":["ux-experiencia","interfaces"]},
+    {"name":"Distribuição","slug":"distribuicao","description":"Como o conteúdo chega às pessoas sem poluir a experiência.","related":["curadoria","economia"]},
+    {"name":"Economia","slug":"economia","description":"Sustentabilidade financeira, valor real e modelos éticos de monetização.","related":["etica","longevidade"]},
+    {"name":"Ética","slug":"etica","description":"Responsabilidade operacional, social e sistêmica.","related":["governanca","social"]},
+    {"name":"Governança","slug":"governanca","description":"Regras, contratos, validações e estruturas de decisão.","related":["observabilidade","risco","arquitetura"]},
+    {"name":"Identidade","slug":"identidade","description":"Voz, propósito e sentido de sistemas e plataformas.","related":["autonomia-dos-sistemas","social"]},
+    {"name":"Ingestão","slug":"ingestao","description":"Como dados, conteúdos e sinais entram no ecossistema.","related":["arquitetura","curadoria"]},
+    {"name":"Interfaces","slug":"interfaces","description":"Pontos de contato que se tornam contratos.","related":["ux-experiencia","governanca"]},
+    {"name":"Longevidade","slug":"longevidade","description":"Sistemas pensados para décadas, não para ciclos curtos.","related":["arquitetura","economia"]},
+    {"name":"Memória","slug":"memoria","description":"Tempo, histórico, responsabilidade e continuidade.","related":["temporalidade","observabilidade"]},
+    {"name":"Multimodalidade","slug":"multimodalidade","description":"Formatos, sentidos e formas de expressão.","related":["design","interfaces"]},
+    {"name":"Observabilidade","slug":"observabilidade","description":"Logs, rastreabilidade, visibilidade e confiança técnica.","related":["governanca","memoria"]},
+    {"name":"Orquestração","slug":"orquestracao","description":"Coordenação de agentes, fluxos e decisões.","related":["governanca","sistemas-complexos"]},
+    {"name":"Resiliência","slug":"resiliencia","description":"Capacidade de resistir sem colapsar.","related":["antifragilidade","risco"]},
+    {"name":"Risco","slug":"risco","description":"Prevenção, auditoria e falhas silenciosas.","related":["governanca","resiliencia"]},
+    {"name":"Sistemas Complexos","slug":"sistemas-complexos","description":"Efeitos emergentes, acúmulo, neutralidade e colaterais.","related":["arquitetura","autonomia-dos-sistemas"]},
+    {"name":"Social","slug":"social","description":"Relações humanas, bots, empatia e interação.","related":["etica","identidade"]},
+    {"name":"Temporalidade","slug":"temporalidade","description":"Tempo como estrutura, não apenas como métrica.","related":["memoria","governanca"]},
+    {"name":"UX e Experiência","slug":"ux-experiencia","description":"Usabilidade, contratos implícitos e carga cognitiva.","related":["interfaces","design"]}
+  ]
+}

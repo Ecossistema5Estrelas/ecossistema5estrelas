@@ -1,0 +1,8 @@
+{
+  "gate": "JS/audit-js-dynamic-execution",
+  "ok": true,
+  "issues_count": 0,
+  "destructive_count": 0,
+  "files_scanned": 62,
+  "issues": []
+}

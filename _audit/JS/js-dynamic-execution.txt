@@ -1,0 +1,4 @@
+[GATE] JS/audit-js-dynamic-execution
+[OK] true
+[ISSUES] 0
+[DESTRUCTIVE] 0

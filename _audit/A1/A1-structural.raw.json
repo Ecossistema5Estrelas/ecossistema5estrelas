@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-01-17T16:38:38.839Z",
+    "generatedAt": "2026-01-17T19:09:59.817Z",
     "root": "C:\\dev\\portal-ecossistema5estrelas",
     "platform": "win32",
     "node": "v20.19.1",
@@ -9,10 +9,10 @@
     "outDirOk": true,
     "outDirError": null,
     "maxDepth": 25,
-    "total": 53662,
+    "total": 53703,
     "stats": {
-      "files": 38044,
-      "dirs": 9588,
+      "files": 38078,
+      "dirs": 9595,
       "symlinks": 5475,
       "excluded": 555,
       "other": 0,
@@ -149,7 +149,7 @@
       "kind": "dir",
       "exists": true,
       "readable": true,
-      "mtimeMs": 1768629238343.4646
+      "mtimeMs": 1768671248330.291
     },
     {
       "path": ".governance/checklists",
@@ -165,6 +165,226 @@
       "readable": true,
       "size": 280,
       "mtimeMs": 1767931104754.782
+    },
+    {
+      "path": ".governance/constitution",
+      "kind": "dir",
+      "exists": true,
+      "readable": true,
+      "mtimeMs": 1768668161572.3066
+    },
+    {
+      "path": ".governance/constitution/blog_allow.json",
+      "kind": "file",
+      "exists": true,
+      "readable": true,
+      "size": 1059,
+      "mtimeMs": 1768670798838.8494
+    },
+    {
+      "path": ".governance/constitution/core_allow.json",
+      "kind": "file",
+      "exists": true,
+      "readable": true,
+      "size": 7809,
+      "mtimeMs": 1768671430034.7402
+    },
+    {
+      "path": ".governance/constitution/forbidden.json",
+      "kind": "file",
+      "exists": true,
+      "readable": true,
+      "size": 1674,
+      "mtimeMs": 1768671393597.2295
+    },
+    {
+      "path": ".governance/constitution/legacy.json",
+      "kind": "file",
+      "exists": true,
+      "readable": true,
+      "size": 3305,
+      "mtimeMs": 1768671918654.8638
+    },
+    {
+      "path": ".governance/constitution/local_only.json",
+      "kind": "file",
+      "exists": true,
+      "readable": true,
+      "size": 1017,
+      "mtimeMs": 1768671305897.105
+    },
+    {
+      "path": ".governance/constitution/sandbox_only.json",
+      "kind": "file",
+      "exists": true,
+      "readable": true,
+      "size": 645,
+      "mtimeMs": 1768670799113.072
+    },
+    {
+      "path": ".governance/constitution.__bak__20260117-141808",
+      "kind": "dir",
+      "exists": true,
+      "readable": true,
+      "mtimeMs": 1768670288863.8284
+    },
+    {
+      "path": ".governance/constitution.__bak__20260117-141808/blog_allow.json",
+      "kind": "file",
+      "exists": true,
+      "readable": true,
+      "size": 495,
+      "mtimeMs": 1768669120062.236
+    },
+    {
+      "path": ".governance/constitution.__bak__20260117-141808/core_allow.json",
+      "kind": "file",
+      "exists": true,
+      "readable": true,
+      "size": 914,
+      "mtimeMs": 1768669119969.233
+    },
+    {
+      "path": ".governance/constitution.__bak__20260117-141808/forbidden.json",
+      "kind": "file",
+      "exists": true,
+      "readable": true,
+      "size": 745,
+      "mtimeMs": 1768669120451.054
+    },
+    {
+      "path": ".governance/constitution.__bak__20260117-141808/legacy.json",
+      "kind": "file",
+      "exists": true,
+      "readable": true,
+      "size": 500,
+      "mtimeMs": 1768669120156.243
+    },
+    {
+      "path": ".governance/constitution.__bak__20260117-141808/local_only.json",
+      "kind": "file",
+      "exists": true,
+      "readable": true,
+      "size": 585,
+      "mtimeMs": 1768669120337.434
+    },
+    {
+      "path": ".governance/constitution.__bak__20260117-141808/sandbox_only.json",
+      "kind": "file",
+      "exists": true,
+      "readable": true,
+      "size": 460,
+      "mtimeMs": 1768669120244.3857
+    },
+    {
+      "path": ".governance/constitution.__bak__A4FINAL__20260117-143408",
+      "kind": "dir",
+      "exists": true,
+      "readable": true,
+      "mtimeMs": 1768671248345.9695
+    },
+    {
+      "path": ".governance/constitution.__bak__A4FINAL__20260117-143408/blog_allow.json",
+      "kind": "file",
+      "exists": true,
+      "readable": true,
+      "size": 1059,
+      "mtimeMs": 1768670798838.8494
+    },
+    {
+      "path": ".governance/constitution.__bak__A4FINAL__20260117-143408/core_allow.json",
+      "kind": "file",
+      "exists": true,
+      "readable": true,
+      "size": 5868,
+      "mtimeMs": 1768670798724.3813
+    },
+    {
+      "path": ".governance/constitution.__bak__A4FINAL__20260117-143408/forbidden.json",
+      "kind": "file",
+      "exists": true,
+      "readable": true,
+      "size": 1140,
+      "mtimeMs": 1768670799368.1387
+    },
+    {
+      "path": ".governance/constitution.__bak__A4FINAL__20260117-143408/legacy.json",
+      "kind": "file",
+      "exists": true,
+      "readable": true,
+      "size": 1894,
+      "mtimeMs": 1768670799011.7842
+    },
+    {
+      "path": ".governance/constitution.__bak__A4FINAL__20260117-143408/local_only.json",
+      "kind": "file",
+      "exists": true,
+      "readable": true,
+      "size": 701,
+      "mtimeMs": 1768670799225.7505
+    },
+    {
+      "path": ".governance/constitution.__bak__A4FINAL__20260117-143408/sandbox_only.json",
+      "kind": "file",
+      "exists": true,
+      "readable": true,
+      "size": 645,
+      "mtimeMs": 1768670799113.072
+    },
+    {
+      "path": ".governance/constitution.__bak__A4REVIEWFINAL__20260117-142636",
+      "kind": "dir",
+      "exists": true,
+      "readable": true,
+      "mtimeMs": 1768670797228.2002
+    },
+    {
+      "path": ".governance/constitution.__bak__A4REVIEWFINAL__20260117-142636/blog_allow.json",
+      "kind": "file",
+      "exists": true,
+      "readable": true,
+      "size": 476,
+      "mtimeMs": 1768670289199.171
+    },
+    {
+      "path": ".governance/constitution.__bak__A4REVIEWFINAL__20260117-142636/core_allow.json",
+      "kind": "file",
+      "exists": true,
+      "readable": true,
+      "size": 1197,
+      "mtimeMs": 1768670289093.148
+    },
+    {
+      "path": ".governance/constitution.__bak__A4REVIEWFINAL__20260117-142636/forbidden.json",
+      "kind": "file",
+      "exists": true,
+      "readable": true,
+      "size": 745,
+      "mtimeMs": 1768669120451.054
+    },
+    {
+      "path": ".governance/constitution.__bak__A4REVIEWFINAL__20260117-142636/legacy.json",
+      "kind": "file",
+      "exists": true,
+      "readable": true,
+      "size": 735,
+      "mtimeMs": 1768670289417.6472
+    },
+    {
+      "path": ".governance/constitution.__bak__A4REVIEWFINAL__20260117-142636/local_only.json",
+      "kind": "file",
+      "exists": true,
+      "readable": true,
+      "size": 585,
+      "mtimeMs": 1768669120337.434
+    },
+    {
+      "path": ".governance/constitution.__bak__A4REVIEWFINAL__20260117-142636/sandbox_only.json",
+      "kind": "file",
+      "exists": true,
+      "readable": true,
+      "size": 500,
+      "mtimeMs": 1768670289541.0852
     },
     {
       "path": ".governance/MANIFESTO_5STAR.md",
@@ -452,7 +672,7 @@
       "kind": "dir",
       "exists": true,
       "readable": true,
-      "mtimeMs": 1768084561036.0933
+      "mtimeMs": 1768675214063.5208
     },
     {
       "path": ".mnemosine/snapshots/2026-01-10T22-00-16.347Z__7caefe8.json",
@@ -485,6 +705,14 @@
       "readable": true,
       "size": 5767,
       "mtimeMs": 1768607376961.725
+    },
+    {
+      "path": ".mnemosine/snapshots/SELAGEM_A4_FINAL__2026-01-17T18-40-13Z.json",
+      "kind": "file",
+      "exists": true,
+      "readable": true,
+      "size": 329,
+      "mtimeMs": 1768675214073.7585
     },
     {
       "path": ".next",
@@ -2245,7 +2473,22 @@
       "kind": "dir",
       "exists": true,
       "readable": true,
-      "mtimeMs": 1768619144646.2773
+      "mtimeMs": 1768675213616.0337
+    },
+    {
+      "path": "docs/governance",
+      "kind": "dir",
+      "exists": true,
+      "readable": true,
+      "mtimeMs": 1768675213869.4546
+    },
+    {
+      "path": "docs/governance/SELAGEM_A4_FINAL.md",
+      "kind": "file",
+      "exists": true,
+      "readable": true,
+      "size": 1225,
+      "mtimeMs": 1768675213869.4546
     },
     {
       "path": "docs/snapshots",
@@ -416587,7 +416830,7 @@
       "kind": "dir",
       "exists": true,
       "readable": true,
-      "mtimeMs": 1768667916267.213
+      "mtimeMs": 1768669467881.4138
     },
     {
       "path": "scripts/ops/_audit/a1-locate.mjs",
@@ -416610,6 +416853,14 @@
       "kind": "file",
       "exists": true,
       "readable": true,
+      "size": 8211,
+      "mtimeMs": 1768668318432.689
+    },
+    {
+      "path": "scripts/ops/_audit/a3-decide.mjs.bak",
+      "kind": "file",
+      "exists": true,
+      "readable": true,
       "size": 7524,
       "mtimeMs": 1768630052155.9092
     },
@@ -416620,6 +416871,14 @@
       "readable": true,
       "size": 12182,
       "mtimeMs": 1768629645379.4004
+    },
+    {
+      "path": "scripts/ops/_audit/a4-plan.mjs",
+      "kind": "file",
+      "exists": true,
+      "readable": true,
+      "size": 9877,
+      "mtimeMs": 1768669467881.4138
     },
     {
       "path": "scripts/posts",
@@ -418516,21 +418775,67 @@
       "kind": "dir",
       "exists": true,
       "readable": true,
-      "mtimeMs": 1768630360759.0815
+      "mtimeMs": 1768668316583.4688
     },
     {
       "path": "_audit/A1",
       "kind": "dir",
       "exists": true,
       "readable": true,
-      "mtimeMs": 1768630360759.0815
+      "mtimeMs": 1768667932805.213
+    },
+    {
+      "path": "_audit/A1/A1-structural.raw.json",
+      "kind": "file",
+      "exists": true,
+      "readable": true,
+      "size": 12662257,
+      "mtimeMs": 1768667932825.787
+    },
+    {
+      "path": "_audit/A2",
+      "kind": "dir",
+      "exists": true,
+      "readable": true,
+      "mtimeMs": 1768668161728.364
+    },
+    {
+      "path": "_audit/A2/A2-constitution.manifest.json",
+      "kind": "file",
+      "exists": true,
+      "readable": true,
+      "size": 845,
+      "mtimeMs": 1768668161728.364
+    },
+    {
+      "path": "_audit/A3",
+      "kind": "dir",
+      "exists": true,
+      "readable": true,
+      "mtimeMs": 1768668318781.5955
+    },
+    {
+      "path": "_audit/A3/decision-plan.json",
+      "kind": "file",
+      "exists": true,
+      "readable": true,
+      "size": 12941150,
+      "mtimeMs": 1768676926825.6091
+    },
+    {
+      "path": "_audit/A3/decision-report.txt",
+      "kind": "file",
+      "exists": true,
+      "readable": true,
+      "size": 803,
+      "mtimeMs": 1768676926835.7495
     },
     {
       "path": "_audit/A4",
       "kind": "dir",
       "exists": true,
       "readable": true,
-      "mtimeMs": 1768629239447.8462
+      "mtimeMs": 1768669468135.6616
     },
     {
       "path": "_audit/A4/a4-report.json",
@@ -418547,6 +418852,22 @@
       "readable": true,
       "size": 470,
       "mtimeMs": 1768629239447.8462
+    },
+    {
+      "path": "_audit/A4/plan-report.txt",
+      "kind": "file",
+      "exists": true,
+      "readable": true,
+      "size": 1983,
+      "mtimeMs": 1768669468135.6616
+    },
+    {
+      "path": "_audit/A4/plan.json",
+      "kind": "file",
+      "exists": true,
+      "readable": true,
+      "size": 153513,
+      "mtimeMs": 1768669468135.6616
     },
     {
       "path": "_audit/dir-sizes-20251230-003414.txt",

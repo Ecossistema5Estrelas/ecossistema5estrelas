@@ -1,28 +1,28 @@
-import './globals.css'
-import type { Metadata, Viewport } from 'next'
-import type { ReactNode } from 'react'
+import "./globals.css"
+import type { Metadata, Viewport } from "next"
+import type { ReactNode } from "react"
 
-import Header from '@/components/layout/Header'
-import Footer from '@/components/layout/Footer'
-import Analytics from '@/components/analytics/Analytics'
-import CookieConsent from '@/components/consent/CookieConsent'
+import Header from "@/components/layout/Header"
+import Footer from "@/components/layout/Footer"
+import Analytics from "@/components/analytics/Analytics"
+import CookieConsent from "@/components/consent/CookieConsent"
 
 export const metadata: Metadata = {
   title: {
-    default: 'ECOSSISTEMA 5ESTRELAS',
-    template: '%s | ECOSSISTEMA 5ESTRELAS',
+    default: "ECOSSISTEMA 5ESTRELAS",
+    template: "%s | ECOSSISTEMA 5ESTRELAS",
   },
-  description: 'Portal institucional do ECOSSISTEMA 5ESTRELAS',
+  description: "Portal institucional do ECOSSISTEMA 5ESTRELAS",
   robots: {
     index: true,
     follow: true,
   },
-  referrer: 'strict-origin-when-cross-origin',
-  manifest: '/manifest.webmanifest',
+  referrer: "strict-origin-when-cross-origin",
+  manifest: "/manifest.webmanifest",
 }
 
 export const viewport: Viewport = {
-  themeColor: '#000000',
+  themeColor: "#000000",
 }
 
 interface RootLayoutProps {
@@ -33,7 +33,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="pt-BR" className="dark">
       <body className="min-h-screen bg-gradient-to-b from-black via-zinc-900 to-zinc-950 text-white antialiased">
-        <Header />
+        
+        <header>
+          <Header />
+        </header>
+
+        <nav aria-label="Navegação principal" />
 
         <Analytics />
 
@@ -45,7 +50,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
           {children}
         </main>
 
-        <Footer />
+        <footer>
+          <Footer />
+        </footer>
 
         <CookieConsent />
       </body>

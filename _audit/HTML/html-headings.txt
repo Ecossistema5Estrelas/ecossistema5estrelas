@@ -1,0 +1,3 @@
+HTML HEADINGS GATE
+
+STATUS: OK — No violations found.

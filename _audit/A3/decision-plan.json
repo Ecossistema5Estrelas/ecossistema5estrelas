@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "A3-DECIDE-1.0",
-    "generatedAt": "2026-01-17T17:45:28.022Z",
+    "generatedAt": "2026-01-17T19:10:28.388Z",
     "root": "C:\\dev\\portal-ecossistema5estrelas",
     "platform": "win32",
     "node": "v20.19.1",
@@ -13,7 +13,7 @@
         "file": "C:\\dev\\portal-ecossistema5estrelas\\_audit\\A1\\A1-structural.raw.json",
         "ok": true,
         "error": null,
-        "items": 53662
+        "items": 53703
       },
       "a2": {
         "core_allow": {
@@ -49,16 +49,16 @@
       }
     },
     "counters": {
-      "totalConsidered": 47631,
-      "classified": 47631,
+      "totalConsidered": 47672,
+      "classified": 47672,
       "unknown": 0,
       "byBucket": {
         "forbidden": 46917,
         "local_only": 6,
         "sandbox_only": 13,
-        "legacy": 238,
+        "legacy": 239,
         "blog_allow": 175,
-        "core_allow": 282,
+        "core_allow": 322,
         "unknown": 0
       }
     }
@@ -194,6 +194,230 @@
     },
     {
       "path": ".governance/checklists/CHECKLIST_PR.md",
+      "kind": "file",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": ".governance/",
+      "note": "Constituição e contratos (pasta oficial)"
+    },
+    {
+      "path": ".governance/constitution",
+      "kind": "dir",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": ".governance/",
+      "note": "Constituição e contratos (pasta oficial)"
+    },
+    {
+      "path": ".governance/constitution/blog_allow.json",
+      "kind": "file",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": ".governance/",
+      "note": "Constituição e contratos (pasta oficial)"
+    },
+    {
+      "path": ".governance/constitution/core_allow.json",
+      "kind": "file",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": ".governance/",
+      "note": "Constituição e contratos (pasta oficial)"
+    },
+    {
+      "path": ".governance/constitution/forbidden.json",
+      "kind": "file",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": ".governance/",
+      "note": "Constituição e contratos (pasta oficial)"
+    },
+    {
+      "path": ".governance/constitution/legacy.json",
+      "kind": "file",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": ".governance/",
+      "note": "Constituição e contratos (pasta oficial)"
+    },
+    {
+      "path": ".governance/constitution/local_only.json",
+      "kind": "file",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": ".governance/",
+      "note": "Constituição e contratos (pasta oficial)"
+    },
+    {
+      "path": ".governance/constitution/sandbox_only.json",
+      "kind": "file",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": ".governance/",
+      "note": "Constituição e contratos (pasta oficial)"
+    },
+    {
+      "path": ".governance/constitution.__bak__20260117-141808",
+      "kind": "dir",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": ".governance/",
+      "note": "Constituição e contratos (pasta oficial)"
+    },
+    {
+      "path": ".governance/constitution.__bak__20260117-141808/blog_allow.json",
+      "kind": "file",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": ".governance/",
+      "note": "Constituição e contratos (pasta oficial)"
+    },
+    {
+      "path": ".governance/constitution.__bak__20260117-141808/core_allow.json",
+      "kind": "file",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": ".governance/",
+      "note": "Constituição e contratos (pasta oficial)"
+    },
+    {
+      "path": ".governance/constitution.__bak__20260117-141808/forbidden.json",
+      "kind": "file",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": ".governance/",
+      "note": "Constituição e contratos (pasta oficial)"
+    },
+    {
+      "path": ".governance/constitution.__bak__20260117-141808/legacy.json",
+      "kind": "file",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": ".governance/",
+      "note": "Constituição e contratos (pasta oficial)"
+    },
+    {
+      "path": ".governance/constitution.__bak__20260117-141808/local_only.json",
+      "kind": "file",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": ".governance/",
+      "note": "Constituição e contratos (pasta oficial)"
+    },
+    {
+      "path": ".governance/constitution.__bak__20260117-141808/sandbox_only.json",
+      "kind": "file",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": ".governance/",
+      "note": "Constituição e contratos (pasta oficial)"
+    },
+    {
+      "path": ".governance/constitution.__bak__A4FINAL__20260117-143408",
+      "kind": "dir",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": ".governance/",
+      "note": "Constituição e contratos (pasta oficial)"
+    },
+    {
+      "path": ".governance/constitution.__bak__A4FINAL__20260117-143408/blog_allow.json",
+      "kind": "file",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": ".governance/",
+      "note": "Constituição e contratos (pasta oficial)"
+    },
+    {
+      "path": ".governance/constitution.__bak__A4FINAL__20260117-143408/core_allow.json",
+      "kind": "file",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": ".governance/",
+      "note": "Constituição e contratos (pasta oficial)"
+    },
+    {
+      "path": ".governance/constitution.__bak__A4FINAL__20260117-143408/forbidden.json",
+      "kind": "file",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": ".governance/",
+      "note": "Constituição e contratos (pasta oficial)"
+    },
+    {
+      "path": ".governance/constitution.__bak__A4FINAL__20260117-143408/legacy.json",
+      "kind": "file",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": ".governance/",
+      "note": "Constituição e contratos (pasta oficial)"
+    },
+    {
+      "path": ".governance/constitution.__bak__A4FINAL__20260117-143408/local_only.json",
+      "kind": "file",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": ".governance/",
+      "note": "Constituição e contratos (pasta oficial)"
+    },
+    {
+      "path": ".governance/constitution.__bak__A4FINAL__20260117-143408/sandbox_only.json",
+      "kind": "file",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": ".governance/",
+      "note": "Constituição e contratos (pasta oficial)"
+    },
+    {
+      "path": ".governance/constitution.__bak__A4REVIEWFINAL__20260117-142636",
+      "kind": "dir",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": ".governance/",
+      "note": "Constituição e contratos (pasta oficial)"
+    },
+    {
+      "path": ".governance/constitution.__bak__A4REVIEWFINAL__20260117-142636/blog_allow.json",
+      "kind": "file",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": ".governance/",
+      "note": "Constituição e contratos (pasta oficial)"
+    },
+    {
+      "path": ".governance/constitution.__bak__A4REVIEWFINAL__20260117-142636/core_allow.json",
+      "kind": "file",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": ".governance/",
+      "note": "Constituição e contratos (pasta oficial)"
+    },
+    {
+      "path": ".governance/constitution.__bak__A4REVIEWFINAL__20260117-142636/forbidden.json",
+      "kind": "file",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": ".governance/",
+      "note": "Constituição e contratos (pasta oficial)"
+    },
+    {
+      "path": ".governance/constitution.__bak__A4REVIEWFINAL__20260117-142636/legacy.json",
+      "kind": "file",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": ".governance/",
+      "note": "Constituição e contratos (pasta oficial)"
+    },
+    {
+      "path": ".governance/constitution.__bak__A4REVIEWFINAL__20260117-142636/local_only.json",
+      "kind": "file",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": ".governance/",
+      "note": "Constituição e contratos (pasta oficial)"
+    },
+    {
+      "path": ".governance/constitution.__bak__A4REVIEWFINAL__20260117-142636/sandbox_only.json",
       "kind": "file",
       "bucket": "core_allow",
       "action": "ALLOW_CORE",
@@ -522,6 +746,14 @@
     },
     {
       "path": ".mnemosine/snapshots/2026-01-10T22-36-00.895Z__7caefe8.json",
+      "kind": "file",
+      "bucket": "legacy",
+      "action": "KEEP_LEGACY",
+      "matchedRule": ".mnemosine/",
+      "note": "Snapshots cognitivos"
+    },
+    {
+      "path": ".mnemosine/snapshots/SELAGEM_A4_FINAL__2026-01-17T18-40-13Z.json",
       "kind": "file",
       "bucket": "legacy",
       "action": "KEEP_LEGACY",
@@ -2319,6 +2551,22 @@
       "action": "ALLOW_CORE",
       "matchedRule": "docs",
       "note": "Docs (top-level dir sem '/')"
+    },
+    {
+      "path": "docs/governance",
+      "kind": "dir",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": "docs/",
+      "note": "Documentação oficial"
+    },
+    {
+      "path": "docs/governance/SELAGEM_A4_FINAL.md",
+      "kind": "file",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": "docs/",
+      "note": "Documentação oficial"
     },
     {
       "path": "docs/snapshots",
@@ -379065,7 +379313,23 @@
       "note": "Ferramentas oficiais"
     },
     {
+      "path": "scripts/ops/_audit/a3-decide.mjs.bak",
+      "kind": "file",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": "scripts/",
+      "note": "Ferramentas oficiais"
+    },
+    {
       "path": "scripts/ops/_audit/a4-apply.mjs",
+      "kind": "file",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": "scripts/",
+      "note": "Ferramentas oficiais"
+    },
+    {
+      "path": "scripts/ops/_audit/a4-plan.mjs",
       "kind": "file",
       "bucket": "core_allow",
       "action": "ALLOW_CORE",
@@ -381017,6 +381281,54 @@
       "note": "Sistema de auditoria (A1-A4)"
     },
     {
+      "path": "_audit/A1/A1-structural.raw.json",
+      "kind": "file",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": "_audit/",
+      "note": "Sistema de auditoria (A1-A4)"
+    },
+    {
+      "path": "_audit/A2",
+      "kind": "dir",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": "_audit/",
+      "note": "Sistema de auditoria (A1-A4)"
+    },
+    {
+      "path": "_audit/A2/A2-constitution.manifest.json",
+      "kind": "file",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": "_audit/",
+      "note": "Sistema de auditoria (A1-A4)"
+    },
+    {
+      "path": "_audit/A3",
+      "kind": "dir",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": "_audit/",
+      "note": "Sistema de auditoria (A1-A4)"
+    },
+    {
+      "path": "_audit/A3/decision-plan.json",
+      "kind": "file",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": "_audit/",
+      "note": "Sistema de auditoria (A1-A4)"
+    },
+    {
+      "path": "_audit/A3/decision-report.txt",
+      "kind": "file",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": "_audit/",
+      "note": "Sistema de auditoria (A1-A4)"
+    },
+    {
       "path": "_audit/A4",
       "kind": "dir",
       "bucket": "core_allow",
@@ -381034,6 +381346,22 @@
     },
     {
       "path": "_audit/A4/a4-report.txt",
+      "kind": "file",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": "_audit/",
+      "note": "Sistema de auditoria (A1-A4)"
+    },
+    {
+      "path": "_audit/A4/plan-report.txt",
+      "kind": "file",
+      "bucket": "core_allow",
+      "action": "ALLOW_CORE",
+      "matchedRule": "_audit/",
+      "note": "Sistema de auditoria (A1-A4)"
+    },
+    {
+      "path": "_audit/A4/plan.json",
       "kind": "file",
       "bucket": "core_allow",
       "action": "ALLOW_CORE",

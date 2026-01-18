@@ -1,0 +1,79 @@
+HTML LANDMARKS GATE
+
+STATUS: FAIL — 20 violations.
+
+File: C:\dev\portal-ecossistema5estrelas\.sandbox\_smoke_home.html
+Rule: missing-main
+
+File: C:\dev\portal-ecossistema5estrelas\.sandbox\_smoke_home.html
+Rule: missing-landmark
+Landmark: header
+
+File: C:\dev\portal-ecossistema5estrelas\.sandbox\_smoke_home.html
+Rule: missing-landmark
+Landmark: nav
+
+File: C:\dev\portal-ecossistema5estrelas\.sandbox\_smoke_home.html
+Rule: missing-landmark
+Landmark: footer
+
+File: C:\dev\portal-ecossistema5estrelas\.sanity\runtime\index.html
+Rule: missing-main
+
+File: C:\dev\portal-ecossistema5estrelas\.sanity\runtime\index.html
+Rule: missing-landmark
+Landmark: header
+
+File: C:\dev\portal-ecossistema5estrelas\.sanity\runtime\index.html
+Rule: missing-landmark
+Landmark: nav
+
+File: C:\dev\portal-ecossistema5estrelas\.sanity\runtime\index.html
+Rule: missing-landmark
+Landmark: footer
+
+File: C:\dev\portal-ecossistema5estrelas\backups\sanity_20251223_212444\studio\.sanity\runtime\index.html
+Rule: missing-main
+
+File: C:\dev\portal-ecossistema5estrelas\backups\sanity_20251223_212444\studio\.sanity\runtime\index.html
+Rule: missing-landmark
+Landmark: header
+
+File: C:\dev\portal-ecossistema5estrelas\backups\sanity_20251223_212444\studio\.sanity\runtime\index.html
+Rule: missing-landmark
+Landmark: nav
+
+File: C:\dev\portal-ecossistema5estrelas\backups\sanity_20251223_212444\studio\.sanity\runtime\index.html
+Rule: missing-landmark
+Landmark: footer
+
+File: C:\dev\portal-ecossistema5estrelas\icones-pwa_files\saved_resource.html
+Rule: missing-main
+
+File: C:\dev\portal-ecossistema5estrelas\icones-pwa_files\saved_resource.html
+Rule: missing-landmark
+Landmark: header
+
+File: C:\dev\portal-ecossistema5estrelas\icones-pwa_files\saved_resource.html
+Rule: missing-landmark
+Landmark: nav
+
+File: C:\dev\portal-ecossistema5estrelas\icones-pwa_files\saved_resource.html
+Rule: missing-landmark
+Landmark: footer
+
+File: C:\dev\portal-ecossistema5estrelas\studio\.sanity\runtime\index.html
+Rule: missing-main
+
+File: C:\dev\portal-ecossistema5estrelas\studio\.sanity\runtime\index.html
+Rule: missing-landmark
+Landmark: header
+
+File: C:\dev\portal-ecossistema5estrelas\studio\.sanity\runtime\index.html
+Rule: missing-landmark
+Landmark: nav
+
+File: C:\dev\portal-ecossistema5estrelas\studio\.sanity\runtime\index.html
+Rule: missing-landmark
+Landmark: footer
+

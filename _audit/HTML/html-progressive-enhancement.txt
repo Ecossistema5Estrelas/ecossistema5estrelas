@@ -1,0 +1,9 @@
+HTML PROGRESSIVE ENHANCEMENT GATE
+
+STATUS: FAIL — 1 violations.
+
+File: C:\dev\portal-ecossistema5estrelas\icones-pwa_files\saved_resource.html
+Rule: missing-noscript-fallback
+Line: 1
+Raw: <script> present but no <noscript> fallback found
+

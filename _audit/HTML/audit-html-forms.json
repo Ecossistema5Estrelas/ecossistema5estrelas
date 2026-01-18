@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "area": "HTML",
+    "gate": "audit-html-forms",
+    "rootDir": "C:\\dev\\portal-ecossistema5estrelas",
+    "auditDir": "C:\\dev\\portal-ecossistema5estrelas\\_audit",
+    "createdAt": "2026-01-18T01:55:59.581Z",
+    "version": "GATES-CORE-1.0"
+  },
+  "summary": {
+    "ok": true,
+    "issues": 0
+  },
+  "issues": []
+}
