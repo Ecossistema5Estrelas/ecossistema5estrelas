@@ -1,4 +1,4 @@
-﻿import { Q } from "@/src/lib/sanity/queries";
+import { Q } from "@/src/lib/sanity/queries";
 import { sanityFetch } from "@/src/lib/sanity/fetch";
 import type { CategoryProjected } from "@/src/lib/sanity/types";
 
@@ -36,3 +36,5 @@ export default async function Page() {
     </main>
   );
 }
+
+
