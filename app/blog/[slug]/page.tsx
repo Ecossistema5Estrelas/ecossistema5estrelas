@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ArchitecturalBreadcrumb from "@/components/blog/ArchitecturalBreadcrumb";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -64,7 +65,23 @@ export default async function Page({ params }: PageProps) {
 
   return (
     <main className="mx-auto w-full max-w-4xl px-4 py-10">
-      <article className="prose prose-invert max-w-none">
+            {/* E3:BREADCRUMB */}
+      <ArchitecturalBreadcrumb
+        items={[
+          { label: "Blog ArqFuturum", href: "/blog" },
+          ...(Array.isArray(data.categories) && data.categories.length > 0
+            ? [
+                { label: "Temas", href: "/blog/temas" },
+                {
+                  label: data.categories[0]?.title || "Tema",
+                  href: `/blog/temas/${data.categories[0]?.slug?.current || ""}`,
+                },
+              ]
+            : []),
+          { label: data.title || "Post" },
+        ]}
+      />
+<article className="prose prose-invert max-w-none">
         <header className="mb-8">
           <h1 className="text-3xl font-semibold tracking-tight">
             {data.title}
@@ -120,3 +137,5 @@ export default async function Page({ params }: PageProps) {
     </main>
   );
 }
+
+
