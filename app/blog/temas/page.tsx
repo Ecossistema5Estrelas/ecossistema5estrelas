@@ -2,6 +2,7 @@ import { Q } from "@/src/lib/sanity/queries";
 import { sanityFetch } from "@/src/lib/sanity/fetch";
 import type { CategoryProjected } from "@/src/lib/sanity/types";
 
+import Link from "next/link";
 export const revalidate = 300;
 
 export default async function Page() {
@@ -36,5 +37,7 @@ export default async function Page() {
     </main>
   );
 }
+
+
 
 
