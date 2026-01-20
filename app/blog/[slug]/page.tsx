@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { parseReadingMode } from "@/lib/blog/e5-reading";
 import ArchitecturalBreadcrumb from "@/components/blog/ArchitecturalBreadcrumb";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -35,8 +36,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 // ---- Página ----
-export default async function Page({ params }: PageProps) {
+export default async function Page({ params, searchParams }: PageProps & { searchParams: Record<string, string | string[] | undefined> }) {
   const slug = params?.slug || "";
+  const mode = parseReadingMode(searchParams);
 
   // Slug inválido → fallback institucional
   if (!isValidSlug(slug)) {
