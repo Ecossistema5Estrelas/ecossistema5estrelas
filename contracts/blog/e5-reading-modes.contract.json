@@ -1,0 +1,61 @@
+{
+  "scope": "BOLHA_H_BLOG_PREMIUM",
+  "id": "E5",
+  "name": "Reading Modes Contract",
+  "version": "1.0.0",
+  "invariants": [
+    "terminal-first",
+    "url-is-state",
+    "deterministic",
+    "indexable",
+    "no-invisible-state",
+    "patch-idempotent",
+    "scripts-reversible",
+    "changes-auditable"
+  ],
+  "modes": {
+    "focus": {
+      "goal": "Leitura pura, zero distração",
+      "ui_constraints": ["no-sidebar", "no-related-cards", "no-inline-tooltips"],
+      "seo": "same-content-different-presentation",
+      "accessibility": ["high-contrast", "line-length-optimized", "font-scaling-safe"]
+    },
+    "study": {
+      "goal": "Aprendizado ativo",
+      "ui_constraints": ["toc-visible", "anchors-enabled", "highlighting-allowed"],
+      "seo": "same-content-different-presentation",
+      "accessibility": ["keyboard-navigation", "focus-traps-disabled"]
+    },
+    "scan": {
+      "goal": "Skimming e orientação rápida",
+      "ui_constraints": ["headings-emphasized", "section-previews", "progress-map"],
+      "seo": "same-content-different-presentation",
+      "accessibility": ["skip-links", "aria-landmarks"]
+    },
+    "ref": {
+      "goal": "Uso como referência técnica",
+      "ui_constraints": ["persistent-toc", "copyable-sections", "deep-links"],
+      "seo": "same-content-different-presentation",
+      "accessibility": ["section-ids", "stable-fragment-links"]
+    }
+  },
+  "rules": [
+    "Mode must be provided via URL search param: ?mode=",
+    "Invalid or missing mode must fallback deterministically",
+    "No client-only memory is allowed",
+    "Presentation may change, content must not",
+    "All modes must be shareable by URL",
+    "All modes must be crawlable",
+    "All modes must be reversible"
+  ],
+  "fallbacks": {
+    "default_mode": "focus",
+    "invalid_mode_behavior": "fallback_to_default"
+  },
+  "examples": [
+    "/blog/post-x?mode=focus",
+    "/blog/post-x?mode=study",
+    "/blog/post-x?mode=scan",
+    "/blog/post-x?mode=ref"
+  ]
+}
