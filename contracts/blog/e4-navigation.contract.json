@@ -1,0 +1,38 @@
+{
+  "scope": "BOLHA_H_BLOG_PREMIUM",
+  "id": "E4",
+  "name": "Navigation Modes Contract",
+  "invariants": [
+    "terminal-first",
+    "zero-ambiguity",
+    "url-is-state",
+    "patch-idempotent",
+    "scripts-reversible",
+    "changes-auditable"
+  ],
+  "modes": {
+    "INDEX": {
+      "route": "/blog",
+      "state_in_url": true,
+      "allowed_search_params": ["q", "tag", "serie", "page"],
+      "required_ui": ["search", "filters", "pagination", "count"]
+    },
+    "EXPLORE": {
+      "route": "/blog?tag=...&serie=...&q=...&page=...",
+      "state_in_url": true,
+      "allowed_search_params": ["q", "tag", "serie", "page"],
+      "required_ui": ["chips", "clear", "active-state-visible"]
+    },
+    "READER": {
+      "route": "/blog/[slug]",
+      "state_in_url": false,
+      "required_ui": ["breadcrumb", "back-to-list-preserving-state"]
+    }
+  },
+  "rules": [
+    "No client-only state required to navigate",
+    "All navigation state is encoded in URL search params",
+    "Back-to-list must preserve the exact querystring",
+    "Slug route must exist and be deterministic"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "gate": "BLOG_E4_NAVIGATION",
+  "ok": true,
+  "checks": [
+    {
+      "name": "contract_exists",
+      "ok": true
+    },
+    {
+      "name": "e4_nav_lib_exists",
+      "ok": true
+    },
+    {
+      "name": "blog_index_route_exists",
+      "ok": true
+    },
+    {
+      "name": "blog_reader_route_exists",
+      "ok": true
+    },
+    {
+      "name": "blog_index_reads_searchParams",
+      "ok": true
+    }
+  ]
+}

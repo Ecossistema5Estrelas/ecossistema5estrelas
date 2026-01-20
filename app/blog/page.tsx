@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { parseBlogNav } from "@/lib/blog/e4-nav";
 import Link from "next/link";
 
 import { Q } from "@/src/lib/sanity/queries";
@@ -26,6 +27,7 @@ export const metadata: Metadata = {
 
 export default async function Page({
   searchParams,
+  const nav = parseBlogNav(searchParams);
 }: {
   searchParams?: { page?: string };
 }) {
