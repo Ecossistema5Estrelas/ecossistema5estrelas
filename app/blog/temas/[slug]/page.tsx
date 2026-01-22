@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 
-import { Q } from "@/src/lib/sanity/queries";
-import { sanityFetch } from "@/src/lib/sanity/fetch";
-import Pagination from "@/components/Pagination";
-import CategoryChips from "@/app/components/blog/CategoryChips";
-import BlogEmptyState from "@/app/components/blog/BlogEmptyState";
+import { Q } from "../../../../src/lib/sanity/queries";
+import { sanityFetch } from "../../../../src/lib/sanity/fetch";
+import Pagination from "../../../../components/Pagination";
+import CategoryChips from "../../../components/blog/CategoryChips";
+import BlogEmptyState from "../../../components/blog/BlogEmptyState";
 
-import type { CategoryProjected, PostCard } from "@/src/lib/sanity/types";
+import type { Metadata } from "next";
+import type { CategoryProjected, PostCard } from "../../../../src/lib/sanity/types";
 
 type PageProps = {
   params: { slug: string };

@@ -1,5 +1,6 @@
 import Link from "next/link";
-import type { CategoryProjected } from "@/src/lib/sanity/types";
+
+import type { CategoryProjected } from "../../../src/lib/sanity/types";
 
 // -------------------------
 // Contrato de entrada

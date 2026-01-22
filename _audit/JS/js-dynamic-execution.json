@@ -1,8 +1,5 @@
 {
-  "gate": "JS/audit-js-dynamic-execution",
-  "ok": true,
-  "issues_count": 0,
-  "destructive_count": 0,
-  "files_scanned": 62,
-  "issues": []
+  "gate": "js-dynamic-execution",
+  "generated_at": "2026-01-21T00:49:45.420Z",
+  "violations": []
 }

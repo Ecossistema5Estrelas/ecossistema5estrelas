@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "generatedAtISO": "2026-01-21T00:25:15.939Z",
+  "futures": [
+    {
+      "from": "e7",
+      "options": [
+        "e6",
+        "e8"
+      ],
+      "rationale": "Se há percursos adaptativos, o próximo passo coerente é memória (E8) para continuidade; E6 pode ser reforçado para reorganização."
+    }
+  ],
+  "plans": [
+    {
+      "id": "p1",
+      "intent": "compreender-blog-premium",
+      "steps": [
+        "e1",
+        "e2",
+        "e6",
+        "e7",
+        "e8"
+      ],
+      "explanation": "Plano canônico mínimo da fundação até memória longitudinal."
+    }
+  ],
+  "simulations": [
+    {
+      "planId": "p1",
+      "outcomes": [
+        "continuidade-estavel",
+        "retomada-deterministica"
+      ],
+      "risk": "risco baixo se os nós existirem no universo E6/E7 e a sessão existir em E8."
+    }
+  ]
+}

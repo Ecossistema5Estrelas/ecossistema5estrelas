@@ -1,0 +1,13 @@
+# E6 DSL v1 — fixture mínimo
+
+INDEX fundamentos | trilha | Fundamentos do Blog Premium
+DESC: Leitura de base para entender o sistema.
+NODES: e1, e2, e3, e4, e5
+
+INDEX indices | árvore | Índices Cognitivos
+DESC: Organização conceitual do conhecimento do blog.
+NODES: e6, mapas, trilhas, arvores
+
+MAP mapa-principal
+INDICES: fundamentos, indices
+PATH: fundamentos -> indices | A base leva ao sistema de organização.

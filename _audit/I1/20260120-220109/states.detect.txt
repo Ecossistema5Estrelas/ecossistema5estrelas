@@ -1,0 +1,5 @@
+I1 STATES DETECT
+Timestamp: 2026-01-21T01:01:09.438Z
+
+- public/_memory/e8-state.json: OK | signals: lido
+- public/_plans/e9-state.json: OK | signals: (none)

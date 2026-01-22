@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
-import { parseReadingMode } from "@/lib/blog/e5-reading";
-import ArchitecturalBreadcrumb from "@/components/blog/ArchitecturalBreadcrumb";
-import Link from "next/link";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 
-import { Q } from "@/src/lib/sanity/queries";
-import { sanityFetch } from "@/src/lib/sanity/fetch";
-import type { PostCard } from "@/src/lib/sanity/types";
+import { parseReadingMode } from "../../../src/lib/blog/e5-reading";
+import ArchitecturalBreadcrumb from "../../components/blog/ArchitecturalBreadcrumb";
+import { Q } from "../../../src/lib/sanity/queries";
+import { sanityFetch } from "../../../src/lib/sanity/fetch";
+
+import type { Metadata } from "next";
 
 type PageProps = { params: { slug: string } };
 
@@ -36,9 +36,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 // ---- Página ----
-export default async function Page({ params, searchParams }: PageProps & { searchParams: Record<string, string | string[] | undefined> }) {
+export default async function Page({
+  params,
+  searchParams,
+}: PageProps & { searchParams: Record<string, string | string[] | undefined> }) {
   const slug = params?.slug || "";
-  const mode = parseReadingMode(searchParams);
+  parseReadingMode(searchParams); // mantido por efeito semântico
 
   // Slug inválido → fallback institucional
   if (!isValidSlug(slug)) {
@@ -67,7 +70,7 @@ export default async function Page({ params, searchParams }: PageProps & { searc
 
   return (
     <main className="mx-auto w-full max-w-4xl px-4 py-10">
-            {/* E3:BREADCRUMB */}
+      {/* E3:BREADCRUMB */}
       <ArchitecturalBreadcrumb
         items={[
           { label: "Blog ArqFuturum", href: "/blog" },
@@ -83,7 +86,8 @@ export default async function Page({ params, searchParams }: PageProps & { searc
           { label: data.title || "Post" },
         ]}
       />
-<article className="prose prose-invert max-w-none">
+
+      <article className="prose prose-invert max-w-none">
         <header className="mb-8">
           <h1 className="text-3xl font-semibold tracking-tight">
             {data.title}
@@ -114,7 +118,6 @@ export default async function Page({ params, searchParams }: PageProps & { searc
         {/* Corpo */}
         <section className="mt-8">
           {Array.isArray(data.body) ? (
-            // Caso Portable Text esteja configurado no frontend, renderize aqui
             <pre className="opacity-80">
               Renderização PortableText não configurada neste contrato.
             </pre>
@@ -139,5 +142,3 @@ export default async function Page({ params, searchParams }: PageProps & { searc
     </main>
   );
 }
-
-

@@ -1,0 +1,30 @@
+{
+  "ts": "20260120-220109",
+  "evidence": {
+    "routes": "_audit/I1/20260120-220109/routes.map.json",
+    "consumption": "_audit/I1/20260120-220109/contracts.consumption.json",
+    "states": "_audit/I1/20260120-220109/states.detect.json",
+    "paths": "_audit/I1/20260120-220109/paths.detect.json"
+  },
+  "checks": {
+    "requiredSurfacesMissingCount": 3,
+    "requiredSurfacesMissing": [
+      "/continuar",
+      "/planejamento",
+      "/busca"
+    ],
+    "publicContractsPresent": true,
+    "knownStateFilesPresent": true
+  },
+  "decision": "BLOCKED",
+  "blockers": [
+    {
+      "code": "SURFACES_MISSING",
+      "detail": [
+        "/continuar",
+        "/planejamento",
+        "/busca"
+      ]
+    }
+  ]
+}

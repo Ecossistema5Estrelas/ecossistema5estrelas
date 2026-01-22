@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
-import { parseBlogNav } from "@/lib/blog/e4-nav";
 import Link from "next/link";
 
-import { Q } from "@/src/lib/sanity/queries";
-import { sanityFetch } from "@/src/lib/sanity/fetch";
-import Pagination from "@/components/Pagination";
-import CategoryChips from "@/app/components/blog/CategoryChips";
-import BlogEmptyState from "@/app/components/blog/BlogEmptyState";
+import { Q } from "../../src/lib/sanity/queries";
+import { sanityFetch } from "../../src/lib/sanity/fetch";
+import { parseBlogNav } from "../../src/lib/blog/e4-nav";
+import Pagination from "../../components/Pagination";
+import CategoryChips from "../components/blog/CategoryChips";
+import BlogEmptyState from "../components/blog/BlogEmptyState";
 
-import type { PostCard } from "@/src/lib/sanity/types";
+import type { Metadata } from "next";
+import type { PostCard } from "../../src/lib/sanity/types";
 
 const LIMIT = 10;
 
@@ -27,10 +27,11 @@ export const metadata: Metadata = {
 
 export default async function Page({
   searchParams,
-  const nav = parseBlogNav(searchParams);
 }: {
   searchParams?: { page?: string };
 }) {
+  parseBlogNav(searchParams ?? {});
+
   const page = parsePage(searchParams?.page);
   const offset = (page - 1) * LIMIT;
 
@@ -61,36 +62,21 @@ export default async function Page({
     <main className="mx-auto w-full max-w-4xl px-4 py-10">
       <h1 className="mb-6 text-3xl font-semibold tracking-tight">BLOG</h1>
 
-      <section className="grid gap-6">
-        {posts.map((p) => (
-          <article
-            key={p._id}
-            className="rounded-2xl border border-white/10 p-4"
-          >
-            <Link href={`/blog/${p.slug?.current || ""}`}>
-              <h2 className="text-lg font-semibold">{p.title}</h2>
+      <CategoryChips />
+
+      <ul className="mt-8 space-y-6">
+        {posts.map((post) => (
+          <li key={post._id}>
+            <Link href={`/blog/${post.slug.current}`}>
+              <h2 className="text-xl font-medium">{post.title}</h2>
             </Link>
-
-            <CategoryChips
-              categories={p.categories}
-              className="mt-2"
-            />
-
-            {p.publishedAt ? (
-              <p className="mt-2 text-sm opacity-60">
-                {new Date(p.publishedAt).toLocaleDateString("pt-BR")}
-              </p>
-            ) : null}
-          </article>
+          </li>
         ))}
-      </section>
+      </ul>
 
-      <Pagination
-        currentPage={page}
-        totalPages={totalPages}
-        basePath="/blog"
-      />
+      <div className="mt-10">
+        <Pagination basePath="/blog" currentPage={page} totalPages={totalPages} />
+      </div>
     </main>
   );
 }
-

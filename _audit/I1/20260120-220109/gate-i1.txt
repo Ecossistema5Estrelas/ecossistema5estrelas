@@ -1,0 +1,15 @@
+GATE I1 VERDICT
+Timestamp: 2026-01-21T01:01:09.669Z
+
+Decision: BLOCKED
+
+Missing surfaces: 3
+- /continuar
+- /planejamento
+- /busca
+
+Public contract outputs present: true
+Known state files present: true
+
+Blockers (1):
+- SURFACES_MISSING

@@ -1,0 +1,36 @@
+I1 ROUTES MAP
+Timestamp: 2026-01-21T01:01:09.146Z
+
+Total route files: 25
+Total routes: 25
+
+Missing required surfaces (3):
+- /continuar
+- /planejamento
+- /busca
+
+/	other	app/page.tsx
+/api/revalidate	other	app/api/revalidate/route.ts
+/apps	other	app/apps/page.tsx
+/blog	blog	app/blog/page.tsx
+/blog/[slug]	blog	app/blog/[slug]/page.tsx
+/blog/page/[page]	blog	app/blog/page/[page]/page.tsx
+/blog/series	blog	app/blog/series/page.tsx
+/blog/temas	blog	app/blog/temas/page.tsx
+/blog/temas/[slug]	blog	app/blog/temas/[slug]/page.tsx
+/blog/timeline	blog	app/blog/timeline/page.tsx
+/blog/trilhas	blog	app/blog/trilhas/page.tsx
+/contato	other	app/contato/page.tsx
+/dashboard	other	app/dashboard/page.tsx
+/dashboard/perfil	other	app/dashboard/perfil/page.tsx
+/loja	other	app/loja/page.tsx
+/obrigado	other	app/obrigado/page.tsx
+/p0/test	other	app/p0/test/page.tsx
+/politica-de-cookies	other	app/politica-de-cookies/page.tsx
+/politica-de-privacidade	other	app/politica-de-privacidade/page.tsx
+/privacidade	other	app/privacidade/page.tsx
+/sobre	other	app/sobre/page.tsx
+/termos	other	app/termos/page.tsx
+/termos-de-uso	other	app/termos-de-uso/page.tsx
+/teste-botao	other	app/teste-botao/page.tsx
+/teste-gradiente	other	app/teste-gradiente/page.tsx

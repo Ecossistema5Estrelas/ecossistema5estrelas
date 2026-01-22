@@ -1,9 +1,11 @@
 import Link from "next/link"
 
-import BlogList from "@/blog/BlogList"
-import Pagination from "@/components/Pagination"
-import { getPostsCount, getPostsPaginated } from "@/lib/queries"
-import { BLOG_PAGE_SIZE, pageToRange } from "@/lib/blog.config"
+
+
+import BlogList from "../../BlogList"
+import Pagination from "../../../../components/Pagination"
+import { getPostsCount, getPostsPaginated } from "../../../../lib/queries"
+import { BLOG_PAGE_SIZE, pageToRange } from "../../../../lib/blog.config"
 
 export const revalidate = 3600
 
@@ -34,11 +36,11 @@ export default async function BlogPagedListPage({ params }: Props) {
         <BlogList posts={posts} />
       </div>
 
-      <Pagination basePath="/blog/page" page={page} totalPages={totalPages} />
+      <Pagination basePath="/blog/page" currentPage={page} totalPages={totalPages} />
 
       <div className="mt-10">
         <Link className="underline" href="/blog">
-          Voltar ao Hub SemÃ¢ntico
+          Voltar ao Hub Semântico
         </Link>
       </div>
     </main>
