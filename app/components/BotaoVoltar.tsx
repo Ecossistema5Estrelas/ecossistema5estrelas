@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 
-export default function BotaoVoltar() {
+export default function BotaoVoltar({ children: _children }: { children?: React.ReactNode }) {
   const router = useRouter();
 
   function handleClick() {

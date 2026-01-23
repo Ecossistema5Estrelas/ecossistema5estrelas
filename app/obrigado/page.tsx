@@ -30,7 +30,7 @@ export default function ObrigadoPage() {
         <ObrigadoContent />
 
         <div>
-          <BotaoVoltar href="/" texto="Voltar ao início" />
+          <BotaoVoltar>Voltar ao início</BotaoVoltar>
         </div>
       </section>
     </main>

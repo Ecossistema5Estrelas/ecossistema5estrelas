@@ -1,11 +1,11 @@
-﻿'use client'
+'use client'
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 
 import SubmitButton from './SubmitButton'
 
-import Input from '@/components/ui/input'
+import { Input } from "@/components/ui/input"
 import Textarea from '@/components/ui/textarea'
 import Label from '@/components/ui/label'
 
@@ -32,7 +32,7 @@ export default function FormularioContato(): JSX.Element {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    // 🔒 Pronto para integração futura (API / Action / Server)
+    // ?? Pronto para integra��o futura (API / Action / Server)
     // Nenhum efeito colateral aqui
   }
 

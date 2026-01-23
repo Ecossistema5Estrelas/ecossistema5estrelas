@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 
-import Input from '@/components/ui/input'
+import { Input } from "@/components/ui/input"
 import Textarea from '@/components/ui/textarea'
 import Button from '@/components/ui/button'
 
@@ -14,8 +14,8 @@ export default function PerfilContent() {
     alert('✅ Dados salvos com sucesso!')
   }
 
-    const handleChange01 = () => ((e) => setBio(e.target.value));
-  const handleChange02 = () => ((e) => setNome(e.target.value));
+    const handleChange01 = () => ((e: React.ChangeEvent<HTMLInputElement>) => setBio(e.target.value));
+  const handleChange02 = () => ((e: React.ChangeEvent<HTMLInputElement>) => setNome(e.target.value));
 
 return (
     <div className="space-y-6 bg-zinc-900 p-6 rounded-2xl shadow-xl border border-zinc-800">

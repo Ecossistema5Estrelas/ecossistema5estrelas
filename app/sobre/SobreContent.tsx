@@ -61,7 +61,7 @@ export default function SobreContent() {
       </div>
 
       <div className="text-center">
-        <BotaoVoltar href="/" texto="Voltar ao Início" />
+        <BotaoVoltar>Voltar ao Início</BotaoVoltar>
       </div>
     </section>
   )
