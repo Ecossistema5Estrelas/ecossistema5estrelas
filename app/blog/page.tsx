@@ -1,82 +1,82 @@
-import Link from "next/link";
+﻿import Link from "next/link";
+import { getPostsCount } from "@/lib/queries";
 
-import { Q } from "../../src/lib/sanity/queries";
-import { sanityFetch } from "../../src/lib/sanity/fetch";
-import { parseBlogNav } from "../../src/lib/blog/e4-nav";
-import Pagination from "../../components/Pagination";
-import CategoryChips from "../components/blog/CategoryChips";
-import BlogEmptyState from "../components/blog/BlogEmptyState";
-
-import type { Metadata } from "next";
-import type { PostCard } from "../../src/lib/sanity/types";
-
-const LIMIT = 10;
-
-function parsePage(input: unknown) {
-  const n = Number(input);
-  if (!Number.isInteger(n) || n < 1) return 1;
-  return n;
-}
-
-export const revalidate = 60;
-
-export const metadata: Metadata = {
-  title: "Blog",
-  description: "Publicações do Ecossistema 5⭐",
+export const metadata = {
+  title: "Blog ArqFuturum — Hub Semântico",
+  description:
+    "Portal conceitual do Blog ArqFuturum. Explore ideias, estude temas, aprofunde conceitos e navegue pela linha do tempo do ECOSSISTEMA 5ESTRELAS.",
 };
 
-export default async function Page({
-  searchParams,
-}: {
-  searchParams?: { page?: string };
-}) {
-  parseBlogNav(searchParams ?? {});
-
-  const page = parsePage(searchParams?.page);
-  const offset = (page - 1) * LIMIT;
-
-  const posts = await sanityFetch<PostCard[]>(
-    Q.postsLatest,
-    { limit: LIMIT, offset },
-    60
-  );
-
-  const totalCount = await sanityFetch<number>(
-    /* groq */ `count(*[_type=="post"])`,
-    {},
-    60
-  );
-
-  const totalPages = Math.max(1, Math.ceil(totalCount / LIMIT));
-
-  if (!Array.isArray(posts) || posts.length === 0) {
-    return (
-      <main className="mx-auto w-full max-w-4xl px-4 py-10">
-        <h1 className="mb-6 text-3xl font-semibold tracking-tight">BLOG</h1>
-        <BlogEmptyState variant="no-posts" />
-      </main>
-    );
-  }
+export default async function BlogHubPage() {
+  const totalPosts = await getPostsCount();
 
   return (
-    <main className="mx-auto w-full max-w-4xl px-4 py-10">
-      <h1 className="mb-6 text-3xl font-semibold tracking-tight">BLOG</h1>
+    <main className="mx-auto max-w-6xl px-6 py-16">
+      <header className="mb-16">
+        <h1 className="text-4xl font-semibold tracking-tight">
+          Blog ArqFuturum
+        </h1>
 
-      <CategoryChips />
+        <p className="mt-4 max-w-3xl text-lg text-muted-foreground">
+          Este não é um feed. É um portal de ideias.
+          <br />
+          O Blog ArqFuturum organiza pensamento, arquitetura e governança
+          para sistemas digitais de longo prazo.
+        </p>
 
-      <ul className="mt-8 space-y-6">
-        {posts.map((post) => (
-          <li key={post._id}>
-            <Link href={`/blog/${post.slug.current}`}>
-              <h2 className="text-xl font-medium">{post.title}</h2>
-            </Link>
-          </li>
-        ))}
-      </ul>
+        <div className="mt-6 text-sm text-muted-foreground">
+          Total de posts publicados: <strong>{totalPosts}</strong>
+        </div>
+      </header>
 
-      <div className="mt-10">
-        <Pagination basePath="/blog" currentPage={page} totalPages={totalPages} />
-      </div>
+      <section className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <HubCard
+          title="Explorar"
+          description="Descoberta livre e navegação cronológica."
+          href="/blog/page/1"
+        />
+
+        <HubCard
+          title="Estudar"
+          description="Temas, séries e trilhas estruturadas."
+          href="/blog/temas"
+        />
+
+        <HubCard
+          title="Aprofundar"
+          description="Leitura contínua e densidade conceitual."
+          href="/blog/series"
+        />
+
+        <HubCard
+          title="Linha do Tempo"
+          description="A memória cronológica do blog."
+          href="/blog/timeline"
+        />
+      </section>
     </main>
+  );
+}
+
+function HubCard({
+  title,
+  description,
+  href,
+}: {
+  title: string;
+  description: string;
+  href: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className="group block rounded-xl border border-border p-6 transition hover:border-foreground"
+    >
+      <h2 className="text-xl font-medium">{title}</h2>
+      <p className="mt-2 text-sm text-muted-foreground">{description}</p>
+      <span className="mt-4 inline-block text-sm font-medium underline underline-offset-4">
+        Acessar
+      </span>
+    </Link>
   );
 }
