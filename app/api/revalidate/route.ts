@@ -17,20 +17,27 @@ export async function POST(req: NextRequest) {
   try {
     const secret = req.headers.get("x-sanity-secret");
     if (!secret || secret !== process.env.SANITY_WEBHOOK_SECRET) {
-      return NextResponse.json({ ok: false, error: "Invalid secret" }, { status: 401 });
+      return NextResponse.json(
+        { ok: false, error: "Invalid secret" },
+        { status: 401 }
+      );
     }
 
     const body = (await req.json()) as SanityWebhookBody;
     const slug = getSlug(body);
 
-    // Tag global (para queries que usam tags)
+    // Tag global (queries que usam tags)
     revalidateTag("sanity");
 
-    // Post específico
-    if (body._type === "post" && slug) {
-      revalidateTag(`post:${slug}`);
-      revalidatePath("/blog");
-      revalidatePath(`/blog/${slug}`);
+    // Conteúdo canônico do HUB
+    if (body._type === "post") {
+      if (slug) {
+        revalidateTag(`post:${slug}`);
+      }
+      // Revalida a verdade única
+      revalidatePath("/hub");
+      // Se/Quando houver rota canônica por slug no HUB, habilitar no BLOCO 3:
+      // if (slug) revalidatePath(`/hub/${slug}`);
     }
 
     return NextResponse.json({
@@ -41,7 +48,10 @@ export async function POST(req: NextRequest) {
       ts: new Date().toISOString(),
     });
   } catch (err) {
-    console.error("[NEXT-01] revalidate error:", err);
-    return NextResponse.json({ ok: false, error: "Revalidate failed" }, { status: 500 });
+    console.error("[NEXT-02] revalidate error:", err);
+    return NextResponse.json(
+      { ok: false, error: "Revalidate failed" },
+      { status: 500 }
+    );
   }
 }
