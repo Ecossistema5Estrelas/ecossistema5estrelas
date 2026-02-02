@@ -35,9 +35,9 @@ export async function POST(req: NextRequest) {
         revalidateTag(`post:${slug}`);
       }
       // Revalida a verdade única
-      revalidatePath("/blog");
+      revalidatePath("/hub");
       // Se/Quando houver rota canônica por slug no HUB, habilitar no BLOCO 3:
-      // if (slug) revalidatePath(`/blog/${slug}`);
+      // if (slug) revalidatePath(`/hub/${slug}`);
     }
 
     return NextResponse.json({
@@ -55,4 +55,3 @@ export async function POST(req: NextRequest) {
     );
   }
 }
-
