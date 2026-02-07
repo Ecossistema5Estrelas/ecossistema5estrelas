@@ -5,6 +5,7 @@ import category from './category'
 import post from './post'
 import blockContent from './blockContent'
 import postHub from './postHub'
+import auditLog from './auditLog'
 
 export const schemaTypes = [
   post,
@@ -12,4 +13,6 @@ export const schemaTypes = [
   category,
   blockContent,
   postHub,
+  auditLog,
 ]
+
