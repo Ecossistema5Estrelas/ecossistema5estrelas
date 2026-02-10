@@ -21,7 +21,7 @@ export default async function TimelinePage() {
     <main style={{ padding: 24 }}>
       <h1>Timeline</h1>
       <p>Modo de visualização temporal (não é a estrutura do blog).</p>
-      <p><Link href="/blog">← Voltar ao Hub</Link></p>
+      <p><Link href="/blog">← Voltar ao Blog</Link></p>
 
       <h2>Últimos 25</h2>
       <ul>

@@ -40,7 +40,7 @@ export default async function BlogPagedListPage({ params }: Props) {
 
       <div className="mt-10">
         <Link className="underline" href="/blog">
-          Voltar ao Hub Semântico
+          Voltar ao Blog
         </Link>
       </div>
     </main>

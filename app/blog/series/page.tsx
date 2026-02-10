@@ -5,7 +5,7 @@ export default function SeriesPage() {
     <main style={{ padding: 24 }}>
       <h1>Séries</h1>
       <p>V1: visão encadeada. Ainda não há séries declaradas no Sanity (não inventamos).</p>
-      <p><Link href="/blog">← Voltar ao Hub</Link></p>
+      <p><Link href="/blog">← Voltar ao Blog</Link></p>
     </main>
   );
 }

@@ -1,13 +1,13 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import { getPostsCount } from "@/lib/queries";
 
 export const metadata = {
-  title: "Blog ArqFuturum — Hub Semântico",
+  title: "Blog ArqFuturum",
   description:
     "Portal conceitual do Blog ArqFuturum. Explore ideias, estude temas, aprofunde conceitos e navegue pela linha do tempo do ECOSSISTEMA 5ESTRELAS.",
 };
 
-export default async function BlogHubPage() {
+export default async function BlogPage() {
   const totalPosts = await getPostsCount();
 
   return (
@@ -30,25 +30,25 @@ export default async function BlogHubPage() {
       </header>
 
       <section className="grid grid-cols-1 gap-6 md:grid-cols-2">
-        <HubCard
+        <IndexCard
           title="Explorar"
           description="Descoberta livre e navegação cronológica."
           href="/blog/page/1"
         />
 
-        <HubCard
+        <IndexCard
           title="Estudar"
           description="Temas, séries e trilhas estruturadas."
           href="/blog/temas"
         />
 
-        <HubCard
+        <IndexCard
           title="Aprofundar"
           description="Leitura contínua e densidade conceitual."
           href="/blog/series"
         />
 
-        <HubCard
+        <IndexCard
           title="Linha do Tempo"
           description="A memória cronológica do blog."
           href="/blog/timeline"
@@ -58,7 +58,7 @@ export default async function BlogHubPage() {
   );
 }
 
-function HubCard({
+function IndexCard({
   title,
   description,
   href,
