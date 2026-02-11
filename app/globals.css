@@ -32,7 +32,7 @@
   box-sizing: border-box;
 }
 
-::selection {
+.prose ::selection {
   background: var(--color-auto-app-03);
   color: var(--color-auto-app-02);
 }
