@@ -1,3 +1,5 @@
+import { portableTextComponents } from "@/lib/portableText";
+import { PortableText } from "@portabletext/react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 
@@ -117,10 +119,9 @@ export default async function Page({
 
         {/* Corpo */}
         <section className="mt-8">
-          {Array.isArray(data.body) ? (
-            <pre className="opacity-80">
-              Renderização PortableText não configurada neste contrato.
-            </pre>
+            <PortableText value={data.body} components={portableTextComponents} />
+
+
           ) : typeof data.body === "string" ? (
             <p className="leading-relaxed opacity-90">{data.body}</p>
           ) : (
@@ -142,3 +143,4 @@ export default async function Page({
     </main>
   );
 }
+
