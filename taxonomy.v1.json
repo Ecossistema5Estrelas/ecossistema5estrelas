@@ -1,0 +1,28 @@
+{
+  "version": "1.0",
+  "source": "conceptual-map",
+  "principles": [
+    "leveza",
+    "determinismo",
+    "não-retroatividade",
+    "semântica explícita",
+    "fonte única"
+  ],
+  "categories": [
+    "fundamentos",
+    "governanca",
+    "arquitetura",
+    "tecnologia",
+    "filosofia",
+    "futuro",
+    "ia",
+    "ecossistema",
+    "sociedade",
+    "negocios",
+    "metodologia",
+    "design",
+    "educacao",
+    "cultura",
+    "pesquisa"
+  ]
+}

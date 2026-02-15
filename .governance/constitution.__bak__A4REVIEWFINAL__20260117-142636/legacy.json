@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "version": "A2-CONSTITUTION-3.0",
+    "scope": "LEGACY",
+    "notes": "Memória institucional, snapshots, histórico e auditorias."
+  },
+  "rules": [
+    { "prefix": "_archive/", "note": "Memória institucional congelada" },
+    { "prefix": "audits/", "note": "Relatórios e rastreabilidade" },
+    { "prefix": "backups/", "note": "Backups históricos" },
+    { "prefix": ".mnemosine/", "note": "Snapshots cognitivos" },
+    { "prefix": "old/", "note": "Código antigo" },
+    { "prefix": "deprecated/", "note": "Componentes obsoletos" },
+    { "prefix": "legacy/", "note": "Heranças técnicas" },
+    { "prefix": "v1/", "note": "Versões antigas" },
+    { "prefix": "archive/", "note": "Arquivos arquivados" }
+  ]
+}

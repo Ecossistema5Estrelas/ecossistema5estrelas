@@ -1,0 +1,14 @@
+[
+  {
+    "code": "CSS_COLOR_HARDCODED",
+    "file": "styles/globals.css",
+    "value": "linear-gradient(\r\n      135deg,\r\n      #1a1a2e 0%,\r\n      #16213e 25%,\r\n      #0f3460 50%,\r\n      #533483 75%,\r\n      #7209b7 100%\r\n    ) !important",
+    "message": "COLOR usando valor hardcoded."
+  },
+  {
+    "code": "CSS_MOTION_HARDCODED",
+    "file": "styles/globals.css",
+    "value": "float 4s ease-in-out infinite",
+    "message": "MOTION usando valor hardcoded."
+  }
+]

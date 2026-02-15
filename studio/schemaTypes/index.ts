@@ -4,10 +4,15 @@ import author from './author'
 import category from './category'
 import post from './post'
 import blockContent from './blockContent'
+import postHub from './postHub'
+import auditLog from './auditLog'
 
 export const schemaTypes = [
   post,
   author,
   category,
   blockContent,
+  postHub,
+  auditLog,
 ]
+

@@ -1,8 +1,8 @@
-﻿'use client'
+'use client'
 
 import { useState } from 'react'
 
-import Input from '@/components/ui/input'
+import { Input } from "@/components/ui/input"
 import Textarea from '@/components/ui/textarea'
 import Button from '@/components/ui/button'
 
@@ -14,7 +14,10 @@ export default function PerfilContent() {
     alert('✅ Dados salvos com sucesso!')
   }
 
-  return (
+    const handleChange01 = () => ((e: React.ChangeEvent<HTMLInputElement>) => setBio(e.target.value));
+  const handleChange02 = () => ((e: React.ChangeEvent<HTMLInputElement>) => setNome(e.target.value));
+
+return (
     <div className="space-y-6 bg-zinc-900 p-6 rounded-2xl shadow-xl border border-zinc-800">
       <h2 className="text-xl font-semibold text-white">
         📝 Editar Perfil
@@ -29,11 +32,11 @@ export default function PerfilContent() {
             Nome completo
           </label>
           <Input
-            id="nome"
+            id="nome" name="nome" aria-label="Nome"
             type="text"
             placeholder="Seu nome"
             value={nome}
-            onChange={(e) => setNome(e.target.value)}
+            onChange={handleChange02}
           />
         </div>
 
@@ -48,7 +51,7 @@ export default function PerfilContent() {
             id="bio"
             placeholder="Conte um pouco sobre você..."
             value={bio}
-            onChange={(e) => setBio(e.target.value)}
+            onChange={handleChange01}
           />
         </div>
 

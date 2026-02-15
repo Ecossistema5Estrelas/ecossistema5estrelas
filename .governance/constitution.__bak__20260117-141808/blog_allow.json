@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "version": "A2-CONSTITUTION-2.0",
+    "scope": "BLOG",
+    "createdAt": "AUTO",
+    "notes": "Canal editorial governado. Conteúdo é produto, mas não é núcleo técnico."
+  },
+  "rules": [
+    { "prefix": "content/", "note": "Conteúdo editorial" },
+    { "prefix": "posts/", "note": "Posts e textos" },
+    { "prefix": "blog/", "note": "Estrutura do blog" },
+    { "prefix": "sanity/", "note": "CMS e schemas" },
+    { "prefix": "media/", "note": "Mídia editorial" }
+  ]
+}

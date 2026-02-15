@@ -1,0 +1,13 @@
+# E9 DSL v1 — fixture mínima (futuro + plano + simulação)
+
+FUTURE e7
+OPTIONS: e8, e6
+WHY: Se há percursos adaptativos, o próximo passo coerente é memória (E8) para continuidade; E6 pode ser reforçado para reorganização.
+
+PLAN p1 | compreender-blog-premium
+STEPS: e1 -> e2 -> e6 -> e7 -> e8
+EXPLAIN: Plano canônico mínimo da fundação até memória longitudinal.
+
+SIM p1
+OUTCOMES: continuidade-estavel, retomada-deterministica
+RISK: risco baixo se os nós existirem no universo E6/E7 e a sessão existir em E8.

@@ -1,0 +1,10 @@
+# E8 DSL v1 — fixture mínima (memória + continuidade)
+
+SESSION s1 | compreender-blog-premium | 2026-01-21T00:00:58Z | 2026-01-21T00:00:58Z
+
+CHECKPOINT s1 | e1 | 2026-01-21T00:00:58Z | entrada inicial
+CHECKPOINT s1 | e2 | 2026-01-21T00:00:58Z | consolidou índices premium
+
+CONTINUITY s1
+PATH: e1 -> e2 -> e6 -> e7
+WHY: Linha mínima de continuidade da base até organização e percursos adaptativos.

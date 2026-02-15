@@ -1,9 +1,10 @@
 'use client'
 
 import Link from 'next/link'
-import type { Route } from 'next'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
+
+import type { Route } from 'next'
 
 type CardAppProps = {
   emoji: string

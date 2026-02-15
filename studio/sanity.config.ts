@@ -1,17 +1,24 @@
 import { defineConfig } from 'sanity'
-import { deskTool } from 'sanity/desk'
-import { visionTool } from '@sanity/vision'
-import { schemaTypes } from './schemaTypes' // <- IMPORTANTE
+import { schemaTypes } from './schemaTypes'
 
 export default defineConfig({
-  name: 'default',
-  title: 'ecossistema5estrelas',
+  name: 'datastore-only',
+  title: 'ecossistema5estrelas-datastore',
 
-  projectId: 'hf3nh9vb', // <-- AGORA VAI!
-
+  projectId: 'hf3nh9vb',
   dataset: 'production',
 
-  plugins: [deskTool(), visionTool()],
+  /**
+   * ⚠️ IMPORTANTE — Gate V2-5
+   *
+   * Nenhum plugin de UI é carregado.
+   * Nenhum Studio é ativado.
+   * Nenhuma interface humana é permitida.
+   *
+   * O Sanity atua SOMENTE como datastore,
+   * acessado via @sanity/client (terminal / runtime).
+   */
+  plugins: [],
 
   schema: {
     types: schemaTypes,

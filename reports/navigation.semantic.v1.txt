@@ -1,0 +1,39 @@
+NAVEGAÇÃO SEMÂNTICA v1 — ECOSSISTEMA 5⭐
+
+Princípio:
+Usuários navegam por significado, não por tempo.
+
+Vistas:
+
+/blog               → Hub de conhecimento
+/blog/temas         → Índice de eixos semânticos
+/blog/temas/[slug]  → Página de eixo
+/blog/series        → Narrativas encadeadas
+/blog/trilhas       → Trilhas de aprendizado
+/blog/timeline      → Visualização temporal
+
+Eixos principais:
+- fundamentos
+- governanca
+- arquitetura
+- tecnologia
+- ia
+- filosofia
+- sociedade
+- negocios
+- educacao
+- cultura
+- pesquisa
+- design
+- metodologia
+- futuro
+- ecossistema
+
+Regras:
+- Tempo é visualização, não estrutura
+- Não há feed infinito
+- Não há lista sem contexto
+- Todo post futuro exige semântica
+- Nada é reclassificado à força
+
+Este modelo é a fonte única da navegação do blog.

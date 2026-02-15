@@ -1,0 +1,33 @@
+/* =========================================================
+   TOKENS — ECOSSISTEMA 5⭐ (CSS)
+   Gerado por governança (gate CSS Tokens)
+   Princípio: sem refatoração, só tokenização mínima.
+   ========================================================= */
+
+:root {
+/* tokens adicionados automaticamente abaixo */
+
+  /* auto-tokens (css-tokens gate) */
+  --color-auto-01: linear-gradient(
+      135deg,
+      #1a1a2e 0%,
+      #16213e 25%,
+      #0f3460 50%,
+      #533483 75%,
+      #7209b7 100%
+    ) !important;
+  --motion-auto-01: float 4s ease-in-out infinite;
+
+  /* auto-tokens (app css) */
+  --color-auto-app-01: #000000;
+  --color-auto-app-02: #ffffff;
+  --color-auto-app-03: #27272a;
+  --size-auto-app-01: 100dvh;
+
+  /* auto-tokens (tsx inline) */
+  --space-auto-tsx-01: 6rem', textAlign: 'center' }}>
+      <h1>Página não encontrada</h1>
+      <p>O conteúdo solicitado não existe ou foi movido.</p>
+    </main>
+  );
+}

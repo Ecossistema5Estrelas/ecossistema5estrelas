@@ -1,0 +1,112 @@
+{
+  "generatedAt": "2026-01-18T05:29:20.547Z",
+  "taxonomyVersion": "1.0",
+  "totals": {
+    "posts": 0,
+    "withThemes": 0,
+    "withoutThemes": 0
+  },
+  "byTheme": {
+    "arquitetura": {
+      "count": 0,
+      "posts": []
+    },
+    "antifragilidade": {
+      "count": 0,
+      "posts": []
+    },
+    "autonomia-dos-sistemas": {
+      "count": 0,
+      "posts": []
+    },
+    "curadoria": {
+      "count": 0,
+      "posts": []
+    },
+    "criatividade-estruturada": {
+      "count": 0,
+      "posts": []
+    },
+    "design": {
+      "count": 0,
+      "posts": []
+    },
+    "distribuicao": {
+      "count": 0,
+      "posts": []
+    },
+    "economia": {
+      "count": 0,
+      "posts": []
+    },
+    "etica": {
+      "count": 0,
+      "posts": []
+    },
+    "governanca": {
+      "count": 0,
+      "posts": []
+    },
+    "identidade": {
+      "count": 0,
+      "posts": []
+    },
+    "ingestao": {
+      "count": 0,
+      "posts": []
+    },
+    "interfaces": {
+      "count": 0,
+      "posts": []
+    },
+    "longevidade": {
+      "count": 0,
+      "posts": []
+    },
+    "memoria": {
+      "count": 0,
+      "posts": []
+    },
+    "multimodalidade": {
+      "count": 0,
+      "posts": []
+    },
+    "observabilidade": {
+      "count": 0,
+      "posts": []
+    },
+    "orquestracao": {
+      "count": 0,
+      "posts": []
+    },
+    "resiliencia": {
+      "count": 0,
+      "posts": []
+    },
+    "risco": {
+      "count": 0,
+      "posts": []
+    },
+    "sistemas-complexos": {
+      "count": 0,
+      "posts": []
+    },
+    "social": {
+      "count": 0,
+      "posts": []
+    },
+    "temporalidade": {
+      "count": 0,
+      "posts": []
+    },
+    "ux-experiencia": {
+      "count": 0,
+      "posts": []
+    }
+  },
+  "bySeries": {},
+  "byLevel": {},
+  "overlaps": [],
+  "unclassified": [],
+  "perPost": []
+}

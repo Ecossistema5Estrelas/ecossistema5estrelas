@@ -1,4 +1,4 @@
-import Link from 'next/link'
+﻿import Link from "next/link";
 
 export default function Header(): JSX.Element {
   return (
@@ -22,6 +22,10 @@ export default function Header(): JSX.Element {
             Blog
           </Link>
 
+          <Link href="/hub" className="hover:text-white transition">
+            HUB
+          </Link>
+
           <Link href="/sobre" className="hover:text-white transition">
             Sobre
           </Link>
@@ -32,5 +36,5 @@ export default function Header(): JSX.Element {
         </nav>
       </div>
     </header>
-  )
+  );
 }

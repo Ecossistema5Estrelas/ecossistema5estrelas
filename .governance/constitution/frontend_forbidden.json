@@ -1,0 +1,49 @@
+{
+  "process": [
+    "implicit-rules",
+    "undocumented-conventions",
+    "feature-without-constitution",
+    "feature-without-gate",
+    "change-without-snapshot"
+  ],
+  "js": [
+    "eval",
+    "new-function",
+    "document-write",
+    "dom-hacks",
+    "js-fixing-html",
+    "js-fixing-css",
+    "global-mutable-state",
+    "logic-without-audit",
+    "inline-event-handlers"
+  ],
+  "css": [
+    "experimental-in-core",
+    "layout-via-effects",
+    "transition-all",
+    "important-indiscriminate",
+    "browser-hacks",
+    "magic-values",
+    "implicit-cascade",
+    "vh-layout-mobile"
+  ],
+  "meta": {
+    "type": "prospective",
+    "created": "2026-01-17T16:39:34Z",
+    "name": "Frontend Constitution — Forbidden",
+    "scope": "frontend",
+    "version": "1.0"
+  },
+  "html": [
+    "inline-js",
+    "inline-css",
+    "layout-with-div-only",
+    "missing-main",
+    "multiple-main",
+    "headings-skipped",
+    "inputs-without-label",
+    "img-without-alt",
+    "semantic-tags-ignored",
+    "fake-forms"
+  ]
+}

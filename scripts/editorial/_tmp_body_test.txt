@@ -1,0 +1,6 @@
+Este é um corpo de teste com mais de 400 caracteres.
+Ele não contém markdown, não possui headings com "# ",
+e serve apenas para validar o gate de schema e o gate de size.
+A ideia aqui é confirmar que o pipeline passa por todos os
+gates essenciais em modo dry-run, sem publicar nada, sem
+efeitos colaterais, sem ruído e com saída determinística.

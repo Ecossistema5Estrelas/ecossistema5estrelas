@@ -1,4 +1,5 @@
 import PostCard from './PostCard'
+
 import type { Post } from '@/lib/types'
 
 type PostListProps = {

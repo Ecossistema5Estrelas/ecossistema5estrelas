@@ -1,0 +1,113 @@
+{
+  "gate": "HTML/audit-progressive-enhancement",
+  "ok": true,
+  "issues_count": 0,
+  "issues": [],
+  "stats": {
+    "pages_scanned": 17
+  },
+  "checks": [
+    {
+      "file": "app/apps/page.tsx",
+      "use_client": false,
+      "noscript_fallback": false,
+      "allowed": false
+    },
+    {
+      "file": "app/blog/page.tsx",
+      "use_client": false,
+      "noscript_fallback": false,
+      "allowed": false
+    },
+    {
+      "file": "app/blog/[slug]/page.tsx",
+      "use_client": false,
+      "noscript_fallback": false,
+      "allowed": false
+    },
+    {
+      "file": "app/contato/page.tsx",
+      "use_client": false,
+      "noscript_fallback": false,
+      "allowed": false
+    },
+    {
+      "file": "app/dashboard/page.tsx",
+      "use_client": false,
+      "noscript_fallback": true,
+      "allowed": false
+    },
+    {
+      "file": "app/dashboard/perfil/page.tsx",
+      "use_client": false,
+      "noscript_fallback": false,
+      "allowed": false
+    },
+    {
+      "file": "app/loja/page.tsx",
+      "use_client": false,
+      "noscript_fallback": false,
+      "allowed": false
+    },
+    {
+      "file": "app/obrigado/page.tsx",
+      "use_client": false,
+      "noscript_fallback": false,
+      "allowed": false
+    },
+    {
+      "file": "app/page.tsx",
+      "use_client": false,
+      "noscript_fallback": false,
+      "allowed": false
+    },
+    {
+      "file": "app/politica-de-cookies/page.tsx",
+      "use_client": false,
+      "noscript_fallback": false,
+      "allowed": false
+    },
+    {
+      "file": "app/politica-de-privacidade/page.tsx",
+      "use_client": false,
+      "noscript_fallback": false,
+      "allowed": false
+    },
+    {
+      "file": "app/privacidade/page.tsx",
+      "use_client": false,
+      "noscript_fallback": true,
+      "allowed": false
+    },
+    {
+      "file": "app/sobre/page.tsx",
+      "use_client": false,
+      "noscript_fallback": false,
+      "allowed": false
+    },
+    {
+      "file": "app/termos/page.tsx",
+      "use_client": false,
+      "noscript_fallback": true,
+      "allowed": false
+    },
+    {
+      "file": "app/termos-de-uso/page.tsx",
+      "use_client": false,
+      "noscript_fallback": false,
+      "allowed": false
+    },
+    {
+      "file": "app/teste-botao/page.tsx",
+      "use_client": false,
+      "noscript_fallback": true,
+      "allowed": false
+    },
+    {
+      "file": "app/teste-gradiente/page.tsx",
+      "use_client": false,
+      "noscript_fallback": false,
+      "allowed": false
+    }
+  ]
+}

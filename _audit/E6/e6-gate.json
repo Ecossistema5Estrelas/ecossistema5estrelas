@@ -1,0 +1,18 @@
+{
+  "gate": "E6_COGNITIVE_INDEXES",
+  "version": 1,
+  "fixture": "content/indices/e6.dsl.txt",
+  "generatedAtISO": "2026-01-20T23:36:44.803Z",
+  "ok": true,
+  "counts": {
+    "errors": 0,
+    "warns": 0,
+    "total": 0
+  },
+  "hashes": {
+    "dsl_sha256": "628fbbc35b4f76362c6066526d120f6ca28ee2ce930acb637b7212062f0d97a5",
+    "state_sha256": "8e225ef6333a2b1f4c65b460a0d1766efb91601f061e8468a80260316f0c3617"
+  },
+  "summary": "PASS",
+  "issues": []
+}

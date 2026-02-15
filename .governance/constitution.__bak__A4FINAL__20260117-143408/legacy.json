@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "version": "A2-CONSTITUTION-3.1",
+    "scope": "LEGACY",
+    "notes": "Memória institucional, histórico congelado, auditorias e artefatos de transição. Não entra em runtime."
+  },
+  "rules": [
+    { "prefix": "_archive/", "note": "Memória institucional congelada" },
+    { "prefix": "_archive",  "note": "Archive (top-level dir sem '/')" },
+
+    { "prefix": "audits/", "note": "Relatórios e rastreabilidade" },
+    { "prefix": "audits",  "note": "Audits (top-level dir sem '/')" },
+
+    { "prefix": "backups/", "note": "Backups históricos" },
+    { "prefix": "backups",  "note": "Backups (top-level dir sem '/')" },
+
+    { "prefix": ".mnemosine/", "note": "Snapshots cognitivos" },
+    { "prefix": ".mnemosine",  "note": "Mnemosine (top-level dir sem '/')" },
+
+    { "prefix": "logs/", "note": "Logs e rastreabilidade operacional (preferir migrar para audits/_archive no futuro)" },
+    { "prefix": "logs",  "note": "Logs (top-level dir sem '/')" },
+
+    { "prefix": "audit-report.txt", "note": "Relatório pontual (histórico)" },
+    { "prefix": "audit-size.txt",   "note": "Relatório pontual (histórico)" },
+
+    { "prefix": "icones-pwa_files/", "note": "Artefatos/exportações de geração de ícones (histórico)" },
+    { "prefix": "icones-pwa_files",  "note": "Artefatos/exportações (top-level dir sem '/')" },
+
+    { "prefix": "post-", "note": "Artefatos/exportações editoriais (ndjson/txt) — histórico" },
+
+    { "prefix": "ngrok-v3-stable-windows-amd64", "note": "Artefato local (zip) mantido como histórico; ideal mover para /_archive no futuro" },
+
+    { "prefix": "old/", "note": "Código antigo" },
+    { "prefix": "deprecated/", "note": "Componentes obsoletos" },
+    { "prefix": "legacy/", "note": "Heranças técnicas" },
+    { "prefix": "v1/", "note": "Versões antigas" },
+    { "prefix": "archive/", "note": "Arquivos arquivados" }
+  ]
+}

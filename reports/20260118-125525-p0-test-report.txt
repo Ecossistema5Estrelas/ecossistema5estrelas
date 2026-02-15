@@ -1,0 +1,5 @@
+REPORT CONTRACT
+name: p0-test-report
+slug: p0-test-report
+created_at: 2026-01-18 12:55:25
+root: C:\dev\portal-ecossistema5estrelas

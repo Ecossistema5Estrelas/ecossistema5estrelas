@@ -1,0 +1,101 @@
+{
+  "gate": "html-landmarks",
+  "generated_at": "2026-01-17T20:19:57.989Z",
+  "violations": [
+    {
+      "file": "C:\\dev\\portal-ecossistema5estrelas\\.sandbox\\_smoke_home.html",
+      "rule": "missing-main"
+    },
+    {
+      "file": "C:\\dev\\portal-ecossistema5estrelas\\.sandbox\\_smoke_home.html",
+      "rule": "missing-landmark",
+      "landmark": "header"
+    },
+    {
+      "file": "C:\\dev\\portal-ecossistema5estrelas\\.sandbox\\_smoke_home.html",
+      "rule": "missing-landmark",
+      "landmark": "nav"
+    },
+    {
+      "file": "C:\\dev\\portal-ecossistema5estrelas\\.sandbox\\_smoke_home.html",
+      "rule": "missing-landmark",
+      "landmark": "footer"
+    },
+    {
+      "file": "C:\\dev\\portal-ecossistema5estrelas\\.sanity\\runtime\\index.html",
+      "rule": "missing-main"
+    },
+    {
+      "file": "C:\\dev\\portal-ecossistema5estrelas\\.sanity\\runtime\\index.html",
+      "rule": "missing-landmark",
+      "landmark": "header"
+    },
+    {
+      "file": "C:\\dev\\portal-ecossistema5estrelas\\.sanity\\runtime\\index.html",
+      "rule": "missing-landmark",
+      "landmark": "nav"
+    },
+    {
+      "file": "C:\\dev\\portal-ecossistema5estrelas\\.sanity\\runtime\\index.html",
+      "rule": "missing-landmark",
+      "landmark": "footer"
+    },
+    {
+      "file": "C:\\dev\\portal-ecossistema5estrelas\\backups\\sanity_20251223_212444\\studio\\.sanity\\runtime\\index.html",
+      "rule": "missing-main"
+    },
+    {
+      "file": "C:\\dev\\portal-ecossistema5estrelas\\backups\\sanity_20251223_212444\\studio\\.sanity\\runtime\\index.html",
+      "rule": "missing-landmark",
+      "landmark": "header"
+    },
+    {
+      "file": "C:\\dev\\portal-ecossistema5estrelas\\backups\\sanity_20251223_212444\\studio\\.sanity\\runtime\\index.html",
+      "rule": "missing-landmark",
+      "landmark": "nav"
+    },
+    {
+      "file": "C:\\dev\\portal-ecossistema5estrelas\\backups\\sanity_20251223_212444\\studio\\.sanity\\runtime\\index.html",
+      "rule": "missing-landmark",
+      "landmark": "footer"
+    },
+    {
+      "file": "C:\\dev\\portal-ecossistema5estrelas\\icones-pwa_files\\saved_resource.html",
+      "rule": "missing-main"
+    },
+    {
+      "file": "C:\\dev\\portal-ecossistema5estrelas\\icones-pwa_files\\saved_resource.html",
+      "rule": "missing-landmark",
+      "landmark": "header"
+    },
+    {
+      "file": "C:\\dev\\portal-ecossistema5estrelas\\icones-pwa_files\\saved_resource.html",
+      "rule": "missing-landmark",
+      "landmark": "nav"
+    },
+    {
+      "file": "C:\\dev\\portal-ecossistema5estrelas\\icones-pwa_files\\saved_resource.html",
+      "rule": "missing-landmark",
+      "landmark": "footer"
+    },
+    {
+      "file": "C:\\dev\\portal-ecossistema5estrelas\\studio\\.sanity\\runtime\\index.html",
+      "rule": "missing-main"
+    },
+    {
+      "file": "C:\\dev\\portal-ecossistema5estrelas\\studio\\.sanity\\runtime\\index.html",
+      "rule": "missing-landmark",
+      "landmark": "header"
+    },
+    {
+      "file": "C:\\dev\\portal-ecossistema5estrelas\\studio\\.sanity\\runtime\\index.html",
+      "rule": "missing-landmark",
+      "landmark": "nav"
+    },
+    {
+      "file": "C:\\dev\\portal-ecossistema5estrelas\\studio\\.sanity\\runtime\\index.html",
+      "rule": "missing-landmark",
+      "landmark": "footer"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+[FIX] JS Inline Execution
+PATCHED -> app/components/blog/FiltroCategoria.tsx (1)
+PATCHED -> app/components/blog/FiltroCategoriaMultiplo.tsx (1)
+PATCHED -> app/components/BotaoVoltar.tsx (1)
+PATCHED -> app/dashboard/perfil/PerfilContent.tsx (2)
+PATCHED -> app/teste-botao/page.tsx (1)

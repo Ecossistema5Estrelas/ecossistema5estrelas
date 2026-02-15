@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "version": "A2-CONSTITUTION-3.0",
+    "scope": "CORE",
+    "notes": "Núcleo do produto, governança ativa e runtime."
+  },
+  "rules": [
+    { "prefix": "app/", "note": "App Router do portal (runtime e UX)" },
+    { "prefix": "components/", "note": "Componentes de UI e performance" },
+    { "prefix": "governance/", "note": "Contratos, políticas e protocolos" },
+    { "prefix": "scripts-canônicos/", "note": "Scripts oficiais de operação e observabilidade" },
+    { "prefix": ".husky/", "note": "Governança executável (hooks)" },
+    { "prefix": ".github/", "note": "Governança automatizada (CI/CD)" },
+    { "prefix": "apps/", "note": "Aplicações nucleares" },
+    { "prefix": "packages/", "note": "Bibliotecas reutilizáveis" },
+    { "prefix": "src/", "note": "Código-fonte principal" },
+    { "prefix": "scripts/", "note": "Ferramentas oficiais" },
+    { "prefix": "_audit/", "note": "Sistema de auditoria" },
+    { "prefix": ".governance/", "note": "Constituição e contratos" },
+    { "prefix": "public/", "note": "Assets públicos" },
+    { "prefix": "README", "note": "Documentação raiz" },
+    { "prefix": "docs/", "note": "Documentação oficial" }
+  ]
+}

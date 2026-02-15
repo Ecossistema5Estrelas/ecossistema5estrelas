@@ -1,0 +1,3 @@
+[GATE] HTML/audit-progressive-enhancement
+[OK] true
+[ISSUES] 0

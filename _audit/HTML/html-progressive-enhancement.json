@@ -1,0 +1,12 @@
+{
+  "gate": "html-progressive-enhancement",
+  "generated_at": "2026-01-17T21:07:00.951Z",
+  "violations": [
+    {
+      "file": "C:\\dev\\portal-ecossistema5estrelas\\icones-pwa_files\\saved_resource.html",
+      "rule": "missing-noscript-fallback",
+      "line": 1,
+      "raw": "<script> present but no <noscript> fallback found"
+    }
+  ]
+}

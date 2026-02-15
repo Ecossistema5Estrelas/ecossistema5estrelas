@@ -1,0 +1,8 @@
+[GATE] CSS/audit-css-tokens
+[OK] false
+[ISSUES] 2
+FILES: 55
+COLOR: 6
+SPACE: 1
+SIZE: 1
+MOTION: 3

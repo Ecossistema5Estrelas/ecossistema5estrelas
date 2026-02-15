@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "area": "HTML",
+    "gate": "audit-html-progressive-enhancement",
+    "rootDir": "C:\\dev\\portal-ecossistema5estrelas",
+    "auditDir": "C:\\dev\\portal-ecossistema5estrelas\\_audit",
+    "createdAt": "2026-01-18T00:27:53.338Z",
+    "version": "GATES-CORE-1.0"
+  },
+  "summary": {
+    "ok": false,
+    "issues": 2
+  },
+  "issues": [
+    {
+      "code": "PE_MAIN_EMPTY",
+      "file": "C:\\dev\\portal-ecossistema5estrelas\\app\\apps\\page.tsx",
+      "msg": "Conteúdo textual detectável no <main> é vazio (risco de dependência de JS)."
+    },
+    {
+      "code": "PE_MAIN_EMPTY",
+      "file": "C:\\dev\\portal-ecossistema5estrelas\\app\\global-error.tsx",
+      "msg": "Conteúdo textual detectável no <main> é vazio (risco de dependência de JS)."
+    }
+  ]
+}

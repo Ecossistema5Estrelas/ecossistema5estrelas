@@ -1,0 +1,77 @@
+{
+  "version": "1.0",
+  "source": "ecossistema5estrelas",
+  "principles": [
+    "navegacao-por-significado",
+    "nao-cronologica",
+    "semantica-explicita",
+    "determinismo",
+    "fonte-unica",
+    "nao-retroatividade"
+  ],
+
+  "views": {
+    "hub": "/blog",
+    "temas": "/blog/temas",
+    "tema": "/blog/temas/[slug]",
+    "series": "/blog/series",
+    "trilhas": "/blog/trilhas",
+    "timeline": "/blog/timeline"
+  },
+
+  "axes": [
+    "fundamentos",
+    "governanca",
+    "arquitetura",
+    "tecnologia",
+    "ia",
+    "filosofia",
+    "sociedade",
+    "negocios",
+    "educacao",
+    "cultura",
+    "pesquisa",
+    "design",
+    "metodologia",
+    "futuro",
+    "ecossistema"
+  ],
+
+  "navigationTypes": {
+    "byAxis": "Exploração por tema",
+    "bySeries": "Narrativas encadeadas",
+    "byTrail": "Progressão pedagógica",
+    "byTimeline": "Visualização temporal",
+    "byDependency": "Pré-requisitos conceituais"
+  },
+
+  "rules": {
+    "noChronologicalAsStructure": true,
+    "timeIsViewNotStructure": true,
+    "noPostWithoutSemanticContext": true,
+    "taxonomyIsMandatoryForFuture": true,
+    "noAutoRetroclassification": true
+  },
+
+  "uiContracts": {
+    "hubMustShow": [
+      "eixos",
+      "series",
+      "trilhas",
+      "mapa-conceitual"
+    ],
+    "temaMustShow": [
+      "descricao",
+      "relacionamentos",
+      "posts",
+      "trilhas",
+      "series"
+    ],
+    "postMustShow": [
+      "eixo",
+      "serie (se houver)",
+      "trilha (se houver)",
+      "relacionados"
+    ]
+  }
+}

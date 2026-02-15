@@ -1,7 +1,8 @@
 'use client'
 
-import type { Route } from 'next'
 import Link from 'next/link'
+
+import type { Route } from 'next'
 
 import BotaoVoltar from '@/components/BotaoVoltar'
 
@@ -60,7 +61,7 @@ export default function SobreContent() {
       </div>
 
       <div className="text-center">
-        <BotaoVoltar href="/" texto="Voltar ao Início" />
+        <BotaoVoltar>Voltar ao Início</BotaoVoltar>
       </div>
     </section>
   )

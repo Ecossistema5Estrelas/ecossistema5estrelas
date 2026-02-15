@@ -1,0 +1,11 @@
+E7 GATE — PASS
+Gate: E7_ADAPTIVE_PATHS v1
+DSL: content/paths/e7.dsl.txt
+E6 : public/_indices/e6-state.json
+GeneratedAt: 2026-01-20T23:54:45.982Z
+Errors: 0 | Warns: 0 | Total: 0
+DSL sha256: 2f8b214a8b22d54a56a9fa4d390b789d044994219a7dd722bbd969854f469eca
+E7  sha256: 89518a4f841899b84f0672fd1c9c16f69e6e157c744519aec7684d54401e0928
+E6  sha256: 4339341f215cd54c46d5f7577eefe9ec3ce5a03ab37c659ec24aa784e3b6b45b
+
+No issues. ✅

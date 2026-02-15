@@ -1,0 +1,18 @@
+E9 GATE — FAIL
+Gate: E9_PLANNING_SIMULATION v1
+DSL: content/plans/e9.dsl.txt
+E6 : public/_indices/e6-state.json
+E7 : public/_paths/e7-state.json
+E8 : public/_memory/e8-state.json
+GeneratedAt: 2026-01-21T00:25:16.078Z
+Errors: 2 | Warns: 0 | Total: 2
+DSL sha256: e048364a2656e6d8cc15b497982e3cce85ea740a778050f562cecf767a192d41
+E9  sha256: 8a983cc07e5db1539e678c80c1250edfbcb28b4e0c491d843b416c3c3e1db2d2
+E6  sha256: 4339341f215cd54c46d5f7577eefe9ec3ce5a03ab37c659ec24aa784e3b6b45b
+E7  sha256: 54aa9f0dc875f5985a2b6c579cdf76b8abbe59e32f7a9333868d95eb8a6f4454
+E8  sha256: 790e439eb621b92fef87c9c0de5932a150412d555dd7cd11d4354d94a8139ce0
+
+[ERROR] FUTURE_OPT_UNKNOWN — FUTURE.options contém item fora do universo permitido
+  meta: {"from":"e7","option":"e8"}
+[ERROR] PLAN_STEP_UNKNOWN — PLAN.step fora do universo permitido
+  meta: {"id":"p1","step":"e8"}

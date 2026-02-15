@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "version": "A2-CONSTITUTION-2.0",
+    "scope": "CORE",
+    "createdAt": "AUTO",
+    "notes": "Núcleo mínimo, estável, premium. Tudo aqui deve ser versionável, auditável, observável, sustentável e livre de dependências ocultas."
+  },
+  "rules": [
+    { "prefix": "apps/", "note": "Aplicações nucleares do ecossistema" },
+    { "prefix": "packages/", "note": "Bibliotecas reutilizáveis e governadas" },
+    { "prefix": "src/", "note": "Código-fonte principal" },
+    { "prefix": "scripts/", "note": "Ferramentas oficiais do ecossistema" },
+    { "prefix": "_audit/", "note": "Sistema de auditoria e rastreabilidade" },
+    { "prefix": ".governance/", "note": "Constituição e contratos" },
+    { "prefix": "public/", "note": "Assets públicos versionáveis" },
+    { "prefix": "README", "note": "Documentação raiz" },
+    { "prefix": "docs/", "note": "Documentação oficial" }
+  ]
+}

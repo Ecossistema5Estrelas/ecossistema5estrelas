@@ -1,0 +1,3 @@
+JS DYNAMIC EXECUTION GATE
+
+STATUS: OK — No violations found.

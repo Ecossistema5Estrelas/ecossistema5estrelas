@@ -1,0 +1,37 @@
+SEMANTIC SUMMARY
+Generated: 2026-01-18T05:29:20.547Z
+Taxonomy: v1.0
+
+TOTAL POSTS: 0
+WITH THEMES: 0
+WITHOUT THEMES: 0
+
+BY THEME:
+- arquitetura: 0
+- antifragilidade: 0
+- autonomia-dos-sistemas: 0
+- curadoria: 0
+- criatividade-estruturada: 0
+- design: 0
+- distribuicao: 0
+- economia: 0
+- etica: 0
+- governanca: 0
+- identidade: 0
+- ingestao: 0
+- interfaces: 0
+- longevidade: 0
+- memoria: 0
+- multimodalidade: 0
+- observabilidade: 0
+- orquestracao: 0
+- resiliencia: 0
+- risco: 0
+- sistemas-complexos: 0
+- social: 0
+- temporalidade: 0
+- ux-experiencia: 0
+
+UNCLASSIFIED POSTS:
+
+OVERLAPS (multi-theme posts):

@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "generatedAtISO": "2026-01-20T23:54:45.849Z",
+  "intents": [
+    {
+      "id": "compreender-blog-premium",
+      "description": "Entrar no sistema cognitivo do Blog Premium e entender a progressão canônica.",
+      "entryPoints": [
+        "e1",
+        "e2"
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "from": "e1",
+      "to": "e2",
+      "when": "quando a base infra e encoding estiver compreendida",
+      "rationale": "E2 depende de estabilidade infra para indexação premium."
+    },
+    {
+      "from": "e2",
+      "to": "e6",
+      "when": "quando navegação semântica estiver pronta e quiser organizar conhecimento",
+      "rationale": "E6 formaliza índices cognitivos acima da navegação."
+    }
+  ],
+  "paths": [
+    {
+      "intent": "compreender-blog-premium",
+      "sequence": [
+        "e1",
+        "e2",
+        "e6"
+      ],
+      "explanation": "Progressão mínima para entender base, índices premium e organização cognitiva."
+    }
+  ]
+}

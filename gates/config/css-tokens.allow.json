@@ -1,0 +1,53 @@
+{
+  "scan_roots": ["app", "styles", "components", "ui"],
+  "ignore_patterns": [
+    "node_modules",
+    ".next",
+    "dist",
+    "build",
+    "public",
+    "_archive",
+    "_files",
+    ".min.css"
+  ],
+
+  "color_tokens_prefixes": [
+    "var(--color-",
+    "var(--brand-",
+    "var(--neutral-",
+    "var(--semantic-",
+    "var(--text-",
+    "var(--bg-",
+    "var(--surface-",
+    "var(--icon-",
+    "var(--interactive-",
+    "var(--border-",
+    "var(--shadow-"
+  ],
+
+  "space_tokens_prefixes": [
+    "var(--space-",
+    "var(--gap-",
+    "var(--inset-",
+    "var(--spacing-",
+    "var(--container-"
+  ],
+
+  "size_tokens_prefixes": [
+    "var(--size-",
+    "var(--radius-",
+    "var(--font-",
+    "var(--line-",
+    "var(--text-",
+    "var(--leading-"
+  ],
+
+  "motion_tokens_prefixes": [
+    "var(--motion-",
+    "var(--ease-",
+    "var(--duration-",
+    "var(--easing-",
+    "var(--spring-",
+    "var(--animate-"
+  ]
+}

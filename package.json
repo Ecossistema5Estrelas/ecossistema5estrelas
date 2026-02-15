@@ -7,8 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "check": "pnpm lint && pnpm typecheck && pnpm build",
     "prepare": "husky",
-    "lint:fix": "eslint . --fix"
+    "verify": "pnpm lint && pnpm typecheck && pnpm build",
+    "snapshot": "node scripts/snapshot.mjs",
+    "ci:verify": "pnpm install --frozen-lockfile && pnpm verify"
   },
   "dependencies": {
     "@portabletext/react": "^6.0.0",
@@ -20,7 +25,6 @@
     "@sanity/vision": "^4.22.0",
     "@sentry/nextjs": "^10.32.1",
     "@tailwindcss/typography": "^0.5.19",
-    "autoprefixer": "^10.4.23",
     "clsx": "^2.1.1",
     "dotenv": "^17.2.3",
     "firebase": "^12.7.0",
@@ -29,7 +33,6 @@
     "lucide-react": "^0.561.0",
     "next": "15.5.9",
     "next-sanity": "^11.6.12",
-    "postcss": "^8.5.6",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-share": "^5.2.2",
@@ -47,15 +50,20 @@
   "devDependencies": {
     "@commitlint/cli": "^20.2.0",
     "@commitlint/config-conventional": "^20.2.0",
+    "@eslint/js": "^9.39.2",
     "@playwright/test": "^1.57.0",
+    "@sanity/client": "^7.14.0",
+    "@types/node": "^25.0.6",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "@typescript-eslint/eslint-plugin": "^8.50.1",
-    "@typescript-eslint/parser": "^8.50.1",
-    "eslint": "^8.57.0",
+    "@typescript-eslint/eslint-plugin": "^8.52.0",
+    "@typescript-eslint/parser": "^8.52.0",
+    "autoprefixer": "^10.4.23",
+    "eslint": "^9.39.2",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-unused-imports": "^4.3.0",
     "husky": "^9.1.7",
+<<<<<<< HEAD
     "lint-staged": "^16.2.7",
     "playwright": "^1.57.0",
     "prettier": "^3.7.4",
@@ -65,3 +73,12 @@
   },
   "packageManager": "pnpm@10.27.0+sha512.72d699da16b1179c14ba9e64dc71c9a40988cbdc65c264cb0e489db7de917f20dcf4d64d8723625f2969ba52d4b7e2a1170682d9ac2a5dcaeaab732b7e16f04a"
 }
+=======
+    "postcss": "^8.5.6",
+    "tailwindcss": "3.4.17",
+    "typescript": "^5.4.0"
+  },
+  "packageManager": "pnpm@10.27.0+sha512.72d699da16b1179c14ba9e64dc71c9a40988cbdc65c264cb0e489db7de917f20dcf4d64d8723625f2969ba52d4b7e2a1170682d9ac2a5dcaeaab732b7e16f04a",
+  "type": "module"
+}
+>>>>>>> chore/remove-hub-from-navigation-20260208

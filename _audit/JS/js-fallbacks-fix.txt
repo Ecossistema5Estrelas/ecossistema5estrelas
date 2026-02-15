@@ -1,0 +1,5 @@
+[FIX] JS Fallbacks (<noscript>)
+PATCHED -> app/dashboard/page.tsx
+PATCHED -> app/privacidade/page.tsx
+PATCHED -> app/termos/page.tsx
+PATCHED -> app/teste-botao/page.tsx

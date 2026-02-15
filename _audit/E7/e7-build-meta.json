@@ -1,0 +1,8 @@
+{
+  "input": "content/paths/e7.dsl.txt",
+  "generatedAtISO": "2026-01-20T23:54:45.849Z",
+  "hashes": {
+    "dsl_sha256": "2f8b214a8b22d54a56a9fa4d390b789d044994219a7dd722bbd969854f469eca",
+    "state_sha256": "54aa9f0dc875f5985a2b6c579cdf76b8abbe59e32f7a9333868d95eb8a6f4454"
+  }
+}

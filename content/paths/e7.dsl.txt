@@ -1,0 +1,17 @@
+# E7 DSL v1 — fixture mínima (sem UI)
+
+INTENT compreender-blog-premium
+DESC: Entrar no sistema cognitivo do Blog Premium e entender a progressão canônica.
+ENTRY: e1, e2
+
+RULE e1 -> e2
+WHEN: quando a base infra e encoding estiver compreendida
+WHY: E2 depende de estabilidade infra para indexação premium.
+
+RULE e2 -> e6
+WHEN: quando navegação semântica estiver pronta e quiser organizar conhecimento
+WHY: E6 formaliza índices cognitivos acima da navegação.
+
+PATH compreender-blog-premium
+SEQ: e1 -> e2 -> e6
+EXPLAIN: Progressão mínima para entender base, índices premium e organização cognitiva.

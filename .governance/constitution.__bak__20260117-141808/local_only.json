@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "version": "A2-CONSTITUTION-2.0",
+    "scope": "LOCAL_ONLY",
+    "createdAt": "AUTO",
+    "notes": "Nunca entra no ecossistema. Ambiente não é produto."
+  },
+  "rules": [
+    { "prefix": ".env", "note": "Variáveis de ambiente" },
+    { "prefix": ".env.", "note": "Variáveis específicas" },
+    { "prefix": "*.log", "note": "Logs locais" },
+    { "prefix": "tmp/", "note": "Arquivos temporários" },
+    { "prefix": "cache/", "note": "Caches" },
+    { "prefix": "secrets/", "note": "Segredos" },
+    { "prefix": ".DS_Store", "note": "Metadados de sistema" }
+  ]
+}
