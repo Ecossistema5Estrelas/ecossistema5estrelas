@@ -1,4 +1,4 @@
-import { portableTextComponents } from "@/lib/portableText";
+﻿import { portableTextComponents } from "@/lib/portableText";
 import { PortableText } from "@portabletext/react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -14,44 +14,44 @@ type PageProps = { params: { slug: string } };
 
 export const revalidate = 60;
 
-// ---- Validações contratuais ----
+// ---- ValidaÃ§Ãµes contratuais ----
 function isValidSlug(input: string) {
-  // slug.current: lowercase + hífen
+  // slug.current: lowercase + hÃ­fen
   return /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(input);
 }
 
-// ---- Metadata canônica ----
+// ---- Metadata canÃ´nica ----
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const slug = params?.slug || "";
-  if (!isValidSlug(slug)) return { title: "POST INVÁLIDO" };
+  if (!isValidSlug(slug)) return { title: "POST INVÃLIDO" };
 
   const data = await sanityFetch<any | null>(Q.postBySlug, { slug }, 60);
-  if (!data?._id) return { title: "POST NÃO ENCONTRADO" };
+  if (!data?._id) return { title: "POST NÃƒO ENCONTRADO" };
 
   return {
     title: (data.title || "POST").toUpperCase(),
     description:
       typeof data?.body === "string"
         ? data.body.slice(0, 160)
-        : "Publicação oficial do ECOSSISTEMA 5⭐.",
+        : "PublicaÃ§Ã£o oficial do ECOSSISTEMA 5â­.",
   };
 }
 
-// ---- Página ----
+// ---- PÃ¡gina ----
 export default async function Page({
   params,
   searchParams,
 }: PageProps & { searchParams: Record<string, string | string[] | undefined> }) {
   const slug = params?.slug || "";
-  parseReadingMode(searchParams); // mantido por efeito semântico
+  parseReadingMode(searchParams); // mantido por efeito semÃ¢ntico
 
-  // Slug inválido → fallback institucional
+  // Slug invÃ¡lido â†’ fallback institucional
   if (!isValidSlug(slug)) {
     return (
       <main className="mx-auto w-full max-w-4xl px-4 py-10">
-        <h1 className="text-2xl font-semibold tracking-tight">POST INVÁLIDO</h1>
+        <h1 className="text-2xl font-semibold tracking-tight">POST INVÃLIDO</h1>
         <p className="mt-3 opacity-80">
-          O identificador não atende ao contrato de slug.
+          O identificador nÃ£o atende ao contrato de slug.
         </p>
         <div className="mt-6">
           <Link
@@ -67,7 +67,7 @@ export default async function Page({
 
   const data = await sanityFetch<any | null>(Q.postBySlug, { slug }, 60);
 
-  // 404 legítimo (institucional)
+  // 404 legÃ­timo (institucional)
   if (!data?._id) notFound();
 
   return (
@@ -119,17 +119,19 @@ export default async function Page({
 
         {/* Corpo */}
         <section className="mt-8">
-            <PortableText value={data.body} components={portableTextComponents} />
-
-
-          ) : typeof data.body === "string" ? (
-            <p className="leading-relaxed opacity-90">{data.body}</p>
-          ) : (
-            <p className="opacity-80">
-              Conteúdo indisponível no formato atual.
-            </p>
-          )}
-        </section>
+  {Array.isArray(data.body) ? (
+    <PortableText
+      value={data.body}
+      components={portableTextComponents}
+    />
+  ) : typeof data.body === "string" ? (
+    <p className="leading-relaxed opacity-90">{data.body}</p>
+  ) : (
+    <p className="opacity-80">
+      Conteúdo indisponível no formato atual.
+    </p>
+  )}
+</section>
       </article>
 
       <nav className="mt-12 flex justify-between">
@@ -137,10 +139,12 @@ export default async function Page({
           href="/blog"
           className="rounded-xl border border-white/10 px-4 py-2"
         >
-          ← Voltar ao blog
+          â† Voltar ao blog
         </Link>
       </nav>
     </main>
   );
 }
+
+
 
