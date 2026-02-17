@@ -1,3 +1,0 @@
-[GATE] JS/audit-js-inline
-[OK] true
-[ISSUES] 0

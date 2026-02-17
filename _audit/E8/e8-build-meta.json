@@ -1,8 +1,0 @@
-{
-  "input": "content/memory/e8.dsl.txt",
-  "generatedAtISO": "2026-01-21T00:04:19.337Z",
-  "hashes": {
-    "dsl_sha256": "74db2fe6629da04b2679747aa81bf09f3d98752f20f667d07856b7ea72026750",
-    "state_sha256": "790e439eb621b92fef87c9c0de5932a150412d555dd7cd11d4354d94a8139ce0"
-  }
-}

@@ -1,4 +1,0 @@
-I1 PATHS DETECT
-Timestamp: 2026-01-21T01:01:09.549Z
-
-- public/_paths/e7-state.json: OK | signals: (none)

@@ -1,3 +1,0 @@
-[GATE] CSS/audit-css-layout
-[OK] true
-[ISSUES] 0

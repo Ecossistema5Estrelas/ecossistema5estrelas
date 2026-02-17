@@ -1,3 +1,0 @@
-[GATE] JS/audit-js-fallbacks
-[OK] true
-[ISSUES] 0

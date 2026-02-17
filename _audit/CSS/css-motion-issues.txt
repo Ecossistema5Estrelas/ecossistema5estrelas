@@ -1,6 +1,0 @@
-[GATE] CSS/audit-css-motion
-[OK] false
-[ISSUES] 1
-
-[1] MOTION_NO_PREFERS_REDUCED_MOTION_GUARD (A11Y)
-FILE: styles\globals.css

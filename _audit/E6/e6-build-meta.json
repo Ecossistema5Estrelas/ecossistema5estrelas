@@ -1,8 +1,0 @@
-{
-  "input": "content/indices/e6.dsl.txt",
-  "generatedAtISO": "2026-01-20T23:36:44.651Z",
-  "hashes": {
-    "dsl_sha256": "628fbbc35b4f76362c6066526d120f6ca28ee2ce930acb637b7212062f0d97a5",
-    "state_sha256": "4339341f215cd54c46d5f7577eefe9ec3ce5a03ab37c659ec24aa784e3b6b45b"
-  }
-}

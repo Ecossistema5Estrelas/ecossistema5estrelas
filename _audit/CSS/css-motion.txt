@@ -1,3 +1,0 @@
-[GATE] CSS/audit-css-motion
-[OK] true
-[ISSUES] 0
