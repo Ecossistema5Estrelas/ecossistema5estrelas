@@ -6,12 +6,16 @@ export function isValidReadingMode(value: unknown): value is ReadingMode {
   return typeof value === "string" && (VALID_READING_MODES as string[]).includes(value);
 }
 
-export async function parseReadingMode(
-  searchParams: Promise<Record<string, string | string[] | undefined>>,
+/**
+ * Parser de modo de leitura
+ * Compatível com Next App Router:
+ * searchParams é sempre objeto síncrono (nunca Promise)
+ */
+export function parseReadingMode(
+  searchParams: Record<string, string | string[] | undefined>,
   fallback: ReadingMode = "focus"
-): Promise<ReadingMode> {
-  const resolved = await searchParams;
-  const raw = resolved?.["mode"];
+): ReadingMode {
+  const raw = searchParams?.["mode"];
   const value = Array.isArray(raw) ? raw[0] : raw;
 
   if (isValidReadingMode(value)) return value;
