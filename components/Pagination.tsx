@@ -3,7 +3,7 @@ import Link from "next/link";
 type Props = {
   currentPage: number;
   totalPages: number;
-  basePath: string; // ex: "/blog" ou "/blog/temas/tecnologia"
+  basePath: string; // ex: "/blog/page" ou "/blog/temas/tecnologia/page"
   className?: string;
 };
 
@@ -30,8 +30,7 @@ export default function Pagination({
   const prev = safeCurrent > 1 ? safeCurrent - 1 : null;
   const next = safeCurrent < totalPages ? safeCurrent + 1 : null;
 
-  const mkHref = (p: number) =>
-    p === 1 ? basePath : `${basePath}?page=${p}`;
+  const mkHref = (p: number) => `${basePath}/${p}`;
 
   return (
     <nav

@@ -25,3 +25,13 @@ export type SanitySlug = {
   _type: "slug";
   current: string;
 };
+
+export async function sanityFetch<T = any>(
+  query: string,
+  params: Record<string, any> = {},
+  revalidate: number | false = 60
+): Promise<T> {
+  return sanity.fetch(query, params, {
+    next: revalidate === false ? undefined : { revalidate }
+  });
+}

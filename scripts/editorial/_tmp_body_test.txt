@@ -1,6 +1,8 @@
-Este é um corpo de teste com mais de 400 caracteres.
-Ele não contém markdown, não possui headings com "# ",
-e serve apenas para validar o gate de schema e o gate de size.
-A ideia aqui é confirmar que o pipeline passa por todos os
-gates essenciais em modo dry-run, sem publicar nada, sem
-efeitos colaterais, sem ruído e com saída determinística.
+RESUMO
+Este é um post de teste real para validar o pipeline completo de publicação do blog. O objetivo é confirmar que o sistema escreve corretamente no CMS, indexa, revalida e renderiza automaticamente no frontend sem intervenção manual.
+
+INTRODUÇÃO
+O ECOSSISTEMA 5ESTRELAS exige prova empírica antes de confiança estrutural. Este texto serve exclusivamente para validar a cadeia completa de publicação e garantir que nenhuma etapa esteja silenciosamente falhando.
+
+CONCLUSÃO
+Se este post aparecer no blog, o pipeline está oficialmente aprovado.

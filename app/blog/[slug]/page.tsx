@@ -1,4 +1,4 @@
-﻿import { portableTextComponents } from "@/lib/portableText";
+import { portableTextComponents } from "@/lib/portableText";
 import { PortableText } from "@portabletext/react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -9,49 +9,52 @@ import { Q } from "../../../src/lib/sanity/queries";
 import { sanityFetch } from "../../../src/lib/sanity/fetch";
 
 import type { Metadata } from "next";
+import PostTelemetry from "../../components/g6/PostTelemetry";
 
 type PageProps = { params: { slug: string } };
 
 export const revalidate = 60;
 
-// ---- ValidaÃ§Ãµes contratuais ----
+// ---- Validações contratuais ----
 function isValidSlug(input: string) {
-  // slug.current: lowercase + hÃ­fen
+  // slug.current: lowercase + hífen
   return /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(input);
 }
 
-// ---- Metadata canÃ´nica ----
+// ---- Metadata canônica ----
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const slug = params?.slug || "";
-  if (!isValidSlug(slug)) return { title: "POST INVÃLIDO" };
+  const { slug } = await params;
+  if (!isValidSlug(slug)) return { title: "POST INVÁLIDO" };
 
   const data = await sanityFetch<any | null>(Q.postBySlug, { slug }, 60);
-  if (!data?._id) return { title: "POST NÃƒO ENCONTRADO" };
+  if (!data?._id) return { title: "POST NÃO ENCONTRADO" };
 
   return {
     title: (data.title || "POST").toUpperCase(),
     description:
       typeof data?.body === "string"
         ? data.body.slice(0, 160)
-        : "PublicaÃ§Ã£o oficial do ECOSSISTEMA 5â­.",
+        : "Publicação oficial do ECOSSISTEMA 5⭐.",
   };
 }
 
-// ---- PÃ¡gina ----
+// ---- Página ----
 export default async function Page({
   params,
   searchParams,
 }: PageProps & { searchParams: Record<string, string | string[] | undefined> }) {
-  const slug = params?.slug || "";
-  parseReadingMode(searchParams); // mantido por efeito semÃ¢ntico
+  const { slug } = await params;
+  parseReadingMode(searchParams); // mantido por efeito semântico
 
-  // Slug invÃ¡lido â†’ fallback institucional
+  // Slug inválido → fallback institucional
   if (!isValidSlug(slug)) {
     return (
       <main className="mx-auto w-full max-w-4xl px-4 py-10">
-        <h1 className="text-2xl font-semibold tracking-tight">POST INVÃLIDO</h1>
+      {/* G6_E3_POST_TELEMETRY */}
+      <PostTelemetry slug={slug} />
+        <h1 className="text-2xl font-semibold tracking-tight">POST INVÁLIDO</h1>
         <p className="mt-3 opacity-80">
-          O identificador nÃ£o atende ao contrato de slug.
+          O identificador não atende ao contrato de slug.
         </p>
         <div className="mt-6">
           <Link
@@ -67,7 +70,7 @@ export default async function Page({
 
   const data = await sanityFetch<any | null>(Q.postBySlug, { slug }, 60);
 
-  // 404 legÃ­timo (institucional)
+  // 404 legítimo (institucional)
   if (!data?._id) notFound();
 
   return (
@@ -128,7 +131,7 @@ export default async function Page({
     <p className="leading-relaxed opacity-90">{data.body}</p>
   ) : (
     <p className="opacity-80">
-      Conteúdo indisponível no formato atual.
+      Conte�do indispon�vel no formato atual.
     </p>
   )}
 </section>
@@ -139,12 +142,14 @@ export default async function Page({
           href="/blog"
           className="rounded-xl border border-white/10 px-4 py-2"
         >
-          â† Voltar ao blog
+          ← Voltar ao blog
         </Link>
       </nav>
     </main>
   );
 }
+
+
 
 
 

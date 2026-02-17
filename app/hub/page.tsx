@@ -1,5 +1,1 @@
-import { notFound } from "next/navigation";
-
-export default function HubPage() {
-  notFound();
-}
+import { notFound } from 'next/navigation'; export default function Page(){ notFound() }

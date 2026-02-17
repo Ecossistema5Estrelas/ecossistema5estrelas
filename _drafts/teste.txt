@@ -1,0 +1,1 @@
+Este é um post de teste automático para validação do pipeline editorial.

@@ -6,11 +6,12 @@ export function isValidReadingMode(value: unknown): value is ReadingMode {
   return typeof value === "string" && (VALID_READING_MODES as string[]).includes(value);
 }
 
-export function parseReadingMode(
-  searchParams: Record<string, string | string[] | undefined>,
+export async function parseReadingMode(
+  searchParams: Promise<Record<string, string | string[] | undefined>>,
   fallback: ReadingMode = "focus"
-): ReadingMode {
-  const raw = searchParams["mode"];
+): Promise<ReadingMode> {
+  const resolved = await searchParams;
+  const raw = resolved?.["mode"];
   const value = Array.isArray(raw) ? raw[0] : raw;
 
   if (isValidReadingMode(value)) return value;
@@ -32,3 +33,4 @@ export const READING_MODE_CONFIG: Record<ReadingMode, { goal: string }> = {
 export function getReadingModeConfig(mode: ReadingMode) {
   return READING_MODE_CONFIG[mode];
 }
+
