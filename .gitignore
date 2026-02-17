@@ -14,7 +14,7 @@ node_modules.PNPM-CONTAMINATED/
 .pnpm-debug.log*
 
 # ===============================
-# Auditoria e snapshots (não versionar)
+# Auditoria e snapshots
 # ===============================
 audits/
 audit-*.txt
@@ -23,7 +23,7 @@ snapshots/
 *.freeze
 
 # ===============================
-# Environment (NUNCA versionar)
+# Environment
 # ===============================
 .env
 .env.local
@@ -39,22 +39,22 @@ snapshots/
 Thumbs.db
 
 # ===============================
-# Sanity (gerado / runtime)
+# Sanity runtime
 # ===============================
 studio/.sanity/
 .sanity/
 sanity.cli.*
 
 # ===============================
-# Scripts editoriais (Node + token)
+# Scripts editoriais locais
 # ===============================
-sanity-*.mjs
-publish-*.mjs
-post-*.json
-post-*.ndjson
+_drafts/
+scripts/debug-*.mjs
+scripts/probe*.mjs
+test-*.mjs
 
 # ===============================
-# Backups & snapshots (não-versionados)
+# Backups
 # ===============================
 backups/
 sanity-backup-*
@@ -64,7 +64,7 @@ _discarded/
 _archive/
 
 # ===============================
-# Binários / instaladores / lixo
+# Binários
 # ===============================
 *.exe
 *.msi
@@ -72,24 +72,11 @@ _archive/
 *.7z
 *.iso
 *.bak
-*.bat
-*.ps1
 
 # ===============================
 # Deploy
 # ===============================
 .vercel/
-
-# ===============================
-# Sentry
-# ===============================
-.env.sentry-build-plugin
-
-# ===============================
-# Node version managers
-# ===============================
-.node-version
-.nvmrc
 
 # ===============================
 # Logs
@@ -100,13 +87,14 @@ yarn-debug.log*
 yarn-error.log*
 
 # ===============================
-# Cache / Temp
+# Cache
 # ===============================
 .cache/
 .tmp/
 .temp/
 
 # ===============================
-# Mnemosine / Arquivos históricos
+# Mnemosine histórico
 # ===============================
 _archive/mnemosine/
+
