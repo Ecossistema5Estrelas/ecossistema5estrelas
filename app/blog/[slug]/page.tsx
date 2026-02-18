@@ -21,7 +21,6 @@ function isValidSlug(input: string) {
 }
 
 // ---- Slugs reservados do sistema ----
-// Impede colisão entre rotas estáticas e rota dinâmica
 const RESERVED = new Set([
   "series",
   "temas",
@@ -52,10 +51,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function Page({
   params,
   searchParams,
-}: PageProps & { searchParams: Record<string, string | string[] | undefined> }) {
+}: PageProps & {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
   const { slug } = await params;
 
-  parseReadingMode(searchParams);
+  // ✅ FIX NEXT 15 — searchParams agora é async
+  const sp = await searchParams;
+  parseReadingMode(sp);
 
   // ⛔ bloqueio de rotas reservadas
   if (RESERVED.has(slug)) notFound();

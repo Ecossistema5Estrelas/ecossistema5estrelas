@@ -32,7 +32,19 @@
   box-sizing: border-box;
 }
 
-.prose ::selection {
-  background: var(--color-auto-app-03);
-  color: var(--color-auto-app-02);
+/* ================================
+   HIGHLIGHT EDITORIAL (BLINDADO)
+   ================================ */
+
+/* Firefox */
+.prose ::-moz-selection {
+  background: var(--color-auto-app-03, #2563eb);
+  color: var(--color-auto-app-02, #ffffff);
 }
+
+/* Chrome / Edge / Safari */
+.prose ::selection {
+  background: var(--color-auto-app-03, #2563eb);
+  color: var(--color-auto-app-02, #ffffff);
+}
+
