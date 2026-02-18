@@ -1,4 +1,4 @@
-import { portableTextComponents } from "@/lib/portableText";
+﻿import { portableTextComponents } from "@/lib/portableText";
 import { PortableText } from "@portabletext/react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -17,13 +17,23 @@ export const revalidate = 60;
 
 // ---- Validações contratuais ----
 function isValidSlug(input: string) {
-  // slug.current: lowercase + hífen
   return /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(input);
 }
+
+// ---- Slugs reservados do sistema ----
+// Impede colisão entre rotas estáticas e rota dinâmica
+const RESERVED = new Set([
+  "series",
+  "temas",
+  "trilhas",
+  "timeline",
+]);
 
 // ---- Metadata canônica ----
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
+
+  if (RESERVED.has(slug)) return { title: "ROTA INSTITUCIONAL" };
   if (!isValidSlug(slug)) return { title: "POST INVÁLIDO" };
 
   const data = await sanityFetch<any | null>(Q.postBySlug, { slug }, 60);
@@ -44,23 +54,23 @@ export default async function Page({
   searchParams,
 }: PageProps & { searchParams: Record<string, string | string[] | undefined> }) {
   const { slug } = await params;
-  parseReadingMode(searchParams); // mantido por efeito semântico
 
-  // Slug inválido → fallback institucional
+  parseReadingMode(searchParams);
+
+  // ⛔ bloqueio de rotas reservadas
+  if (RESERVED.has(slug)) notFound();
+
+  // Slug inválido
   if (!isValidSlug(slug)) {
     return (
       <main className="mx-auto w-full max-w-4xl px-4 py-10">
-      {/* G6_E3_POST_TELEMETRY */}
-      <PostTelemetry slug={slug} />
+        <PostTelemetry slug={slug} />
         <h1 className="text-2xl font-semibold tracking-tight">POST INVÁLIDO</h1>
         <p className="mt-3 opacity-80">
           O identificador não atende ao contrato de slug.
         </p>
         <div className="mt-6">
-          <Link
-            href="/blog"
-            className="rounded-xl border border-white/10 px-4 py-2"
-          >
+          <Link href="/blog" className="rounded-xl border border-white/10 px-4 py-2">
             Voltar ao blog
           </Link>
         </div>
@@ -70,12 +80,11 @@ export default async function Page({
 
   const data = await sanityFetch<any | null>(Q.postBySlug, { slug }, 60);
 
-  // 404 legítimo (institucional)
+  // 404 legítimo
   if (!data?._id) notFound();
 
   return (
     <main className="mx-auto w-full max-w-4xl px-4 py-10">
-      {/* E3:BREADCRUMB */}
       <ArchitecturalBreadcrumb
         items={[
           { label: "Blog ArqFuturum", href: "/blog" },
@@ -98,13 +107,13 @@ export default async function Page({
             {data.title}
           </h1>
 
-          {data.publishedAt ? (
+          {data.publishedAt && (
             <p className="mt-2 text-sm opacity-70">
               {new Date(data.publishedAt).toLocaleDateString("pt-BR")}
             </p>
-          ) : null}
+          )}
 
-          {Array.isArray(data.categories) && data.categories.length > 0 ? (
+          {Array.isArray(data.categories) && data.categories.length > 0 && (
             <ul className="mt-4 flex flex-wrap gap-2">
               {data.categories.map((c: any) => (
                 <li
@@ -117,31 +126,22 @@ export default async function Page({
                 </li>
               ))}
             </ul>
-          ) : null}
+          )}
         </header>
 
-        {/* Corpo */}
         <section className="mt-8">
-  {Array.isArray(data.body) ? (
-    <PortableText
-      value={data.body}
-      components={portableTextComponents}
-    />
-  ) : typeof data.body === "string" ? (
-    <p className="leading-relaxed opacity-90">{data.body}</p>
-  ) : (
-    <p className="opacity-80">
-      Conte�do indispon�vel no formato atual.
-    </p>
-  )}
-</section>
+          {Array.isArray(data.body) ? (
+            <PortableText value={data.body} components={portableTextComponents} />
+          ) : typeof data.body === "string" ? (
+            <p className="leading-relaxed opacity-90">{data.body}</p>
+          ) : (
+            <p className="opacity-80">Conteúdo indisponível no formato atual.</p>
+          )}
+        </section>
       </article>
 
       <nav className="mt-12 flex justify-between">
-        <Link
-          href="/blog"
-          className="rounded-xl border border-white/10 px-4 py-2"
-        >
+        <Link href="/blog" className="rounded-xl border border-white/10 px-4 py-2">
           ← Voltar ao blog
         </Link>
       </nav>
