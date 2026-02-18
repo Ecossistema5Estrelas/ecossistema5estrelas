@@ -15,12 +15,18 @@ type PageProps = { params: { slug: string } };
 
 export const revalidate = 60;
 
-// ---- Validações contratuais ----
+
+// ─────────────────────────────
+// Validação de slug
+// ─────────────────────────────
 function isValidSlug(input: string) {
   return /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(input);
 }
 
-// ---- Slugs reservados do sistema ----
+
+// ─────────────────────────────
+// Slugs reservados
+// ─────────────────────────────
 const RESERVED = new Set([
   "series",
   "temas",
@@ -28,7 +34,10 @@ const RESERVED = new Set([
   "timeline",
 ]);
 
-// ---- Metadata canônica ----
+
+// ─────────────────────────────
+// Metadata
+// ─────────────────────────────
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
 
@@ -47,23 +56,27 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-// ---- Página ----
+
+// ─────────────────────────────
+// Página
+// ─────────────────────────────
 export default async function Page({
   params,
   searchParams,
 }: PageProps & {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
+
   const { slug } = await params;
 
-  // ✅ FIX NEXT 15 — searchParams agora é async
+  // FIX NEXT 15 — searchParams agora é async
   const sp = await searchParams;
   parseReadingMode(sp);
 
-  // ⛔ bloqueio de rotas reservadas
+  // bloqueio de rotas reservadas
   if (RESERVED.has(slug)) notFound();
 
-  // Slug inválido
+  // slug inválido
   if (!isValidSlug(slug)) {
     return (
       <main className="mx-auto w-full max-w-4xl px-4 py-10">
@@ -83,11 +96,12 @@ export default async function Page({
 
   const data = await sanityFetch<any | null>(Q.postBySlug, { slug }, 60);
 
-  // 404 legítimo
   if (!data?._id) notFound();
+
 
   return (
     <main className="mx-auto w-full max-w-4xl px-4 py-10">
+
       <ArchitecturalBreadcrumb
         items={[
           { label: "Blog ArqFuturum", href: "/blog" },
@@ -104,7 +118,13 @@ export default async function Page({
         ]}
       />
 
-      <article className="prose prose-invert max-w-none">
+
+
+      {/* =========================================================
+         CONTAINER EDITORIAL BLINDADO
+         ========================================================= */}
+      <article className="prose prose-invert max-w-none select-text">
+
         <header className="mb-8">
           <h1 className="text-3xl font-semibold tracking-tight">
             {data.title}
@@ -132,22 +152,33 @@ export default async function Page({
           )}
         </header>
 
+
+
         <section className="mt-8">
           {Array.isArray(data.body) ? (
-            <PortableText value={data.body} components={portableTextComponents} />
+            <PortableText
+              value={data.body}
+              components={portableTextComponents}
+            />
           ) : typeof data.body === "string" ? (
             <p className="leading-relaxed opacity-90">{data.body}</p>
           ) : (
-            <p className="opacity-80">Conteúdo indisponível no formato atual.</p>
+            <p className="opacity-80">
+              Conteúdo indisponível no formato atual.
+            </p>
           )}
         </section>
+
       </article>
+
+
 
       <nav className="mt-12 flex justify-between">
         <Link href="/blog" className="rounded-xl border border-white/10 px-4 py-2">
           ← Voltar ao blog
         </Link>
       </nav>
+
     </main>
   );
 }
