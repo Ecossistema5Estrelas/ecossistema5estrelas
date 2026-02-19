@@ -33,18 +33,42 @@
 }
 
 /* ================================
-   HIGHLIGHT EDITORIAL (BLINDADO)
+   HIGHLIGHT EDITORIAL — CANÔNICO
    ================================ */
 
 /* Firefox */
 .prose ::-moz-selection {
-  background: var(--color-auto-app-03, #2563eb);
+  background: var(--color-auto-app-03, #3b82f6);
   color: var(--color-auto-app-02, #ffffff);
 }
 
 /* Chrome / Edge / Safari */
 .prose ::selection {
-  background: var(--color-auto-app-03, #2563eb);
+  background: var(--color-auto-app-03, #3b82f6);
   color: var(--color-auto-app-02, #ffffff);
+}
+
+/* ================================
+   FIX INTERAÇÃO — ANTI DRAG
+   INC-SELECAO-PROD-001
+   ================================ */
+
+/*
+Regra institucional:
+conteúdo editorial nunca pode ser draggable.
+Arrastar = selecionar texto.
+Nunca arrastar elemento.
+*/
+
+.prose,
+.prose * {
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+/* neutraliza atributos injetados por renderers */
+.prose [draggable="true"] {
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
 }
 
